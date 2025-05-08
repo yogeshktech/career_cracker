@@ -14,29 +14,34 @@
                     <div class="header-top-bar-wrap__info d-sm-flex">
                         {{-- <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
                             @guest
-                                <li><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in</button></li>
-                                <li><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register</button></li>
+                            <li><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log
+                                    in</button></li>
+                            <li><button data-bs-toggle="modal" data-bs-target="#registerModal"
+                                    class="btn btn-link">Register</button></li>
                             @endguest
                             @auth
-                                <li><span class="user-name">{{ Auth::user()->name }}</span></li>
-                                <li>
-                                    <form action="{{ route('logout') }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-link">Logout</button>
-                                    </form>
-                                </li>
+                            <li><span class="user-name">{{ Auth::user()->name }}</span></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-link">Logout</button>
+                                </form>
+                            </li>
                             @endauth
                         </ul> --}}
                         <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
                             @guest
-                                <li><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in</button></li>
-                                <li><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register</button></li>
+                                <li><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log
+                                        in</button></li>
+                                <li><button data-bs-toggle="modal" data-bs-target="#registerModal"
+                                        class="btn btn-link">Register</button></li>
                             @endguest
                             @auth
                                 <li>
                                     <div class="dropdown">
-                                        <button class="btn btn-link dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                           Welcome To {{ Auth::user()->name }}
+                                        <button class="btn btn-link dropdown-toggle" type="button" id="profileDropdown"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Welcome To {{ Auth::user()->name }}
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                                             <li>
@@ -216,75 +221,137 @@
                         </div>
                         <!-- Header Navigation End -->
 
+
+
+
                         <!-- Header Mini Cart Start -->
                         <div class="header-action">
-                            <a href="{{route('cart.view')}}" class="header-action__btn">
+                            <a href="{{ route('cart.view') }}" class="header-action__btn">
                                 <i class="fas fa-shopping-basket"></i>
-                                <span class="header-action__number">3</span>
+                                <span class="header-action__number">{{ $cartCount }}</span>
                             </a>
 
                             <!-- Header Mini Cart Start -->
                             <div class="header-mini-cart">
+                                @if ($cartItems->isEmpty())
+                                    <p class="text-center">Your cart is empty.</p>
+                                @else
+                                    <!-- Header Mini Cart Product List Start -->
+                                    <ul class="header-mini-cart__product-list">
+                                        @foreach ($cartItems as $item)
+                                            <li class="header-mini-cart__item" data-cart-item-id="{{ $item->id }}">
+                                                <form action="{{ route('cart.delete', $item->id) }}" method="POST"
+                                                    class="cart-remove-form">
+                                                    @csrf
+                                                    <button type="submit" class="header-mini-cart__close"></button>
+                                                </form>
+                                                <div class="header-mini-cart__thumbnail">
+                                                    <a href="{{ url('/courses/' . $item->course->id) }}">
+                                                        @if ($item->course->thumbnail)
+                                                            <img src="{{ asset('' . $item->course->thumbnail) }}"
+                                                                alt="{{ $item->course->title }}" width="80" height="93">
+                                                        @else
+                                                            <img src="{{ asset('images/placeholder.png') }}" alt="No Image"
+                                                                width="80" height="93">
+                                                        @endif
+                                                    </a>
+                                                </div>
+                                                <div class="header-mini-cart__caption">
+                                                    <h3 class="header-mini-cart__name">
+                                                        <a
+                                                            href="{{ url('/courses/' . $item->course->id) }}">{{ $item->course->title }}</a>
+                                                    </h3>
+                                                    <span class="header-mini-cart__quantity">
+                                                        1 × <strong
+                                                            class="amount">₹{{ number_format($item->course->sale_price, 2) }}</strong>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                    <!-- Header Mini Cart Product List End -->
 
-                                <!-- Header Mini Cart Product List Start -->
-                                <ul class="header-mini-cart__product-list ">
-                                    <li class="header-mini-cart__item">
-                                        <a href="#" class="header-mini-cart__close"></a>
-                                        <div class="header-mini-cart__thumbnail">
-                                            <a href="#"><img src="assets/images/product/product-1.png" alt="Product"
-                                                    width="80" height="93"></a>
+                                    <div class="header-mini-cart__footer">
+                                        <div class="header-mini-cart__total">
+                                            <p class="header-mini-cart__label">Total:</p>
+                                            <p class="header-mini-cart__value">
+                                                ₹{{ number_format($cartItems->sum(fn($item) => $item->course->sale_price), 2) }}
+                                            </p>
                                         </div>
-                                        <div class="header-mini-cart__caption">
-                                            <h3 class="header-mini-cart__name"><a href="#">Awesome for Websites</a></h3>
-                                            <span class="header-mini-cart__quantity">1 × <strong
-                                                    class="amount">$49</strong><span class="separator">.00</span></span>
+                                        <div class="header-mini-cart__btn">
+                                            <a href="{{ route('cart.view') }}"
+                                                class="btn btn-primary btn-hover-secondary">View cart</a>
+                                            <a href="{{ route('checkout') }}"
+                                                class="btn btn-primary btn-hover-secondary">Checkout</a>
                                         </div>
-                                    </li>
-                                    <li class="header-mini-cart__item">
-                                        <a href="#" class="header-mini-cart__close"></a>
-                                        <div class="header-mini-cart__thumbnail">
-                                            <a href="#"><img src="assets/images/product/product-2.png" alt="Product"
-                                                    width="80" height="93"></a>
-                                        </div>
-                                        <div class="header-mini-cart__caption">
-                                            <h3 class="header-mini-cart__name"> <a href="#">Awesome for Websites</a>
-                                            </h3>
-                                            <span class="header-mini-cart__quantity">1 × <strong
-                                                    class="amount">$49</strong><span class="separator">.00</span></span>
-                                        </div>
-                                    </li>
-                                    <li class="header-mini-cart__item">
-                                        <a href="#" class="header-mini-cart__close"></a>
-                                        <div class="header-mini-cart__thumbnail">
-                                            <a href="#"><img src="assets/images/product/product-3.png" alt="Product"
-                                                    width="80" height="93"></a>
-                                        </div>
-                                        <div class="header-mini-cart__caption">
-                                            <h3 class="header-mini-cart__name"> <a href="#">Awesome for Websites</a>
-                                            </h3>
-                                            <span class="header-mini-cart__quantity">1 × <strong
-                                                    class="amount">$49</strong><span class="separator">.00</span></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <!-- Header Mini Cart Product List End -->
-
-                                <div class="header-mini-cart__footer">
-                                    <div class="header-mini-cart__total">
-                                        <p class="header-mini-cart__label">Total:</p>
-                                        <p class="header-mini-cart__value">$445<span class="separator">.99</span></p>
                                     </div>
-                                    <div class="header-mini-cart__btn">
-                                        <a href="cart.php" class="btn btn-primary btn-hover-secondary">View cart</a>
-                                        <a href="checkout.php" class="btn btn-primary btn-hover-secondary">Checkout</a>
-                                    </div>
-                                </div>
-
+                                @endif
                             </div>
                             <!-- Header Mini Cart End -->
-
                         </div>
                         <!-- Header Mini Cart End -->
+
+                        <script>
+                            document.querySelectorAll('.header-mini-cart__close').forEach(button => {
+                                button.addEventListener('click', function (e) {
+                                    e.preventDefault();
+                                    const form = this.closest('.cart-remove-form');
+                                    const cartItem = this.closest('.header-mini-cart__item');
+                                    const cartItemId = cartItem.dataset.cartItemId;
+
+                                    fetch(form.action, {
+                                        method: 'POST',
+                                        headers: {
+                                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                                            'Accept': 'application/json',
+                                        },
+                                        body: new FormData(form),
+                                    })
+                                        .then(response => {
+                                            if (!response.ok) {
+                                                throw new Error('Network response was not ok');
+                                            }
+                                            return response.json();
+                                        })
+                                        .then(data => {
+                                            if (data.success) {
+                                                // Remove the cart item from the DOM
+                                                cartItem.remove();
+
+                                                // Update cart count
+                                                const cartCountElement = document.querySelector('.header-action__number');
+                                                let cartCount = parseInt(cartCountElement.textContent);
+                                                cartCountElement.textContent = cartCount - 1;
+
+                                                // Update total
+                                                const totalElement = document.querySelector('.header-mini-cart__value');
+                                                let currentTotal = parseFloat(totalElement.textContent.replace('₹', '').replace(',', ''));
+                                                const itemPrice = parseFloat(cartItem.querySelector('.amount').textContent.replace('₹', '').replace(',', ''));
+                                                totalElement.textContent = '₹' + (currentTotal - itemPrice).toFixed(2);
+
+                                                // Show empty message if no items left
+                                                if (cartCount - 1 === 0) {
+                                                    const miniCartList = document.querySelector('.header-mini-cart__product-list');
+                                                    miniCartList.replaceWith(document.createElement('p')).textContent = 'Your cart is empty.';
+                                                    document.querySelector('.header-mini-cart__footer').style.display = 'none';
+                                                }
+
+                                                // Show success message (optional)
+                                                alert(data.message);
+                                            } else {
+                                                alert(data.message || 'Failed to remove item.');
+                                            }
+                                        })
+                                        .catch(error => {
+                                            console.error('Error:', error);
+                                            alert('An error occurred while removing the item.');
+                                        });
+                                });
+                            });
+                        </script>
+
+
+
 
                         <!-- Header Mobile Toggle Start -->
                         <div class="header-toggle">
@@ -322,51 +389,51 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Log In Modal Start -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-login">
-            <div class="modal-wrapper">
-                <button class="modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                        <p class="modal-description">Don't have an account yet? <button type="button" data-bs-toggle="modal"
-                                data-bs-target="#registerModal" data-bs-dismiss="modal">Sign up for free</button></p>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{ route('login') }}" method="POST">
-                            @csrf
-                            <div class="modal-form">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Your email"
-                                    value="{{ old('email') }}" required>
-                                @error('email')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="modal-form">
-                                <label class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                                @error('password')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="modal-form d-flex justify-content-between flex-wrap gap-2">
-                                eck">
-                                <input type="checkbox" name="remember" id="rememberme">
-                                <label for="rememberme">Remember me</label>
-                            </div>
-                            <div class="text-end">
-                                <a class="modal-form__link" href="{{ route('password.request') }}">Forgot your password?</a>
-                            </div>
-                    </div>
-                    <div class="modal-form">
-                        <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In</button>
-                    </div>
-                    </form>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-login">
+        <div class="modal-wrapper">
+            <button class="modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <p class="modal-description">Don't have an account yet? <button type="button" data-bs-toggle="modal"
+                            data-bs-target="#registerModal" data-bs-dismiss="modal">Sign up for free</button></p>
                 </div>
+                <div class="modal-body">
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
+                        <div class="modal-form">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Your email"
+                                value="{{ old('email') }}" required>
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="modal-form">
+                            <label class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="modal-form d-flex justify-content-between flex-wrap gap-2">
+                            eck">
+                            <input type="checkbox" name="remember" id="rememberme">
+                            <label for="rememberme">Remember me</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="modal-form__link" href="{{ route('password.request') }}">Forgot your password?</a>
+                        </div>
+                </div>
+                <div class="modal-form">
+                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In</button>
+                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 <!-- Log In Modal End -->
 

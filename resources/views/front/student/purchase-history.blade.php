@@ -34,21 +34,22 @@
                                     <td class="correct">
                                         <div class="dashboard-table__mobile-heading">Amount</div>
                                         <div class="dashboard-table__text">
-                                            <span class="sale-price"> ₹{{ floor($purchase->amount) }}.<small class="separator">{{ sprintf('%02d', ($purchase->amount - floor($purchase->amount)) * 100) }}</small></span>
+                                            <span class="sale-price"> ₹{{ number_format($purchase->amount, 2) }}</span>
                                         </div>
                                     </td>
                                     <td class="incorrect">
                                         <div class="dashboard-table__mobile-heading">Status</div>
-                                        <div class="dashboard-table__text">{{ $purchase->status }}</div>
+                                        <div class="dashboard-table__text">{{ $purchase->status ?? 'N/A' }}</div>
                                     </td>
                                     <td class="earned">
                                         <div class="dashboard-table__mobile-heading">Date</div>
-                                        <div class="dashboard-table__text">{{ $purchase->date->format('F j, Y') }}</div>
+                                        <div class="dashboard-table__text">{{ $purchase->date->format('F j, Y') ?? 'N/A' }}</div>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $purchases->links() }}
                 @endif
             </div>
         </div>

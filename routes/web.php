@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\AdminController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ReviewController;
 use App\Http\Controllers\Front\StudentController;
 use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\CheckoutController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,8 +28,23 @@ Route::post('/resend-otp', [RegisteredUserController::class, 'resendOtp'])->name
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
+
+
+
+
+
+// Cart Route 
 Route::get('/cart', [CartController::class, 'view'])->name('cart.view');
-Route::delete('/cart/{id}', [CartController::class, 'delete'])->name('cart.delete');
+Route::post('/cart/add/{courseId}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
+Route::post('/cart/enroll/{courseId}', [CartController::class, 'enroll'])->name('cart.enroll');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+
+// Checkout Route 
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+Route::get('/order/confirmation/{orderId}', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -114,6 +131,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/{id}', [LanguageController::class, 'destroy'])->name('destroy');
         });
 
+        Route::prefix('orders')->name('orders.')->group(function () {
+            Route::get('/orders', [OrderController::class, 'index'])->name('index');
+            Route::patch('/orders/{course}/links', [OrderController::class, 'updateLinks'])->name('updateLinks');
+        });
+        
+
         Route::prefix('blogs')->name('blogs.')->group(function () {
             Route::get('/', [BlogController::class, 'index'])->name('index');
             Route::get('/create', [BlogController::class, 'create'])->name('create');
@@ -156,5 +179,5 @@ Route::prefix('student')->name('student.')->middleware('auth')->group(function (
     Route::get('/settings', [StudentController::class, 'settings'])->name('settings');
     Route::patch('/settings', [StudentController::class, 'updateSettings'])->name('settings.update');
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-    Route::get('/live-class/{course}', [StudentController::class, 'joinLiveClass'])->name('live-class.join');
+    Route::get('/live-class/{course}', [StudentController::class, 'joinLiveClass'])->name('liveclass.join'); // Updated name
 });

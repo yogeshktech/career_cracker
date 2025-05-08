@@ -20,7 +20,7 @@
             <div class="dashboard-course-list">
                 <!-- All Courses Tab Content -->
                 <div id="all-courses" class="course-tab-content active">
-                    @if ($enrolledCourses->isEmpty() ?? '')
+                    @if ($enrolledCourses->isEmpty())
                         <p>No enrolled courses yet.</p>
                     @else
                         @foreach ($enrolledCourses as $course)
@@ -38,15 +38,15 @@
                                         <h3 class="dashboard-course-item__title">{{ $course->title }}</h3>
                                         <div class="dashboard-course-item__meta">
                                             <ul class="dashboard-course-item__meta-list">
-                                                <li><span class="meta-label">Total Lessons:</span><span class="meta-value">{{ $course->total_lessons }}</span></li>
-                                                <li><span class="meta-label">Completed Lessons:</span><span class="meta-value">{{ $course->completed_lessons }}/{{ $course->total_lessons }}</span></li>
+                                                <li><span class="meta-label">Total Lessons:</span><span class="meta-value">{{ $course->total_lessons ?? 'N/A' }}</span></li>
+                                                <li><span class="meta-label">Completed Lessons:</span><span class="meta-value">{{ $course->pivot->completed_lessons }}/{{ $course->total_lessons ?? 'N/A' }}</span></li>
                                             </ul>
                                         </div>
                                         <div class="dashboard-course-item__progress-bar-wrap">
                                             <div class="dashboard-course-item__progress-bar">
-                                                <div class="dashboard-course-item__progress-bar-line" style="width: {{ $course->progress }}%;"></div>
+                                                <div class="dashboard-course-item__progress-bar-line" style="width: {{ $course->pivot->progress }}%;"></div>
                                             </div>
-                                            <div class="dashboard-course-item__progress-bar-text">{{ $course->progress }}% Complete</div>
+                                            <div class="dashboard-course-item__progress-bar-text">{{ $course->pivot->progress }}% Complete</div>
                                         </div>
                                     </div>
                                 </a>
@@ -75,26 +75,29 @@
                                         <h3 class="dashboard-course-item__title">{{ $course->title }}</h3>
                                         <div class="dashboard-course-item__meta">
                                             <ul class="dashboard-course-item__meta-list">
-                                                <li><span class="meta-label">Total Lessons:</span><span class="meta-value">{{ $course->total_lessons }}</span></li>
-                                                <li><span class="meta-label">Completed Lessons:</span><span class="meta-value">{{ $course->completed_lessons }}/{{ $course->total_lessons }}</span></li>
+                                                <li><span class="meta-label">Total Lessons:</span><span class="meta-value">{{ $course->total_lessons ?? 'N/A' }}</span></li>
+                                                <li><span class="meta-label">Completed Lessons:</span><span class="meta-value">{{ $course->pivot->completed_lessons }}/{{ $course->total_lessons ?? 'N/A' }}</span></li>
                                             </ul>
                                         </div>
                                         <div class="dashboard-course-item__progress-bar-wrap">
                                             <div class="dashboard-course-item__progress-bar">
-                                                <div class="dashboard-course-item__progress-bar-line" style="width: {{ $course->progress }}%;"></div>
+                                                <div class="dashboard-course-item__progress-bar-line" style="width: {{ $course->pivot->progress }}%;"></div>
                                             </div>
-                                            <div class="dashboard-course-item__progress-bar-text">{{ $course->progress }}% Complete</div>
+                                            <div class="dashboard-course-item__progress-bar-text">{{ $course->pivot->progress }}% Complete</div>
                                         </div>
                                     </div>
                                     <div class="dashboard-course-item__join-now">
-                                        <a href="{{ route('live-class.join', $course->id) }}" class="btn btn-primary">Join Now</a>
+                                        @foreach ($courseuser as $couItemKey=>$courValue)
+                                            @if($courValue->course_id===$course->id)
+                                            <a href="{{$courValue->google_meet_link}}" class="btn btn-primary">Join Now</a>
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </a>
                             </div>
                         @endforeach
                     @endif
                 </div>
-
                 <!-- Completed Courses Tab Content -->
                 <div id="completed-courses" class="course-tab-content">
                     @if ($completedCourses->isEmpty())
@@ -115,15 +118,15 @@
                                         <h3 class="dashboard-course-item__title">{{ $course->title }}</h3>
                                         <div class="dashboard-course-item__meta">
                                             <ul class="dashboard-course-item__meta-list">
-                                                <li><span class="meta-label">Total Lessons:</span><span class="meta-value">{{ $course->total_lessons }}</span></li>
-                                                <li><span class="meta-label">Completed Lessons:</span><span class="meta-value">{{ $course->completed_lessons }}/{{ $course->total_lessons }}</span></li>
+                                                <li><span class="meta-label">Total Lessons:</span><span class="meta-value">{{ $course->total_lessons ?? 'N/A' }}</span></li>
+                                                <li><span class="meta-label">Completed Lessons:</span><span class="meta-value">{{ $course->pivot->completed_lessons }}/{{ $course->total_lessons ?? 'N/A' }}</span></li>
                                             </ul>
                                         </div>
                                         <div class="dashboard-course-item__progress-bar-wrap">
                                             <div class="dashboard-course-item__progress-bar">
-                                                <div class="dashboard-course-item__progress-bar-line" style="width: {{ $course->progress }}%;"></div>
+                                                <div class="dashboard-course-item__progress-bar-line" style="width: {{ $course->pivot->progress }}%;"></div>
                                             </div>
-                                            <div class="dashboard-course-item__progress-bar-text">{{ $course->progress }}% Complete</div>
+                                            <div class="dashboard-course-item__progress-bar-text">{{ $course->pivot->progress }}% Complete</div>
                                         </div>
                                     </div>
                                 </a>

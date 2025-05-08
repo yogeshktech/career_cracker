@@ -85,6 +85,20 @@
                 <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-users-three"></i></span>
+                        <span class="text">Orders</span>
+                    </a>
+                    <!-- Submenu start -->
+                    <ul class="sidebar-submenu">
+                        <li class="sidebar-submenu__item">
+                            <a href="{{route('admin.orders.index')}}" class="sidebar-submenu__link">All Orders </a>
+                        </li>
+                    </ul>
+                    <!-- Submenu End -->
+                </li>
+
+                <li class="sidebar-menu__item has-dropdown">
+                    <a href="javascript:void(0)" class="sidebar-menu__link">
+                        <span class="icon"><i class="ph ph-users-three"></i></span>
                         <span class="text">Blog</span>
                     </a>
                     <!-- Submenu start -->

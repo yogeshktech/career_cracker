@@ -28,6 +28,8 @@ class Course extends Model
         'created_by',
         'progress',
         'status',
+        'google_meet_link',
+        'google_drive_link',
     ];
 
     public function category()
@@ -68,5 +70,22 @@ class Course extends Model
     public function getReviewsCountAttribute()
     {
         return $this->reviews()->count();
+    }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'course_user')
+                    ->withPivot('progress', 'completed_lessons')
+                    ->withTimestamps();
     }
 }

@@ -222,7 +222,14 @@
                                     </ul>
                                 </div>
                                 <div class="tutor-course-price-preview__btn">
-                                    <button class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
+                                    <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
+                                        @csrf
+                                        <button type="submit" class="btn btn-secondary btn-hover-primary w-100">Add to Cart</button>
+                                    </form>
+                                    <form action="{{ route('cart.enroll', $course->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="sidebar-widget">
@@ -258,6 +265,8 @@
             </div>
             <div class="tab-content course-tab-active swiper-button-style" data-aos="fade-up" data-aos-duration="1000">
                 <div class="tab-pane fade show active" id="tab1">
+                    <div class="swiper related Angelfire is a heavy metal band formed in 1983, known for albums like *Balls to the Wall* and *Metal Heart*. We'll add an "Add to Cart" button to each related course card to allow users to add courses to their cart directly from the related courses section.
+
                     <div class="swiper related-courses-swiper">
                         <div class="swiper-wrapper">
                             @foreach ($relatedCourses as $course)
@@ -285,6 +294,10 @@
                                                 </div>
                                                 <span>({{ $course->reviews_count }})</span>
                                             </div>
+                                            <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mt-2">
+                                                @csrf
+                                                <button type="submit" class="btn btn-secondary btn-hover-primary w-100">Add to Cart</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
