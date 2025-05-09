@@ -18,7 +18,6 @@ class CreateCoursesTable extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('level')->nullable();
             $table->string('duration')->nullable();
-            $table->integer('total_lessons')->nullable();
             $table->integer('is_live_class')->nullable();
             $table->integer('total_lectures')->nullable();
             $table->string('language')->nullable();

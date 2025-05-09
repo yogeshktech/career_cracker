@@ -18,7 +18,6 @@ class Course extends Model
         'thumbnail',
         'level',
         'duration',
-        'total_lessons',
         'total_lectures',
         'language_id',
         'overview',
@@ -57,9 +56,11 @@ class Course extends Model
         return $this->belongsTo(Language::class);
     }
 
+
+
     public function reviews()
     {
-        return $this->hasMany(Review::class);
+        return $this->hasMany(Review::class)->where('status', 1);
     }
 
     public function getRatingAttribute()
@@ -85,7 +86,9 @@ class Course extends Model
     public function users()
     {
         return $this->belongsToMany(User::class, 'course_user')
-                    ->withPivot('progress', 'completed_lessons')
-                    ->withTimestamps();
+            ->withPivot('progress', 'completed_lessons')
+            ->withTimestamps();
     }
+
+   
 }

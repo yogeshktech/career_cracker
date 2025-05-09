@@ -9,5 +9,27 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['course_id', 'user_id', 'rating', 'comment', 'name', 'email'];
+    protected $fillable = [
+        'course_id',
+        'name',
+        'email',
+        'rating',
+        'comment',
+        'status',
+    ];
+
+    protected $casts = [
+        'rating' => 'float',
+        'status' => 'integer',
+    ];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'admin_id');
+    }
 }

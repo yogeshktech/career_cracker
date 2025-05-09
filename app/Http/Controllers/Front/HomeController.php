@@ -10,6 +10,7 @@ use App\Models\Faculty;
 use App\Models\Carrier;
 use App\Models\Language;
 use App\Models\Enquiry;
+use App\Models\Newsletter;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -89,20 +90,19 @@ class HomeController extends Controller
 
     public function show(Course $course)
     {
-        // Fetch related courses by category, excluding the current one
         $relatedCourses = Course::where('category_id', $course->category_id)
             ->where('id', '!=', $course->id)
             ->where('status', 'published')
-            ->with(['faculties', 'creator', 'reviews'])
+            ->with(['faculties', 'creator', 'reviews']) // Will now only get approved reviews
             ->latest()
             ->take(8)
             ->get();
 
-        // Fetch categories for sidebar
         $categories = Category::where('status', 'public')->get();
 
         return view('front.courseDetails', compact('course', 'relatedCourses', 'categories'));
     }
+
 
     public function AllBlog()
     {
@@ -115,7 +115,7 @@ class HomeController extends Controller
         $blog = Blog::findOrFail($id);
         return view('front.blogdetails', compact('blog'));
     }
-    
+
 
     public function Career()
     {
@@ -142,7 +142,7 @@ class HomeController extends Controller
             'resume' => 'required|file|mimes:pdf|max:5120',
         ]);
 
-       
+
 
         if ($request->hasFile('resume')) {
             $resume = $request->file('resume');
@@ -185,6 +185,26 @@ class HomeController extends Controller
         ]);
 
         return redirect()->route('home')->with('success', 'Enquiry submitted successfully.');
+    }
+
+
+    public function NewsLetter(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|max:255',
+        ]);
+
+        // Optional: Check if already subscribed
+        $existing = Newsletter::where('email', $request->email)->first();
+        if ($existing) {
+            return back()->with('error', 'You are already subscribed.');
+        }
+
+        $news = new Newsletter();
+        $news->email = $request->email;
+        $news->save();
+
+        return redirect()->back()->with('success', 'Subscribed successfully.');
     }
 
 }

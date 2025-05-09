@@ -1,11 +1,52 @@
+<div class="section-padding-0">
+    <div class="">
+        <div class="newsletter-section scene">
+            <!-- Newsletter Wrapper Start -->
+            <div class="newsletter-wrapper d-flex">
+                <div class="newsletter__content">
+                    <h3 class="newsletter__title"> <span class="orange">Subscribe Our</span> <span
+                            class="text-white">Newsletter</span> </h3>
+                    <p class=" text-white">Get the latest updates, tips, and exclusive <br> offers straight
+                        to your inbox.
+                    </p>
+                </div>
+                <div class="newsletter__form">
+                    @if (session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                    @endif
+                    <form action="{{ route('news_letter') }}" method="post">
+                        @csrf
+                        <input type="text" name="email" placeholder="Your e-mail" value="{{ old('email') }}">
+                        <button class="btn btn-orange btn-hover-primary">Subscribe</button>
+
+                        @error('email')
+                            <div class="text-danger mt-1">{{ $message }}</div>
+                        @enderror
+                    </form>
+                </div>
+
+
+            </div>
+            <!-- Newsletter Wrapper End -->
+            <div class="newsletter-section__shape-01" data-depth="-0.4"></div>
+            <div class="newsletter-section__shape-02" data-depth="0.4"></div>
+            <div class="newsletter-section__shape-03" data-depth="-0.5"></div>
+            <div class="newsletter-section__shape-04" data-depth="0.5"></div>
+        </div>
+    </div>
+</div>
 <div class="footer-section">
     <div class="footer-widget-area section-padding-01">
         <div class="container">
             <div class="row gy-6">
                 <div class="col-lg-4">
                     <div class="footer-widget">
-                        <a href="{{url('/')}}" class="footer-widget__logo"><img src="{{ asset("front/assets/images/careercracker.png")}}" alt="Logo"
-                                width="150" height="32"></a>
+                        <a href="{{url('/')}}" class="footer-widget__logo"><img
+                                src="{{ asset("front/assets/images/careercracker.png")}}" alt="Logo" width="150"
+                                height="32"></a>
                         <div class="footer-widget__info">
                             <span class="title">We understand that each student's situation and needs
                                 are unique to them. Tell us more about what you're looking

@@ -163,16 +163,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-sm-6">
-                                    <label for="total_lessons" class="h5 mb-8 fw-semibold font-heading">Total
-                                        Lessons</label>
-                                    <input type="number" class="form-control py-9 placeholder-13 text-15" id="total_lessons"
-                                        name="total_lessons" placeholder="Enter number of lessons"
-                                        value="{{ old('total_lessons') }}">
-                                    @error('total_lessons')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                
                                 <div class="col-sm-6">
                                     <label for="total_lectures" class="h5 mb-8 fw-semibold font-heading">Total
                                         Lectures</label>

@@ -57,11 +57,15 @@ class AdminController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:admins,email,' . $admin->id],
             'profile_image' => ['nullable', 'image', 'mimes:jpeg,png', 'max:5120'],
-            'current_password' => ['nullable', 'string', function ($attribute, $value, $fail) use ($admin) {
-                if (!Hash::check($value, $admin->password)) {
-                    $fail('The current password is incorrect.');
+            'current_password' => [
+                'nullable',
+                'string',
+                function ($attribute, $value, $fail) use ($admin) {
+                    if (!Hash::check($value, $admin->password)) {
+                        $fail('The current password is incorrect.');
+                    }
                 }
-            }],
+            ],
             'password' => ['nullable', 'string', 'min:8', 'confirmed'],
         ]);
 
@@ -128,11 +132,20 @@ class AdminController extends Controller
         ]);
 
         // Assign 'student' role (assuming Spatie Laravel Permission)
-        
+
 
         // Send welcome email
         Mail::to($user->email)->send(new StudentWelcome($user, $request->password));
 
         return redirect()->route('admin.students.index')->with('success', 'Student added successfully.');
     }
+
+    public function delete($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->back()->with('success', 'User deleted successfully.');
+    }
+
 }

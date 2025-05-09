@@ -19,11 +19,6 @@
                 <table id="facultyTable" class="table table-striped">
                     <thead>
                         <tr>
-                            <th class="fixed-width">
-                                <div class="form-check">
-                                    <input class="form-check-input border-gray-200 rounded-4" type="checkbox" id="selectAll">
-                                </div>
-                            </th>
                             <th class="h6 text-gray-300">Faculty</th>
                             <th class="h6 text-gray-300">Email</th>
                             <th class="h6 text-gray-300">Course</th>
@@ -35,11 +30,6 @@
                     <tbody>
                         @forelse ($faculties as $faculty)
                             <tr>
-                                <td class="fixed-width">
-                                    <div class="form-check">
-                                        <input class="form-check-input border-gray-200 rounded-4" type="checkbox" name="selected[]" value="{{ $faculty->id }}">
-                                    </div>
-                                </td>
                                 <td>
                                     <div class="flex-align gap-8">
                                         <img src="{{ asset($faculty->profile_image) }}" alt="{{ $faculty->name }}"

@@ -21,7 +21,6 @@
                         <span class="icon"><i class="ph ph-graduation-cap"></i></span>
                         <span class="text">Courses</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
                             <a href="{{ route('admin.courses.index') }}" class="sidebar-submenu__link">All Courses</a>
@@ -37,9 +36,7 @@
                         </li>
 
                     </ul>
-                    <!-- Submenu End -->
                 </li>
-                <!-- Existing sidebar content -->
                 <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-users-three"></i></span>
@@ -55,45 +52,38 @@
                         </li>
                     </ul>
                 </li>
-                <!-- Other sidebar items -->
                 <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-users-three"></i></span>
                         <span class="text">Language</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
                             <a href="{{route('admin.language.index')}}" class="sidebar-submenu__link">All Language</a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
                 </li>
                 <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-users-three"></i></span>
                         <span class="text">Faculty</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
                             <a href="{{route('admin.faculties.index')}}" class="sidebar-submenu__link">All Faculty </a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
                 </li>
                 <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-users-three"></i></span>
                         <span class="text">Orders</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
-                            <a href="{{route('admin.orders.index')}}" class="sidebar-submenu__link">All Orders </a>
+                            <a href="{{route('admin.orders.all_orders')}}" class="sidebar-submenu__link">All Orders </a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
                 </li>
 
                 <li class="sidebar-menu__item has-dropdown">
@@ -130,24 +120,18 @@
                         <span class="icon"><i class="ph ph-stack"></i></span>
                         <span class="text">Batch</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
-                            <a href="all-batch.php" class="sidebar-submenu__link">All Batch </a>
-                        </li>
-                        <li class="sidebar-submenu__item">
-                            <a href="add-batch.php" class="sidebar-submenu__link"> Add Batch </a>
+                            <a href="{{route('admin.batchs.index')}}" class="sidebar-submenu__link">All Batch </a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
                 </li>
 
-                <li class="sidebar-menu__item has-dropdown">
+                {{-- <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-broadcast"></i></span>
                         <span class="text">Live Class</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
                             <a href="all-live-class.php" class="sidebar-submenu__link">All Live Class </a>
@@ -156,31 +140,28 @@
                             <a href="add-live-class.php" class="sidebar-submenu__link"> Add Live Class </a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
-                </li>
+                </li> --}}
 
                 <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-chat-circle-text"></i></span>
                         <span class="text">Review</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
-                            <a href="all-review.php" class="sidebar-submenu__link">All Review </a>
+                            <a href="{{ route('admin.reviews.index') }}" class="sidebar-submenu__link">All Review</a>
                         </li>
                         <li class="sidebar-submenu__item">
-                            <a href="add-review.php" class="sidebar-submenu__link"> Add Review </a>
+                            <a href="{{ route('admin.reviews.create') }}" class="sidebar-submenu__link">Add Review</a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
                 </li>
-                <li class="sidebar-menu__item has-dropdown">
+
+                {{-- <li class="sidebar-menu__item has-dropdown">
                     <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-calendar-dots"></i></span>
                         <span class="text">Events</span>
                     </a>
-                    <!-- Submenu start -->
                     <ul class="sidebar-submenu">
                         <li class="sidebar-submenu__item">
                             <a href="all-events.php" class="sidebar-submenu__link">All Events </a>
@@ -189,19 +170,26 @@
                             <a href="#" class="sidebar-submenu__link"> Add Events </a>
                         </li>
                     </ul>
-                    <!-- Submenu End -->
-                </li>
-                <li class="sidebar-menu__item">
-                    <a href="{{route('admin.career.index')}}" class="sidebar-menu__link">
+                </li> --}}
+
+                <li class="sidebar-menu__item has-dropdown">
+                    <a href="javascript:void(0)" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-suitcase"></i></span>
-                        <span class="text">Career </span>
+                        <span class="text">Careers & Other</span>
                     </a>
-                </li>
-                <li class="sidebar-menu__item">
-                    <a href="{{ route('admin.enquiry.view') }}" class="sidebar-menu__link">
-                        <span class="icon"><i class="ph ph-suitcase"></i></span>
-                        <span class="text">Enquiry</span>
-                    </a>
+                    <ul class="sidebar-submenu">
+                        <li class="sidebar-submenu__item">
+                            <a href="{{route('admin.career.index')}}" class="sidebar-submenu__link">Career</a>
+                        </li>
+                        <li class="sidebar-submenu__item">
+                            <a href="{{ route('admin.enquiry.view') }}" class="sidebar-submenu__link">Enquiry</a>
+                        </li>
+
+                        <li class="sidebar-submenu__item">
+                            <a href="{{ route('admin.news_letters.newsLetter') }}" class="sidebar-submenu__link">News
+                                Letters</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-menu__item">
@@ -213,24 +201,6 @@
                         <span class="icon"><i class="ph ph-gear"></i></span>
                         <span class="text">Account Settings</span>
                     </a>
-                </li>
-                <li class="sidebar-menu__item has-dropdown">
-                    <a href="javascript:void(0)" class="sidebar-menu__link">
-                        <span class="icon"><i class="ph ph-shield-check"></i></span>
-                        <span class="text">Authetication</span>
-                    </a>
-                    <!-- Submenu start -->
-                    <ul class="sidebar-submenu">
-
-                        <li class="sidebar-submenu__item">
-                            <a href="forgot-password.php" class="sidebar-submenu__link">Forgot Password</a>
-                        </li>
-                        <li class="sidebar-submenu__item">
-                            <a href="reset-password.php" class="sidebar-submenu__link">Reset Password</a>
-                        </li>
-
-                    </ul>
-                    <!-- Submenu End -->
                 </li>
             </ul>
         </div>

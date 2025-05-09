@@ -89,58 +89,7 @@
     </div>
     <!-- Slider Section End -->
 
-    <!-- Offcanvas Start -->
-    <div class="offcanvas offcanvas-end offcanvas-mobile" id="offcanvasMobileMenu"
-        style="background-image: url({{ asset('front/assets/images/mobile-bg.jpg') }}">
-        <div class="offcanvas-header bg-white">
-            <div class="offcanvas-logo">
-                <a class="offcanvas-logo__logo" href="#"><img src="{{ asset('front/assets/images/careercracker.png') }}" alt="Logo"></a>
-            </div>
-            <button type="button" class="offcanvas-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
-        </div>
-
-        <div class="offcanvas-body">
-            <nav class="canvas-menu">
-                <ul class="offcanvas-menu">
-                    <li><a class="active" href="index.php"><span>Home</span></a>
-
-                    </li>
-                    <li>
-                        <a href="course.php"><span>Courses</span></a>
-
-                    </li>
-                    <li>
-                        <a href="#"><span>Blog</span></a>
-
-                    </li>
-                    <li>
-                        <a href="#"><span>Pages</span></a>
-
-                    </li>
-                    <li>
-                        <a href="#"><span>Features</span></a>
-
-                    </li>
-
-                </ul>
-            </nav>
-        </div>
-
-        <!-- Header User Button Start -->
-        <div class="offcanvas-user d-lg-none">
-            <div class="offcanvas-user__button">
-                <button class="offcanvas-user__login btn btn-secondary btn-hover-secondarys" data-bs-toggle="modal"
-                    data-bs-target="#loginModal">Log In</button>
-            </div>
-            <div class="offcanvas-user__button">
-                <button class="offcanvas-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal"
-                    data-bs-target="#registerModal">Sign Up</button>
-            </div>
-        </div>
-        <!-- Header User Button End -->
-
-    </div>
-    <!-- Offcanvas End -->
+  
 
 
 
@@ -1760,45 +1709,4 @@
             <button class="carousel-arrow right" onclick="slideRight()">&#8594;</button>
         </div>
     </div>
-
-    <!-- slider end  -->
-
-
-
-    <!-- Newsletter Start -->
-    <div class="section-padding-0">
-        <div class="">
-            <div class=" newsletter-section scene">
-
-                <!-- Newsletter Wrapper Start -->
-                <div class="newsletter-wrapper d-flex">
-
-                    <div class="newsletter__content">
-                        <h3 class="newsletter__title"> <span class="orange">Subscribe Our</span> <span
-                                class="text-white">Newsletter</span> </h3>
-                        <p class=" text-white">Get the latest updates, tips, and exclusive <br> offers straight
-                            to your inbox.</p>
-
-                    </div>
-                    <div class="newsletter__form">
-                        <form action="#">
-                            <input type="text" placeholder="Your e-mail">
-                            <button class="btn btn-orange btn-hover-primary">Subscribe</button>
-                        </form>
-                    </div>
-
-                </div>
-                <!-- Newsletter Wrapper End -->
-
-                <div class="newsletter-section__shape-01" data-depth="-0.4"></div>
-                <div class="newsletter-section__shape-02" data-depth="0.4"></div>
-                <div class="newsletter-section__shape-03" data-depth="-0.5"></div>
-                <div class="newsletter-section__shape-04" data-depth="0.5"></div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter End -->
-
-
 @endsection

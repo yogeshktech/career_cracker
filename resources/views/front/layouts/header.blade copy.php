@@ -77,52 +77,90 @@
                             <div class="header-category-toggle__text">Category</div>
                         </a>
                         <div class="header-category-dropdown-wrap">
-    <ul class="header-category-dropdown">
-        @foreach ($categories as $category)
-            <li>
-                <a href="#">{{ $category->name }} 
-                    @if ($category->subcategories->isNotEmpty())
-                        <span class="toggle-sub-menu"></span>
-                    @endif
-                </a>
-                @if ($category->subcategories->isNotEmpty())
-                    <ul class="sub-categories children">
-                        @foreach ($category->subcategories as $subcategory)
-                            <li>
-                                <a href="#">{{ $subcategory->name }}
-                                    @if ($subcategory->courses->isNotEmpty())
-                                        <span class="toggle-sub-menu"></span>
-                                    @endif
-                                </a>
-                                @if ($subcategory->courses->isNotEmpty())
-                                    <ul class="course-list children">
-                                        @foreach ($subcategory->courses as $course)
-                                            <li>
-                                                <a class="categories-course" href="#">
-                                                    <div class="categories-course__thumbnail">
-                                                        <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
-                                                            width="62" height="50">
-                                                    </div>
-                                                    <div class="categories-course__caption">
-                                                        <h5 class="categories-course__title">{{ $course->title }}</h5>
-                                                        <div class="categories-course__price">
-                                                            <span class="categories-course__sale-price">${{ number_format($course->sale_price, 2) }}</span>
-                                                            <span class="categories-course__regular-price">${{ number_format($course->regular_price, 2) }}</span>
+                            <ul class="header-category-dropdown">
+                                <li>
+                                    <a href="#"> Design <span class="toggle-sub-menu"></span></a>
+                                    <ul class="sub-categories children">
+                                        <li><a href="#">All Business</a></li>
+                                        <li>
+                                            <a href="#">Communications<span class="toggle-sub-menu"></span></a>
+                                            <ul class="course-list children">
+                                                <li>
+                                                    <a class="categories-course" href="#">
+                                                        <div class="categories-course__thumbnail">
+                                                            <img src="assets/images/courses/courses-1.jpg" alt="Course"
+                                                                width="62" height="50">
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        @endforeach
+                                                        <div class="categories-course__caption">
+                                                            <h5 class="categories-course__title">Illustrator 2020
+                                                                MasterClass</h5>
+                                                            <div class="categories-course__price">
+                                                                <span
+                                                                    class="categories-course__sale-price">$22.00</span>
+                                                                <span
+                                                                    class="categories-course__regular-price">$30.00</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="categories-course" href="#">
+                                                        <div class="categories-course__thumbnail">
+                                                            <img src="assets/images/courses/courses-2.jpg" alt="Course"
+                                                                width="62" height="50">
+                                                        </div>
+                                                        <div class="categories-course__caption">
+                                                            <h5 class="categories-course__title">Illustrator 2020
+                                                                MasterClass</h5>
+                                                            <div class="categories-course__price">
+                                                                <span
+                                                                    class="categories-course__sale-price">$22.00</span>
+                                                                <span
+                                                                    class="categories-course__regular-price">$30.00</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="categories-course" href="#">
+                                                        <div class="categories-course__thumbnail">
+                                                            <img src="assets/images/courses/courses-3.jpg" alt="Course"
+                                                                width="62" height="50">
+                                                        </div>
+                                                        <div class="categories-course__caption">
+                                                            <h5 class="categories-course__title">Illustrator 2020
+                                                                MasterClass</h5>
+                                                            <div class="categories-course__price">
+                                                                <span
+                                                                    class="categories-course__sale-price">$22.00</span>
+                                                                <span
+                                                                    class="categories-course__regular-price">$30.00</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Entrepreneurship</a></li>
+                                        <li><a href="#">Finance</a></li>
+                                        <li><a href="#">Management</a></li>
+                                        <li><a href="#">Sales</a></li>
+                                        <li><a href="#">Strategy &amp; Analytics</a></li>
                                     </ul>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-            </li>
-        @endforeach
-    </ul>
-</div>
+                                </li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Data Science</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Finance</a></li>
+                                <li><a href="#">Health &amp; Fitness</a></li>
+                                <li><a href="#">Lifestyle</a></li>
+                                <li><a href="#">Marketing</a></li>
+                                <li><a href="#">Music</a></li>
+                                <li><a href="#">Personal Development</a></li>
+                                <li><a href="#">Photography</a></li>
+                                <li><a href="#">Teaching &amp; Academics</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="header-inner">
                         <div class="header-serach">

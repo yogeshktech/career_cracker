@@ -45,7 +45,7 @@
                                     Not Set
                                 @endif
                             </p><hr>
-                            <form action="{{ route('admin.orders.updateLinks', $course->id) }}" method="POST">
+                            <form action="{{ route('admin.batchs.updateLinks', $course->id) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
                                 <div class="mb-3">

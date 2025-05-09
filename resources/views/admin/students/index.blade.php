@@ -33,11 +33,12 @@
                                         <td>{{ $student->email }}</td>
                                         <td>{{ $student->contact_no ?? 'N/A' }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-info">Edit</a>
-                                            <form action="#" method="POST" style="display:inline;">
+                                            <form action="{{ route('admin.students.delete', $student->id) }}" method="POST"
+                                                style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                <button type="submit" class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Are you sure?')">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

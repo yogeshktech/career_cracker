@@ -32,17 +32,17 @@ class TestimonialController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            
+
             // Make sure the directory exists
             $path = public_path('uploads/testimonials');
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
             }
-            
+
             // Move the file
             $image->move($path, $filename);
             $imagePath = 'uploads/testimonials/' . $filename;
-            
+
             // Save testimonial
             Testimonial::create([
                 'name' => $request->name,
@@ -50,19 +50,26 @@ class TestimonialController extends Controller
                 'designation' => $request->designation,
                 'image' => $imagePath,
             ]);
-            
+
             return redirect()->route('admin.testimonials.index')->with('success', 'Testimonial created successfully.');
         }
-        
+
         return redirect()->back()->with('error', 'Please upload an image')->withInput();
     }
 
-    public function edit(Testimonial $testimonial)
+    // public function edit(Testimonial $testimonial)
+    // {
+    //     return view('admin.testimonials.edit', compact('testimonial'));
+    // }
+
+    public function edit($id)
     {
+        $testimonial = Testimonial::findOrFail($id);
         return view('admin.testimonials.edit', compact('testimonial'));
     }
 
-    public function update(Request $request, Testimonial $testimonial)
+
+    public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|string|max:100',
@@ -70,6 +77,9 @@ class TestimonialController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
             'designation' => 'required|string|max:100',
         ]);
+
+        // First, retrieve the testimonial
+        $testimonial = Testimonial::findOrFail($id);
 
         $imagePath = $testimonial->image;
 
@@ -102,8 +112,11 @@ class TestimonialController extends Controller
             ->with('success', 'Testimonial updated successfully.');
     }
 
-    public function destroy(Testimonial $testimonial)
+
+    public function destroy($id)
     {
+        $testimonial = Testimonial::findOrFail($id);
+
         if ($testimonial->image && file_exists(public_path($testimonial->image))) {
             unlink(public_path($testimonial->image));
         }
@@ -113,4 +126,5 @@ class TestimonialController extends Controller
         return redirect()->route('admin.testimonials.index')
             ->with('success', 'Testimonial deleted successfully.');
     }
+
 }

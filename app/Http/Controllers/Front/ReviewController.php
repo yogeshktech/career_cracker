@@ -20,15 +20,19 @@ class ReviewController extends Controller
             'comment' => 'required|string',
         ]);
 
-        Review::create([
-            'course_id' => $course->id,
-            'user_id' => Auth::id() ?? null, // Optional: Link to authenticated user
-            'rating' => $request->rating,
-            'comment' => $request->comment,
-            'name' => $request->name,
-            'email' => $request->email,
-        ]);
+        $review = new Review;
+        $review->course_id = $course->id;
+        $review->user_id = Auth::id() ?? null;
+        $review->rating = $request->rating;
+        $review->comment = $request->comment;
+        $review->name = $request->name;
+        $review->email = $request->email;
+        $review->status = 0;
+        // dd($review);
+        $review->save();
 
-        return redirect()->route('courses.show', $course->id)->with('success', 'Review submitted successfully!');
+        return redirect()->route('courses.show', $course->id)
+            ->with('success', 'Review submitted successfully!');
     }
+
 }

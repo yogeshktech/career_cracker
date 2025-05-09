@@ -100,9 +100,15 @@
                                     <div class="rating-total">{{ $course->reviews_count }} Ratings</div>
                                 </div>
                                 <div class="tutor-course-segment__reviews-metar">
+                                    @php
+                                        $approvedReviews = $course->reviews; 
+                                        $totalApproved = $approvedReviews->count();
+                                    @endphp
+
                                     @foreach ([5, 4, 3, 2, 1] as $star)
                                         @php
-                                            $percentage = $course->reviews()->where('rating', $star)->count() / ($course->reviews_count ?: 1) * 100;
+                                            $count = $approvedReviews->where('rating', $star)->count();
+                                            $percentage = $totalApproved > 0 ? ($count / $totalApproved) * 100 : 0;
                                         @endphp
                                         <div class="course-rating-metar">
                                             <div class="rating-metar-star">
@@ -137,29 +143,46 @@
                                                     @endfor
                                                 </ul>
                                                 <input type="hidden" name="rating" id="rating-value" required>
+                                                @error('rating')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
+
                                             <div class="row gy-4">
                                                 <div class="col-md-6">
                                                     <div class="comment-form__input">
-                                                        <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
+                                                        <input type="text" name="name" class="form-control" placeholder="Your Name *" required value="{{ old('name') }}">
+                                                        @error('name')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-6">
                                                     <div class="comment-form__input">
-                                                        <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
+                                                        <input type="email" name="email" class="form-control" placeholder="Your Email *" required value="{{ old('email') }}">
+                                                        @error('email')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-12">
                                                     <div class="comment-form__input">
-                                                        <textarea name="comment" class="form-control" placeholder="Your Comment" required></textarea>
+                                                        <textarea name="comment" class="form-control" placeholder="Your Comment" required>{{ old('comment') }}</textarea>
+                                                        @error('comment')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-12">
                                                     <div class="comment-form__input form-check">
-                                                        <input type="checkbox" id="save" name="save_info">
+                                                        <input type="checkbox" id="save" name="save_info" {{ old('save_info') ? 'checked' : '' }}>
                                                         <label for="save">Save my name and email in this browser for the next time I comment.</label>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-12">
                                                     <div class="comment-form__input">
                                                         <button type="submit" class="btn btn-primary btn-hover-secondary">Submit</button>
@@ -167,6 +190,7 @@
                                                 </div>
                                             </div>
                                         </form>
+
                                     </div>
                                 </div>
                             </div>

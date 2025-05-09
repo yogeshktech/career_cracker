@@ -59,6 +59,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/career', [HomeController::class, 'store'])->name('careers.store');
 Route::post('/enquiry', [HomeController::class, 'enquiry_save'])->name('enquiry_send');
+Route::post('/news-letter', [HomeController::class, 'NewsLetter'])->name('news_letter');
 
 require __DIR__ . '/auth.php';
 
@@ -67,6 +68,8 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::get('/students', [AdminController::class, 'index'])->name('admin.students.index');
     Route::get('/students/create', [AdminController::class, 'create'])->name('admin.students.create');
     Route::post('/students', [AdminController::class, 'store'])->name('admin.students.store');
+    Route::delete('/students/delete/{id}', [AdminController::class, 'delete'])->name('admin.students.delete');
+
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -131,11 +134,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/{id}', [LanguageController::class, 'destroy'])->name('destroy');
         });
 
+
         Route::prefix('orders')->name('orders.')->group(function () {
-            Route::get('/orders', [OrderController::class, 'index'])->name('index');
-            Route::patch('/orders/{course}/links', [OrderController::class, 'updateLinks'])->name('updateLinks');
+            Route::get('/orders', [OrderController::class, 'AllOrders'])->name('all_orders');
         });
-        
+
+        Route::prefix('batchs')->name('batchs.')->group(function () {
+            Route::get('/batchs', [OrderController::class, 'index'])->name('index');
+            Route::patch('/batchs/{course}/links', [OrderController::class, 'updateLinks'])->name('updateLinks');
+        });
 
         Route::prefix('blogs')->name('blogs.')->group(function () {
             Route::get('/', [BlogController::class, 'index'])->name('index');
@@ -166,8 +173,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', [CarrirController::class, 'viewEnquiry'])->name('view');
             Route::delete('/{id}', [CarrirController::class, 'delete'])->name('delete');
         });
+
+        Route::prefix('news_letters')->name('news_letters.')->group(function () {
+            Route::get('/', [CarrirController::class, 'newsLetter'])->name('newsLetter');
+            Route::delete('/{id}', [CarrirController::class, 'newsLetterDelete'])->name('delete');
+        });
+
+        Route::prefix('reviews')->name('reviews.')->group(function () {
+            Route::get('/', [CarrirController::class, 'reviews'])->name('index');
+            Route::get('/create', [CarrirController::class, 'createReview'])->name('create');
+            Route::post('/', [CarrirController::class, 'addReview'])->name('store');
+            Route::delete('/{id}', [CarrirController::class, 'reviewDelete'])->name('delete');
+            Route::post('/{id}/toggle-status', [CarrirController::class, 'toggleStatus'])->name('toggle-status');
+        });
     });
 });
+
+
 
 // Student Dashboard Routes
 Route::prefix('student')->name('student.')->middleware('auth')->group(function () {

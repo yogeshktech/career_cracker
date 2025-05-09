@@ -292,33 +292,7 @@
     </div>
     <!-- slider end  -->
     <!-- Newsletter Start -->
-    <div class="section-padding-0">
-        <div class="">
-            <div class="newsletter-section scene">
-                <!-- Newsletter Wrapper Start -->
-                <div class="newsletter-wrapper d-flex">
-                    <div class="newsletter__content">
-                        <h3 class="newsletter__title"> <span class="orange">Subscribe Our</span> <span
-                                class="text-white">Newsletter</span> </h3>
-                        <p class=" text-white">Get the latest updates, tips, and exclusive <br> offers straight
-                            to your inbox.
-                        </p>
-                    </div>
-                    <div class="newsletter__form">
-                        <form action="#">
-                            <input type="text" placeholder="Your e-mail">
-                            <button class="btn btn-orange btn-hover-primary">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-                <!-- Newsletter Wrapper End -->
-                <div class="newsletter-section__shape-01" data-depth="-0.4"></div>
-                <div class="newsletter-section__shape-02" data-depth="0.4"></div>
-                <div class="newsletter-section__shape-03" data-depth="-0.5"></div>
-                <div class="newsletter-section__shape-04" data-depth="0.5"></div>
-            </div>
-        </div>
-    </div>
+   
     <!-- Include AOS JS, jQuery, and Bootstrap JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

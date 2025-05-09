@@ -19,11 +19,6 @@
                 <table id="languageTable" class="table table-striped">
                     <thead>
                         <tr>
-                            <th class="fixed-width">
-                                <div class="form-check">
-                                    <input class="form-check-input border-gray-200 rounded-4" type="checkbox" id="selectAll">
-                                </div>
-                            </th>
                             <th class="h6 text-gray-300">Name</th>
                             <th class="h6 text-gray-300">Status</th>
                             <th class="h6 text-gray-300">Actions</th>
@@ -32,11 +27,6 @@
                     <tbody>
                         @forelse ($languages as $language)
                             <tr>
-                                <td class="fixed-width">
-                                    <div class="form-check">
-                                        <input class="form-check-input border-gray-200 rounded-4" type="checkbox" name="selected[]" value="{{ $language->id }}">
-                                    </div>
-                                </td>
                                 <td>
                                     <span class="h6 mb-0 fw-medium text-gray-300">{{ $language->name }}</span>
                                 </td>

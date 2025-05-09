@@ -93,10 +93,11 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="subcategory_id" class="h5 mb-8 fw-semibold font-heading">Course Subcategory <span
-                                            class="text-13 text-gray-400 fw-medium">(Required)</span></label>
+                                    <label for="subcategory_id" class="h5 mb-8 fw-semibold font-heading">
+                                        Course Subcategory <span class="text-13 text-gray-400 fw-medium">(Required)</span>
+                                    </label>
                                     <select id="subcategory_id" name="subcategory_id" class="form-select py-9 placeholder-13 text-15" required>
-                                        <option value="" disabled {{ old('subcategory_id', $course->subcategory_id) === null ? 'selected' : '' }}>
+                                        <option value="" disabled {{ empty(old('subcategory_id', $course->subcategory_id)) ? 'selected' : '' }}>
                                             Select Subcategory
                                         </option>
                                         @foreach ($subcategories as $subcategory)
@@ -111,6 +112,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-sm-6">
                                     <label for="mrp" class="h5 mb-8 fw-semibold font-heading">MRP Price <span
                                             class="text-13 text-gray-400 fw-medium">(Required)</span></label>
@@ -156,14 +158,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-sm-6">
-                                    <label for="total_lessons" class="h5 mb-8 fw-semibold font-heading">Total Lessons</label>
-                                    <input type="number" class="form-control py-9 placeholder-13 text-15" id="total_lessons" name="total_lessons"
-                                        placeholder="Enter number of lessons" min="0" value="{{ old('total_lessons', $course->total_lessons) }}">
-                                    @error('total_lessons')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                
                                 <div class="col-sm-6">
                                     <label for="total_lectures" class="h5 mb-8 fw-semibold font-heading">Total Lectures</label>
                                     <input type="number" class="form-control py-9 placeholder-13 text-15" id="total_lectures" name="total_lectures"
