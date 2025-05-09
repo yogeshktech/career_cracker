@@ -77,52 +77,52 @@
                             <div class="header-category-toggle__text">Category</div>
                         </a>
                         <div class="header-category-dropdown-wrap">
-    <ul class="header-category-dropdown">
-        @foreach ($categories as $category)
-            <li>
-                <a href="#">{{ $category->name }} 
-                    @if ($category->subcategories->isNotEmpty())
-                        <span class="toggle-sub-menu"></span>
-                    @endif
-                </a>
-                @if ($category->subcategories->isNotEmpty())
-                    <ul class="sub-categories children">
-                        @foreach ($category->subcategories as $subcategory)
-                            <li>
-                                <a href="#">{{ $subcategory->name }}
-                                    @if ($subcategory->courses->isNotEmpty())
-                                        <span class="toggle-sub-menu"></span>
+                        <ul class="header-category-dropdown">
+                            @foreach ($categories as $category)
+                                <li>
+                                    <a href="#">{{ $category->name }} 
+                                        @if ($category->subcategories->isNotEmpty())
+                                            <span class="toggle-sub-menu"></span>
+                                        @endif
+                                    </a>
+                                    @if ($category->subcategories->isNotEmpty())
+                                        <ul class="sub-categories children">
+                                            @foreach ($category->subcategories as $subcategory)
+                                                <li>
+                                                    <a href="#">{{ $subcategory->name }}
+                                                        @if ($subcategory->courses->isNotEmpty())
+                                                            <span class="toggle-sub-menu"></span>
+                                                        @endif
+                                                    </a>
+                                                    @if ($subcategory->courses->isNotEmpty())
+                                                        <ul class="course-list children">
+                                                            @foreach ($subcategory->courses as $course)
+                                                                <li>
+                                                                    <a class="categories-course" href="#">
+                                                                        <div class="categories-course__thumbnail">
+                                                                            <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
+                                                                                width="62" height="50">
+                                                                        </div>
+                                                                        <div class="categories-course__caption">
+                                                                            <h5 class="categories-course__title">{{ $course->title }}</h5>
+                                                                            <div class="categories-course__price">
+                                                                                <span class="categories-course__sale-price">${{ number_format($course->sale_price, 2) }}</span>
+                                                                                <span class="categories-course__regular-price">${{ number_format($course->regular_price, 2) }}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     @endif
-                                </a>
-                                @if ($subcategory->courses->isNotEmpty())
-                                    <ul class="course-list children">
-                                        @foreach ($subcategory->courses as $course)
-                                            <li>
-                                                <a class="categories-course" href="#">
-                                                    <div class="categories-course__thumbnail">
-                                                        <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
-                                                            width="62" height="50">
-                                                    </div>
-                                                    <div class="categories-course__caption">
-                                                        <h5 class="categories-course__title">{{ $course->title }}</h5>
-                                                        <div class="categories-course__price">
-                                                            <span class="categories-course__sale-price">${{ number_format($course->sale_price, 2) }}</span>
-                                                            <span class="categories-course__regular-price">${{ number_format($course->regular_price, 2) }}</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-            </li>
-        @endforeach
-    </ul>
-</div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                     </div>
                     <div class="header-inner">
                         <div class="header-serach">
@@ -380,7 +380,7 @@
                             @enderror
                         </div>
                         <div class="modal-form d-flex justify-content-between flex-wrap gap-2">
-                            eck">
+                        
                             <input type="checkbox" name="remember" id="rememberme">
                             <label for="rememberme">Remember me</label>
                         </div>

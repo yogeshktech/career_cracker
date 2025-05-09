@@ -51,4 +51,9 @@ class User extends Authenticatable
                     ->withPivot('progress', 'completed_lessons')
                     ->withTimestamps();
     }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
 }

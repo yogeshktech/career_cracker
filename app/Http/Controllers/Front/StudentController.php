@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Course_user;
+use App\Models\Purchase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,7 +54,7 @@ class StudentController extends Controller
     public function purchaseHistory()
     {
         $user = Auth::user();
-        $purchases = $user->purchases()->get();
+        $purchases = $user->purchases()->paginate();
         $liveClasses = $user->courses()->wherePivot('google_meet_link', '!=', null)->withPivot('google_meet_link', 'google_drive_link', 'progress', 'completed_lessons')->get();
         return view('front.student.purchase-history', compact('purchases', 'liveClasses'));
     }
