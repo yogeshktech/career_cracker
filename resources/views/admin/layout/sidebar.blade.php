@@ -198,9 +198,9 @@
                     </a>
                 </li>
                 <li class="sidebar-menu__item">
-                    <a href="{{ route('admin.enquery.view') }}" class="sidebar-menu__link">
+                    <a href="{{ route('admin.enquiry.view') }}" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-suitcase"></i></span>
-                        <span class="text">Enquery</span>
+                        <span class="text">Enquiry</span>
                     </a>
                 </li>
 

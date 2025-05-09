@@ -7,7 +7,7 @@
                     <li><a href="{{ route('admin.dashboard') }}"
                             class="text-gray-200 fw-normal text-15 hover-text-main-600">Home</a></li>
                     <li><span class="text-gray-500 fw-normal d-flex"><i class="ph ph-caret-right"></i></span></li>
-                    <li><span class="text-main-600 fw-normal text-15">All Enquery</span></li>
+                    <li><span class="text-main-600 fw-normal text-15">All Enquiry</span></li>
                 </ul>
             </div>
 
@@ -24,7 +24,7 @@
         @endif
         <div class="card overflow-hidden">
             <div class="card-body p-0 overflow-x-auto">
-                <table id="enqueryTable" class="table table-striped">
+                <table id="enquiryTable" class="table table-striped">
                     <thead>
                         <tr>
                             <th class="fixed-width">
@@ -40,29 +40,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($enqueries as $enquery)
+                        @forelse ($enqueries as $enquiry)
                             <tr>
                                 <td class="fixed-width">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" name="selected[]"
-                                            value="{{ $enquery->id }}">
+                                            value="{{ $enquiry->id }}">
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquery->name }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquiry->name }}</span>
                                 </td>
                                 <td>
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquery->email }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquiry->email }}</span>
                                 </td>
                                 <td>
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquery->phone }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquiry->phone }}</span>
                                 </td>
 
                                 <td>
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquery->message }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $enquiry->message }}</span>
                                 </td>
                                 <td>
-                                    <form action="{{ route('admin.enquery.delete', $enquery->id) }}" method="POST"
+                                    <form action="{{ route('admin.enquiry.delete', $enquiry->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')

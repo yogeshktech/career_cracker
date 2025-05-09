@@ -58,7 +58,7 @@ Route::get('/career', [HomeController::class, 'Career'])->name('career');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/career', [HomeController::class, 'store'])->name('careers.store');
-Route::post('/enquery', [HomeController::class, 'enquiry_save'])->name('enquiry_send');
+Route::post('/enquiry', [HomeController::class, 'enquiry_save'])->name('enquiry_send');
 
 require __DIR__ . '/auth.php';
 
@@ -162,8 +162,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/{id}', [CarrirController::class, 'destroy'])->name('destroy');
         });
 
-        Route::prefix('enquery')->name('enquery.')->group(function () {
-            Route::get('/', [CarrirController::class, 'viewEnquery'])->name('view');
+        Route::prefix('enquiry')->name('enquiry.')->group(function () {
+            Route::get('/', [CarrirController::class, 'viewEnquiry'])->name('view');
             Route::delete('/{id}', [CarrirController::class, 'delete'])->name('delete');
         });
     });

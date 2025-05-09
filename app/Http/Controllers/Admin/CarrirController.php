@@ -39,10 +39,10 @@ class CarrirController extends Controller
         return redirect()->route('career.index')->with('success', 'Career applicant deleted successfully.');
     }
 
-    public function viewEnquery()
+    public function viewEnquiry()
     {
         $enqueries = Enquiry::orderByDesc('created_at')->paginate('12');
-        return view('admin.career.enquery',compact('enqueries'));
+        return view('admin.career.enquiry',compact('enqueries'));
     }
 
     public function delete($id)
@@ -50,9 +50,9 @@ class CarrirController extends Controller
         if (!Auth::guard('admin')->check()) {
             return redirect()->route('admin.login')->with('error', 'You must be logged in as an admin to delete a career applicant.');
         }
-        $enquery = Enquiry::findOrFail($id);
-        $enquery->delete();
-        return redirect()->back()->with('success', 'Enquery applicant deleted successfully.');
+        $enquiry = Enquiry::findOrFail($id);
+        $enquiry->delete();
+        return redirect()->back()->with('success', 'Enquiry applicant deleted successfully.');
 
     }
 }
