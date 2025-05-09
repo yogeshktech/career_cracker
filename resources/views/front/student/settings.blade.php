@@ -33,7 +33,7 @@
                                     <div class="col-md-6">
                                         <div class="dashboard-content__input">
                                             <label class="form-label-02">Name</label>
-                                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $student->name) }}" required>
+                                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $user->name) }}" required>
                                             @error('name')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -42,7 +42,7 @@
                                     <div class="col-md-6">
                                         <div class="dashboard-content__input">
                                             <label class="form-label-02">Email</label>
-                                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $student->email) }}" required>
+                                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" required>
                                             @error('email')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -51,7 +51,7 @@
                                     <div class="col-md-6">
                                         <div class="dashboard-content__input">
                                             <label class="form-label-02">Job Title</label>
-                                            <input type="text" class="form-control @error('job_title') is-invalid @enderror" name="job_title" value="{{ old('job_title', $student->job_title) }}">
+                                            <input type="text" class="form-control @error('job_title') is-invalid @enderror" name="job_title" value="{{ old('job_title', $user->job_title) }}">
                                             @error('job_title')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -60,7 +60,7 @@
                                     <div class="col-md-6">
                                         <div class="dashboard-content__input">
                                             <label class="form-label-02">Phone Number</label>
-                                            <input type="text" class="form-control @error('contact_no') is-invalid @enderror" name="contact_no" value="{{ old('contact_no', $student->contact_no) }}">
+                                            <input type="text" class="form-control @error('contact_no') is-invalid @enderror" name="contact_no" value="{{ old('contact_no', $user->contact_no) }}">
                                             @error('contact_no')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -69,7 +69,7 @@
                                     <div class="col-md-12">
                                         <div class="dashboard-content__input">
                                             <label class="form-label-02">Bio</label>
-                                            <textarea class="form-control @error('bio') is-invalid @enderror" name="bio" rows="4">{{ old('bio', $student->bio) }}</textarea>
+                                            <textarea class="form-control @error('bio') is-invalid @enderror" name="bio" rows="4">{{ old('bio', $user->bio) }}</textarea>
                                             @error('bio')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -87,13 +87,13 @@
                                 <div id="dashboard-profile-cover-photo-editor" class="dashboard-settings-profile">
                                     <!-- Cover Photo -->
                                     <input id="dashboard-photo-dialogue-box-cover" class="dashboard-settings-profile__input" type="file" name="cover_photo" accept=".png,.jpg,.jpeg" />
-                                    <div id="dashboard-cover-area" class="dashboard-settings-profile__cover" style="background-image:url({{ $student->cover_photo ? asset('storage/' . $student->cover_photo) : asset('front/assets/images/cover-photo.jpg') }})">
+                                    <div id="dashboard-cover-area" class="dashboard-settings-profile__cover" style="background-image:url({{ $user->cover_photo ? asset('storage/' . $user->cover_photo) : asset('front/assets/images/cover-photo.jpg') }})">
                                         <span class="cover-deleter" data-file="cover_photo">
                                             <i class="fas fa-trash-alt"></i>
                                         </span>
                                         <div class="overlay">
                                             <button class="cover-uploader" type="button">
-                                                <i class="fas fa-camera"></i> 
+                                                <i class="fas fa-camera"></i> 
                                                 <span>Update Cover Photo</span>
                                             </button>
                                         </div>
@@ -101,7 +101,7 @@
 
                                     <!-- Profile Photo -->
                                     <input id="dashboard-photo-dialogue-box-profile" class="dashboard-settings-profile__input" type="file" name="avatar" accept=".png,.jpg,.jpeg" />
-                                    <div id="profile-photo" class="dashboard-settings-profile__photo" style="background-image:url({{ $student->avatar ? asset('storage/' . $student->avatar) : asset('front/assets/images/avatar-placeholder.jpg') }})">
+                                    <div id="profile-photo" class="dashboard-settings-profile__photo" style="background-image:url({{ $user->avatar ? asset('storage/' . $user->avatar) : asset('front/assets/images/avatar-placeholder.jpg') }})">
                                         <div class="overlay">
                                             <i class="fas fa-camera"></i>
                                         </div>
