@@ -32,15 +32,10 @@
         @endif
         <div class="card overflow-hidden">
             <div class="card-body p-0 overflow-x-auto">
-                <table id="studentTable" class="table table-striped">
+                <table id="dataTable" data-toggle="table" data-search="true" data-pagination="true" data-page-size="10"
+                    data-sortable="true" data-show-columns="true" data-show-refresh="true" class="table table-striped">
                     <thead>
                         <tr>
-                            <th class="fixed-width">
-                                <div class="form-check">
-                                    <input class="form-check-input border-gray-200 rounded-4" type="checkbox"
-                                        id="selectAll">
-                                </div>
-                            </th>
                             <th class="h6 text-gray-300">Category</th>
                             <th class="h6 text-gray-300">Description</th>
                             <th class="h6 text-gray-300">Status</th>
@@ -50,7 +45,6 @@
                     <tbody>
                         @foreach($categories as $category)
                             <tr>
-                                <td><input type="checkbox" class="category-checkbox" value="{{ $category->id }}" /></td>
                                 <td>
                                     <div class="flex-align gap-8">
                                         <img src="{{ $category->thumbnail ? asset('' . $category->thumbnail) : asset('images/placeholder.png') }}"

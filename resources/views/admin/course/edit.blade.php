@@ -203,7 +203,7 @@
                                 <div class="col-sm-12">
                                     <label for="details" class="h5 mb-8 fw-semibold font-heading">Course Details</label>
                                     <textarea id="details" name="details" rows="4" class="form-control py-9 placeholder-13 text-15"
-                                        placeholder="Provide in-depth course details">{{ old('details', $course->highlights) }}</textarea>
+                                        placeholder="Provide in-depth course details">{{ old('details', $course->details) }}</textarea>
                                     @error('details')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -234,6 +234,21 @@
     </div>
 
     <script>
+        // Initialize CKEditor for textareas
+        CKEDITOR.replace('overview', {
+            height: 200
+        });
+        CKEDITOR.replace('highlights', {
+            height: 200
+        });
+        CKEDITOR.replace('details', {
+            height: 200
+        });
+        CKEDITOR.replace('why_choose_us', {
+            height: 200
+        });
+
+        // Image preview functionality
         function previewImage(event) {
             const input = event.target;
             const preview = document.getElementById('thumbnailPreview');
@@ -247,6 +262,7 @@
             }
         }
 
+        // Title character counter
         const titleInput = document.getElementById('title');
         const currentCount = document.getElementById('current');
         titleInput.addEventListener('input', function() {

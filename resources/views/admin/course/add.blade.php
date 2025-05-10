@@ -246,7 +246,24 @@
         </div>
     </div>
 
+    <!-- Include CKEditor 4.16.0 -->
+    
     <script>
+        // Initialize CKEditor for textareas
+        CKEDITOR.replace('overview', {
+            height: 200
+        });
+        CKEDITOR.replace('highlights', {
+            height: 200
+        });
+        CKEDITOR.replace('details', {
+            height: 200
+        });
+        CKEDITOR.replace('why_choose_us', {
+            height: 200
+        });
+
+        // Existing scripts for image preview and title character counter
         function previewImage(event) {
             const input = event.target;
             const preview = document.getElementById('thumbnailPreview');

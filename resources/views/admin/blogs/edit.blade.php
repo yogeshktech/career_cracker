@@ -71,16 +71,24 @@
         </div>
     </div>
 
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-        tinymce.init({
-            selector: '#description',
-            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
-            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-            height: 400,
-            menubar: false,
-        });
+       
+        if (typeof CKEDITOR !== 'undefined') {
+            try {
+                CKEDITOR.replace('description', {
+                    height: 400
+                });
+                console.log('CKEditor initialized successfully.');
+            } catch (error) {
+                console.error('Failed to initialize CKEditor:', error);
+                alert('Error loading the rich text editor. Please try refreshing the page or contact support.');
+            }
+        } else {
+            console.error('CKEditor library not loaded.');
+            alert('The rich text editor failed to load. Please check your internet connection or try refreshing the page.');
+        }
 
+        // Image preview functionality
         function previewImage(event) {
             const input = event.target;
             const preview = document.getElementById('imagePreview');
@@ -94,9 +102,10 @@
             }
         }
 
-        const titleInput = document.getElementById('title');
+        // Name character counter
+        const nameInput = document.getElementById('name');
         const currentCount = document.getElementById('current');
-        titleInput.addEventListener('input', function() {
+        nameInput.addEventListener('input', function() {
             currentCount.textContent = this.value.length;
         });
     </script>

@@ -27,7 +27,9 @@
                     </div>
                 @endif
 
-                <table class="table">
+                <table id="dataTable" data-toggle="table" data-search="true"
+                    data-pagination="true" data-page-size="10" data-sortable="true" data-show-columns="true"
+                    data-show-refresh="true" class="table">
                     <thead>
                         <tr>
                             <th>#</th>

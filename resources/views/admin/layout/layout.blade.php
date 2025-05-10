@@ -6,35 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Title -->
-  <title> Edmate Learning Dashboard HTML Template</title>
+  <title>@yield('title', 'Edmate Learning Dashboard')</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{url('admin/assets/images/logo/favicon.png')}}">
+  <link rel="shortcut icon" href="{{ url('admin/assets/images/logo/favicon.png') }}">
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/bootstrap.min.css')}}">
-  <!-- file upload -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/file-upload.css')}}">
-  <!-- file upload -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/plyr.css')}}">
-  <!-- DataTables -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/bootstrap.min.css') }}">
+  <!-- Bootstrap Table CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.css">
+  <!-- File Upload -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/file-upload.css') }}">
+  <!-- Plyr -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/plyr.css') }}">
+  <!-- DataTables (optional, kept for non-Bootstrap Table pages) -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
-  <!-- full calendar -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/full-calendar.css')}}">
-  <!-- jquery Ui -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/jquery-ui.css')}}">
-  <!-- editor quill Ui -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/editor-quill.css')}}">
-  <!-- apex charts Css -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/apexcharts.css')}}">
-  <!-- calendar Css -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/calendar.css')}}">
-  <!-- jvector map Css -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/jquery-jvectormap-2.0.5.css')}}">
-  <!-- Main css -->
-  <link rel="stylesheet" href="{{url('admin/assets/css/main.css')}}">
+  <!-- Full Calendar -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/full-calendar.css') }}">
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/jquery-ui.css') }}">
+  <!-- Editor Quill -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/editor-quill.css') }}">
+  <!-- ApexCharts -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/apexcharts.css') }}">
+  <!-- Calendar -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/calendar.css') }}">
+  <!-- jVectorMap -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/jquery-jvectormap-2.0.5.css') }}">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ url('admin/assets/css/main.css') }}">
+  <!-- Phosphor Icons CSS (assumed included in main.css or phosphor-icon.js) -->
+  <!-- CKEditor -->
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+  <!-- jQuery (single inclusion) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <!-- Page-specific Styles -->
+  @yield('styles')
 </head>
 
 <body>
-
   <!--==================== Preloader Start ====================-->
   <div class="preloader">
     <div class="loader"></div>
@@ -46,51 +54,46 @@
   <!--==================== Sidebar Overlay End ====================-->
 
   <!-- ============================ Sidebar Start ============================ -->
-
   @include('admin.layout.sidebar')
   <!-- ============================ Sidebar End  ============================ -->
+
   <div class="dashboard-main-wrapper">
     @include('admin.layout.header')
     @yield('content')
     @include('admin.layout.footer')
   </div>
 
-  <!-- Jquery js -->
-  <script src="{{url('admin/assets/js/jquery-3.7.1.min.js')}}"></script>
-  <!-- Bootstrap Bundle Js -->
-  <script src="{{url('admin/assets/js/boostrap.bundle.min.js')}}"></script>
-  <!-- Phosphor Js -->
-  <script src="{{url('admin/assets/js/phosphor-icon.js')}}"></script>
-  <!-- file upload -->
-  <script src="{{url('admin/assets/js/file-upload.js')}}"></script>
-  <!-- file upload -->
-  <script src="{{url('admin/assets/js/plyr.js')}}"></script>
-  <!-- dataTables -->
+  <!-- Bootstrap Bundle JS -->
+  <script src="{{ url('admin/assets/js/boostrap.bundle.min.js') }}"></script>
+  <!-- Phosphor Icons JS -->
+  <script src="{{ url('admin/assets/js/phosphor-icon.js') }}"></script>
+  <!-- File Upload -->
+  <script src="{{ url('admin/assets/js/file-upload.js') }}"></script>
+  <!-- Plyr -->
+  <script src="{{ url('admin/assets/js/plyr.js') }}"></script>
+  <!-- DataTables (optional, kept for non-Bootstrap Table pages) -->
   <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-  <!-- full calendar -->
-  <script src="{{url('admin/assets/js/full-calendar.js')}}"></script>
+  <!-- Full Calendar -->
+  <script src="{{ url('admin/assets/js/full-calendar.js') }}"></script>
   <!-- jQuery UI -->
-  <script src="{{url('admin/assets/js/jquery-ui.js')}}"></script>
-  <!-- jQuery UI -->
-  <script src="{{url('admin/assets/js/editor-quill.js')}}"></script>
-  <!-- apex charts -->
-  <script src="{{url('admin/assets/js/apexcharts.min.js')}}"></script>
-  <!-- jvectormap Js -->
-  <script src="{{url('admin/assets/js/jquery-jvectormap-2.0.5.min.js')}}"></script>
-  <!-- jvectormap world Js -->
-  <script src="{{url('admin/assets/js/jquery-jvectormap-world-mill-en.js')}}"></script>
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <!-- main js -->
-  <script src="{{url('admin/assets/js/main.js')}}"></script>
+  <script src="{{ url('admin/assets/js/jquery-ui.js') }}"></script>
+  <!-- Editor Quill -->
+  <script src="{{ url('admin/assets/js/editor-quill.js') }}"></script>
+  <!-- ApexCharts -->
+  <script src="{{ url('admin/assets/js/apexcharts.min.js') }}"></script>
+  <!-- jVectorMap -->
+  <script src="{{ url('admin/assets/js/jquery-jvectormap-2.0.5.min.js') }}"></script>
+  <!-- jVectorMap World -->
+  <script src="{{ url('admin/assets/js/jquery-jvectormap-world-mill-en.js') }}"></script>
+  <!-- Bootstrap Table JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.js"></script>
+  <!-- Main JS -->
+  <script src="{{ url('admin/assets/js/main.js') }}"></script>
 
-
-
-
+  <!-- ApexCharts Scripts -->
   <script>
     function createChart(chartId, chartColor) {
-
       let currentYear = new Date().getFullYear();
-
       var options = {
         series: [
           {
@@ -103,9 +106,8 @@
           width: 80,
           height: 42,
           sparkline: {
-            enabled: true // Remove whitespace
+            enabled: true
           },
-
           toolbar: {
             show: false
           },
@@ -157,19 +159,18 @@
         },
         fill: {
           type: 'gradient',
-          colors: [chartColor], // Set the starting color (top color) here
+          colors: [chartColor],
           gradient: {
-            shade: 'light', // Gradient shading type
-            type: 'vertical',  // Gradient direction (vertical)
-            shadeIntensity: 0.5, // Intensity of the gradient shading
-            gradientToColors: [`${chartColor}00`], // Bottom gradient color (with transparency)
-            inverseColors: false, // Do not invert colors
-            opacityFrom: .5, // Starting opacity
-            opacityTo: 0.3,  // Ending opacity
+            shade: 'light',
+            type: 'vertical',
+            shadeIntensity: 0.5,
+            gradientToColors: [`${chartColor}00`],
+            inverseColors: false,
+            opacityFrom: .5,
+            opacityTo: 0.3,
             stops: [0, 100],
           },
         },
-        // Customize the circle marker color on hover
         markers: {
           colors: [chartColor],
           strokeWidth: 2,
@@ -198,19 +199,15 @@
           },
         },
       };
-
       var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
       chart.render();
     }
 
-    // Call the function for each chart with the desired ID and color
     createChart('complete-course', '#2FB2AB');
     createChart('earned-certificate', '#27CFA7');
     createChart('course-progress', '#6142FF');
     createChart('community-support', '#FA902F');
 
-
-    // =========================== Double Line Chart Start ===============================
     function createLineChart(chartId, chartColor) {
       var options = {
         series: [
@@ -228,7 +225,7 @@
           width: '100%',
           height: 350,
           sparkline: {
-            enabled: false // Remove whitespace
+            enabled: false
           },
           toolbar: {
             show: false
@@ -240,7 +237,7 @@
             bottom: 0
           }
         },
-        colors: ['#3D7FF9', chartColor],  // Set the color of the series
+        colors: ['#3D7FF9', chartColor],
         dataLabels: {
           enabled: false,
         },
@@ -280,7 +277,6 @@
             left: 0
           },
         },
-        // Customize the circle marker color on hover
         markers: {
           colors: ["#3D7FF9", chartColor],
           strokeWidth: 3,
@@ -329,14 +325,11 @@
           offsetY: -0
         }
       };
-
       var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
       chart.render();
     }
     createLineChart('doubleLineChart', '#27CFA7');
-    // =========================== Double Line Chart End ===============================
 
-    // ============================ Donut Chart Start ==========================
     var options = {
       series: [65.2, 25, 9.8],
       chart: {
@@ -344,7 +337,7 @@
         type: 'donut',
       },
       colors: ['#3D7FF9', '#27CFA7', '#EA5455'],
-      enabled: true, // Enable data labels
+      enabled: true,
       formatter: function (val, opts) {
         return opts.w.config.series[opts.seriesIndex] + '%';
       },
@@ -354,7 +347,7 @@
       plotOptions: {
         pie: {
           donut: {
-            size: '55%' // Fixed slice width
+            size: '55%'
           }
         }
       },
@@ -376,13 +369,12 @@
         show: false
       }
     };
-
     var chart = new ApexCharts(document.querySelector("#activityDonutChart"), options);
     chart.render();
-    // ============================ Donut Chart End ==========================
-
   </script>
 
+  <!-- Page-specific Scripts -->
+  @yield('scripts')
 </body>
 
 </html>

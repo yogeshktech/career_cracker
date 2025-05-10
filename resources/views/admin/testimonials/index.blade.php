@@ -32,7 +32,9 @@
                 @if ($testimonials->isEmpty())
                     <p>No testimonials found.</p>
                 @else
-                    <table class="table table-bordered">
+                    <table id="dataTable" data-toggle="table" data-search="true"
+                    data-pagination="true" data-page-size="10" data-sortable="true" data-show-columns="true"
+                    data-show-refresh="true" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Name</th>

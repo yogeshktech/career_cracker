@@ -29,41 +29,51 @@
                         {{ session('error') }}
                     </div>
                 @endif
+
                 @if ($blogs->isEmpty())
                     <p>No blogs found.</p>
                 @else
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Image</th>
-                                <th>Created By</th>
-                                <th>Created At</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($blogs as $blog)
+                    <div class="table-responsive">
+                        <table id="blogTable" class="table table-bordered table-hover" 
+                               data-toggle="table" 
+                               data-search="true" 
+                               data-pagination="true" 
+                               data-page-size="10" 
+                               data-sortable="true" 
+                               data-show-columns="true"
+                               data-show-refresh="true">
+                            <thead>
                                 <tr>
-                                    <td>{{ $blog->title }}</td>
-                                    <td><img src="{{ asset($blog->blog_image) }}" alt="{{ $blog->title }}" style="max-height: 100px;"></td>
-                                    <td>{{ $blog->creator ? $blog->creator->name : 'Unknown' }}</td>
-                                    <td>{{ $blog->created_at->format('Y-m-d H:i') }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="btn btn-sm btn-outline-main">Edit</a>
-                                        <form action="{{ route('admin.blogs.destroy', $blog->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this blog?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                                        </form>
-                                    </td>
+                                    <th data-sortable="true">Title</th>
+                                    <th>Image</th>
+                                    <th data-sortable="true">Created By</th>
+                                    <th data-sortable="true">Created At</th>
+                                    <th>Actions</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    {{ $blogs->links() }}
+                            </thead>
+                            <tbody>
+                                @foreach ($blogs as $blog)
+                                    <tr>
+                                        <td>{{ $blog->title }}</td>
+                                        <td><img src="{{ asset($blog->blog_image) }}" alt="{{ $blog->title }}" style="max-height: 100px;"></td>
+                                        <td>{{ $blog->creator ? $blog->creator->name : 'Unknown' }}</td>
+                                        <td>{{ $blog->created_at->format('Y-m-d H:i') }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="btn btn-sm btn-outline-main">Edit</a>
+                                            <form action="{{ route('admin.blogs.destroy', $blog->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this blog?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 @endif
             </div>
         </div>
     </div>
+
 @endsection

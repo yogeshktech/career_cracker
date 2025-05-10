@@ -16,7 +16,9 @@
 
         <div class="card overflow-hidden">
             <div class="card-body p-0 overflow-x-auto">
-                <table id="facultyTable" class="table table-striped">
+                <table id="dataTable" data-toggle="table" data-search="true"
+                    data-pagination="true" data-page-size="10" data-sortable="true" data-show-columns="true"
+                    data-show-refresh="true" class="table table-striped">
                     <thead>
                         <tr>
                             <th class="h6 text-gray-300">Faculty</th>
