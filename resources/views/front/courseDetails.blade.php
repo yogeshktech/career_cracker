@@ -70,23 +70,23 @@
                         <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title" id="overview">Overview</h4>
                             <div class="tutor-course-segment__content-wrap">
-                                <p>{{ $course->overview }}</p>
+                                <p>{!! $course->overview !!}</p>
                             </div>
                         </div>
                         <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title" id="highlight">Course Highlights</h4>
                             <div class="margin-left">
-                                <p>{{ $course->highlights }}</p>
+                                <p>{!! $course->highlights !!}</p>
                             </div>
                         </div>
                         <div class="tutor-course-segment">
                             <div class="tutor-course-segment__header" id="detail">
                                 <h4 class="tutor-course-segment__title">Course Details</h4>
                             </div>
-                            <p>{{ $course->details }}</p>
+                            <p>{!! $course->details !!}</p>
                         </div>
                         <h4 class="tutor-course-segment__title mt-4" id="choose">Why Choose This Course</h4>
-                        <p>{{ $course->why_choose_us }}</p>
+                        <p>{!! $course->why_choose_us !!}</p>
                         <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title">Student Feedback</h4>
                             <div class="tutor-course-segment__feedback">

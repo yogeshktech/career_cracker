@@ -126,9 +126,9 @@
                     </div>
                     <div class="header-inner">
                         <div class="header-serach">
-                            <form action="#">
-                                <input type="text" class="header-serach__input" placeholder="Search...">
-                                <button class="header-serach__btn"><i class="fas fa-search"></i></button>
+                            <form action="{{ route('courses.search') }}" method="GET">
+                                <input type="text" name="search" class="header-serach__input" placeholder="Search courses..." value="{{ request('search') }}">
+                                <button type="submit" class="header-serach__btn"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                         <div class="header-navigation d-none d-xl-block">

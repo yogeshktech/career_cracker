@@ -40,6 +40,7 @@ Route::post('/cart/delete/{id}', [CartController::class, 'delete'])->name('cart.
 Route::post('/cart/enroll/{courseId}', [CartController::class, 'enroll'])->name('cart.enroll');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+Route::get('/search', [HomeController::class, 'AllsearchCourse'])->name('courses.search');
 
 // Checkout Route 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
