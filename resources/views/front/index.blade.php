@@ -18,7 +18,7 @@
                             <div class="d-flex gap-3 mt-3">
                                 <a href="{{route('all_course')}}" class="slider-caption-04__btn btn btn-orange rounded-button">View All
                                     Courses</a>
-                                <a href="" class="slider-caption-04__btn btn btn-orangee rounded-button">Enroll Now</a>
+                                {{-- <a href="" class="slider-caption-04__btn btn btn-orangee rounded-button">Enroll Now</a> --}}
                             </div>
                         </div>
 
@@ -113,7 +113,7 @@
                                 individuals through quality education and practical, in-demand skills.
                                 More than just an academy...</p>
 
-                            <a href=""><button class="btn btn-orange rounded-button">Read More</button>
+                            <a href="{{route('about')}}"><button class="btn btn-orange rounded-button mt-3">Read More</button>
                         </div></a>
                         <!-- Section Title End -->
                     </div>
@@ -237,7 +237,7 @@
         <div class="row mt-5 mb-6 g-4">
             <div class="col-md-4">
                 <div class="info-box h-100 text-start">
-                    <h5>Our Value</h5>
+                    <h5 class="fs-3">Our Value</h3>
                     <p>At CareerCracker, we value integrity, excellence, and a commitment to lifelong learning. We believe
                         that education should be accessible to all and strive to create an inclusive and welcoming
                         environment for our students.</p>
@@ -245,7 +245,7 @@
             </div>
             <div class="col-md-4">
                 <div class="info-box h-100 text-start">
-                    <h5>Our services</h5>
+                    <h5  class="fs-3">Our services</h5>
                     <p>We offer a wide range of services to support students at all levels, including academic tutoring,
                         interview preparation, placement help and more. Our services are tailored to the unique needs of
                         each student to ensure the best possible outcomes.</p>
@@ -253,7 +253,7 @@
             </div>
             <div class="col-md-4">
                 <div class="info-box h-100 text-start">
-                    <h5>Our Approach</h5>
+                    <h5  class="fs-3">Our Approach</h5>
                     <p>We take a holistic approach to education, recognizing that academic success is just one aspect of a
                         fulfilling life. We work closely with our students to identify their goals and aspirations, and to
                         develop the skills and mindset needed to achieve them.</p>
@@ -1354,7 +1354,7 @@
                                     <div class="testimonial-main-content">
                                         <div class="testimonial-caption">
                                             <h3 class="testimonial-caption__title">{{ $testimonial->title }}</h3>
-                                            <p>{{ $testimonial->content }}</p>
+                                            <p>{!! $testimonial->content !!}</p>
                                         </div>
                                         <div class="testimonial-info">
                                             <div class="testimonial-info__image">
