@@ -7915,6 +7915,7 @@ span.flatpickr-weekday {
   color: #333;
   padding: 23px 30px;
   width: 330px;
+  display: none;
 }
 .course-item-hover__category a {
   font-weight: 400;

@@ -1,7 +1,7 @@
 <div class="row g-6">
     @forelse ($courses as $course)
         <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-            <div class="course-item">
+            <div class="course-item  py-3">
                 <div class="course-header">
                     <div class="course-header__thumbnail">
                         <a href="{{ route('courses.show', $course->id) }}">

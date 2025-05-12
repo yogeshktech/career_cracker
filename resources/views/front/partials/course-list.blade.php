@@ -1,5 +1,5 @@
 @forelse ($courses as $course)
-    <div class="course-list-item" data-aos="fade-up" data-aos-duration="1000">
+    <div class="course-list-item py-3" data-aos="fade-up" data-aos-duration="1000">
         <div class="course-list-header">
             <div class="course-list-header__thumbnail">
                 <a href="{{ route('courses.show', $course->id) }}">
