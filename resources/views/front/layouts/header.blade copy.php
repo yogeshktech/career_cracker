@@ -2,7 +2,7 @@
     <div class="header-section header-sticky">
         <div class="header-top d-none d-sm-block">
             <div class="container">
-                <div class="header-top-bar-wrap d-sm-flex justify-content-between">
+                <div class="header-top-bar-wrap d-sm-flex justify-content-between align-items-center">
                     <div class="header-top-bar-wrap__info">
                         <ul class="header-top-bar-wrap__info-list">
                             <li><a href="tel:9867-679-600"><i class="fas fa-phone"></i> <span
@@ -77,96 +77,58 @@
                             <div class="header-category-toggle__text">Category</div>
                         </a>
                         <div class="header-category-dropdown-wrap">
-                            <ul class="header-category-dropdown">
+                        <ul class="header-category-dropdown">
+                            @foreach ($categories as $category)
                                 <li>
-                                    <a href="#"> Design <span class="toggle-sub-menu"></span></a>
-                                    <ul class="sub-categories children">
-                                        <li><a href="#">All Business</a></li>
-                                        <li>
-                                            <a href="#">Communications<span class="toggle-sub-menu"></span></a>
-                                            <ul class="course-list children">
+                                    <a href="#">{{ $category->name }} 
+                                        @if ($category->subcategories->isNotEmpty())
+                                            <span class="toggle-sub-menu"></span>
+                                        @endif
+                                    </a>
+                                    @if ($category->subcategories->isNotEmpty())
+                                        <ul class="sub-categories children">
+                                            @foreach ($category->subcategories as $subcategory)
                                                 <li>
-                                                    <a class="categories-course" href="#">
-                                                        <div class="categories-course__thumbnail">
-                                                            <img src="assets/images/courses/courses-1.jpg" alt="Course"
-                                                                width="62" height="50">
-                                                        </div>
-                                                        <div class="categories-course__caption">
-                                                            <h5 class="categories-course__title">Illustrator 2020
-                                                                MasterClass</h5>
-                                                            <div class="categories-course__price">
-                                                                <span
-                                                                    class="categories-course__sale-price">$22.00</span>
-                                                                <span
-                                                                    class="categories-course__regular-price">$30.00</span>
-                                                            </div>
-                                                        </div>
+                                                    <a href="#">{{ $subcategory->name }}
+                                                        @if ($subcategory->courses->isNotEmpty())
+                                                            <span class="toggle-sub-menu"></span>
+                                                        @endif
                                                     </a>
+                                                    @if ($subcategory->courses->isNotEmpty())
+                                                        <ul class="course-list children">
+                                                            @foreach ($subcategory->courses as $course)
+                                                                <li>
+                                                                    <a class="categories-course" href="#">
+                                                                        <div class="categories-course__thumbnail">
+                                                                            <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
+                                                                                width="62" height="50">
+                                                                        </div>
+                                                                        <div class="categories-course__caption">
+                                                                            <h5 class="categories-course__title">{{ $course->title }}</h5>
+                                                                            <div class="categories-course__price">
+                                                                                <span class="categories-course__sale-price">${{ number_format($course->sale_price, 2) }}</span>
+                                                                                <span class="categories-course__regular-price">${{ number_format($course->regular_price, 2) }}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
                                                 </li>
-                                                <li>
-                                                    <a class="categories-course" href="#">
-                                                        <div class="categories-course__thumbnail">
-                                                            <img src="assets/images/courses/courses-2.jpg" alt="Course"
-                                                                width="62" height="50">
-                                                        </div>
-                                                        <div class="categories-course__caption">
-                                                            <h5 class="categories-course__title">Illustrator 2020
-                                                                MasterClass</h5>
-                                                            <div class="categories-course__price">
-                                                                <span
-                                                                    class="categories-course__sale-price">$22.00</span>
-                                                                <span
-                                                                    class="categories-course__regular-price">$30.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="categories-course" href="#">
-                                                        <div class="categories-course__thumbnail">
-                                                            <img src="assets/images/courses/courses-3.jpg" alt="Course"
-                                                                width="62" height="50">
-                                                        </div>
-                                                        <div class="categories-course__caption">
-                                                            <h5 class="categories-course__title">Illustrator 2020
-                                                                MasterClass</h5>
-                                                            <div class="categories-course__price">
-                                                                <span
-                                                                    class="categories-course__sale-price">$22.00</span>
-                                                                <span
-                                                                    class="categories-course__regular-price">$30.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Entrepreneurship</a></li>
-                                        <li><a href="#">Finance</a></li>
-                                        <li><a href="#">Management</a></li>
-                                        <li><a href="#">Sales</a></li>
-                                        <li><a href="#">Strategy &amp; Analytics</a></li>
-                                    </ul>
+                                            @endforeach
+                                        </ul>
+                                    @endif
                                 </li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Data Science</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Finance</a></li>
-                                <li><a href="#">Health &amp; Fitness</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Marketing</a></li>
-                                <li><a href="#">Music</a></li>
-                                <li><a href="#">Personal Development</a></li>
-                                <li><a href="#">Photography</a></li>
-                                <li><a href="#">Teaching &amp; Academics</a></li>
-                            </ul>
-                        </div>
+                            @endforeach
+                        </ul>
+                    </div>
                     </div>
                     <div class="header-inner">
                         <div class="header-serach">
-                            <form action="#">
-                                <input type="text" class="header-serach__input" placeholder="Search...">
-                                <button class="header-serach__btn"><i class="fas fa-search"></i></button>
+                            <form action="{{ route('courses.search') }}" method="GET">
+                                <input type="text" name="search" class="header-serach__input" placeholder="Search courses..." value="{{ request('search') }}">
+                                <button type="submit" class="header-serach__btn"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                         <div class="header-navigation d-none d-xl-block">
@@ -418,7 +380,7 @@
                             @enderror
                         </div>
                         <div class="modal-form d-flex justify-content-between flex-wrap gap-2">
-                            eck">
+                        
                             <input type="checkbox" name="remember" id="rememberme">
                             <label for="rememberme">Remember me</label>
                         </div>
