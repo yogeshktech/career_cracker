@@ -55,12 +55,20 @@
         </div>
     </div>
 
-    <div class="d-flex container custom-container mb-4">
+   <div class="d-flex container custom-container mb-4">
+    @if (!empty(trim(strip_tags($course->overview))))
         <a href="#overview" class="slider-caption-04__btn btn btn-orange rounded-button">Overview</a>
+    @endif
+    @if (!empty(trim(strip_tags($course->highlights))))
         <a href="#highlight" class="slider-caption-04__btn btn btn-orangee rounded-button">Course Highlights</a>
+    @endif
+    @if (!empty(trim(strip_tags($course->details))))
         <a href="#detail" class="slider-caption-04__btn btn btn-orangee rounded-button">Course Details</a>
+    @endif
+    @if (!empty(trim(strip_tags($course->why_choose_us))))
         <a href="#choose" class="slider-caption-04__btn btn btn-orangee rounded-button">Why Choose Us?</a>
-    </div>
+    @endif
+</div>
 
     <div class="tutor-course-main-content section-padding-01 sticky-parent">
         <div class="container custom-container">
@@ -238,13 +246,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="tutor-course-segment">
-                                    <h4 class="tutor-course-segment__title">Material Includes</h4>
-                                    <ul class="tutor-course-segment__list-style-01">
-                                        <li>Videos</li>
-                                        <li>Booklets</li>
-                                    </ul>
-                                </div>
+                               
                                 <div class="tutor-course-price-preview__btn">
                                     <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
                                         @csrf

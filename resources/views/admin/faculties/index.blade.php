@@ -43,7 +43,7 @@
                                     <span class="h6 mb-0 fw-medium text-gray-300">{{ $faculty->email }}</span>
                                 </td>
                                 <td>
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $faculty->course->title }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $faculty->course->title ?? '' }}</span>
                                 </td>
                                 <td>
                                     <span class="h6 mb-0 fw-medium text-gray-300">{{ $faculty->position }}</span>

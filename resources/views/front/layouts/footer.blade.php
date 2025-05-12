@@ -54,7 +54,7 @@
                             </span>
                         </div>
                         <div class="footer-widget__info">
-                            <p> <strong>Address:</strong> Delhi Address</p>
+                            <p> <strong>Address:</strong> Mumbai India</p>
                             <p> <Strong>Email:</Strong> info@careercracker.in, info.careercracker@gmail.com</p>
                         </div>
                     </div>

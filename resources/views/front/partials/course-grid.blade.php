@@ -14,12 +14,12 @@
                     <h3 class="course-info__title">
                         <a href="{{ route('courses.show', $course->id) }}">{{ $course->title }}</a>
                     </h3>
-                    <a href="#" class="course-info__instructor">{{ $course->faculties->first()->name ?? $course->creator->name ?? 'Instructor' }}</a>
+                   
                     <div class="course-info__price">
                         <span class="sale-price">
-                            ${{ number_format($course->sale_price, 2, '.', '') }}
+                            ₹{{ number_format($course->sale_price, 2, '.', '') }}
                             @if($course->sale_price == floor($course->sale_price))
-                                <small class="separator">.00</small>
+                                <small class="separator"></small>
                             @endif
                         </span>
                     </div>

@@ -2,7 +2,7 @@
     <div class="header-section header-sticky">
         <div class="header-top d-none d-sm-block">
             <div class="container">
-                <div class="header-top-bar-wrap d-sm-flex justify-content-between">
+                <div class="header-top-bar-wrap d-sm-flex justify-content-between align-items-center">
                     <div class="header-top-bar-wrap__info">
                         <ul class="header-top-bar-wrap__info-list">
                             <li><a href="tel:9867-679-600"><i class="fas fa-phone"></i> <span

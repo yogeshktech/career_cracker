@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- Title -->
   <title>@yield('title', 'Edmate Learning Dashboard')</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ url('admin/assets/images/logo/favicon.png') }}">
+  <link rel="shortcut icon" href="{{ url('admin/assets/images/logo/fevicon-icon.png') }}">
+
   <!-- Bootstrap -->
   <link rel="stylesheet" href="{{ url('admin/assets/css/bootstrap.min.css') }}">
   <!-- Bootstrap Table CSS -->

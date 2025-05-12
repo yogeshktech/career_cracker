@@ -1362,13 +1362,13 @@ hr {
 .form-control {
   color: #252525;
   background-color: #f8f8f8;
-  border: 1px solid #f8f8f8;
+  border: 0px solid #f8f8f8 !important;
   font-size: 14px;
   font-weight: 400;
   height: 52px;
   padding: 3px 20px;
   width: 100%;
-  border-radius: 37px;
+  border-radius: 37px !important;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .form-select:focus,
@@ -1953,6 +1953,7 @@ span.flatpickr-weekday {
 }
 .header-top-bar-wrap__info > *:last-child {
   margin-right: 0 !important;
+  align-items: center !important;
 }
 .header-top-bar-wrap__info-list {
   display: flex;
@@ -20704,10 +20705,7 @@ margin-top: 6rem;
   content: "/";
 }
 
-.align-items-center{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+
 
 .pading{
   
@@ -20724,3 +20722,8 @@ margin-top: 6rem;
 
 }
 
+
+
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1440px;
+    }

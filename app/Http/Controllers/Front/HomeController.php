@@ -274,7 +274,7 @@ class HomeController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->route('home')->with('success', 'Enquiry submitted successfully.');
+        return redirect()->back()->with('success', 'Enquiry submitted successfully.');
     }
 
 

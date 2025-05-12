@@ -31,7 +31,7 @@
                             <span class="meta-action"><i class="fas fa-calendar"></i> <span class="meta-action__value">{{ \Carbon\Carbon::parse($blog->created_at)->format('F d, Y') }}</span></span>
                         </div>
                         <h3 class="blog-details__title">{{$blog->title}}</h3>
-                        <p>{{ Str::words(strip_tags($blog->description)) }}</p>
+                        <p>{!! $blog->description !!}</p>
                     </div>
                 </div>
             </div>
