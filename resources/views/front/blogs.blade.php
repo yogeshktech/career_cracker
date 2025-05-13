@@ -27,7 +27,6 @@
                                 <span class="meta-action"><i class="fas fa-calendar"></i>
                                     {{ \Carbon\Carbon::parse($blog->created_at)->format('F d, Y') }}
                                 </span>
-                                <span class="meta-action"><i class="fas fa-eye"></i> 4,036 views</span>
                             </div>
                             <h3 class="blog-item-02__title"><a href="#">{{ $blog->title }}</a></h3>
                             <p>{{ Str::words(strip_tags($blog->description), 20, '...') }}</p>

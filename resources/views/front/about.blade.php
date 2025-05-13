@@ -103,11 +103,11 @@
     <div class="tutor-course-main-content section-padding-01 sticky-parent">
         <div class="container custom-container">
             <div class="row gy-10">
-                <div class="col-lg-8">
+                <div class="col-lg-8 offset-2">
                     <div class="tutor-course-main-segment">
                         <div class="tutor-course-segment">
-                            <div class="tutor-course-segment__header" id="detail">
-                                <h4 class="tutor-course-segment__title">Why Choose Career Cracker?</h4>
+                            <div class="tutor-course-segment__header justify-content-center" id="detail">
+                                <h4 class="section-title__title-03">Why Choose Career Cracker?</h4>
                             </div>
                             <div class="course-curriculum accordion">
                                 <div class="accordion-item">

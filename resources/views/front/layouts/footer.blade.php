@@ -144,8 +144,7 @@
                                 <ul class="footer-widget__link">
                                     <li><a href="{{route('faqs')}}">FAQs</a></li>
                                     <li><a href="{{route('career')}}">Career</a></li>
-                                    <li><a href="#">Forum</a></li>
-                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="{{route('contact')}}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

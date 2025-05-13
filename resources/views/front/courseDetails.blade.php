@@ -256,8 +256,9 @@
                                 <div class="tutor-course-price-preview__btn">
                                     <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
                                         @csrf
-                                        <button type="submit" class="btn btn-secondary btn-hover-primary w-100">Add to Cart</button>
+                                        <button type="submit" class="button btn btn-yellow btn-hover-secondary w-100">Add to Cart</button>
                                     </form>
+
                                     <form action="{{ route('cart.enroll', $course->id) }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>

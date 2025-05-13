@@ -17,13 +17,10 @@
                 <span><i class="fas fa-sliders-h"></i> {{ $course->level }}</span>
             </div>
             <div class="course-list-info__description">
-                <p>{{ Str::limit($course->overview, 100) }}</p>
+                <p>{!! Str::limit($course->overview, 100) !!}</p>
             </div>
             <div class="course-list-info__action">
-                <button class="btn btn-primary btn-hover-secondary">Add to cart</button>
-                <button class="btn-icon btn-light btn-hover-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Add to wishlist">
-                    <i class="far fa-heart"></i>
-                </button>
+                <a class="btn btn-primary btn-hover-secondary" href="{{ route('courses.show', $course->id) }}">Add to cart</a>
             </div>
             <div class="course-list-info__footer">
                 <div class="course-list-info__price">
