@@ -260,38 +260,6 @@
             </div>
         </div>
     </div>
-    <!-- Courses List Hover End -->
-    <!-- slider  -->
-    <div class="container  logo-carousel ">
-        <h2>We Are Associated With</h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-arrow left" onclick="slideLeft()">&#8592;</button>
-            <div class="carousel-view" id="carouselView">
-                <div class="carousel-track" id="carouselTrack">
-                    <!-- Logos will be cloned dynamically -->
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png')}}" alt="Logo 1" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png')}}" alt="Logo 2" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png')}}" alt="Logo 3" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png')}}" alt="Logo 4" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png')}}" alt="Logo 5" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png')}}" alt="Logo 6" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png')}}" alt="Logo 7" />
-                    </div>
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png')}}" alt="Logo 8" />
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-arrow right" onclick="slideRight()">&#8594;</button>
-        </div>
-    </div>
-    <!-- slider end  -->
-    <!-- Newsletter Start -->
    
     <!-- Include AOS JS, jQuery, and Bootstrap JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
