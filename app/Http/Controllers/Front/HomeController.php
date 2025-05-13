@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Faculty;
 use App\Models\Carrier;
 use App\Models\Language;
+use App\Models\Subcategory;
 use App\Models\Enquiry;
 use App\Models\Newsletter;
 use App\Models\Testimonial;
@@ -21,7 +22,47 @@ class HomeController extends Controller
         $courses = Course::where('status', 'published')->limit(12)->get();
         $testimonials = Testimonial::orderByDesc('created_at')->get();
         $blogs = Blog::orderByDesc('created_at')->limit(3)->get();
-        return view('front.index', compact('blogs', 'testimonials', 'courses'));
+
+        $categories = Category::where('status', 'public')
+            ->with([
+                'subcategories' => function ($query) {
+                    $query->where('status', 'public')
+                        ->with([
+                            'courses' => function ($query) {
+                                $query->where('status', 'published')->take(3);
+                            }
+                        ]);
+                }
+            ])
+            ->get();
+
+        return view('front.index', compact('blogs', 'testimonials', 'courses', 'categories'));
+    }
+
+    public function showCategory(Category $category)
+    {
+        $courses = Course::where('category_id', $category->id)
+            ->where('status', 'published')
+            ->paginate(12);
+        $categories = Category::where('status', 'public')->get();
+        $faculties = Faculty::where('status', 'published')->get();
+        $languages = Language::where('status', '1')->get();
+        $totalCourses = Course::where('status', 'published')->count();
+
+        return view('front.course', compact('courses', 'categories', 'faculties', 'languages', 'totalCourses', 'category'));
+    }
+
+    public function showSubcategory(Subcategory $subcategory)
+    {
+        $courses = Course::where('subcategory_id', $subcategory->id)
+            ->where('status', 'published')
+            ->paginate(12);
+        $categories = Category::where('status', 'public')->get();
+        $faculties = Faculty::where('status', 'published')->get();
+        $languages = Language::where('status', '1')->get();
+        $totalCourses = Course::where('status', 'published')->count();
+
+        return view('front.course', compact('courses', 'categories', 'faculties', 'languages', 'totalCourses', 'subcategory'));
     }
 
     public function AllCourse(Request $request)
@@ -309,6 +350,6 @@ class HomeController extends Controller
 
     public function privacyPolicy()
     {
-         return view('front.privacy');
+        return view('front.privacy');
     }
 }

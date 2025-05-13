@@ -64,6 +64,9 @@ Route::post('/news-letter', [HomeController::class, 'NewsLetter'])->name('news_l
 Route::get('/faqs',[HomeController::class, 'FAQS'])->name('faqs');
 Route::get('/term-conditions',[HomeController::class, 'TermCondition'])->name('termcondition');
 Route::get('/privacy-policy',[HomeController::class, 'privacyPolicy'])->name('privacypolicy');
+Route::get('/course/{course}', [HomeController::class, 'show'])->name('course.show');
+Route::get('/category/{category}', [HomeController::class, 'showCategory'])->name('category.show');
+Route::get('/subcategory/{subcategory}', [HomeController::class, 'showSubcategory'])->name('subcategory.show');
 
 require __DIR__ . '/auth.php';
 
@@ -192,7 +195,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
     });
 });
-
 
 
 // Student Dashboard Routes

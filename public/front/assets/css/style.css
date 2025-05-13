@@ -24267,3 +24267,21 @@ button.btn.btn-yellow.w-100:hover {
   color: #999;
   font-size: 14px;
 }
+
+.profile-menu {
+   
+    transform: translate3d(0px, 40px, 0px) !important;
+    z-index: 9999999 !important;
+    background-color: #f7f7f7;
+ padding-left: 10px;
+}
+
+/* Ensure dropdown menu appears above other elements */
+.dropdown-menu.profile-menu {
+    z-index: 1000;
+}
+
+/* Add bottom border to the first li in the dropdown menu */
+.dropdown-menu.profile-menu li:first-child {
+    border-bottom: 1px solid #ccc;
+}

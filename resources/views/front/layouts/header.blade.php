@@ -22,18 +22,18 @@
                             @auth
                                 <li>
                                     <div class="dropdown">
-                                        <button class="btn btn-link dropdown-toggle" type="button" id="profileDropdown"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Welcome To {{ Auth::user()->name }}
+                                        <button class="btn btn-link dropdown-toggle text-light" type="button"
+                                            id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ Auth::user()->name }}
                                         </button>
-                                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                                        <ul class="dropdown-menu profile-menu" aria-labelledby="profileDropdown">
                                             <li>
-                                                <a href="{{ route('student.dashboard') }}">Profile</a>
+                                                <a href="{{ route('student.dashboard') }}" class="text-dark">Profile</a>
                                             </li>
                                             <li>
                                                 <form action="{{ route('logout') }}" method="POST">
                                                     @csrf
-                                                    <button type="submit" class="dropdown-item">Logout</button>
+                                                    <button type="submit" class="dropdown-item text-dark">Logout</button>
                                                 </form>
                                             </li>
                                         </ul>
@@ -76,58 +76,59 @@
                             </div>
                             <div class="header-category-toggle__text">Category</div>
                         </a>
-                        <div class="header-category-dropdown-wrap">
-                        <ul class="header-category-dropdown">
-                            @foreach ($categories as $category)
-                                <li>
-                                    <a href="#">{{ $category->name }} 
-                                        @if ($category->subcategories->isNotEmpty())
-                                            <span class="toggle-sub-menu"></span>
-                                        @endif
-                                    </a>
-                                    @if ($category->subcategories->isNotEmpty())
-                                        <ul class="sub-categories children">
-                                            @foreach ($category->subcategories as $subcategory)
-                                                <li>
-                                                    <a href="#">{{ $subcategory->name }}
-                                                        @if ($subcategory->courses->isNotEmpty())
-                                                            <span class="toggle-sub-menu"></span>
-                                                        @endif
-                                                    </a>
-                                                    @if ($subcategory->courses->isNotEmpty())
-                                                        <ul class="course-list children">
-                                                            @foreach ($subcategory->courses as $course)
-                                                                <li>
-                                                                    <a class="categories-course" href="#">
-                                                                        <div class="categories-course__thumbnail">
-                                                                            <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
-                                                                                width="62" height="50">
-                                                                        </div>
-                                                                        <div class="categories-course__caption">
-                                                                            <h5 class="categories-course__title">{{ $course->title }}</h5>
-                                                                            <div class="categories-course__price">
-                                                                                <span class="categories-course__sale-price">${{ number_format($course->sale_price, 2) }}</span>
-                                                                                <span class="categories-course__regular-price">${{ number_format($course->regular_price, 2) }}</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @endif
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+                     <div class="header-category-dropdown-wrap">
+    <ul class="header-category-dropdown">
+        @forelse ($categories as $category)
+            <li>
+                <a href="{{ route('category.show', $category->id) }}">{{ $category->name }} <span class="toggle-sub-menu"></span></a>
+                @if ($category->subcategories->count())
+                    <ul class="sub-categories children">
+                        @foreach ($category->subcategories as $subcategory)
+                            <li>
+                                <a href="{{ route('subcategory.show', $subcategory->id) }}">{{ $subcategory->name }} <span class="toggle-sub-menu"></span></a>
+                                @if ($subcategory->courses->count())
+                                    <ul class="course-list children">
+                                        @foreach ($subcategory->courses as $course)
+                                            <li>
+                                                <a class="categories-course" href="{{ route('course.show', $course->id) }}">
+                                                    <div class="categories-course__thumbnail">
+                                                        <img src="{{ asset($course->thumbnail) }}" alt="{{ $category->name }} - {{ $subcategory->name }} - {{ $course->title }}"
+                                                             width="62" height="50" loading="lazy">
+                                                    </div>
+                                                    <div class="categories-course__caption">
+                                                        <h5 class="categories-course__title">{{ $course->title }}</h5>
+                                                        <div class="categories-course__price">
+                                                            <span class="categories-course__sale-price">
+                                                                ${{ number_format($course->sale_price, 2) }}
+                                                            </span>
+                                                            @if ($course->mrp > $course->sale_price)
+                                                                <span class="categories-course__regular-price">
+                                                                    ${{ number_format($course->mrp, 2) }}
+                                                                </span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </li>
+        @empty
+            <li><a href="#">No categories available</a></li>
+        @endforelse
+    </ul>
+</div>
                     </div>
                     <div class="header-inner">
                         <div class="header-serach">
                             <form action="{{ route('courses.search') }}" method="GET">
-                                <input type="text" name="search" class="header-serach__input" placeholder="Search courses..." value="{{ request('search') }}">
+                                <input type="text" name="search" class="header-serach__input"
+                                    placeholder="Search courses..." value="{{ request('search') }}">
                                 <button type="submit" class="header-serach__btn"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
@@ -379,19 +380,14 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="modal-form d-flex justify-content-between flex-wrap gap-2">
-                        
-                            <input type="checkbox" name="remember" id="rememberme">
-                            <label for="rememberme">Remember me</label>
+                        <div class="modal-form py-4">
+                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In</button>
                         </div>
-                        <div class="text-end">
+                        <div class="text-end py-2">
                             <a class="modal-form__link" href="{{ route('password.request') }}">Forgot your password?</a>
                         </div>
+                    </form>
                 </div>
-                <div class="modal-form">
-                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In</button>
-                </div>
-                </form>
             </div>
         </div>
     </div>
@@ -492,194 +488,194 @@
 
 <!-- JavaScript for Form Switching and AJAX -->
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Login and Register Modal Triggers
-    const mobileLoginModalTriggers = document.querySelectorAll('.offcanvas-user__login');
-    const mobileRegisterModalTriggers = document.querySelectorAll('.offcanvas-user__signup');
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mobile Menu Login and Register Modal Triggers
+        const mobileLoginModalTriggers = document.querySelectorAll('.offcanvas-user__login');
+        const mobileRegisterModalTriggers = document.querySelectorAll('.offcanvas-user__signup');
 
-    // Add click event listeners for mobile login modal triggers
-    mobileLoginModalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Close the offcanvas menu
-            const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
-            if (offcanvasMobileMenu) {
-                bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
-            }
-            
-            // Show the login modal
-            const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-            loginModal.show();
-        });
-    });
-
-    // Add click event listeners for mobile register modal triggers
-    mobileRegisterModalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Close the offcanvas menu
-            const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
-            if (offcanvasMobileMenu) {
-                bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
-            }
-            
-            // Show the register modal
-            const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
-            registerModal.show();
-        });
-    });
-
-    // Mobile Registration Form Submission
-    const mobileRegisterForm = document.querySelector('#offcanvasMobileMenu #registerForm');
-    if (mobileRegisterForm) {
-        mobileRegisterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(mobileRegisterForm);
-
-            // Clear previous errors
-            ['nameError', 'emailError', 'passwordError', 'contactNoError', 'termsError'].forEach(id => {
-                const errorElement = document.getElementById(id);
-                if (errorElement) errorElement.textContent = '';
-            });
-
-            fetch('{{ route("register") }}', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+        // Add click event listeners for mobile login modal triggers
+        mobileLoginModalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Close the offcanvas menu
+                const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
+                if (offcanvasMobileMenu) {
+                    bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Store email for OTP form
-                const otpEmailInput = document.getElementById('otpEmail');
-                if (otpEmailInput) otpEmailInput.value = data.email;
 
-                // Switch to OTP form
-                mobileRegisterForm.style.display = 'none';
-                const otpForm = document.getElementById('otpForm');
-                if (otpForm) {
-                    otpForm.style.display = 'block';
-                    document.getElementById('registerModalLabel').textContent = 'Verify OTP';
-                    const modalDescription = document.querySelector('.modal-description');
-                    if (modalDescription) modalDescription.textContent = 'An OTP has been sent to ' + data.email;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+                // Show the login modal
+                const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
             });
         });
-    }
 
-    // Mobile OTP Form Submission
-    const mobileOtpForm = document.querySelector('#offcanvasMobileMenu #otpForm');
-    if (mobileOtpForm) {
-        mobileOtpForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(mobileOtpForm);
-
-            // Clear previous OTP error
-            const otpError = document.getElementById('otpError');
-            if (otpError) otpError.textContent = '';
-
-            fetch('{{ route("otp.verify.post") }}', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+        // Add click event listeners for mobile register modal triggers
+        mobileRegisterModalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Close the offcanvas menu
+                const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
+                if (offcanvasMobileMenu) {
+                    bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
                 }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json().then(errorData => {
-                        throw new Error(errorData.message || 'Verification failed');
+
+                // Show the register modal
+                const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+                registerModal.show();
+            });
+        });
+
+        // Mobile Registration Form Submission
+        const mobileRegisterForm = document.querySelector('#offcanvasMobileMenu #registerForm');
+        if (mobileRegisterForm) {
+            mobileRegisterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(mobileRegisterForm);
+
+                // Clear previous errors
+                ['nameError', 'emailError', 'passwordError', 'contactNoError', 'termsError'].forEach(id => {
+                    const errorElement = document.getElementById(id);
+                    if (errorElement) errorElement.textContent = '';
+                });
+
+                fetch('{{ route("register") }}', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Store email for OTP form
+                        const otpEmailInput = document.getElementById('otpEmail');
+                        if (otpEmailInput) otpEmailInput.value = data.email;
+
+                        // Switch to OTP form
+                        mobileRegisterForm.style.display = 'none';
+                        const otpForm = document.getElementById('otpForm');
+                        if (otpForm) {
+                            otpForm.style.display = 'block';
+                            document.getElementById('registerModalLabel').textContent = 'Verify OTP';
+                            const modalDescription = document.querySelector('.modal-description');
+                            if (modalDescription) modalDescription.textContent = 'An OTP has been sent to ' + data.email;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
                     });
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Close modal and redirect
-                const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                if (registerModal) registerModal.hide();
-                window.location.href = '{{ url("/") }}';
-            })
-            .catch(error => {
+            });
+        }
+
+        // Mobile OTP Form Submission
+        const mobileOtpForm = document.querySelector('#offcanvasMobileMenu #otpForm');
+        if (mobileOtpForm) {
+            mobileOtpForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(mobileOtpForm);
+
+                // Clear previous OTP error
                 const otpError = document.getElementById('otpError');
-                if (otpError) otpError.textContent = error.message;
-            });
-        });
-    }
+                if (otpError) otpError.textContent = '';
 
-    // Mobile Resend OTP
-    const mobileResendOtpButton = document.querySelector('#offcanvasMobileMenu #resendOtp');
-    if (mobileResendOtpButton) {
-        mobileResendOtpButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('otpEmail').value;
-
-            fetch('{{ route("otp.resend") }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                },
-                body: JSON.stringify({ email: email })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to resend OTP');
-                }
-                return response.json();
-            })
-            .then(data => {
-                alert('OTP resent to ' + email);
-            })
-            .catch(error => {
-                alert('Failed to resend OTP. Please try again.');
-            });
-        });
-    }
-
-    // Mobile Login Form Submission
-    const mobileLoginForm = document.querySelector('#offcanvasMobileMenu form[action="{{ route("login") }}"]');
-    if (mobileLoginForm) {
-        mobileLoginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(mobileLoginForm);
-
-            fetch('{{ route("login") }}', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json().then(errorData => {
-                        throw new Error(errorData.message || 'Login failed');
+                fetch('{{ route("otp.verify.post") }}', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw new Error(errorData.message || 'Verification failed');
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Close modal and redirect
+                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                        if (registerModal) registerModal.hide();
+                        window.location.href = '{{ url("/") }}';
+                    })
+                    .catch(error => {
+                        const otpError = document.getElementById('otpError');
+                        if (otpError) otpError.textContent = error.message;
                     });
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Close modal and redirect
-                const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                if (loginModal) loginModal.hide();
-                window.location.href = '{{ url("/") }}';
-            })
-            .catch(error => {
-                // Display error message
-                const errorContainer = mobileLoginForm.querySelector('.text-danger');
-                if (errorContainer) {
-                    errorContainer.textContent = error.message;
-                }
             });
-        });
-    }
-});
+        }
+
+        // Mobile Resend OTP
+        const mobileResendOtpButton = document.querySelector('#offcanvasMobileMenu #resendOtp');
+        if (mobileResendOtpButton) {
+            mobileResendOtpButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('otpEmail').value;
+
+                fetch('{{ route("otp.resend") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: JSON.stringify({ email: email })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to resend OTP');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        alert('OTP resent to ' + email);
+                    })
+                    .catch(error => {
+                        alert('Failed to resend OTP. Please try again.');
+                    });
+            });
+        }
+
+        // Mobile Login Form Submission
+        const mobileLoginForm = document.querySelector('#offcanvasMobileMenu form[action="{{ route("login") }}"]');
+        if (mobileLoginForm) {
+            mobileLoginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(mobileLoginForm);
+
+                fetch('{{ route("login") }}', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw new Error(errorData.message || 'Login failed');
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Close modal and redirect
+                        const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                        if (loginModal) loginModal.hide();
+                        window.location.href = '{{ url("/") }}';
+                    })
+                    .catch(error => {
+                        // Display error message
+                        const errorContainer = mobileLoginForm.querySelector('.text-danger');
+                        if (errorContainer) {
+                            errorContainer.textContent = error.message;
+                        }
+                    });
+            });
+        }
+    });
 
 </script>
