@@ -131,10 +131,10 @@
                             <div class="footer-widget">
                                 <h4 class="footer-widget__title">Links</h4>
                                 <ul class="footer-widget__link">
-                                    <li><a href="#">News & Blogs</a></li>
-                                    <li><a href="#">Library</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Partners</a></li>
+                                    <li><a href="https://dev.electolver.com/courses/20">Essential Courses</a></li>
+                                    <li><a href="https://dev.electolver.com/courses/18">Software Testing</a></li>
+                                    <li><a href="https://dev.electolver.com/courses/17">Web Development</a></li>
+                                    <li><a href="https://dev.electolver.com/courses/12">Data Analytics</a></li>
                                 </ul>
                             </div>
                         </div>
