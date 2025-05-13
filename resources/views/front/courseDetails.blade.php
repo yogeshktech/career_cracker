@@ -82,19 +82,25 @@
                             </div>
                         </div>
                         <div class="tutor-course-segment">
+                             @if (!empty(trim(strip_tags($course->highlights))))
                             <h4 class="tutor-course-segment__title" id="highlight">Course Highlights</h4>
                             <div class="margin-left">
                                 <p>{!! $course->highlights !!}</p>
                             </div>
+                            @endif
                         </div>
                         <div class="tutor-course-segment">
+                             @if (!empty(trim(strip_tags($course->details))))
                             <div class="tutor-course-segment__header" id="detail">
                                 <h4 class="tutor-course-segment__title">Course Details</h4>
                             </div>
                             <p>{!! $course->details !!}</p>
+                            @endif
                         </div>
+                        @if (!empty(trim(strip_tags($course->why_choose_us))))
                         <h4 class="tutor-course-segment__title mt-4" id="choose">Why Choose This Course</h4>
                         <p>{!! $course->why_choose_us !!}</p>
+                        @endif
                         <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title">Student Feedback</h4>
                             <div class="tutor-course-segment__feedback">
@@ -337,37 +343,7 @@
         </div>
     </div>
 
-    <div class="container logo-carousel section-padding-02">
-        <h2>We Are Associated With</h2>
-        <div class="swiper logo-carousel-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png') }}" alt="CCSU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png') }}" alt="AKTU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png') }}" alt="CCSU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png') }}" alt="AKTU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png') }}" alt="CCSU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png') }}" alt="AKTU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/ccsu.png') }}" alt="CCSU" loading="lazy"></div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="carousel-item-custom"><img src="{{ asset('front/assets/images/aktu.png') }}" alt="AKTU" loading="lazy"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- Include AOS JS, jQuery, Bootstrap JS, and Swiper JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

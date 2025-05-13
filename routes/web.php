@@ -61,6 +61,9 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/career', [HomeController::class, 'store'])->name('careers.store');
 Route::post('/enquiry', [HomeController::class, 'enquiry_save'])->name('enquiry_send');
 Route::post('/news-letter', [HomeController::class, 'NewsLetter'])->name('news_letter');
+Route::get('/faqs',[HomeController::class, 'FAQS'])->name('faqs');
+Route::get('/term-conditions',[HomeController::class, 'TermCondition'])->name('termcondition');
+Route::get('/privacy-policy',[HomeController::class, 'privacyPolicy'])->name('privacypolicy');
 
 require __DIR__ . '/auth.php';
 

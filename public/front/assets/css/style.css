@@ -510,9 +510,9 @@ hr {
 .swiper-button-style .swiper-button-next::after, .swiper-button-style .swiper-button-prev::after {
   display: none;
 }
-.swiper-button-style .swiper-button-next {
+/* .swiper-button-style .swiper-button-next {
   right: -26px;
-}
+} */
 @media only screen and (min-width: 1200px) and (max-width: 1499px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .swiper-button-style .swiper-button-next {
     right: -15px;
@@ -523,9 +523,9 @@ hr {
     right: 10px;
   }
 }
-.swiper-button-style .swiper-button-prev {
+/* .swiper-button-style .swiper-button-prev {
   left: -26px;
-}
+} */
 @media only screen and (min-width: 1200px) and (max-width: 1499px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .swiper-button-style .swiper-button-prev {
     left: -15px;
@@ -20481,7 +20481,8 @@ span.flatpickr-weekday {
                 }
                 
   .orange{
-    color: orangered !important;
+    color: #f7941d !important;
+
   }
 
 
@@ -20635,7 +20636,7 @@ margin-top: 6rem;
 
 .logo-carousel h2 {
   color: #f05423;
-  font-weight: 700;
+  /* font-weight: 700; */
   margin-bottom: 65px;
 }
 
@@ -20728,3 +20729,20 @@ margin-top: 6rem;
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1440px;
     }
+
+   .page-banner__wrapper .about-banner {
+    background-image: url(front/assets/images/main-hero-img.jpg) !important;
+    background-color: red !important ;
+}
+
+p{
+  font-size: 16px !important;
+  line-height: 30px !important;
+}
+
+
+.course-info__badge-text.badge-all {
+    /* background: #2b3990 !important; */
+    color: #2b3990 !important;
+    
+}

@@ -18,7 +18,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $courses = Course::where('status', 'published')->get();
+        $courses = Course::where('status', 'published')->limit(12)->get();
         $testimonials = Testimonial::orderByDesc('created_at')->get();
         $blogs = Blog::orderByDesc('created_at')->limit(3)->get();
         return view('front.index', compact('blogs', 'testimonials', 'courses'));
@@ -295,5 +295,20 @@ class HomeController extends Controller
         $news->save();
 
         return redirect()->back()->with('success', 'Subscribed successfully.');
+    }
+
+    public function FAQS()
+    {
+        return view('front.faqs');
+    }
+
+    public function TermCondition()
+    {
+        return view('front.term-condition');
+    }
+
+    public function privacyPolicy()
+    {
+         return view('front.privacy');
     }
 }
