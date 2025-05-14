@@ -41,7 +41,7 @@
                             <div class="contact-info__content">
                                 <h3 class="contact-info__title">Contact</h3>
                                 <p>Mobile: <strong>9867-679-600</strong></p>
-                                <p>Hotline: <strong>9867-679-600</strong></p>
+                                {{-- <p>Hotline: <strong>9867-679-600</strong></p> --}}
                                 <p>Mail: info@careercracker.in</p>
                             </div>
                         </div>
@@ -53,8 +53,8 @@
                             </div>
                             <div class="contact-info__content">
                                 <h3 class="contact-info__title">Hour of operation</h3>
-                                <p>Monday - Friday: 09:00 - 20:00</p>
-                                <p>Sunday & Saturday: 10:30 - 22:00</p>
+                                <p>Monday - Friday: 09:00 AM - 05:00 PM</p>
+                                <p>Sunday & Saturday: Closed</p>
                             </div>
                         </div>
                     </div>

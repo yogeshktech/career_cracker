@@ -24121,7 +24121,7 @@ h5 {
 .carousel-view {
   overflow: hidden;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1440px;
 }
 
 .carousel-track {
@@ -24284,4 +24284,9 @@ button.btn.btn-yellow.w-100:hover {
 /* Add bottom border to the first li in the dropdown menu */
 .dropdown-menu.profile-menu li:first-child {
     border-bottom: 1px solid #ccc;
+}
+
+li{
+    font-size: 16px !important;
+    line-height: 30px !important;
 }
