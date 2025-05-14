@@ -101,7 +101,7 @@
                         <h4 class="tutor-course-segment__title mt-4" id="choose">Why Choose This Course</h4>
                         <p>{!! $course->why_choose_us !!}</p>
                         @endif
-                        <div class="tutor-course-segment">
+                        {{-- <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title">Student Feedback</h4>
                             <div class="tutor-course-segment__feedback">
                                 <div class="tutor-course-segment__reviews-average">
@@ -140,8 +140,8 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
-                        <div class="tutor-course-segment">
+                        </div> --}}
+                        {{-- <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title">Write a Review</h4>
                             <div class="tutor-course-segment__reviews">
                                 <button class="tutor-course-segment__btn btn btn-primary btn-hover-secondary" data-bs-toggle="collapse" data-bs-target="#collapseForm">Write a Review</button>
@@ -208,7 +208,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -230,22 +230,22 @@
                                 </div>
                                 <div class="tutor-course-price-preview__meta">
                                     <ul class="tutor-course-meta-list">
-                                        <li>
+                                        {{-- <li>
                                             <div class="label"><i class="fas fa-sliders-h"></i> Level</div>
                                             <div class="value">{{ $course->level }}</div>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <div class="label"><i class="fas fa-clock"></i> Duration</div>
                                             <div class="value">{{ $course->duration }}</div>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <div class="label"><i class="fas fa-play-circle"></i> Lectures</div>
                                             <div class="value">{{ $course->total_lectures }} lectures</div>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <div class="label"><i class="fas fa-tag"></i> Subject</div>
                                             <div class="value"><a href="{{ route('all_course', ['categories' => $course->category_id]) }}">{{ $course->category->name }}</a></div>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <div class="label"><i class="fas fa-globe"></i> Language</div>
                                             <div class="value">{{ $course->language->name ?? ''}}</div>
@@ -265,14 +265,14 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <h3 class="sidebar-widget__title">Course Categories</h3>
                                 <ul class="sidebar-widget__link">
                                     @foreach ($categories as $category)
                                         <li><a href="{{ route('all_course', ['categories' => $category->id]) }}">{{ $category->name }}</a></li>
                                     @endforeach
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -313,7 +313,7 @@
                                             </div>
                                         </div>
                                         <div class="course-info">
-                                            <span class="course-info__badge-text badge-all">{{ $course->level }}</span>
+                                            {{-- <span class="course-info__badge-text badge-all">{{ $course->level }}</span> --}}
                                             <h3 class="course-info__title">
                                                 <a href="{{ route('courses.show', $course->id) }}">{{ $course->title }}</a>
                                             </h3>

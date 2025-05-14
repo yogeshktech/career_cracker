@@ -9,12 +9,12 @@
         </div>
         <div class="course-list-info">
             <h3 class="course-list-info__title">
-                <a href="{{ route('courses.show', $course->id) }}">{{ $course->title }}</a>
+                <a href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
             </h3>
             <div class="course-list-info__meta">
                 <span><i class="fas fa-play-circle"></i> {{ $course->total_lessons }} Lessons</span>
                 <span><i class="fas fa-clock"></i> {{ $course->duration }}</span>
-                <span><i class="fas fa-sliders-h"></i> {{ $course->level }}</span>
+                {{-- <span><i class="fas fa-sliders-h"></i> {{ $course->level }}</span> --}}
             </div>
             <div class="course-list-info__description">
                 <p>{!! Str::limit($course->overview, 100) !!}</p>

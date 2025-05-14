@@ -364,12 +364,13 @@
                                             </div>
                                         </div>
                                         <div class="course-info">
-                                            <span class="course-info__badge-text badge-all">{{ $course->level }}</span>
+                                            {{-- <span class="course-info__badge-text badge-all">{{ $course->level }}</span>
+                                            --}}
                                             <h3 class="course-info__title">
                                                 <a
                                                     href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
                                             </h3>
-                                            <a href="#" class="course-info__instructor">{{ $course->instructor ?? '' }}</a>
+                                            {{-- <a href="#" class="course-info__instructor">{{ $course->instructor ?? '' }}</a> --}}
                                             <div class="course-info__price">
                                                 <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
                                             </div>
@@ -731,52 +732,41 @@
 
                 <div class="col-lg-8">
 
-                    <!-- Partners Logo Wrapper Start -->
-                    <div class="partner-logo-wrapper-02" data-aos="fade-up" data-aos-duration="1000">
 
-                        <!-- Partners Logo Start -->
-                        <div class="partner-logo">
-                            <div class="partner-logo__logo">
-                                <img src="{{ asset("front/assets/images/partners-logo/client-logo-01.jpg")}}" alt="Logo"
-                                    width="68" height="92">
+
+                    <div class="logo-carousel">
+                        <div class="carousel-wrapper">
+                            <button class="carousel-arrow left" onclick="slideLeft()">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <div class="carousel-view" id="carouselView">
+                                <div class="carousel-track" id="carouselTrack">
+                                    <div class="carousel-item-custom"><img
+                                            src="{{ asset("front/assets/images/partners-logo/client-logo-01.jpg")}}"
+                                            alt="Logo 1" />
+                                    </div>
+                                    <div class="carousel-item-custom"><img
+                                            src="{{ asset("front/assets/images/partners-logo/client-logo-04.jpg")}}"
+                                            alt="Logo 2" />
+                                    </div>
+                                    <div class="carousel-item-custom"><img
+                                            src="{{ asset("front/assets/images/partners-logo/client-logo-05.jpg")}}"
+                                            alt="Logo 3" />
+                                    </div>
+                                    <div class="carousel-item-custom"><img
+                                            src="{{ asset("front/assets/images/partners-logo/client-logo-06.jpg")}}"
+                                            alt="Logo 4" />
+                                    </div>
+                                </div>
                             </div>
+                            <button class="carousel-arrow right" onclick="slideRight()">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
                         </div>
-                        <!-- Partners Logo End -->
-
-                        <!-- Partners Logo Start -->
-                        <div class="partner-logo">
-                            <div class="partner-logo__logo">
-                                <img src="{{ asset("front/assets/images/partners-logo/client-logo-04.jpg")}}" alt="Logo"
-                                    width="78" height="91">
-                            </div>
-                        </div>
-                        <!-- Partners Logo End -->
-
-                        <!-- Partners Logo Start -->
-                        <div class="partner-logo">
-                            <div class="partner-logo__logo">
-                                <img src="{{ asset("front/assets/images/partners-logo/client-logo-05.jpg")}}" alt="Logo"
-                                    width="76" height="91">
-                            </div>
-                        </div>
-                        <!-- Partners Logo End -->
-
-                        <!-- Partners Logo Start -->
-                        <div class="partner-logo">
-                            <div class="partner-logo__logo">
-                                <img src="{{ asset("front/assets/images/partners-logo/client-logo-06.jpg")}}" alt="Logo"
-                                    width="99" height="71">
-                            </div>
-                        </div>
-                        <!-- Partners Logo End -->
-
-
-                        <!-- Partners Logo End -->
-
                     </div>
-                    <!-- Partners Logo Wrapper End -->
-
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -786,5 +776,5 @@
     <!-- slider  -->
 
 
- 
+
 @endsection

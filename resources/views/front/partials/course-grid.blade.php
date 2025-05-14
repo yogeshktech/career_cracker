@@ -10,9 +10,9 @@
                     </div>
                 </div>
                 <div class="course-info">
-                    <span class="course-info__badge-text badge-all">{{ $course->level ?? 'All Levels' }}</span>
+                    {{-- <span class="course-info__badge-text badge-all">{{ $course->level ?? 'All Levels' }}</span> --}}
                     <h3 class="course-info__title">
-                        <a href="{{ route('courses.show', $course->id) }}">{{ $course->title }}</a>
+                        <a href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
                     </h3>
                    
                     <div class="course-info__price">

@@ -139,8 +139,10 @@
             </div>
         </div>
     </div>
-    <!-- Courses End -->
-    <div class="container">
+
+
+
+    {{-- <div class="container">
         <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="section-title__title-03 "> Courses</h2>
         </div>
@@ -181,7 +183,6 @@
             </div>
         </div>
     </div>
-    <!-- Courses Hover End -->
     <div id="course-hover">
         <div class="course-item-hover">
             <div class="course-item-hover__category">
@@ -220,8 +221,6 @@
             </div>
         </div>
     </div>
-    <!-- Courses Hover End -->
-    <!-- Courses List Hover End -->
     <div id="course-list-hover">
         <div class="course-item-hover">
             <div class="course-item-hover__category">
@@ -259,7 +258,7 @@
                 <a class="btn-link" href="#"><i class="far fa-heart"></i> Add to wishlist</a>
             </div>
         </div>
-    </div>
+    </div> --}}
    
     <!-- Include AOS JS, jQuery, and Bootstrap JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
