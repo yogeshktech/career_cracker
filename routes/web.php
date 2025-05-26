@@ -29,7 +29,9 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 

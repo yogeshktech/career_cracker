@@ -30,7 +30,7 @@
                             <h5 class="card-title">{{ $course->title }}</h5>
                             <p class="card-text">Students Enrolled: {{ $course->users_count }}</p>
                             <p class="card-text">
-                                Google Meet Link:
+                                Link to join today's session:
                                 @if ($course->users->first() && $course->users->first()->pivot->google_meet_link)
                                     <a href="{{ $course->users->first()->pivot->google_meet_link }}" target="_blank">Start Class</a>
                                 @else
@@ -38,7 +38,7 @@
                                 @endif
                             </p>
                             <p class="card-text">
-                                Google Drive Link:
+                                Access Class Recordings:
                                 @if ($course->users->first() && $course->users->first()->pivot->google_drive_link)
                                     <a href="{{ $course->users->first()->pivot->google_drive_link }}" target="_blank">View Link</a>
                                 @else

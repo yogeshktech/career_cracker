@@ -16,6 +16,8 @@ class RegisteredUserController extends Controller
 {
     /**
      * Display the registration view.
+     *
+     * @return \Illuminate\View\View
      */
     public function create()
     {
@@ -24,11 +26,14 @@ class RegisteredUserController extends Controller
 
     /**
      * Handle an incoming registration request with OTP.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
         // Validate the registration form
-        $request->validate([
+        $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -39,17 +44,21 @@ class RegisteredUserController extends Controller
         // Generate OTP
         $otp = rand(100000, 999999);
 
-        // Store OTP in the database
+        // Store OTP in the database (hashed)
         Otp::create([
             'email' => $request->email,
-            'otp' => $otp,
+            'otp' => Hash::make($otp),
             'expires_at' => now()->addMinutes(10),
         ]);
 
         // Send OTP via email
-        Mail::raw("Your OTP is: $otp", function ($message) use ($request) {
-            $message->to($request->email)->subject('Your OTP Code');
-        });
+        try {
+            Mail::raw("Your OTP is: $otp", function ($message) use ($request) {
+                $message->to($request->email)->subject('Your OTP Code');
+            });
+        } catch (\Exception $e) {
+            return response()->json(['errors' => ['email' => 'Failed to send OTP. Please try again.']], 500);
+        }
 
         // Store registration data in session
         session([
@@ -62,6 +71,9 @@ class RegisteredUserController extends Controller
 
     /**
      * Verify the OTP and complete registration.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function verifyOtp(Request $request)
     {
@@ -72,11 +84,10 @@ class RegisteredUserController extends Controller
 
         // Find the OTP record
         $otpRecord = Otp::where('email', $request->email)
-            ->where('otp', $request->otp)
             ->where('expires_at', '>', now())
             ->first();
 
-        if (!$otpRecord) {
+        if (!$otpRecord || !Hash::check($request->otp, $otpRecord->otp)) {
             return response()->json(['errors' => ['otp' => 'Invalid or expired OTP.']], 422);
         }
 
@@ -84,7 +95,7 @@ class RegisteredUserController extends Controller
         $data = session('registration_data');
 
         if (!$data || $data['email'] !== $request->email) {
-            return response()->json(['errors' => ['otp' => 'Session data mismatch. Please try registering again.']], 422);
+            return response()->json(['errors' => ['otp' => 'Session expired. Please register again.']], 422);
         }
 
         // Create the user
@@ -111,6 +122,9 @@ class RegisteredUserController extends Controller
 
     /**
      * Resend OTP.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function resendOtp(Request $request)
     {
@@ -124,17 +138,21 @@ class RegisteredUserController extends Controller
         // Delete old OTPs for this email
         Otp::where('email', $request->email)->delete();
 
-        // Store new OTP
+        // Store new OTP (hashed)
         Otp::create([
             'email' => $request->email,
-            'otp' => $otp,
+            'otp' => Hash::make($otp),
             'expires_at' => now()->addMinutes(10),
         ]);
 
         // Send OTP via email
-        Mail::raw("Your OTP is: $otp", function ($message) use ($request) {
-            $message->to($request->email)->subject('Your OTP Code');
-        });
+        try {
+            Mail::raw("Your OTP is: $otp", function ($message) use ($request) {
+                $message->to($request->email)->subject('Your OTP Code');
+            });
+        } catch (\Exception $e) {
+            return response()->json(['errors' => ['email' => 'Failed to send OTP. Please try again.']], 500);
+        }
 
         return response()->json(['message' => 'OTP resent']);
     }

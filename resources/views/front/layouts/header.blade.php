@@ -489,193 +489,198 @@
 <!-- JavaScript for Form Switching and AJAX -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Mobile Menu Login and Register Modal Triggers
-        const mobileLoginModalTriggers = document.querySelectorAll('.offcanvas-user__login');
-        const mobileRegisterModalTriggers = document.querySelectorAll('.offcanvas-user__signup');
+    // Mobile Menu Login and Register Modal Triggers
+    const mobileLoginModalTriggers = document.querySelectorAll('.offcanvas-user__login');
+    const mobileRegisterModalTriggers = document.querySelectorAll('.offcanvas-user__signup');
 
-        // Add click event listeners for mobile login modal triggers
-        mobileLoginModalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Close the offcanvas menu
-                const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
-                if (offcanvasMobileMenu) {
-                    bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
-                }
+    // Helper function to close offcanvas and show modal
+    function showModal(modalId) {
+        const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
+        if (offcanvasMobileMenu) {
+            bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
+        }
+        const modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+    }
 
-                // Show the login modal
-                const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-                loginModal.show();
-            });
+    // Add click event listeners for mobile login modal triggers
+    mobileLoginModalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            showModal('loginModal');
         });
-
-        // Add click event listeners for mobile register modal triggers
-        mobileRegisterModalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Close the offcanvas menu
-                const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
-                if (offcanvasMobileMenu) {
-                    bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
-                }
-
-                // Show the register modal
-                const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
-                registerModal.show();
-            });
-        });
-
-        // Mobile Registration Form Submission
-        const mobileRegisterForm = document.querySelector('#offcanvasMobileMenu #registerForm');
-        if (mobileRegisterForm) {
-            mobileRegisterForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(mobileRegisterForm);
-
-                // Clear previous errors
-                ['nameError', 'emailError', 'passwordError', 'contactNoError', 'termsError'].forEach(id => {
-                    const errorElement = document.getElementById(id);
-                    if (errorElement) errorElement.textContent = '';
-                });
-
-                fetch('{{ route("register") }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    }
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Store email for OTP form
-                        const otpEmailInput = document.getElementById('otpEmail');
-                        if (otpEmailInput) otpEmailInput.value = data.email;
-
-                        // Switch to OTP form
-                        mobileRegisterForm.style.display = 'none';
-                        const otpForm = document.getElementById('otpForm');
-                        if (otpForm) {
-                            otpForm.style.display = 'block';
-                            document.getElementById('registerModalLabel').textContent = 'Verify OTP';
-                            const modalDescription = document.querySelector('.modal-description');
-                            if (modalDescription) modalDescription.textContent = 'An OTP has been sent to ' + data.email;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
-        }
-
-        // Mobile OTP Form Submission
-        const mobileOtpForm = document.querySelector('#offcanvasMobileMenu #otpForm');
-        if (mobileOtpForm) {
-            mobileOtpForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(mobileOtpForm);
-
-                // Clear previous OTP error
-                const otpError = document.getElementById('otpError');
-                if (otpError) otpError.textContent = '';
-
-                fetch('{{ route("otp.verify.post") }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    }
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            return response.json().then(errorData => {
-                                throw new Error(errorData.message || 'Verification failed');
-                            });
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Close modal and redirect
-                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                        if (registerModal) registerModal.hide();
-                        window.location.href = '{{ url("/") }}';
-                    })
-                    .catch(error => {
-                        const otpError = document.getElementById('otpError');
-                        if (otpError) otpError.textContent = error.message;
-                    });
-            });
-        }
-
-        // Mobile Resend OTP
-        const mobileResendOtpButton = document.querySelector('#offcanvasMobileMenu #resendOtp');
-        if (mobileResendOtpButton) {
-            mobileResendOtpButton.addEventListener('click', function (e) {
-                e.preventDefault();
-                const email = document.getElementById('otpEmail').value;
-
-                fetch('{{ route("otp.resend") }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    },
-                    body: JSON.stringify({ email: email })
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to resend OTP');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        alert('OTP resent to ' + email);
-                    })
-                    .catch(error => {
-                        alert('Failed to resend OTP. Please try again.');
-                    });
-            });
-        }
-
-        // Mobile Login Form Submission
-        const mobileLoginForm = document.querySelector('#offcanvasMobileMenu form[action="{{ route("login") }}"]');
-        if (mobileLoginForm) {
-            mobileLoginForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(mobileLoginForm);
-
-                fetch('{{ route("login") }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                    }
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            return response.json().then(errorData => {
-                                throw new Error(errorData.message || 'Login failed');
-                            });
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Close modal and redirect
-                        const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                        if (loginModal) loginModal.hide();
-                        window.location.href = '{{ url("/") }}';
-                    })
-                    .catch(error => {
-                        // Display error message
-                        const errorContainer = mobileLoginForm.querySelector('.text-danger');
-                        if (errorContainer) {
-                            errorContainer.textContent = error.message;
-                        }
-                    });
-            });
-        }
     });
 
+    // Add click event listeners for mobile register modal triggers
+    mobileRegisterModalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            showModal('registerModal');
+        });
+    });
+
+    // Mobile Registration Form Submission
+    const mobileRegisterForm = document.querySelector('#offcanvasMobileMenu #registerForm');
+    if (mobileRegisterForm) {
+        mobileRegisterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(mobileRegisterForm);
+
+            // Clear previous errors
+            ['nameError', 'emailError', 'passwordError', 'contactNoError', 'termsError'].forEach(id => {
+                const errorElement = document.getElementById(id);
+                if (errorElement) errorElement.textContent = '';
+            });
+
+            fetch('{{ route("register") }}', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errorData => {
+                            throw errorData;
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Store email for OTP form
+                    const otpEmailInput = document.getElementById('otpEmail');
+                    if (otpEmailInput) otpEmailInput.value = data.email;
+
+                    // Switch to OTP form
+                    const otpForm = document.getElementById('otpForm');
+                    const registerModalLabel = document.getElementById('registerModalLabel');
+                    const modalDescription = document.querySelector('.modal-description');
+                    if (otpForm && mobileRegisterForm) {
+                        mobileRegisterForm.classList.add('d-none');
+                        otpForm.classList.remove('d-none');
+                        if (registerModalLabel) registerModalLabel.textContent = 'Verify OTP';
+                        if (modalDescription) modalDescription.textContent = `An OTP has been sent to ${data.email}`;
+                    }
+                })
+                .catch(error => {
+                    // Handle validation errors
+                    if (error.errors) {
+                        Object.keys(error.errors).forEach(key => {
+                            const errorElement = document.getElementById(`${key}Error`);
+                            if (errorElement) errorElement.textContent = error.errors[key][0];
+                        });
+                    } else {
+                        console.error('Error:', error);
+                        alert('Registration failed. Please try again.');
+                    }
+                });
+        });
+    }
+
+    // Mobile OTP Form Submission
+    const mobileOtpForm = document.querySelector('#offcanvasMobileMenu #otpForm');
+    if (mobileOtpForm) {
+        mobileOtpForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(mobileOtpForm);
+
+            // Clear previous OTP error
+            const otpError = document.getElementById('otpError');
+            if (otpError) otpError.textContent = '';
+
+            fetch('{{ route("otp.verify.post") }}', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errorData => {
+                            throw new Error(errorData.errors?.otp?.[0] || 'Verification failed');
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Close modal and redirect
+                    const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                    if (registerModal) registerModal.hide();
+                    // Ensure redirect is a GET request
+                    window.location.assign('{{ url("/") }}'); // Use assign instead of href for clarity
+                })
+                .catch(error => {
+                    if (otpError) otpError.textContent = error.message;
+                    console.error('OTP Verification Error:', error);
+                });
+        });
+    }
+
+    // Mobile Resend OTP
+    const mobileResendOtpButton = document.querySelector('#offcanvasMobileMenu #resendOtp');
+    if (mobileResendOtpButton) {
+        mobileResendOtpButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('otpEmail')?.value;
+            if (!email) {
+                alert('Email not found. Please try registering again.');
+                return;
+            }
+
+            fetch('{{ route("otp.resend") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to resend OTP');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert(`OTP resent to ${email}`);
+                })
+                .catch(error => {
+                    alert('Failed to resend OTP. Please try again.');
+                    console.error('Resend OTP Error:', error);
+                });
+        });
+    }
+
+    // Mobile Login Form Submission
+    const mobileLoginForm = document.querySelector('#offcanvasMobileMenu form[action="{{ route("login") }}"]');
+    if (mobileLoginForm) {
+        mobileLoginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(mobileLoginForm);
+
+            // Clear previous errors
+            const errorContainer = mobileLoginForm.querySelector('.text-danger');
+            if (errorContainer) errorContainer.textContent = '';
+
+            fetch('{{ route("login") }}', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errorData => {
+                            throw new Error(errorData.message || 'Login failed');
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Close modal and redirect
+                    const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    if (loginModal) loginModal.hide();
+                    // Ensure redirect is a GET request
+                    window.location.assign('{{ url("/") }}'); // Use assign instead of href for clarity
+                })
+                .catch(error => {
+                    if (errorContainer) errorContainer.textContent = error.message;
+                    console.error('Login Error:', error);
+                });
+        });
+    }
+});
 </script>
