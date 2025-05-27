@@ -56,7 +56,7 @@ Route::get('/courses/{course}', [HomeController::class, 'show'])->name('courses.
 
 Route::post('/courses/{course}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 Route::get('/blogs', [HomeController::class, 'AllBlog'])->name('blogs');
-Route::get('/blogs/{id}', [HomeController::class, 'BlogDetails'])->name('blog.details');
+Route::get('/blog/{id}', [HomeController::class, 'BlogDetails'])->name('blog.details');
 Route::get('/career', [HomeController::class, 'Career'])->name('career');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');

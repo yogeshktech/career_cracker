@@ -29,6 +29,7 @@ class Course extends Model
         'status',
         'google_meet_link',
         'google_drive_link',
+        'is_saleable',
     ];
 
     public function category()

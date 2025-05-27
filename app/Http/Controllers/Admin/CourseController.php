@@ -23,7 +23,7 @@ class CourseController extends Controller
         $languages = Language::where('status', '1')->get();
         $categories = Category::where('status', 'public')->get();
         $subcategories = Subcategory::where('status', 'public')->get();
-        return view('admin.course.add', compact('categories', 'subcategories','languages'));
+        return view('admin.course.add', compact('categories', 'subcategories', 'languages'));
     }
 
     public function store(Request $request)
@@ -45,6 +45,7 @@ class CourseController extends Controller
             'why_choose_us' => 'nullable|string',
             'progress' => 'nullable|integer|min:0|max:100',
             'status' => 'required|in:draft,published',
+            'is_saleable' => 'required|boolean', // Add validation for is_saleable
         ]);
 
         if (!Auth::guard('admin')->check()) {
@@ -79,6 +80,7 @@ class CourseController extends Controller
                 'created_by' => Auth::guard('admin')->id(),
                 'progress' => $request->progress ?? 0,
                 'status' => $request->status,
+                'is_saleable' => $request->is_saleable, // Add is_saleable
             ]);
 
             return redirect()->route('admin.courses.index')->with('success', 'Course created successfully.');
@@ -93,7 +95,7 @@ class CourseController extends Controller
         $course = Course::findOrFail($id);
         $categories = Category::where('status', 'public')->get();
         $subcategories = Subcategory::where('status', 'public')->get();
-        return view('admin.course.edit', compact('course', 'categories', 'subcategories','languages'));
+        return view('admin.course.edit', compact('course', 'categories', 'subcategories', 'languages'));
     }
 
     public function update(Request $request, $id)
@@ -118,6 +120,7 @@ class CourseController extends Controller
             'why_choose_us' => 'nullable|string',
             'progress' => 'nullable|integer|min:0|max:100',
             'status' => 'required|in:draft,published',
+            'is_saleable' => 'required|boolean',
         ]);
 
         if (!Auth::guard('admin')->check()) {
@@ -157,6 +160,7 @@ class CourseController extends Controller
             'why_choose_us' => $request->why_choose_us,
             'progress' => $request->progress ?? 0,
             'status' => $request->status,
+            'is_saleable' => $request->is_saleable,
         ]);
 
         return redirect()->route('admin.courses.index')->with('success', 'Course updated successfully.');

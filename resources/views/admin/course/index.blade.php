@@ -98,6 +98,13 @@
                                                         <button type="submit" class="btn btn-outline-main rounded-pill py-9 w-70"
                                                             onclick="return confirm('Are you sure?')">Delete</button>
                                                     </form>
+                                                    <p>
+                                                        @if ($course->is_saleable == 1)
+                                                           <span class="btn btn-outline-main rounded-pill py-9 w-70">S-Yes</span>
+                                                        @else
+                                                            <span class="btn btn-outline-main rounded-pill py-9 w-70">S-No</span>
+                                                        @endif
+                                                    </p>
                                                 </div>
 
                                             </div>

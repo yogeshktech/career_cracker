@@ -658,15 +658,11 @@
     <!-- Blog Start -->
     <div class="blog-section section-padding-01">
         <div class="container ">
-
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Section Title Start -->
                     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
                         <h2 class="section-title__title-03"><span class="orange">Our Latest</span> Blogs</h2>
                     </div>
-                    <!-- Section Title End -->
-
                 </div>
                 <div class="col-lg-6">
                     <div class="courses-tab-menu aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
@@ -676,9 +672,7 @@
                     </div>
                 </div>
             </div>
-
             @php use Illuminate\Support\Str; @endphp
-
             <div class="row gy-6 grid">
                 @foreach ($blogs as $blog)
                     <div class="col-xl-4 col-md-6 grid-item">
@@ -694,7 +688,7 @@
                                 </div>
                                 <h3 class="blog-item-02__title"><a href="#">{{ $blog->title }}</a></h3>
                                 <p>{{ Str::words(strip_tags($blog->description), 20, '...') }}</p>
-                                <a class="blog-item-02__more btn btn-light btn-hover-white" href="blogDetails/{{ $blog->id }}">
+                                <a class="blog-item-02__more btn btn-light btn-hover-white" href="blog/{{ $blog->id }}">
                                     Read More <i class="fas fa-long-arrow-right"></i>
                                 </a>
                             </div>
@@ -702,10 +696,6 @@
                     </div>
                 @endforeach
             </div>
-
-
-
-
         </div>
     </div>
 

@@ -230,6 +230,16 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6">
+                                    <label for="is_saleable" class="h5 mb-8 fw-semibold font-heading">Available for Sale</label>
+                                    <select id="is_saleable" name="is_saleable" class="form-select py-9 placeholder-13 text-15">
+                                        <option value="1" {{ old('is_saleable', 1) == 1 ? 'selected' : '' }}>Yes</option>
+                                        <option value="0" {{ old('is_saleable') == 0 ? 'selected' : '' }}>No</option>
+                                    </select>
+                                    @error('is_saleable')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-sm-6">
                                     <label for="progress" class="h5 mb-8 fw-semibold font-heading">Progress (%)</label>
                                     <input type="number" class="form-control py-9 placeholder-13 text-15" id="progress"
                                         name="progress" placeholder="Enter progress percentage" min="0" max="100"

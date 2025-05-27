@@ -253,7 +253,7 @@
                                     </ul>
                                 </div>
                                
-                                <div class="tutor-course-price-preview__btn">
+                                {{-- <div class="tutor-course-price-preview__btn">
                                     <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
                                         @csrf
                                         <button type="submit" class="button btn btn-yellow btn-hover-secondary w-100">Add to Cart</button>
@@ -263,7 +263,25 @@
                                         @csrf
                                         <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
                                     </form>
+                                </div> --}}
+
+                                <div class="tutor-course-price-preview__btn">
+                                    @if ($course->is_saleable)
+                                        <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
+                                            @csrf
+                                            <button type="submit" class="button btn btn-yellow btn-hover-secondary w-100">Add to Cart</button>
+                                        </form>
+                                        <form action="{{ route('cart.enroll', $course->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
+                                        </form>
+                                    @else
+                                        <div class="alert alert-info text-center">
+                                            This course is coming soon!
+                                        </div>
+                                    @endif
                                 </div>
+
                             </div>
                             {{-- <div class="sidebar-widget">
                                 <h3 class="sidebar-widget__title">Course Categories</h3>
@@ -313,7 +331,6 @@
                                             </div>
                                         </div>
                                         <div class="course-info">
-                                            {{-- <span class="course-info__badge-text badge-all">{{ $course->level }}</span> --}}
                                             <h3 class="course-info__title">
                                                 <a href="{{ route('courses.show', $course->id) }}">{{ $course->title }}</a>
                                             </h3>
@@ -327,10 +344,16 @@
                                                 </div>
                                                 <span>({{ $course->reviews_count }})</span>
                                             </div>
-                                            <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mt-2">
-                                                @csrf
-                                                <button type="submit" class="btn btn-secondary btn-hover-primary w-100">Add to Cart</button>
-                                            </form>
+                                            @if ($course->is_saleable)
+                                                <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mt-2">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-secondary btn-hover-primary w-100">Add to Cart</button>
+                                                </form>
+                                            @else
+                                                <div class="alert alert-info text-center mt-2">
+                                                    Coming Soon
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
