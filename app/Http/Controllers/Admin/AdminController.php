@@ -12,6 +12,9 @@ use Illuminate\Http\RedirectResponse;
 
 use App\Mail\StudentWelcome;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Course;
+use App\Models\OrderCourse;
 use Illuminate\Support\Facades\Mail;
 use Spatie\Permission\Models\Role;
 
@@ -41,7 +44,10 @@ class AdminController extends Controller
 
     public function dashboard(): View
     {
-        return view('admin.dashboard');
+        $courses = Course::count();
+        $users = User::get()->count();
+        $orders = Order::count();
+        return view('admin.dashboard',compact('orders','users','courses'));
     }
 
     public function profile(): View
