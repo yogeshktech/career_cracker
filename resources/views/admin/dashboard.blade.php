@@ -95,9 +95,6 @@
                 </div>
             </div>
         </div>
-
-
-        
     </div>
     {{-- @include('admin.layout.footer') --}}
 @endsection

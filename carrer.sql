@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2025 at 06:52 PM
+-- Generation Time: May 28, 2025 at 01:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -67,7 +67,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `blog_image`, `description`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'test update', 'uploads/blogs/1746291837_1732878720_BANER_Perforce-week-of-gratitude-gift-2.jpg', '<p>sewregtry</p>', '2', '2025-05-03 11:31:11', '2025-05-03 11:33:57');
+(1, 'Master IT Excellence with Our Service Transition and Operations Course', 'uploads/blogs/1746291837_1732878720_BANER_Perforce-week-of-gratitude-gift-2.jpg', '<p>In today&#39;s fast-paced digital world, delivering seamless and stable IT services is more critical than ever. Whether you&#39;re an aspiring IT professional or a seasoned manager looking to upskill, our <strong>Service Transition and Operations Course</strong> is designed to prepare you for real-world challenges and help you excel in managing key IT service processes.</p>\r\n\r\n<h3><strong>Why This Course Matters</strong></h3>\r\n\r\n<p>Organizations today rely heavily on IT services to operate efficiently. Any disruption &mdash; be it a major incident, recurring problem, or poorly managed change &mdash; can impact business continuity and customer satisfaction. That&rsquo;s where robust service management practices come into play.</p>\r\n\r\n<p>This course bridges the gap between IT service design and operations, focusing on the essential practices that ensure a smooth <strong>transition</strong> and <strong>stable operation</strong> of IT services.</p>\r\n\r\n<h3><strong>What You Will Learn</strong></h3>\r\n\r\n<p>Our comprehensive curriculum covers the following key areas:</p>\r\n\r\n<p>✅ <strong>Major Incident Management</strong></p>\r\n\r\n<p>Learn how to respond swiftly and effectively to high-impact incidents, minimizing downtime and restoring services with confidence.</p>\r\n\r\n<p>✅ <strong>Problem Management</strong></p>\r\n\r\n<p>Go beyond quick fixes. Master the art of identifying root causes, preventing future incidents, and improving overall service reliability.</p>\r\n\r\n<p>✅ <strong>Change Management</strong></p>\r\n\r\n<p>Gain the skills to implement changes to IT services with minimal risk and disruption, ensuring business continuity and user satisfaction.</p>\r\n\r\n<h3><strong>Who Should Take This Course?</strong></h3>\r\n\r\n<p>This course is ideal for:</p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>IT Service Managers</p>\r\n	</li>\r\n	<li>\r\n	<p>System Administrators</p>\r\n	</li>\r\n	<li>\r\n	<p>Incident and Problem Managers</p>\r\n	</li>\r\n	<li>\r\n	<p>Change Coordinators</p>\r\n	</li>\r\n	<li>\r\n	<p>Anyone looking to build or enhance their ITSM (IT Service Management) capabilities</p>\r\n	</li>\r\n</ul>\r\n\r\n<p>Whether you&#39;re new to IT operations or aiming to formalize your knowledge, this training offers valuable insights and practical tools to elevate your career.</p>\r\n\r\n<h3><strong>Why Choose Us?</strong></h3>\r\n\r\n<ul>\r\n	<li>\r\n	<p><strong>Industry-Relevant Curriculum:</strong> Based on real-world scenarios and ITIL best practices</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Expert Instructors:</strong> Learn from professionals with years of hands-on experience</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Practical Approach:</strong> Interactive sessions, case studies, and templates</p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Flexible Learning:</strong> Online and in-person options available</p>\r\n	</li>\r\n</ul>\r\n\r\n<h3><strong>Get Started Today</strong></h3>\r\n\r\n<p>Don&rsquo;t wait for service failures to realize the importance of IT operations. Take a proactive step in your professional growth and organizational success.</p>\r\n\r\n<p>👉 <strong>Enroll now</strong> in the <strong>Service Transition and Operations Course</strong> and ensure your IT services are always a step ahead.</p>', '2', '2025-05-03 11:31:11', '2025-05-12 04:35:30');
 
 -- --------------------------------------------------------
 
@@ -80,6 +80,16 @@ CREATE TABLE `cache` (
   `value` mediumtext NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('career_cracker_cache_admin@gmail.com|127.0.0.1', 'i:3;', 1747135490),
+('career_cracker_cache_admin@gmail.com|127.0.0.1:timer', 'i:1747135490;', 1747135490),
+('career_cracker_cache_yogeshkumar0798@gmail.com|127.0.0.1', 'i:1;', 1748254167),
+('career_cracker_cache_yogeshkumar0798@gmail.com|127.0.0.1:timer', 'i:1748254167;', 1748254167);
 
 -- --------------------------------------------------------
 
@@ -137,8 +147,7 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `course_id`, `user_id`, `ip_address`, `created_at`, `updated_at`) VALUES
-(28, 9, 1, NULL, '2025-05-09 07:35:34', '2025-05-09 07:35:34'),
-(29, 8, 1, NULL, '2025-05-09 07:40:49', '2025-05-09 07:40:49');
+(31, 3, 1, NULL, '2025-05-13 03:57:47', '2025-05-13 05:24:06');
 
 -- --------------------------------------------------------
 
@@ -192,19 +201,19 @@ CREATE TABLE `courses` (
   `progress` int(11) NOT NULL DEFAULT 0,
   `status` enum('draft','published') NOT NULL DEFAULT 'draft',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `is_saleable` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`id`, `subcategory_id`, `mrp`, `category_id`, `sale_price`, `title`, `thumbnail`, `level`, `duration`, `is_live_class`, `total_lectures`, `language_id`, `overview`, `highlights`, `details`, `why_choose_us`, `created_by`, `progress`, `status`, `created_at`, `updated_at`) VALUES
-(3, 3, '500', 12, '444', 'new', 'uploads/course/1746264247_Website.jpg', 'Beginner', '5 Hours', NULL, 12, 2, '2weregtrh', 'eqwrwegtr', 'wqeawrest', 'qwewarestr', 2, 100, 'published', '2025-05-03 03:54:07', '2025-05-03 07:46:41'),
-(4, 2, '490', 12, '444', 'edwfregtr', 'Uploads/course/1746265810_ragenaizer_profile_qrcode.png', 'Beginner', '5 Hours', NULL, 12, 0, 'dfg', 'erty', 'qretrytuy', 'wqewretr', 2, 50, 'published', '2025-05-03 04:20:10', '2025-05-03 04:20:10'),
-(5, 4, '200', 13, '65', 'check this Course', 'Uploads/course/1746277395_1732878720_BANER_Perforce-week-of-gratitude-gift-2.jpg', 'Intermediate', '10 Hours', NULL, 21, 2, 'ertyt', 'efrgrsht', 'efrgrsht', 'fsghj', 2, 20, 'draft', '2025-05-03 07:33:16', '2025-05-06 05:37:18'),
-(8, 5, '599', 14, '499', 'new course update', 'Uploads/course/1746530523_674d61cc4f639_71KVHVmSwYL._SL1500_.jpg', 'Beginner', '5 Hours', NULL, 15, 2, 'test', 'test', 'test', 'test', 2, 50, 'published', '2025-05-06 05:52:03', '2025-05-09 06:45:15'),
-(9, 5, '3000', 14, '2500', 'test product new', 'Uploads/course/1746793670_WhatsApp Image 2025-01-29 at 22.48.03.jpeg', 'Beginner', '5 Hours', NULL, 50, 2, 'wewregtry', 'ewregtrhy', 'ewregtrhy', 'ewretry', 2, 50, 'published', '2025-05-09 06:57:50', '2025-05-09 07:01:55');
+INSERT INTO `courses` (`id`, `subcategory_id`, `mrp`, `category_id`, `sale_price`, `title`, `thumbnail`, `level`, `duration`, `is_live_class`, `total_lectures`, `language_id`, `overview`, `highlights`, `details`, `why_choose_us`, `created_by`, `progress`, `status`, `created_at`, `updated_at`, `is_saleable`) VALUES
+(3, 3, '500', 12, '444', 'new', 'uploads/course/1746264247_Website.jpg', 'Beginner', '5 Hours', NULL, 12, 2, '2weregtrh', 'eqwrwegtr', 'wqeawrest', 'qwewarestr', 2, 100, 'published', '2025-05-03 03:54:07', '2025-05-03 07:46:41', 1),
+(4, 2, '490', 12, '444', 'edwfregtr', 'Uploads/course/1746265810_ragenaizer_profile_qrcode.png', 'Beginner', '5 Hours', NULL, 12, 0, 'dfg', 'erty', 'qretrytuy', 'wqewretr', 2, 50, 'published', '2025-05-03 04:20:10', '2025-05-03 04:20:10', 1),
+(8, 5, '599', 14, '499', 'new course update', 'Uploads/course/1746530523_674d61cc4f639_71KVHVmSwYL._SL1500_.jpg', 'Beginner', '5 Hours', NULL, 15, 2, 'test', 'test', 'test', 'test', 2, 50, 'published', '2025-05-06 05:52:03', '2025-05-09 06:45:15', 1),
+(9, 5, '3000', 14, '2500', 'test product new', 'Uploads/course/1746793670_WhatsApp Image 2025-01-29 at 22.48.03.jpeg', 'Beginner', '5 Hours', NULL, 50, 2, '<h1><strong>wewregtry</strong></h1>', NULL, '<h2>ewregtrhy</h2>', '<h2>ewretry</h2>', 2, 50, 'published', '2025-05-09 06:57:50', '2025-05-27 00:06:01', 0);
 
 -- --------------------------------------------------------
 
@@ -226,7 +235,10 @@ CREATE TABLE `course_order` (
 
 INSERT INTO `course_order` (`order_id`, `course_id`, `price`, `created_at`, `updated_at`) VALUES
 (13, 8, 499.00, '2025-05-08 12:12:24', '2025-05-08 12:12:24'),
-(14, 4, 444.00, '2025-05-08 23:51:53', '2025-05-08 23:51:53');
+(14, 4, 444.00, '2025-05-08 23:51:53', '2025-05-08 23:51:53'),
+(15, 4, 444.00, '2025-05-09 12:09:40', '2025-05-09 12:09:40'),
+(15, 8, 499.00, '2025-05-09 12:09:40', '2025-05-09 12:09:40'),
+(15, 9, 2500.00, '2025-05-09 12:09:40', '2025-05-09 12:09:40');
 
 -- --------------------------------------------------------
 
@@ -251,8 +263,9 @@ CREATE TABLE `course_user` (
 --
 
 INSERT INTO `course_user` (`id`, `course_id`, `user_id`, `completed_lessons`, `progress`, `google_meet_link`, `google_drive_link`, `created_at`, `updated_at`) VALUES
-(2, 8, 1, 0, 0, 'https://meet.google.com/mmm-xuad-mss', NULL, '2025-05-08 12:12:24', '2025-05-08 14:44:38'),
-(3, 4, 1, 0, 0, 'https://meet.google.com/bpf-debs-fdk', NULL, '2025-05-08 23:51:53', '2025-05-09 03:13:45');
+(2, 8, 1, 0, 0, 'https://meet.google.com/mmm-xuad-mss', NULL, '2025-05-09 12:09:40', '2025-05-09 12:09:40'),
+(3, 4, 1, 0, 0, 'https://meet.google.com/bpf-debs-fdk', NULL, '2025-05-09 12:09:40', '2025-05-09 12:09:40'),
+(4, 9, 1, 0, 0, NULL, NULL, '2025-05-09 12:09:40', '2025-05-09 12:09:40');
 
 -- --------------------------------------------------------
 
@@ -276,7 +289,9 @@ CREATE TABLE `enquiries` (
 
 INSERT INTO `enquiries` (`id`, `name`, `email`, `phone`, `message`, `created_at`, `updated_at`) VALUES
 (7, 'yogesh', 'admin@gmail.com', '08650242402', 't46y57u6i7', '2025-05-05 12:39:20', '2025-05-05 12:39:20'),
-(9, 'yogesh', 'admin@gmail.com', '08650242402', 'fdgfgh', '2025-05-08 23:59:57', '2025-05-08 23:59:57');
+(9, 'yogesh', 'admin@gmail.com', '08650242402', 'fdgfgh', '2025-05-08 23:59:57', '2025-05-08 23:59:57'),
+(10, 'yogesh', 'admin@gmail.com', '08650242402', 'test contact page', '2025-05-12 03:37:56', '2025-05-12 03:37:56'),
+(11, 'yogesh', 'admin@gmail.com', '08650242402', '2', '2025-05-12 03:49:20', '2025-05-12 03:49:20');
 
 -- --------------------------------------------------------
 
@@ -470,7 +485,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (25, '2025_05_08_131140_create_course_order_table', 22),
 (26, '2025_05_08_131325_add_progress_to_course_user_table', 23),
 (27, '2025_05_09_065347_create_newsletters_table', 24),
-(28, '2025_05_09_114551_modify_user_id_in_reviews_table', 25);
+(28, '2025_05_09_114551_modify_user_id_in_reviews_table', 25),
+(29, '2025_05_27_052345_add_is_saleable_to_courses_table', 26);
 
 -- --------------------------------------------------------
 
@@ -514,7 +530,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `total`, `payment_method`, `status`, `created_at`, `updated_at`) VALUES
 (13, 1, 499.00, 'cod', 'pending', '2025-05-08 12:12:24', '2025-05-08 12:12:24'),
-(14, 1, 444.00, 'cod', 'pending', '2025-05-08 23:51:53', '2025-05-08 23:51:53');
+(14, 1, 444.00, 'cod', 'pending', '2025-05-08 23:51:53', '2025-05-08 23:51:53'),
+(15, 1, 3443.00, 'cod', 'pending', '2025-05-09 12:09:40', '2025-05-09 12:09:40');
 
 -- --------------------------------------------------------
 
@@ -589,7 +606,10 @@ CREATE TABLE `purchases` (
 
 INSERT INTO `purchases` (`id`, `user_id`, `course_id`, `course_title`, `amount`, `status`, `date`, `created_at`, `updated_at`) VALUES
 (12, 1, 8, 'new course', 499.00, 'completed', '2025-05-08', '2025-05-08 12:12:24', '2025-05-08 12:12:24'),
-(13, 1, 4, 'edwfregtr', 444.00, 'completed', '2025-05-09', '2025-05-08 23:51:53', '2025-05-08 23:51:53');
+(13, 1, 4, 'edwfregtr', 444.00, 'completed', '2025-05-09', '2025-05-08 23:51:53', '2025-05-08 23:51:53'),
+(14, 1, 9, 'test product new', 2500.00, 'completed', '2025-05-09', '2025-05-09 12:09:40', '2025-05-09 12:09:40'),
+(15, 1, 8, 'new course update', 499.00, 'completed', '2025-05-09', '2025-05-09 12:09:40', '2025-05-09 12:09:40'),
+(16, 1, 4, 'edwfregtr', 444.00, 'completed', '2025-05-09', '2025-05-09 12:09:40', '2025-05-09 12:09:40');
 
 -- --------------------------------------------------------
 
@@ -643,8 +663,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('AmJyLvnO7GAq2BmvZkOSbZW4tT4ujYjXGeSB5GFm', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiM0J2YzdweTV3eFlLZHczcHR4ZndJR3d3NG1kM1JsdEVqNFQwcm5uNCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozNToiaHR0cDovL2xvY2FsaG9zdDo4MDAwL2FkbWluL2VucXVpcnkiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozNDoiaHR0cDovL2xvY2FsaG9zdDo4MDAwL2FkbWluL2NhcmVlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1746794400),
-('OGfpkiD3j35aMRzYvU0nCSJai2PSojlTX2FN4p1E', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoib1NXWnVHVXZ2ZDF2b1hZR2UyQXh0WEowMEJuQjFzeFF2S05KOTFNbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jb3Vyc2VzLzkiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1746796681);
+('JKjzrctLS867LQipl7ffVZHOXLP4SxHlF6bkvxhT', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYXdLSlZ6MWZJT1VhdGRVV2lUQ2pGdWdWaGpMbXplOTl5NXNUSDI5WiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1748335984),
+('s27QcZS17NCZVlDCFi3oly8M5GmVzFbhCWBoksxy', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiTkNWb0U5S1RrTWxzZkdDd2hQaEU3S0xvTjhQS3NWcnk1STRHUDdENCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQyOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWRtaW4vY291cnNlcy9lZGl0LzgiO319', 1748326829);
 
 -- --------------------------------------------------------
 
@@ -695,7 +715,7 @@ CREATE TABLE `testimonials` (
 
 INSERT INTO `testimonials` (`id`, `name`, `content`, `image`, `designation`, `created_at`, `updated_at`) VALUES
 (1, 'yogesh', 'testing for this', 'uploads/testimonials/1746380676_Website (1).jpg', 'developer', '2025-05-04 12:14:36', '2025-05-04 12:14:36'),
-(2, 'test', 'ERGTHYUYF', 'uploads/testimonials/1746383169_1732878720_BANER_Perforce-week-of-gratitude-gift-2.jpg', 'wserthy', '2025-05-04 12:56:09', '2025-05-04 12:56:09');
+(2, 'test', '<p>&quot;I took the ServiceNow Certification course and am now working as a ServiceNow Developer at Accenture with a 15 LPA package. The course provided me with the skills I needed to excel in this high-demand field. Career Cracker&rsquo;s practical approach and expert trainers made all the difference.&quot;</p>', 'uploads/testimonials/1746383169_1732878720_BANER_Perforce-week-of-gratitude-gift-2.jpg', 'wserthy', '2025-05-04 12:56:09', '2025-05-12 06:52:06');
 
 -- --------------------------------------------------------
 
@@ -724,7 +744,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `contact_no`, `job_title`, `bio`, `avatar`, `cover_photo`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'yogesh kumar', 'yogeshkumar0798@gmail.com', '8650242405', 'test', 'dfrgtr', NULL, NULL, NULL, '$2y$12$4m5kItESVnc9eN5YXN204.3n0P5CGFtKCj3ws7X2Q67q7WikzBiCi', 'qVZPoCrzmKcWreYs66PE8pVj1psekB5Nyzdc7f34a0VrtUN9DA9KKxUGlMSi', '2025-05-05 00:47:35', '2025-05-09 01:12:07');
+(1, 'yogesh kumar', 'yogeshkumar0798@gmail.com', '8650242405', 'test', 'dfrgtr', 'avatars/WJuXGbuidHHcag31dW9IrYf0HgfWiS3qzrCSOcJk.jpg', 'covers/D7OJIl7gCRfz8DkqVNCtnVhvcwWhwoTt7kZhQ7wJ.jpg', NULL, '$2y$12$mWRTQa2/UB6RdtIoog5RfObrITNLd6n7O/OhS3r5/3Epn4lQI4ceO', 'cSgwhsoNQSZwQXrqBryKLz1h57pAA3f3tuxVt36QNh7skolo5Hshbg7Mhz0p', '2025-05-05 00:47:35', '2025-05-09 12:51:55');
 
 --
 -- Indexes for dumped tables
@@ -961,7 +981,7 @@ ALTER TABLE `carriers`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -979,13 +999,13 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `course_user`
 --
 ALTER TABLE `course_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `enrollments`
@@ -1027,7 +1047,7 @@ ALTER TABLE `lessons`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `newsletters`
@@ -1039,7 +1059,7 @@ ALTER TABLE `newsletters`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `order_course`
@@ -1057,7 +1077,7 @@ ALTER TABLE `otps`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `reviews`
