@@ -31,9 +31,11 @@
 
                         <!-- Slider Register Form Start -->
                         <div class="slider-register__box text-center" data-aos="fade-up" data-aos-duration="1000">
-                            <h4 class="slider-register__title">Register for A Free Account <br> To Access To
-                                <span>1200+</span> Online Courses
+                            <h4 class="slider-register__title">Kickstart your career with 100% <br> placement and high CTC
+                                in just 45 days
+                                — Register Now
                             </h4>
+
 
                             @if (session('success'))
                                 <div class="alert alert-success" role="alert">
@@ -202,36 +204,32 @@
                     <!-- Left side: Heading + Content -->
                     <div class="col-md-6 mb-4 mb-md-0">
                         <h1 class="display-6 fw-bold text-white">Proof is in the Numbers</h1>
-                        <p class="lead">A trusted tech partner for accelerating growth &
-                            future-readiness using next-gen services
-                            and solutions.</p>
+                        <p class="lead">Your success is our scorecard — transforming careers through
+                            industry-ready training and unmatched placement support.
+                        </p>
                     </div>
-
                     <!-- Right side: 2x2 Counter Grid -->
                     <div class="col-md-6">
                         <div class="row text-center g-4">
                             <!-- Top Row -->
                             <div class="col-6">
-                                <div class="counter" data-target="20" data-label="20k">0</div>
-                                <div class="counter-label">Total Clients</div>
+                                <div class="counter" data-target="20" data-label="1900+">0</div>
+                                <div class="counter-label">Students Successfully Placed</div>
                             </div>
                             <div class="col-6">
-                                <div class="counter" data-target="89" data-label="89k">0</div>
-                                <div class="counter-label">Total Clients</div>
+                                <div class="counter" data-target="89" data-label="439+">0</div>
+                                <div class="counter-label">Trusted Hiring Partners</div>
                             </div>
                             <div class="col-6">
-                                <div class="counter" data-target="208" data-label="208k">0</div>
-                                <div class="counter-label">Total Clients</div>
+                                <div class="counter" data-target="208" data-label="6000+">0</div>
+                                <div class="counter-label">IT Professionals Trained</div>
                             </div>
                             <div class="col-6">
-                                <div class="counter" data-target="100" data-label="100k">0</div>
-                                <div class="counter-label">Total Clients</div>
+                                <div class="counter" data-target="100" data-label="₹19 LPA Avg | ₹45 LPA">0</div>
+                                <div class="counter-label">Highest CTC Packages Offered</div>
                             </div>
-
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
@@ -370,7 +368,8 @@
                                                 <a
                                                     href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
                                             </h3>
-                                            {{-- <a href="#" class="course-info__instructor">{{ $course->instructor ?? '' }}</a> --}}
+                                            {{-- <a href="#" class="course-info__instructor">{{ $course->instructor ?? '' }}</a>
+                                            --}}
                                             <div class="course-info__price">
                                                 <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
                                             </div>
@@ -396,40 +395,17 @@
             </div>
         </div>
     </div>
-
     <!-- Course Section End -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Testimonial Start -->
     <div class="testimonial-section bg-color-01 section-padding-01 scene">
         <div class="container">
             <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="section-title__title-03"><span class="orange">People Say About</span> Career Cracker</h2>
+                <h2 class="section-title__title-03"><span class="orange">Student Testimonials:
+                    </span>The Career Cracker Experience</h2>
             </div>
             <div class="testimonial-active-02" data-aos="fade-up" data-aos-duration="1000">
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
                 <div class="swiper testimonial-slider">
                     <div class="swiper-wrapper">
                         @foreach ($testimonials as $testimonial)
@@ -466,10 +442,8 @@
                         @endforeach
                     </div>
                     <div class="swiper-pagination"></div>
-                    {{-- <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div> --}}
-
-
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
                 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
                 <script>
@@ -503,158 +477,14 @@
                 </script>
             </div>
             <!-- Testimonial End -->
-
         </div>
-
         <div class="testimonial-section__shape-01" data-depth="-0.5"></div>
         <div class="testimonial-section__shape-02" data-depth="0.7"></div>
         <div class="testimonial-section__shape-03" data-depth="-0.5"></div>
         <img class="testimonial-section__shape-04" data-depth="0.7"
             src="{{ asset("front/assets/images/shape/edumall-shape-01.png") }}" alt="Shape" width="179" height="178">
-
     </div>
     <!-- Testimonial End -->
-
-
-    <!-- additonal section start -->
-    <!-- Campus Life Start -->
-    <div class="campus-section section-padding-02">
-        <div class="container ">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Section Title Start -->
-                    <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                        <h2 class="section-title__title-03"><span class="orange">Campus</span> Life</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-
-            </div>
-
-            <div class="campus-wrapper scene">
-                <div class="campus">
-                    <div class="row gy-6 flex-row-reverse align-items-center">
-
-                        <div class="col-md-6">
-                            <!-- Campus Image Start -->
-                            <div class="campus-image">
-                                <div class="campus-image__image" data-aos="fade-up" data-aos-duration="1000">
-                                    <img src="{{ asset("front/assets/images/home-university-image-campus-life.jpg")}}"
-                                        alt="Campus" width="570" height="399">
-                                </div>
-                            </div>
-                            <!-- Campus Image End -->
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <!-- Campus Widget Start -->
-                            <div class="campus-widget">
-
-                                <!-- Campus Widget Item Start -->
-                                <div class="campus-widget-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="campus-widget-item__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512"
-                                            height="512">
-                                            <g fill="#000000">
-                                                <path
-                                                    d="M314,264a7,7,0,0,0-7-7H248.293a20.8,20.8,0,0,0-19.448-13.855,20.5,20.5,0,0,0-6.629,1.053l-56.1-79.035a6.993,6.993,0,1,0-11.414,8.083L211.263,252.9a20.617,20.617,0,0,0-3.106,10.872,20.837,20.837,0,0,0,20.688,20.855A20.6,20.6,0,0,0,248.293,271H307A7,7,0,0,0,314,264Zm-85.155,6.507a6.74,6.74,0,1,1,6.687-6.739A6.722,6.722,0,0,1,228.845,270.507Z">
-                                                </path>
-                                                <path
-                                                    d="M486.523,373.832a29.635,29.635,0,0,1-9.288-10.392c-6.668-13.06-14.617-35.248-14.617-66.778,0-19.295-8.146-38.852-22.267-53.659-1.072-1.124-2.351-2.2-3.351-3.25V238.1a7.029,7.029,0,0,0-.007-.871A210.431,210.431,0,0,0,318.4,73.258a209.583,209.583,0,0,0-179.114,0A210.6,210.6,0,0,0,19,263.768C19,379.9,113.135,474.376,228.844,474.376a208.7,208.7,0,0,0,135.921-50.159,28.333,28.333,0,0,0,51.2-17.021,31.025,31.025,0,0,0-.173-3.2H476.06A16.822,16.822,0,0,0,493,387.241c0-3.556-1.19-8.48-4.52-11.811A15.325,15.325,0,0,0,486.523,373.832ZM228.845,460.376C120.855,460.376,33,372.178,33,263.768A196.6,196.6,0,0,1,145.286,85.9a195.609,195.609,0,0,1,167.121,0A196.538,196.538,0,0,1,421.525,228.4a74.054,74.054,0,0,0-13.164-5.733,25.7,25.7,0,0,0-20.169-40.74,180.42,180.42,0,0,0-82.956-80.64,178.8,178.8,0,0,0-152.779,0A179.622,179.622,0,0,0,49.868,263.768c0,99.044,80.288,179.49,178.977,179.49,40.44,0,79.959-13.258,111.5-39.258h19.046a30.74,30.74,0,0,0-.172,3.175,30.122,30.122,0,0,0,.159,3.079A194.846,194.846,0,0,1,228.845,460.376ZM387.594,219.319l-.062,0a11.638,11.638,0,1,1,.123,0ZM299.127,404H316.2c-26.051,17-56.409,25.258-87.351,25.258-90.969,0-164.977-74.232-164.977-165.557A164.937,164.937,0,0,1,299.235,113.929a166.4,166.4,0,0,1,75.1,71.692,25.715,25.715,0,0,0-7.507,37.042A77.389,77.389,0,0,0,334.789,243c-14.121,14.8-22.221,34.36-22.221,53.655,0,35.693-10.235,58.866-16.337,69.5a25.226,25.226,0,0,1-7.243,7.7,15.35,15.35,0,0,0-1.85,1.57,16.53,16.53,0,0,0-4.95,11.817A16.821,16.821,0,0,0,299.127,404Zm102.838,3.2a14.373,14.373,0,1,1-28.743-.055,15.854,15.854,0,0,1,.316-3.141h28.109A16.264,16.264,0,0,1,401.965,407.2Zm74.1-17.2H299.127a2.777,2.777,0,0,1-2.939-2.759,2.689,2.689,0,0,1,.862-2,.526.526,0,0,0,.154-.089A39.029,39.029,0,0,0,308.376,373.1c6.794-11.843,18.192-37.519,18.192-76.458,0-33.116,29.034-63.272,60.937-63.328.029,0,.059,0,.089,0h.089c31.9.056,60.935,30.22,60.935,63.341,0,34.313,8.781,58.716,16.149,73.143a43.419,43.419,0,0,0,13.557,15.374,1.941,1.941,0,0,1,.17.135,4.29,4.29,0,0,1,.506,1.927A2.777,2.777,0,0,1,476.06,390Z">
-                                                </path>
-                                                <path
-                                                    d="M228,139.275a7,7,0,0,0,7-7V111.2a7,7,0,0,0-14,0v21.079A7,7,0,0,0,228,139.275Z">
-                                                </path>
-                                                <path
-                                                    d="M228,389.264a7,7,0,0,0-7,7v21.079a7,7,0,1,0,14,0V396.264A7,7,0,0,0,228,389.264Z">
-                                                </path>
-                                                <path d="M96,258H76a7,7,0,0,0,0,14H96a7,7,0,0,0,0-14Z"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="campus-widget-item__content">
-                                        <h3 class="campus-widget-item__title"><a href="#">Student Life</a></h3>
-                                        <p>This is a valuable period where you learn and grow. School life can be tiring but
-                                            it sets the foundation for your whole life.</p>
-                                    </div>
-                                </div>
-                                <!-- Campus Widget Item End -->
-
-                                <!-- Campus Widget Item Start -->
-                                <div class="campus-widget-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="campus-widget-item__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 512 512"
-                                            width="512">
-                                            <g fill="#000000">
-                                                <path
-                                                    d="m370.274 407.522a6 6 0 0 0 6-6v-74.11a6 6 0 1 0 -12 0v74.11a6 6 0 0 0 6 6z">
-                                                </path>
-                                                <path
-                                                    d="m370.274 303.443a6 6 0 0 0 6-6v-16.4a6 6 0 0 0 -12 0v16.4a6 6 0 0 0 6 6z">
-                                                </path>
-                                                <path
-                                                    d="m186.875 490.443h200a26.029 26.029 0 0 0 26-26v-265.6a6 6 0 0 0 -6-6h-21.9c1.689-2.1 3.647-4.5 6-7.34a25.9 25.9 0 0 0 -4.862-37.835 6.255 6.255 0 0 0 -.634-.393l-.12-.063a26.353 26.353 0 0 0 -20.115-4.131 27.269 27.269 0 0 0 -17.888 12.223c-1.926 3.1-3.582 5.756-5.039 8.091-7.863 12.611-9.993 16.028-17.253 29.448h-20.788l14.544-51.7c.033-.117.061-.234.087-.351a25.9 25.9 0 0 0 -22.143-31.062 5.968 5.968 0 0 0 -.744-.046h-.137a26.362 26.362 0 0 0 -19.683 5.852 27.269 27.269 0 0 0 -10 19.211l-3.813 58.1h-23.156v-73.261a26 26 0 0 0 -52 0v73.258h-20.356a6 6 0 0 0 -6 6v64.8h-16.2a73.8 73.8 0 0 0 0 147.6h16.2v53.2a26.029 26.029 0 0 0 26 25.999zm165.62-320.7c1.459-2.34 3.119-5 5-8.029a15.327 15.327 0 0 1 10.032-6.854 14.47 14.47 0 0 1 11.222 2.372 6.081 6.081 0 0 0 .634.393l.071.038a13.9 13.9 0 0 1 2.33 20.119c-5.742 6.927-9.225 11.351-12.057 15.06h-31c4.745-8.625 7.181-12.533 13.773-23.097zm-74.328-34.13a15.324 15.324 0 0 1 5.609-10.776 14.451 14.451 0 0 1 11.013-3.2 6.179 6.179 0 0 0 .744.046h.08a13.906 13.906 0 0 1 11.6 16.4l-15.4 54.764h-17.4zm-64.936-30.029a14.015 14.015 0 0 1 14 14v14h-28v-14a14.015 14.015 0 0 1 14-13.998zm-14 40h28v47.258h-28zm-26.356 59.258h228v259.6a14.016 14.016 0 0 1 -14 14h-200a14.015 14.015 0 0 1 -14-14zm-28.2 194.4a61.8 61.8 0 0 1 0-123.6h16.2v123.6z">
-                                                </path>
-                                                <path
-                                                    d="m266.141 55.185a70.449 70.449 0 0 0 -4.294 7.943c-4.148 9.253-3.387 19.9 1.988 27.79 7.937 11.649 22.547 13.806 32.268 13.806 1.107 0 2.152-.028 3.116-.074a34.047 34.047 0 0 0 27.781-16.217c6.363-10.3 7.013-23.016 1.786-34.914-4.416-10.887-12.525-19.269-24.1-24.914a73.8 73.8 0 0 0 -26.232-6.89c-9.258-.671-11.852.644-13.4 3.3a6.162 6.162 0 0 0 .2 6.441 16.4 16.4 0 0 0 1.5 1.827c1.764 1.969 5.047 5.633 4.8 9.547-.235 3.661-2.867 8.08-5.413 12.355zm6.695 12.76a61.63 61.63 0 0 1 3.614-6.62c3.124-5.243 6.665-11.187 7.075-17.744a20.083 20.083 0 0 0 -1.753-9.4c11.373 1.667 29.216 7.283 35.922 23.912.024.06.05.121.076.18 3.646 8.25 3.289 16.942-.978 23.846a22.208 22.208 0 0 1 -18.135 10.54c-11.95.558-20.788-2.46-24.9-8.5-3.049-4.467-3.416-10.645-.921-16.214z">
-                                                </path>
-                                                <path
-                                                    d="m440.868 113.229c1.244-11.683-1.949-22.9-9.492-33.341a73.749 73.749 0 0 0 -19.876-18.455c-7.847-4.959-10.752-5.025-13.372-3.414a6.163 6.163 0 0 0 -2.866 5.771 16.318 16.318 0 0 0 .458 2.32c.626 2.568 1.791 7.347-.273 10.683-1.928 3.117-6.334 5.77-10.6 8.336a70.638 70.638 0 0 0 -7.536 4.977c-8.024 6.2-12.379 15.949-11.363 25.44 1.67 15.614 16.2 24.75 24.713 28.806a34.986 34.986 0 0 0 15.054 3.46 33.922 33.922 0 0 0 17.089-4.648c10.479-6.071 17.055-16.979 18.064-29.935zm-24.075 19.557a22.2 22.2 0 0 1 -20.962.733c-10.793-5.143-17.166-11.979-17.944-19.249-.575-5.377 2.018-11 6.847-14.729a61.37 61.37 0 0 1 6.311-4.132c5.228-3.148 11.154-6.717 14.609-12.3a20.092 20.092 0 0 0 2.89-9.111c9.239 6.838 22.32 20.21 20.383 38.035-.007.066-.013.131-.018.2-.68 8.987-5.096 16.481-12.116 20.553z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="campus-widget-item__content">
-                                        <h3 class="campus-widget-item__title"><a href="#">Arts & Clubs</a></h3>
-                                        <p>This is a valuable period where you learn and grow. School life can be tiring but
-                                            it sets the foundation for your whole life.</p>
-                                    </div>
-                                </div>
-                                <!-- Campus Widget Item End -->
-
-                                <!-- Campus Widget Item Start -->
-                                <div class="campus-widget-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="campus-widget-item__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512"
-                                            height="512">
-                                            <title>basket ball</title>
-                                            <g fill="#000000">
-                                                <path
-                                                    d="M320.867,34.986A236.882,236.882,0,0,0,28.11,198.451,237.7,237.7,0,0,0,256.343,501.739,237.362,237.362,0,0,0,483.89,329.085a237.985,237.985,0,0,0-163.023-294.1ZM440.185,137.551C426.666,151.584,375.1,201.785,279.229,258c-1.06-1.795-2.107-3.6-3.119-5.427A224.328,224.328,0,0,1,273.2,40.509a224.434,224.434,0,0,1,43.821,7.938A221.334,221.334,0,0,1,440.185,137.551ZM147.692,68.08A221.133,221.133,0,0,1,255.678,39.8c.73,0,1.46.012,2.19.019a238.391,238.391,0,0,0,5.994,219.535c1.053,1.9,2.144,3.779,3.246,5.649-2.768,1.576-5.559,3.154-8.4,4.737-18.126,10.11-35.5,19.117-51.89,27.116-.309-.558-.62-1.108-.93-1.669-61.739-111.521-81.512-190.8-85.539-209.157A226.041,226.041,0,0,1,147.692,68.08ZM108.263,95.991c2.437,10.077,6.874,26.506,14.345,48.462,11.771,34.585,33.65,89.987,71.035,157.518.177.321.355.636.533.957-14.4,6.8-27.938,12.781-40.388,18l-.053-.1c-28.716-51.87-68.229-94.294-111.7-120.081A222.379,222.379,0,0,1,108.263,95.991ZM38.384,214.9C78,239.386,114.06,278.57,140.741,326.292c-12.588,5.063-23.841,9.272-33.514,12.706-26.6,9.443-45.7,14.649-54.486,16.863A222.659,222.659,0,0,1,38.384,214.9Zm22.7,157.613c-.7-1.271-1.383-2.55-2.059-3.83,14.387-3.775,45.765-12.86,88.331-30.016,22.983,45.138,35.244,92.829,35.038,136.408A221.562,221.562,0,0,1,61.079,372.516ZM196.323,479.455c1.055-46.629-11.59-97.836-35.989-146.128,12.759-5.359,26.378-11.395,40.727-18.175,51.865,90.754,99.435,144.082,118.113,163.386A220.654,220.654,0,0,1,196.323,479.455Zm167.986-20a225.586,225.586,0,0,1-30.354,14.1c-12.787-12.748-64.352-66.971-120.241-164.485,16.479-8.056,33.809-17.054,51.817-27.1,3.065-1.71,6.075-3.414,9.059-5.115A236.419,236.419,0,0,0,446.44,380.426,222.112,222.112,0,0,1,364.309,459.455Zm106.116-134.2a226.528,226.528,0,0,1-16.5,41.779,222.4,222.4,0,0,1-167.2-97.2c56.191-33,96.789-63.626,121.853-84.43,19.359-16.068,32.272-28.512,39.312-35.674q1.544,2.622,3.028,5.293A223.167,223.167,0,0,1,470.425,325.254Z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="campus-widget-item__content">
-                                        <h3 class="campus-widget-item__title"><a href="#">Sports and Fitness</a></h3>
-                                        <p>This is a valuable period where you learn and grow. School life can be tiring but
-                                            it sets the foundation for your whole life.</p>
-                                    </div>
-                                </div>
-                                <!-- Campus Widget Item End -->
-
-                            </div>
-                            <!-- Campus Widget End -->
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="campus-wrapper__shape-01" data-depth="-0.5"></div>
-                <div class="campus-wrapper__shape-02" data-depth="0.5"></div>
-            </div>
-
-        </div>
-    </div>
-    <!-- Campus Life End -->
-    <!-- additonal section end -->
-
-
-
-
     <!-- Blog Start -->
     <div class="blog-section section-padding-01">
         <div class="container ">
@@ -698,32 +528,19 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <!-- Blog End -->
-    <!-- Partners Start -->
-    <div class="partners-seaction section-padding-02">
+    {{-- <div class="partners-seaction section-padding-02">
         <div class="container">
             <div class="row gy-8 align-items-center">
                 <div class="col-lg-4 col-md-6">
-                    <!-- Section Title Start -->
                     <div class="section-title pe-xxl-2" data-aos="fade-up" data-aos-duration="1000">
                         <h2 class="section-title__title-02">We Collaborate With <span>190+</span> Leading Universities And
                             Companies</h2>
                     </div>
-                    <!-- Section Title End -->
-
                     <div class="section-btn" data-aos="fade-up" data-aos-duration="1000">
                         <a href="#" class="btn btn-light btn-hover-primary">View all Partners</a>
                     </div>
                 </div>
-
                 <div class="col-lg-8">
-
-
-
                     <div class="logo-carousel">
                         <div class="carousel-wrapper">
                             <button class="carousel-arrow left" onclick="slideLeft()">
@@ -755,16 +572,7 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-    </div>
-    <!-- Partners End -->
-
-
-    <!-- slider  -->
-
-
-
+    </div> --}}
 @endsection

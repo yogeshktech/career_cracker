@@ -1,5 +1,5 @@
 <div class="logo-carousel">
-    <h2 class="section-title__title-03">We Are Associated With</h2>
+    <h2 class="section-title__title-03">Hiring Partners</h2>
     <div class="carousel-wrapper">
         <button class="carousel-arrow left" onclick="slideLeft()">
             <i class="fas fa-angle-left"></i>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="footer-widget__info">
                             <p> <strong>Address:</strong> Mumbai India</p>
-                            <p> <Strong>Email:</Strong> info@careercracker.in, info.careercracker@gmail.com</p>
+                            <p> <Strong>Email:</Strong> info@careercracker.com</p>
                         </div>
                     </div>
                 </div>
@@ -131,10 +131,10 @@
                             <div class="footer-widget">
                                 <h4 class="footer-widget__title">Links</h4>
                                 <ul class="footer-widget__link">
-                                    <li><a href="https://dev.electolver.com/courses/20">Essential Courses</a></li>
-                                    <li><a href="https://dev.electolver.com/courses/18">Software Testing</a></li>
-                                    <li><a href="https://dev.electolver.com/courses/17">Web Development</a></li>
-                                    <li><a href="https://dev.electolver.com/courses/12">Data Analytics</a></li>
+                                    <li><a href="https://careercracker.com/courses/19">Essential Courses</a></li>
+                                    <li><a href="https://careercracker.com/courses/17">Software Testing</a></li>
+                                    <li><a href="https://careercracker.com/courses/16">Web Development</a></li>
+                                    <li><a href="https://careercracker.com/courses/11">Data Analytics</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -158,12 +158,36 @@
         <div class="container">
             <div class="copyright-wrapper text-center">
                 <ul class="footer-widget__link flex-row gap-8 justify-content-center">
-                    <li><a href="{{route('termcondition')}}">Terms of Use</a></li>
+                    <li><a href="{{route('termcondition')}}">Terms & Conditions</a></li>
                     <li><a href="{{route('privacypolicy')}}">Privacy Policy</a></li>
                 </ul>
-                <p class="footer-widget__copyright mt-0">&copy; 2025 <span> Career Cracker. </span> Designed by <a
-                        href="hyperscripts.io">Hyperscripts</a></p>
+                <p class="footer-widget__copyright mt-0">&copy; 2025 <span> Career Cracker. </span> </p>
             </div>
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=9867-679-600&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+    class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
+<style>
+    .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 120px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+
+    .my-float {
+        margin-top: 16px;
+    }
+</style>

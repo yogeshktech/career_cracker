@@ -18,7 +18,8 @@
 <section class="container  my-5">
    <div class="card  border-0">
    <div class="card-body p-5">
-      <h2 class="section-title__title-03 py-3"><span class="orange">Terms of</span> Service</h2>
+      <h2 class="section-title__title-03 py-3"><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h2>
+       
       <p>
          This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms “we,” “us,” and “our” refer to Career Cracker.
          Career Cracker offers this website, including all information, tools, and services available from this site to you, the user,

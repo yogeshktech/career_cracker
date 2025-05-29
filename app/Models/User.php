@@ -18,10 +18,18 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name', 'email', 'password', 'contact_no', 'job_title', 'bio', 'avatar', 'cover_photo',
+        'name',
+        'email',
+        'password',
+        'contact_no',
+        'job_title',
+        'bio',
+        'avatar',
+        'cover_photo',
+        'terms_accepted',
     ];
-    
-    
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -48,8 +56,8 @@ class User extends Authenticatable
     public function courses()
     {
         return $this->belongsToMany(Course::class, 'course_user')
-                    ->withPivot('progress', 'completed_lessons')
-                    ->withTimestamps();
+            ->withPivot('progress', 'completed_lessons')
+            ->withTimestamps();
     }
 
     public function purchases()

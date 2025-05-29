@@ -7,8 +7,8 @@
                         <ul class="header-top-bar-wrap__info-list">
                             <li><a href="tel:9867-679-600"><i class="fas fa-phone"></i> <span
                                         class="info-text">9867-679-600</span></a></li>
-                            <li><a href="mailto:info@careercracker.in"><i class="far fa-envelope"></i> <span
-                                        class="info-text">info@careercracker.in</span></a></li>
+                            <li><a href="mailto:info@careercracker.com"><i class="far fa-envelope"></i> <span
+                                        class="info-text">info@careercracker.com</span></a></li>
                         </ul>
                     </div>
                     <div class="header-top-bar-wrap__info d-sm-flex">
@@ -76,53 +76,58 @@
                             </div>
                             <div class="header-category-toggle__text">Category</div>
                         </a>
-                     <div class="header-category-dropdown-wrap">
-    <ul class="header-category-dropdown">
-        @forelse ($categories as $category)
-            <li>
-                <a href="{{ route('category.show', $category->id) }}">{{ $category->name }} <span class="toggle-sub-menu"></span></a>
-                @if ($category->subcategories->count())
-                    <ul class="sub-categories children">
-                        @foreach ($category->subcategories as $subcategory)
-                            <li>
-                                <a href="{{ route('subcategory.show', $subcategory->id) }}">{{ $subcategory->name }} <span class="toggle-sub-menu"></span></a>
-                                @if ($subcategory->courses->count())
-                                    <ul class="course-list children">
-                                        @foreach ($subcategory->courses as $course)
-                                            <li>
-                                                <a class="categories-course" href="{{ route('course.show', $course->id) }}">
-                                                    <div class="categories-course__thumbnail">
-                                                        <img src="{{ asset($course->thumbnail) }}" alt="{{ $category->name }} - {{ $subcategory->name }} - {{ $course->title }}"
-                                                             width="62" height="50" loading="lazy">
-                                                    </div>
-                                                    <div class="categories-course__caption">
-                                                        <h5 class="categories-course__title">{{ $course->title }}</h5>
-                                                        <div class="categories-course__price">
-                                                            <span class="categories-course__sale-price">
-                                                                ${{ number_format($course->sale_price, 2) }}
-                                                            </span>
-                                                            @if ($course->mrp > $course->sale_price)
-                                                                <span class="categories-course__regular-price">
-                                                                    ${{ number_format($course->mrp, 2) }}
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-            </li>
-        @empty
-            <li><a href="#">No categories available</a></li>
-        @endforelse
-    </ul>
-</div>
+                        <div class="header-category-dropdown-wrap">
+                            <ul class="header-category-dropdown">
+                                @forelse ($categories as $category)
+                                    <li>
+                                        <a href="{{ route('category.show', $category->id) }}">{{ $category->name }} <span
+                                                class="toggle-sub-menu"></span></a>
+                                        @if ($category->subcategories->count())
+                                            <ul class="sub-categories children">
+                                                @foreach ($category->subcategories as $subcategory)
+                                                    <li>
+                                                        <a href="{{ route('subcategory.show', $subcategory->id) }}">{{ $subcategory->name }}
+                                                            <span class="toggle-sub-menu"></span></a>
+                                                        @if ($subcategory->courses->count())
+                                                            <ul class="course-list children">
+                                                                @foreach ($subcategory->courses as $course)
+                                                                    <li>
+                                                                        <a class="categories-course"
+                                                                            href="{{ route('course.show', $course->id) }}">
+                                                                            <div class="categories-course__thumbnail">
+                                                                                <img src="{{ asset($course->thumbnail) }}"
+                                                                                    alt="{{ $category->name }} - {{ $subcategory->name }} - {{ $course->title }}"
+                                                                                    width="62" height="50" loading="lazy">
+                                                                            </div>
+                                                                            <div class="categories-course__caption">
+                                                                                <h5 class="categories-course__title">{{ $course->title }}
+                                                                                </h5>
+                                                                                <div class="categories-course__price">
+                                                                                    <span class="categories-course__sale-price">
+                                                                                        ${{ number_format($course->sale_price, 2) }}
+                                                                                    </span>
+                                                                                    @if ($course->mrp > $course->sale_price)
+                                                                                        <span class="categories-course__regular-price">
+                                                                                            ${{ number_format($course->mrp, 2) }}
+                                                                                        </span>
+                                                                                    @endif
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @empty
+                                    <li><a href="#">No categories available</a></li>
+                                @endforelse
+                            </ul>
+                        </div>
                     </div>
                     <div class="header-inner">
                         <div class="header-serach">
@@ -392,19 +397,17 @@
         </div>
     </div>
 </div>
-
 <!-- Log In Modal End -->
 
 <!-- Register Modal Start -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-register">
         <div class="modal-wrapper">
-            <button class="modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            <button class="modal-close" data-bs-dismiss="modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
-                    <p class="modal-description">Already have an account? <button type="button" data-bs-toggle="modal"
-                            data-bs-target="#loginModal" data-bs-dismiss="modal">Log in</button></p>
+                    <p class="modal-description">Already have an account? <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Log in</button></p>
                 </div>
                 <div class="modal-body">
                     <form id="registerForm" method="POST">
@@ -413,64 +416,140 @@
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Your name"
-                                        value="{{ old('name') }}" required>
-                                    <span class="text-danger" id="nameError"></span>
+                                    <input type="text" name="name" class="form-control" placeholder="Your name" value="{{ old('name') }}" required>
+                                    @error('name')
+                                        <span class="text-danger" id="nameError">{{ $message }}</span>
+                                    @else
+                                        <span class="text-danger" id="nameError"></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email"
-                                        value="{{ old('email') }}" required>
-                                    <span class="text-danger" id="emailError"></span>
+                                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
+                                    @error('email')
+                                        <span class="text-danger" id="emailError">{{ $message }}</span>
+                                    @else
+                                        <span class="text-danger" id="emailError"></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password"
-                                        required>
-                                    <span class="text-danger" id="passwordError"></span>
+                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                    @error('password')
+                                        <span class="text-danger" id="passwordError">{{ $message }}</span>
+                                    @else
+                                        <span class="text-danger" id="passwordError"></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="modal-form">
-                                    <label class="form-label">Confirm Password</label>
-                                    <input type="password" name="password_confirmation" class="form-control"
-                                        placeholder="Confirm Password" required>
+                                    <label class="form-label">Password Confirmation</label>
+                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+                                    @error('password_confirmation')
+                                        <span class="text-danger" id="password_confirmationError">{{ $message }}</span>
+                                    @else
+                                        <span class="text-danger" id="password_confirmationError"></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="modal-form">
                                     <label class="form-label">Contact No</label>
-                                    <input type="tel" name="contact_no" class="form-control"
-                                        placeholder="Enter Contact No" value="{{ old('contact_no') }}">
-                                    <span class="text-danger" id="contactNoError"></span>
+                                    <input type="tel" name="contact_no" class="form-control" placeholder="Enter Contact No" value="{{ old('contact_no') }}" required>
+                                    @error('contact_no')
+                                        <span class="text-danger" id="contact_noError">{{ $message }}</span>
+                                    @else
+                                        <span class="text-danger" id="contact_noError"></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="modal-form form-check">
-                                    <input type="checkbox" name="terms" id="privacy" required>
-                                    <label for="privacy">Accept the <a href="#">Terms and Privacy Policy</a></label>
-                                    <span class="text-danger" id="termsError"></span>
+                                    <input type="checkbox" name="show_terms" id="showTerms" class="form-check-input" required>
+                                    <label for="showTerms">View Terms and Privacy Policy</label>
+                                    @error('show_terms')
+                                        <span class="text-danger" id="show_termsError">{{ $message }}</span>
+                                    @else
+                                        <span class="text-danger" id="show_termsError"></span>
+                                    @enderror
+                                </div>
+                                <div id="termsContent" style="display: none;" class="mt-3">
+                                    <h2 class="section-title__title-03 py-3"><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h2>
+       
+                                        <p>
+                                            This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms “we,” “us,” and “our” refer to Career Cracker.
+                                            Career Cracker offers this website, including all information, tools, and services available from this site to you, the user,
+                                            conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
+                                        </p>
+                                        <p>
+                                            By visiting our site and/or purchasing something from us, you engage in our “Service” and agree to be bound by the following
+                                            terms and conditions (“Terms of Service,” “Terms”), including any additional terms and conditions and policies referenced herein
+                                            and/or available by hyperlink. These Terms of Service apply to all users of the site, including, without limitation, users who
+                                            are browsers, vendors, customers, merchants, and/or contributors of content.
+                                        </p>
+                                        <p>
+                                            Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site,
+                                            you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then
+                                            you may not access the website or use any of the services. If these Terms of Service are considered an offer, acceptance is
+                                            expressly limited to these Terms of Service.
+                                        </p>
+                                        <hr class="my-4">
+                                        <h4 class="mb-3">Prohibited Uses</h4>
+                                        <p>In addition to other prohibitions as set forth in the Terms of Service, you are prohibited from using the site or its content:</p>
+                                        <ul class="list-unstyled ms-3">
+                                            <li>• For any unlawful purpose;</li>
+                                            <li>• To solicit others to perform or participate in any unlawful acts;</li>
+                                            <li>• To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances;</li>
+                                            <li>• To infringe upon or violate our intellectual property rights or the intellectual property rights of others;</li>
+                                            <li>• To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability;</li>
+                                            <li>• To submit false or misleading information;</li>
+                                            <li>• To upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Service or any related website, other websites, or the Internet;</li>
+                                            <li>• To collect or track the personal information of others;</li>
+                                            <li>• To spam, phish, pharm, pretext, spider, crawl, or scrape;</li>
+                                            <li>• For any obscene or immoral purpose;</li>
+                                            <li>• To interfere with or circumvent the security features of the Service or any related website, other websites, or the Internet.</li>
+                                        </ul>
+                                        <p class="mt-3">
+                                            We reserve the right to terminate your use of the Service or any related website for violating any of the prohibited uses.
+                                        </p>
+                                        <hr class="my-4">
+                                        <h4 class="mb-3">Contact Information</h4>
+                                        <p> Questions about the Terms of Service should be sent to us at <b>info.careercracker@gmail.com</b> </p>
+                                    <div class="modal-form form-check">
+                                        <input type="checkbox" name="terms_accepted" id="termsAccepted" class="form-check-input" required>
+                                        <label for="termsAccepted">I agree to the Terms and Privacy Policy</label>
+                                        @error('terms_accepted')
+                                            <span class="text-danger" id="terms_acceptedError">{{ $message }}</span>
+                                        @else
+                                            <span class="text-danger" id="terms_acceptedError"></span>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="modal-form">
-                                    <button type="submit"
-                                        class="btn btn-primary btn-hover-secondary w-100">Register</button>
+                                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Register</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <form id="otpForm" style="display: none;" method="POST">
+                    <form id="otpForm" class="d-none" method="POST">
                         @csrf
                         <input type="hidden" name="email" id="otpEmail">
+                        <input type="hidden" name="terms_accepted" id="otpTermsAccepted" value="true">
                         <div class="modal-form">
                             <label class="form-label">Enter OTP</label>
                             <input type="text" name="otp" class="form-control" placeholder="Enter OTP" required>
-                            <span class="text-danger" id="otpError"></span>
+                            @error('otp')
+                                <span class="text-danger" id="otpError">{{ $message }}</span>
+                            @else
+                                <span class="text-danger" id="otpError"></span>
+                            @enderror
                         </div>
                         <div class="modal-form">
                             <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Verify OTP</button>
@@ -486,48 +565,34 @@
 </div>
 <!-- Register Modal End -->
 
-<!-- JavaScript for Form Switching and AJAX -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    // Mobile Menu Login and Register Modal Triggers
-    const mobileLoginModalTriggers = document.querySelectorAll('.offcanvas-user__login');
-    const mobileRegisterModalTriggers = document.querySelectorAll('.offcanvas-user__signup');
 
-    // Helper function to close offcanvas and show modal
-    function showModal(modalId) {
-        const offcanvasMobileMenu = document.getElementById('offcanvasMobileMenu');
-        if (offcanvasMobileMenu) {
-            bootstrap.Offcanvas.getInstance(offcanvasMobileMenu).hide();
-        }
-        const modal = new bootstrap.Modal(document.getElementById(modalId));
-        modal.show();
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Show/Hide Terms and Conditions
+    const showTermsCheckbox = document.getElementById('showTerms');
+    const termsContent = document.getElementById('termsContent');
+    if (showTermsCheckbox && termsContent) {
+        showTermsCheckbox.addEventListener('change', function () {
+            termsContent.style.display = this.checked ? 'block' : 'none';
+            const termsAcceptedCheckbox = document.getElementById('termsAccepted');
+            if (termsAcceptedCheckbox && !this.checked) {
+                termsAcceptedCheckbox.checked = false;
+            }
+        });
     }
 
-    // Add click event listeners for mobile login modal triggers
-    mobileLoginModalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function (e) {
+    // Registration Form Submission
+    const registerForm = document.getElementById('registerForm');
+    const otpForm = document.getElementById('otpForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            showModal('loginModal');
-        });
-    });
-
-    // Add click event listeners for mobile register modal triggers
-    mobileRegisterModalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function (e) {
-            e.preventDefault();
-            showModal('registerModal');
-        });
-    });
-
-    // Mobile Registration Form Submission
-    const mobileRegisterForm = document.querySelector('#offcanvasMobileMenu #registerForm');
-    if (mobileRegisterForm) {
-        mobileRegisterForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(mobileRegisterForm);
+            const formData = new FormData(registerForm);
 
             // Clear previous errors
-            ['nameError', 'emailError', 'passwordError', 'contactNoError', 'termsError'].forEach(id => {
+            ['nameError', 'emailError', 'passwordError', 'password_confirmationError', 'contact_noError', 'show_termsError', 'terms_acceptedError'].forEach(id => {
                 const errorElement = document.getElementById(id);
                 if (errorElement) errorElement.textContent = '';
             });
@@ -537,6 +602,7 @@
                 body: formData
             })
                 .then(response => {
+                    console.log('Register Response Status:', response.status);
                     if (!response.ok) {
                         return response.json().then(errorData => {
                             throw errorData;
@@ -545,42 +611,75 @@
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Register Response Data:', data);
                     // Store email for OTP form
                     const otpEmailInput = document.getElementById('otpEmail');
-                    if (otpEmailInput) otpEmailInput.value = data.email;
+                    if (otpEmailInput && data.email) {
+                        otpEmailInput.value = data.email;
+                    } else {
+                        console.warn('Email input or data.email missing');
+                    }
 
                     // Switch to OTP form
-                    const otpForm = document.getElementById('otpForm');
                     const registerModalLabel = document.getElementById('registerModalLabel');
                     const modalDescription = document.querySelector('.modal-description');
-                    if (otpForm && mobileRegisterForm) {
-                        mobileRegisterForm.classList.add('d-none');
+                    if (otpForm && registerForm) {
+                        otpForm.style.display = 'block';
                         otpForm.classList.remove('d-none');
-                        if (registerModalLabel) registerModalLabel.textContent = 'Verify OTP';
-                        if (modalDescription) modalDescription.textContent = `An OTP has been sent to ${data.email}`;
+                        registerForm.style.display = 'none';
+                        registerForm.classList.add('d-none');
+                        if (registerModalLabel) {
+                            registerModalLabel.textContent = 'Verify OTP';
+                        } else {
+                            console.warn('registerModalLabel not found');
+                        }
+                        if (modalDescription) {
+                            modalDescription.textContent = `An OTP has been sent to ${data.email || 'your email'}`;
+                        } else {
+                            console.warn('modalDescription not found');
+                        }
+                    } else {
+                        console.error('otpForm or registerForm not found');
+                        alert('Failed to display OTP form. Please try again.');
                     }
                 })
                 .catch(error => {
-                    // Handle validation errors
+                    console.error('Registration Error:', error);
                     if (error.errors) {
+                        const fieldMap = {
+                            'name': 'nameError',
+                            'email': 'emailError',
+                            'password': 'passwordError',
+                            'password_confirmation': 'password_confirmationError',
+                            'contact_no': 'contact_noError',
+                            'show_terms': 'show_termsError',
+                            'terms_accepted': 'terms_acceptedError'
+                        };
                         Object.keys(error.errors).forEach(key => {
-                            const errorElement = document.getElementById(`${key}Error`);
-                            if (errorElement) errorElement.textContent = error.errors[key][0];
+                            const errorElementId = fieldMap[key];
+                            const errorElement = document.getElementById(errorElementId);
+                            if (errorElement) {
+                                errorElement.textContent = error.errors[key][0];
+                            }
                         });
+                        if (error.errors.email && otpForm && registerForm) {
+                            otpForm.style.display = 'none';
+                            otpForm.classList.add('d-none');
+                            registerForm.style.display = 'block';
+                            registerForm.classList.remove('d-none');
+                        }
                     } else {
-                        console.error('Error:', error);
-                        alert('Registration failed. Please try again.');
+                        alert('Registration failed: ' + (error.message || 'Please try again.'));
                     }
                 });
         });
     }
 
-    // Mobile OTP Form Submission
-    const mobileOtpForm = document.querySelector('#offcanvasMobileMenu #otpForm');
-    if (mobileOtpForm) {
-        mobileOtpForm.addEventListener('submit', function (e) {
+    // OTP Form Submission
+    if (otpForm) {
+        otpForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            const formData = new FormData(mobileOtpForm);
+            const formData = new FormData(otpForm);
 
             // Clear previous OTP error
             const otpError = document.getElementById('otpError');
@@ -591,31 +690,46 @@
                 body: formData
             })
                 .then(response => {
+                    console.log('OTP Response Status:', response.status);
+                    const contentType = response.headers.get('content-type');
+                    if (!contentType || !contentType.includes('application/json')) {
+                        return response.text().then(text => {
+                            console.error('Non-JSON Response:', text.substring(0, 100));
+                            throw new Error('Received non-JSON response');
+                        });
+                    }
                     if (!response.ok) {
                         return response.json().then(errorData => {
-                            throw new Error(errorData.errors?.otp?.[0] || 'Verification failed');
+                            throw errorData;
                         });
                     }
                     return response.json();
                 })
                 .then(data => {
-                    // Close modal and redirect
+                    console.log('OTP Response Data:', data);
                     const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                    if (registerModal) registerModal.hide();
-                    // Ensure redirect is a GET request
-                    window.location.assign('{{ url("/") }}'); // Use assign instead of href for clarity
+                    if (registerModal) {
+                        registerModal.hide();
+                    } else {
+                        console.warn('registerModal not found');
+                    }
+                    window.location.assign('{{ url("/") }}');
                 })
                 .catch(error => {
-                    if (otpError) otpError.textContent = error.message;
                     console.error('OTP Verification Error:', error);
+                    if (error.errors && error.errors.otp) {
+                        if (otpError) otpError.textContent = error.errors.otp[0];
+                    } else {
+                        if (otpError) otpError.textContent = error.message || 'Verification failed. Please try again.';
+                    }
                 });
         });
     }
 
-    // Mobile Resend OTP
-    const mobileResendOtpButton = document.querySelector('#offcanvasMobileMenu #resendOtp');
-    if (mobileResendOtpButton) {
-        mobileResendOtpButton.addEventListener('click', function (e) {
+    // Resend OTP
+    const resendOtpButton = document.getElementById('resendOtp');
+    if (resendOtpButton) {
+        resendOtpButton.addEventListener('click', function (e) {
             e.preventDefault();
             const email = document.getElementById('otpEmail')?.value;
             if (!email) {
@@ -631,56 +745,53 @@
                 body: JSON.stringify({ email })
             })
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to resend OTP');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    alert(`OTP resent to ${email}`);
-                })
-                .catch(error => {
-                    alert('Failed to resend OTP. Please try again.');
-                    console.error('Resend OTP Error:', error);
-                });
-        });
-    }
-
-    // Mobile Login Form Submission
-    const mobileLoginForm = document.querySelector('#offcanvasMobileMenu form[action="{{ route("login") }}"]');
-    if (mobileLoginForm) {
-        mobileLoginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(mobileLoginForm);
-
-            // Clear previous errors
-            const errorContainer = mobileLoginForm.querySelector('.text-danger');
-            if (errorContainer) errorContainer.textContent = '';
-
-            fetch('{{ route("login") }}', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => {
+                    console.log('Resend OTP Response Status:', response.status);
                     if (!response.ok) {
                         return response.json().then(errorData => {
-                            throw new Error(errorData.message || 'Login failed');
+                            throw errorData;
                         });
                     }
                     return response.json();
                 })
                 .then(data => {
-                    // Close modal and redirect
-                    const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                    if (loginModal) loginModal.hide();
-                    // Ensure redirect is a GET request
-                    window.location.assign('{{ url("/") }}'); // Use assign instead of href for clarity
+                    console.log('Resend OTP Response Data:', data);
+                    alert(`OTP resent to ${email}`);
                 })
                 .catch(error => {
-                    if (errorContainer) errorContainer.textContent = error.message;
-                    console.error('Login Error:', error);
+                    console.error('Resend OTP Error:', error);
+                    const otpError = document.getElementById('otpError');
+                    if (otpError && error.errors?.email) {
+                        otpError.textContent = error.errors.email[0];
+                    } else {
+                        alert('Failed to resend OTP. Please try again.');
+                    }
                 });
         });
     }
 });
 </script>
+
+<style>
+.text-danger {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1.25rem; 
+}
+.modal-form {
+    margin-bottom: 1rem;
+}
+</style>
+
+
+
+<?php
+
+
+
+// Route::middleware(['web'])->group(function () {
+//     Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+//     Route::post('/register', [RegisteredUserController::class, 'store'])->name('register')->middleware('throttle:10,1');
+//     Route::post('/verify-otp', [RegisteredUserController::class, 'verifyOtp'])->name('otp.verify.post')->middleware('throttle:10,1');
+//     Route::post('/resend-otp', [RegisteredUserController::class, 'resendOtp'])->name('otp.resend')->middleware('throttle:5,1');
+// });

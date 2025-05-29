@@ -53,20 +53,26 @@
                             </div>
                             <div class="contact-info__content">
                                 <h3 class="contact-info__title">Hour of operation</h3>
-                                <p>Monday - Friday: 09:00 AM - 05:00 PM</p>
+                                <p>Monday - Friday: 10:00 AM - 05:00 PM</p>
                                 <p>Sunday & Saturday: Closed</p>
+                                 <a href="https://instagram.com/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://facebook.com/" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="contact-map section-padding-02" data-aos="fade-up" data-aos-duration="1000">
-                <iframe id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            </div>
             <div class="contact-form section-padding-01">
                 <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
-                    <h2 class="section-title__title">Fill the form below so we can get to know you and your needs better.</h2>
+                    <h2 class="section-title__title">Fill the form below so we can get to know you and your needs better.
+                    </h2>
                 </div>
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">
@@ -128,21 +134,29 @@
 
     <style>
         .contact-form__input .form-control {
-            background-color: #f5f5f5; /* Grey background */
-            border: 1px solid #ced4da; /* 1px solid border */
+            background-color: #f5f5f5;
+            /* Grey background */
+            border: 1px solid #ced4da;
+            /* 1px solid border */
             transition: background-color 0.3s, border-color 0.3s;
         }
 
         .contact-form__input .form-control:focus {
-            background-color: #ffffff; /* White background on focus */
-            border: 1px solid #ced4da; /* Maintain 1px solid border */
-            outline: none; /* Remove default outline */
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow on focus */
+            background-color: #ffffff;
+            /* White background on focus */
+            border: 1px solid #ced4da;
+            /* Maintain 1px solid border */
+            outline: none;
+            /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* Optional: subtle shadow on focus */
         }
 
         .contact-form__input textarea.form-control {
-            resize: vertical; /* Allow vertical resize only */
-            min-height: 100px; /* Minimum height for textarea */
+            resize: vertical;
+            /* Allow vertical resize only */
+            min-height: 100px;
+            /* Minimum height for textarea */
         }
     </style>
 @endsection
