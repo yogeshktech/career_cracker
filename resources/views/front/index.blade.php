@@ -33,7 +33,8 @@
                         <div class="slider-register__box text-center" data-aos="fade-up" data-aos-duration="1000">
                             <h4 class="slider-register__title">Kickstart your career with 100% <br> placement and high CTC
                                 in just 45 days
-                                — Register Now
+                                <button data-bs-toggle="modal" data-bs-target="#registerModal"
+                                        class="btn btn-link"> — Register Now</button>
                             </h4>
 
 

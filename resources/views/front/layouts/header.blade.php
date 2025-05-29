@@ -479,7 +479,7 @@
                                     @enderror
                                 </div>
                                 <div id="termsContent" style="display: none;" class="mt-3">
-                                    <h2 class="section-title__title-03 py-3"><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h2>
+                                    <h6><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h6>
        
                                         <p>
                                             This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms “we,” “us,” and “our” refer to Career Cracker.
