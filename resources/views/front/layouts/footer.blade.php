@@ -6,21 +6,131 @@
         </button>
         <div class="carousel-view" id="carouselView">
             <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/ccsu.png") }}" alt="Logo 1" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Accenture.webp") }}"
+                        alt="Logo 1" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/aktu.png") }}" alt="Logo 2" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Amazon.webp") }}"
+                        alt="Logo 2" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/ccsu.png") }}" alt="Logo 3" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Amdocs.webp") }}"
+                        alt="Logo 3" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/aktu.png") }}" alt="Logo 4" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Axis Bank.webp") }}"
+                        alt="Logo 4" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/ccsu.png") }}" alt="Logo 5" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Bain &.webp") }}"
+                        alt="Logo 5" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/aktu.png") }}" alt="Logo 6" />
+                <div class="carousel-item-custom"><img
+                        src="{{ asset("front/assets/images/logo/Bank of America.webp") }}" alt="Logo 6" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/ccsu.png") }}" alt="Logo 7" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/BCG.webp") }}"
+                        alt="Logo 7" />
                 </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/aktu.png") }}" alt="Logo 8" />
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/CapGemini.webp") }}"
+                        alt="Logo 8" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Deloitte.webp") }}"
+                        alt="Logo 9" />
+                </div>
+                <div class="carousel-item-custom"><img
+                        src="{{ asset("front/assets/images/logo/Diebold Nixdorf.webp") }}" alt="Logo 10" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Ericson.webp") }}"
+                        alt="Logo 11" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/EY.webp") }}"
+                        alt="Logo 12" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/FIS.webp") }}"
+                        alt="Logo 13" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Fujitsu.webp") }}"
+                        alt="Logo 14" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Google.webp") }}"
+                        alt="Logo 15" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/HCL.webp") }}"
+                        alt="Logo 16" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Hdfc Bank.webp") }}"
+                        alt="Logo 17" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/HSBC.webp") }}"
+                        alt="Logo 18" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/IBM.webp") }}"
+                        alt="Logo 19" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Infosys.webp") }}"
+                        alt="Logo 20" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/ITC Infotech.webp") }}"
+                        alt="Logo 21" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Jio.webp") }}"
+                        alt="Logo 22" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Kone Elevator.webp") }}"
+                        alt="Logo 23" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/KPMG.webp") }}"
+                        alt="Logo 24" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Lenovo.webp") }}"
+                        alt="Logo 25" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/lti mindtree.webp") }}"
+                        alt="Logo 26" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Mckinsey.webp") }}"
+                        alt="Logo 27" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Microsoft.webp") }}"
+                        alt="Logo 28" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Morgan Stanley.webp") }}"
+                        alt="Logo 29" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/MSCI.webp") }}"
+                        alt="Logo 30" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Nokia.webp") }}"
+                        alt="Logo 31" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Novo Nordisk.webp") }}"
+                        alt="Logo 32" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/NTT Data.webp") }}"
+                        alt="Logo 33" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Oracle.webp") }}"
+                        alt="Logo 34" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Salesforce.webp") }}"
+                        alt="Logo 35" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Sap.webp") }}"
+                        alt="Logo 36" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/tcs.webp") }}"
+                        alt="Logo 37" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Tech Mahindra.webp") }}"
+                        alt="Logo 38" />
+                </div>
+                <div class="carousel-item-custom"><img
+                        src="{{ asset("front/assets/images/logo/Thomson Reuters.webp") }}" alt="Logo 39" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Vodafone.webp") }}"
+                        alt="Logo 40" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Wipro.webp") }}"
+                        alt="Logo 41" />
+                </div>
+                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/WNS.webp") }}"
+                        alt="Logo 42" />
                 </div>
             </div>
         </div>
