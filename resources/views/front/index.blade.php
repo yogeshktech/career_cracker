@@ -509,7 +509,7 @@
                     <div class="col-xl-4 col-md-6 grid-item">
                         <div class="blog-item-02" data-aos="fade-up" data-aos-duration="1000">
                             <div class="blog-item-02__image">
-                                <a href="#"><img src="{{ asset($blog->blog_image) }}" alt="Blog" width="370" height="201"></a>
+                                <a href="blog/{{ $blog->id }}"><img src="{{ asset($blog->blog_image) }}" alt="Blog" width="370" height="201"></a>
                             </div>
                             <div class="blog-item-02__content">
                                 <div class="blog-item-02__meta">
