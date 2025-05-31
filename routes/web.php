@@ -45,10 +45,15 @@ Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear')
 Route::get('/search', [HomeController::class, 'AllsearchCourse'])->name('courses.search');
 
 // Checkout Route 
+// Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+// Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+// Route::get('/order/confirmation/{orderId}', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
+
+
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+Route::post('/checkout/verify', [CheckoutController::class, 'verifyPayment'])->name('checkout.verify');
 Route::get('/order/confirmation/{orderId}', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
-
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/courses', [HomeController::class, 'AllCourse'])->name('all_course');

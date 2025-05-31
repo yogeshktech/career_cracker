@@ -24,11 +24,10 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
-                                <h5 class="mb-1">Name:- {{ $user->name }}</h5>
+                                <h5 class="mb-1">Name: {{ $user->name }}</h5>
                                 <div class="text-muted small">
-                                    <span>Mobile No.:- {{ $user->contact_no ?? 'N/A' }}</span> •<br>
-                                    <span>Email Id:- {{ $user->email }}</span> •
-                                    
+                                    <span>Mobile No.: {{ $user->contact_no ?? 'N/A' }}</span><br>
+                                    <span>Email Id: {{ $user->email }}</span>
                                 </div>
                             </div>
                             <div class="user-avatar">
@@ -43,77 +42,30 @@
                 <!-- Payment Method Selection -->
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
-                        <h5 class="mb-4">Choose a payment method</h5>
-                        <!-- Payment Options -->
+                        <h5 class="mb-4">Payment Method</h5>
                         <div class="payment-options">
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <div class="payment-option active" data-method="cod">
+                                    <div class="payment-option active" data-method="razorpay">
                                         <div class="d-flex align-items-center">
                                             <div class="payment-icon me-3">
-                                                <i class="fa-solid fa-money-bill"></i>
+                                                <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" width="40">
                                             </div>
-                                            <div>Cash on Delivery</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Hidden Payment Options (for future use) -->
-                                <div class="col-md-4 mb-3 d-none">
-                                    <div class="payment-option" data-method="upi">
-                                        <div class="d-flex align-items-center">
-                                            <div class="payment-icon me-3">
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1200px-UPI-Logo-vector.svg.png"
-                                                    alt="UPI" width="40">
-                                            </div>
-                                            <div>UPI</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3 d-none">
-                                    <div class="payment-option" data-method="card">
-                                        <div class="d-flex align-items-center">
-                                            <div class="payment-icon me-3 text-success">
-                                                <i class="fa-solid fa-credit-card"></i>
-                                            </div>
-                                            <div>Debit / Credit Card</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3 d-none">
-                                    <div class="payment-option" data-method="netbanking">
-                                        <div class="d-flex align-items-center">
-                                            <div class="payment-icon me-3 text-danger">
-                                                <i class="fa-solid fa-building-columns"></i>
-                                            </div>
-                                            <div>Netbanking</div>
+                                            <div>Razorpay</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- COD Payment Section -->
-                        <div class="payment-section" id="cod-section">
+                        <!-- Razorpay Payment Section -->
+                        <div class="payment-section" id="razorpay-section">
                             <div class="my-4">
-                                <p class="text-center">You will pay the total amount upon delivery.</p>
-                                <form action="{{ route('checkout.process') }}" method="POST">
-                                    @csrf
-                                    <div class="d-grid mt-4">
-                                        <button type="submit" class="btn btn-primary py-2">Place Order</button>
-                                    </div>
-                                </form>
+                                <p class="text-center">Proceed with Razorpay payment.</p>
+                                <div class="d-grid mt-4">
+                                    <button type="button" class="btn btn-primary py-2" id="rzp-button">Pay Now</button>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Hidden Payment Sections (for future use) -->
-                        <div class="payment-section d-none" id="upi-section">
-                            <!-- UPI payment form (as in original) -->
-                        </div>
-                        <div class="payment-section d-none" id="card-section">
-                            <!-- Card payment form (as in original) -->
-                        </div>
-                        <div class="payment-section d-none" id="netbanking-section">
-                            <!-- Netbanking payment form (as in original) -->
                         </div>
                     </div>
                 </div>
@@ -127,7 +79,7 @@
                             <div class="d-flex mb-4">
                                 <div class="course-image me-3">
                                     @if ($item->course->thumbnail)
-                                        <img src="{{ asset('' . $item->course->thumbnail) }}"
+                                        <img src="{{ asset($item->course->thumbnail) }}"
                                              alt="{{ $item->course->title }}" class="img-fluid rounded" width="80">
                                     @else
                                         <img src="{{ asset('images/placeholder.png') }}"
@@ -173,4 +125,57 @@
             </div>
         </div>
     </main>
+
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.getElementById('rzp-button').onclick = function(e) {
+            var options = {
+                "key": "{{ config('services.razorpay.key') }}",
+                "amount": {{ $cartItems->sum(fn($item) => $item->course->sale_price) * 100 }},
+                "currency": "INR",
+                "name": "Your Company Name",
+                "description": "Course Purchase",
+                "image": "{{ asset('images/logo.png') }}",
+                "order_id": "{{ $razorpayOrder['id'] }}",
+                "handler": function(response) {
+                    // Send payment details to server
+                    fetch("{{ route('checkout.process') }}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_signature: response.razorpay_signature
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            window.location.href = data.redirect;
+                        } else {
+                            alert(data.error);
+                        }
+                    })
+                    .catch(error => {
+                        alert('Payment processing failed. Please try again.');
+                    });
+                },
+                "prefill": {
+                    "name": "{{ $user->name }}",
+                    "email": "{{ $user->email }}",
+                    "contact": "{{ $user->contact_no ?? '' }}"
+                },
+                "theme": {
+                    "color": "#28a745"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+            e.preventDefault();
+        }
+    </script>
 @endsection
