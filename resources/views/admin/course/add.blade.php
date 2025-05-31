@@ -148,17 +148,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="duration" class="h5 mb-8 fw-semibold font-heading">Duration</label>
-                                    <select id="duration" name="duration" class="form-select py-9 placeholder-13 text-15">
-                                        <option value="" disabled selected>Select duration</option>
-                                        <option value="5 Hours" {{ old('duration') == '5 Hours' ? 'selected' : '' }}>5 Hours
-                                        </option>
-                                        <option value="10 Hours" {{ old('duration') == '10 Hours' ? 'selected' : '' }}>10
-                                            Hours</option>
-                                        <option value="15 Hours" {{ old('duration') == '15 Hours' ? 'selected' : '' }}>15
-                                            Hours</option>
-                                        <option value="20 Hours" {{ old('duration') == '20 Hours' ? 'selected' : '' }}>20
-                                            Hours</option>
-                                    </select>
+                                        <input type="text" name="duration" class="form-control py-9 placeholder-13 text-15" placeholder="Duration" required>
                                     @error('duration')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

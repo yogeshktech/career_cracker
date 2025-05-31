@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,7 +17,9 @@
     <!-- Font CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/vendor/fontawesome-all.min.css') }}">
@@ -34,11 +37,11 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/plugins/select2.min.css') }}">
 
     @if (session('status'))
-    <div class="alert alert-success">{{ session('status') }}</div>
-@endif
+        <div class="alert alert-success">{{ session('status') }}</div>
+    @endif
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
@@ -52,40 +55,39 @@
     @yield('styles')
 </head>
 <style>
-   
-.header-top-bar-wrap__info-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1rem;
-}
+    .header-top-bar-wrap__info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 1rem;
+    }
 
-.header-top-bar-wrap__info-list li {
-    font-size: 1rem;
-}
+    .header-top-bar-wrap__info-list li {
+        font-size: 1rem;
+    }
 
-.btn-link {
-    color: #007bff;
-    text-decoration: none;
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-}
+    .btn-link {
+        color: #007bff;
+        text-decoration: none;
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+    }
 
-.btn-link:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
+    .btn-link:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
 
-.user-name {
-    color: #333;
-    font-weight: 500;
-}
-
+    .user-name {
+        color: #333;
+        font-weight: 500;
+    }
 </style>
+
 <body>
 
 
@@ -131,5 +133,23 @@
 
     <!-- Additional Scripts -->
     @yield('scripts')
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
 </body>
+
 </html>

@@ -10,9 +10,7 @@
                     <li class="breadcrumb-item active">{{$blog->title}}</li>
                 </ul>
             </div>
-            <div class="page-banner__caption text-center">
-                <h2 class="page-banner__main-title">Blog Details</h2>
-            </div>
+            
         </div>
     </div>
 </div>

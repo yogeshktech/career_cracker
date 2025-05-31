@@ -1,195 +1,76 @@
-<div class="logo-carousel">
-    <h2 class="section-title__title-03">Hiring Partners</h2>
-    <div class="carousel-wrapper">
-        <button class="carousel-arrow left" onclick="slideLeft()">
+<!-- Hiring Partners Carousel -->
+<div class="hiring-logo-carousel">
+    <h2 class="hiring-section-title__title-03">Hiring Partners</h2>
+    <div class="hiring-carousel-wrapper">
+        <button class="hiring-carousel-arrow left" aria-label="Slide Left">
             <i class="fas fa-angle-left"></i>
         </button>
-        <div class="carousel-view" id="carouselView">
-            <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Accenture.webp") }}"
-                        alt="Logo 1" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Amazon.webp") }}"
-                        alt="Logo 2" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Amdocs.webp") }}"
-                        alt="Logo 3" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Axis Bank.webp") }}"
-                        alt="Logo 4" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Bain &.webp") }}"
-                        alt="Logo 5" />
-                </div>
-                <div class="carousel-item-custom"><img
-                        src="{{ asset("front/assets/images/logo/Bank of America.webp") }}" alt="Logo 6" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/BCG.webp") }}"
-                        alt="Logo 7" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/CapGemini.webp") }}"
-                        alt="Logo 8" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Deloitte.webp") }}"
-                        alt="Logo 9" />
-                </div>
-                <div class="carousel-item-custom"><img
-                        src="{{ asset("front/assets/images/logo/Diebold Nixdorf.webp") }}" alt="Logo 10" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Ericson.webp") }}"
-                        alt="Logo 11" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/EY.webp") }}"
-                        alt="Logo 12" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/FIS.webp") }}"
-                        alt="Logo 13" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Fujitsu.webp") }}"
-                        alt="Logo 14" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Google.webp") }}"
-                        alt="Logo 15" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/HCL.webp") }}"
-                        alt="Logo 16" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Hdfc Bank.webp") }}"
-                        alt="Logo 17" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/HSBC.webp") }}"
-                        alt="Logo 18" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/IBM.webp") }}"
-                        alt="Logo 19" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Infosys.webp") }}"
-                        alt="Logo 20" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/ITC Infotech.webp") }}"
-                        alt="Logo 21" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Jio.webp") }}"
-                        alt="Logo 22" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Kone Elevator.webp") }}"
-                        alt="Logo 23" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/KPMG.webp") }}"
-                        alt="Logo 24" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Lenovo.webp") }}"
-                        alt="Logo 25" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/lti mindtree.webp") }}"
-                        alt="Logo 26" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Mckinsey.webp") }}"
-                        alt="Logo 27" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Microsoft.webp") }}"
-                        alt="Logo 28" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Morgan Stanley.webp") }}"
-                        alt="Logo 29" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/MSCI.webp") }}"
-                        alt="Logo 30" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Nokia.webp") }}"
-                        alt="Logo 31" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Novo Nordisk.webp") }}"
-                        alt="Logo 32" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/NTT Data.webp") }}"
-                        alt="Logo 33" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Oracle.webp") }}"
-                        alt="Logo 34" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Salesforce.webp") }}"
-                        alt="Logo 35" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Sap.webp") }}"
-                        alt="Logo 36" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/tcs.webp") }}"
-                        alt="Logo 37" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Tech Mahindra.webp") }}"
-                        alt="Logo 38" />
-                </div>
-                <div class="carousel-item-custom"><img
-                        src="{{ asset("front/assets/images/logo/Thomson Reuters.webp") }}" alt="Logo 39" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Vodafone.webp") }}"
-                        alt="Logo 40" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/Wipro.webp") }}"
-                        alt="Logo 41" />
-                </div>
-                <div class="carousel-item-custom"><img src="{{ asset("front/assets/images/logo/WNS.webp") }}"
-                        alt="Logo 42" />
-                </div>
+        <div class="hiring-carousel-view" id="hiringCarouselView">
+            <div class="hiring-carousel-track" id="hiringCarouselTrack">
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Accenture.webp') }}" alt="Accenture Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Amazon.webp') }}" alt="Amazon Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Amdocs.webp') }}" alt="Amdocs Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Axis Bank.webp') }}" alt="Axis Bank Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Bain &.webp') }}" alt="Bain & Company Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Bank of America.webp') }}" alt="Bank of America Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/BCG.webp') }}" alt="BCG Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/CapGemini.webp') }}" alt="CapGemini Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Deloitte.webp') }}" alt="Deloitte Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Diebold Nixdorf.webp') }}" alt="Diebold Nixdorf Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Ericson.webp') }}" alt="Ericsson Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/EY.webp') }}" alt="EY Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/FIS.webp') }}" alt="FIS Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Fujitsu.webp') }}" alt="Fujitsu Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Google.webp') }}" alt="Google Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/HCL.webp') }}" alt="HCL Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Hdfc Bank.webp') }}" alt="HDFC Bank Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/HSBC.webp') }}" alt="HSBC Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/IBM.webp') }}" alt="IBM Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Infosys.webp') }}" alt="Infosys Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/ITC Infotech.webp') }}" alt="ITC Infotech Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Jio.webp') }}" alt="Jio Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Kone Elevator.webp') }}" alt="Kone Elevator Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/KPMG.webp') }}" alt="KPMG Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Lenovo.webp') }}" alt="Lenovo Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/lti mindtree.webp') }}" alt="LTI Mindtree Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Mckinsey.webp') }}" alt="McKinsey Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Microsoft.webp') }}" alt="Microsoft Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Morgan Stanley.webp') }}" alt="Morgan Stanley Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/MSCI.webp') }}" alt="MSCI Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Nokia.webp') }}" alt="Nokia Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Novo Nordisk.webp') }}" alt="Novo Nordisk Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/NTT Data.webp') }}" alt="NTT Data Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Oracle.webp') }}" alt="Oracle Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Salesforce.webp') }}" alt="Salesforce Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Sap.webp') }}" alt="SAP Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/tcs.webp') }}" alt="TCS Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Tech Mahindra.webp') }}" alt="Tech Mahindra Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Thomson Reuters.webp') }}" alt="Thomson Reuters Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Vodafone.webp') }}" alt="Vodafone Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/Wipro.webp') }}" alt="Wipro Logo" /></div>
+                <div class="hiring-carousel-item-custom"><img src="{{ asset('front/assets/images/logo/WNS.webp') }}" alt="WNS Logo" /></div>
             </div>
         </div>
-        <button class="carousel-arrow right" onclick="slideRight()">
+        <button class="hiring-carousel-arrow right" aria-label="Slide Right">
             <i class="fas fa-angle-right"></i>
         </button>
     </div>
 </div>
-<style>
-    .carousel-arrow {
-        background: none;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        color: black;
-        /* Initial arrow color */
-        padding: 10px;
-        border-radius: 50%;
-        /* Make the button circular */
-        transition: all 0.3s ease;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
-
-    .carousel-arrow:hover {
-        background-color: #007BFF;
-        /* Hover background: blue */
-        color: white;
-        /* Hover icon color: white */
-    }
-</style>
-
+<!-- Newsletter Section -->
 <div class="section-padding-0">
     <div class="">
         <div class="newsletter-section scene">
             <div class="newsletter-wrapper d-flex">
                 <div class="newsletter__content">
-                    <h3 class="newsletter__title"> <span class="orange">Subscribe Our</span> <span
-                            class="text-white">Newsletter</span> </h3>
-                    <p class=" text-white">Get the latest updates, tips, and exclusive <br> offers straight
-                        to your inbox.
-                    </p>
+                    <h3 class="newsletter__title"> <span class="orange">Subscribe Our</span> <span class="text-white">Newsletter</span> </h3>
+                    <p class="text-white">Get the latest updates, tips, and exclusive <br> offers straight to your inbox.</p>
                 </div>
                 <div class="newsletter__form">
-                    @if (session('success'))
-                        <div class="alert alert-success">{{ session('success') }}</div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger">{{ session('error') }}</div>
-                    @endif
                     <form action="{{ route('news_letter') }}" method="post">
                         @csrf
                         <input type="text" name="email" placeholder="Your e-mail" value="{{ old('email') }}">
                         <button class="btn btn-orange btn-hover-primary">Subscribe</button>
-
                         @error('email')
                             <div class="text-danger mt-1">{{ $message }}</div>
                         @enderror
@@ -203,24 +84,21 @@
         </div>
     </div>
 </div>
+
+<!-- Footer Section -->
 <div class="footer-section">
     <div class="footer-widget-area section-padding-01">
         <div class="container">
             <div class="row gy-6">
                 <div class="col-lg-4">
                     <div class="footer-widget">
-                        <a href="{{url('/')}}" class="footer-widget__logo"><img
-                                src="{{ asset("front/assets/images/careercracker.png")}}" alt="Logo" width="150"
-                                height="32"></a>
+                        <a href="{{ url('/') }}" class="footer-widget__logo"><img src="{{ asset('front/assets/images/careercracker.png') }}" alt="Career Cracker Logo" width="150" height="32"></a>
                         <div class="footer-widget__info">
-                            <span class="title">We understand that each student's situation and needs
-                                are unique to them. Tell us more about what you're looking
-                                for, and we will get back to you soon.
-                            </span>
+                            <span class="title">We understand that each student's situation and needs are unique to them. Tell us more about what you're looking for, and we will get back to you soon.</span>
                         </div>
                         <div class="footer-widget__info">
-                            <p> <strong>Address:</strong> Mumbai India</p>
-                            <p> <Strong>Email:</Strong> info@careercracker.com</p>
+                            <p><strong>Address:</strong> Mumbai, India</p>
+                            <p><strong>Email:</strong> info@careercracker.com</p>
                         </div>
                     </div>
                 </div>
@@ -230,10 +108,10 @@
                             <div class="footer-widget">
                                 <h4 class="footer-widget__title">Quick Links</h4>
                                 <ul class="footer-widget__link">
-                                    <li><a href="{{url('/')}}">Home</a></li>
-                                    <li><a href="{{route('about')}}">About</a></li>
-                                    <li><a href="{{route('all_course')}}">Courses</a></li>
-                                    <li><a href="{{route('blogs')}}">Blogs</a></li>
+                                    <li><a href="{{ url('/') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
+                                    <li><a href="{{ route('all_course') }}">Courses</a></li>
+                                    <li><a href="{{ route('blogs') }}">Blogs</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -252,15 +130,14 @@
                             <div class="footer-widget">
                                 <h4 class="footer-widget__title">Support</h4>
                                 <ul class="footer-widget__link">
-                                    <li><a href="{{route('faqs')}}">FAQs</a></li>
-                                    <li><a href="{{route('career')}}">Career</a></li>
-                                    <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                    <li><a href="{{ route('faqs') }}">FAQs</a></li>
+                                    <li><a href="{{ route('career') }}">Career</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -268,36 +145,189 @@
         <div class="container">
             <div class="copyright-wrapper text-center">
                 <ul class="footer-widget__link flex-row gap-8 justify-content-center">
-                    <li><a href="{{route('termcondition')}}">Terms & Conditions</a></li>
-                    <li><a href="{{route('privacypolicy')}}">Privacy Policy</a></li>
+                    <li><a href="{{ route('termcondition') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ route('privacypolicy') }}">Privacy Policy</a></li>
                 </ul>
-                <p class="footer-widget__copyright mt-0">&copy; 2025 <span> Career Cracker. </span> </p>
+                <p class="footer-widget__copyright mt-0">© 2025 <span>Career Cracker.</span></p>
             </div>
         </div>
     </div>
 </div>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=9867-679-600&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
-    class="float" target="_blank">
+
+<!-- WhatsApp Floating Button -->
+<a href="https://api.whatsapp.com/send?phone=9867679600&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
     <i class="fa fa-whatsapp my-float"></i>
 </a>
+
+<!-- Font Awesome CDN (Single Inclusion) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
-    .float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 120px;
-        right: 40px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
+/* Hiring Partners Carousel Styles */
+.hiring-logo-carousel {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hiring-section-title__title-03 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hiring-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.hiring-carousel-view {
+    overflow: hidden;
+    width: 100%;
+}
+
+.hiring-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hiring-carousel-item-custom {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 10px;
+}
+
+.hiring-carousel-item-custom img {
+    width: 65%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hiring-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.hiring-carousel-arrow:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.hiring-carousel-arrow.left {
+    left: 10px;
+}
+
+.hiring-carousel-arrow.right {
+    right: 10px;
+}
+
+.hiring-carousel-arrow i {
+    font-size: 1.5rem;
+}
+
+/* WhatsApp Floating Button Styles */
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 120px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.my-float {
+    margin-top: 16px;
+}
+</style>
+
+<script>
+// Encapsulate carousel logic in an IIFE to prevent global variable conflicts
+(function () {
+    // Unique variable names with proper scoping
+    const hiringCurrentIndex = 0;
+    let hiringAutoSlideInterval = null;
+    const hiringSlideWidth = 220; // Width of each item (200px + 10px margin on each side)
+    const hiringTotalItems = document.querySelectorAll('.hiring-carousel-item-custom').length;
+    const hiringCarouselTrack = document.getElementById('hiringCarouselTrack');
+    const hiringItemsPerView = 5; // Number of items visible at once
+
+    // Initialize index
+    let currentIndex = hiringCurrentIndex;
+
+    // Attach event listeners to buttons
+    document.querySelector('.hiring-carousel-arrow.left').addEventListener('click', slideLeft);
+    document.querySelector('.hiring-carousel-arrow.right').addEventListener('click', slideRight);
+
+    function slideLeft() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+            resetAutoSlide();
+        }
     }
 
-    .my-float {
-        margin-top: 16px;
+    function slideRight() {
+        if (currentIndex < hiringTotalItems - hiringItemsPerView) {
+            currentIndex++;
+            updateCarousel();
+            resetAutoSlide();
+        }
     }
-</style>
+
+    function updateCarousel() {
+        const translateX = -currentIndex * hiringSlideWidth;
+        hiringCarouselTrack.style.transform = `translateX(${translateX}px)`;
+    }
+
+    function autoSlide() {
+        if (currentIndex < hiringTotalItems - hiringItemsPerView) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to start
+        }
+        updateCarousel();
+    }
+
+    function startAutoSlide() {
+        hiringAutoSlideInterval = setInterval(autoSlide, 3000); // Slide every 3 seconds
+    }
+
+    function resetAutoSlide() {
+        clearInterval(hiringAutoSlideInterval);
+        startAutoSlide();
+    }
+
+    // Start auto-sliding on page load
+    startAutoSlide();
+
+    // Pause auto-slide on hover
+    const carouselWrapper = document.querySelector('.hiring-carousel-wrapper');
+    carouselWrapper.addEventListener('mouseenter', () => {
+        clearInterval(hiringAutoSlideInterval);
+    });
+
+    carouselWrapper.addEventListener('mouseleave', () => {
+        startAutoSlide();
+    });
+})();
+</script>

@@ -38,16 +38,7 @@
                             </h4>
 
 
-                            @if (session('success'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
-                            @if (session('error'))
-                                <div class="alert alert-danger" role="alert">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
+                            
                             <form action="{{ route('enquiry_send') }}" method="POST">
                                 @csrf
                                 <div class="slider-register__form">
@@ -226,7 +217,7 @@
                                 <div class="counter-label">IT Professionals Trained</div>
                             </div>
                             <div class="col-6">
-                                <div class="counter" data-target="100" data-label="₹19 LPA Avg | ₹45 LPA">0</div>
+                                <div class="counter" data-target="100" data-label="₹19 LPA Avg">0</div>
                                 <div class="counter-label">Highest CTC Packages Offered</div>
                             </div>
                         </div>
@@ -518,7 +509,7 @@
                                     </span>
                                 </div>
                                 <h3 class="blog-item-02__title"><a href="#">{{ $blog->title }}</a></h3>
-                                <p>{{ Str::words(strip_tags($blog->description), 20, '...') }}</p>
+                                <p>{!! Str::words(strip_tags($blog->description), 20, '...') !!}</p>
                                 <a class="blog-item-02__more btn btn-light btn-hover-white" href="blog/{{ $blog->id }}">
                                     Read More <i class="fas fa-long-arrow-right"></i>
                                 </a>

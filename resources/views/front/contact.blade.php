@@ -55,11 +55,11 @@
                                 <h3 class="contact-info__title">Hour of operation</h3>
                                 <p>Monday - Friday: 10:00 AM - 05:00 PM</p>
                                 <p>Sunday & Saturday: Closed</p>
-                                 <a href="https://instagram.com/" target="_blank">
+                                 <a href="https://www.instagram.com/careercracker_academy?igsh=MXJ0NWhvN2xtMms5YQ%3D%3D&utm_source=qr" target="_blank">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://facebook.com/" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
+                                <a href="https://www.linkedin.com/company/careercracker-academy/" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
                                 </a>
                                 <a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank">
                                     <i class="fab fa-telegram-plane"></i>
