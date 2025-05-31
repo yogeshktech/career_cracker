@@ -154,13 +154,13 @@
     </div>
 </div>
 
-<!-- WhatsApp Floating Button -->
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <a href="https://api.whatsapp.com/send?phone=9867679600&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-    <i class="fa fa-whatsapp my-float"></i>
+<i class="fa fa-whatsapp my-float"></i>
 </a>
 
-<!-- Font Awesome CDN (Single Inclusion) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
 /* Hiring Partners Carousel Styles */
@@ -257,6 +257,25 @@
 
 .my-float {
     margin-top: 16px;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:100px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
 }
 </style>
 
