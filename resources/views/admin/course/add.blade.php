@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="duration" class="h5 mb-8 fw-semibold font-heading">Duration</label>
-                                        <input type="text" name="duration" class="form-control py-9 placeholder-13 text-15" placeholder="Duration" required>
+                                        <input type="text" name="duration" class="form-control py-9 placeholder-13 text-15" value="{{old('duration')}}" placeholder="Duration" required>
                                     @error('duration')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

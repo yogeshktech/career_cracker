@@ -31,7 +31,7 @@ class CourseController extends Controller
     {
         $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'subcategory_id' => 'required|exists:subcategories,id',
+            'subcategory_id' => 'nullable|exists:subcategories,id',
             'title' => 'required|max:100',
             'mrp' => 'required|numeric|min:0',
             'sale_price' => 'required|numeric|min:0',
@@ -106,7 +106,7 @@ class CourseController extends Controller
 
         $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'subcategory_id' => 'required|exists:subcategories,id',
+            'subcategory_id' => 'nullable|exists:subcategories,id',
             'title' => 'required|max:100',
             'mrp' => 'required|numeric|min:0',
             'sale_price' => 'required|numeric|min:0',
