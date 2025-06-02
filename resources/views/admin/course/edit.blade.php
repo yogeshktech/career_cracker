@@ -93,7 +93,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="subcategory_id" class="h5 mb-8 fw-semibold font-heading">
+                                    {{-- <label for="subcategory_id" class="h5 mb-8 fw-semibold font-heading">
                                         Course Subcategory <span class="text-13 text-gray-400 fw-medium">(Required)</span>
                                     </label>
                                     <select id="subcategory_id" name="subcategory_id" class="form-select py-9 placeholder-13 text-15" required>
@@ -110,7 +110,7 @@
                                     </select>
                                     @error('subcategory_id')
                                         <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    @enderror --}}
                                 </div>
 
                                 <div class="col-sm-6">
