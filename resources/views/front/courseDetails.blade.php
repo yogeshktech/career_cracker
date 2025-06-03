@@ -71,7 +71,7 @@
     <div class="tutor-course-main-content section-padding-01 sticky-parent">
         <div class="container custom-container">
             <div class="row gy-10">
-                <div class="col-lg-5">
+                <div class="col-lg-8">
                     <div class="tutor-course-main-segment">
                         <div class="tutor-course-segment">
                             <h4 class="tutor-course-segment__title" id="overview">Overview</h4>
@@ -101,7 +101,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-4">
                     <div class="sidebar-stic">
                         <div class="tutor-course-sidebar">
                             <div class="tutor-course-price-preview">
@@ -169,80 +169,80 @@
                                     @endif
                                 </div>
                                 <section class="reviews">
-                            <h2 class="section-title">Customer Reviews</h2>
-                            <div class="review-container">
-                                @forelse ($course->reviews as $review)
-                                    <div class="review-box">
-                                        <div class="review-header">
-                                            <strong>{{ $review->name }}</strong>
-                                            <div class="stars">
-                                                {!! str_repeat('★', $review->rating) . str_repeat('☆', 5 - $review->rating) !!}
+                                    <h2 class="section-title">Customer Reviews</h2>
+                                    <div class="review-container">
+                                        @forelse ($course->reviews as $review)
+                                            <div class="review-box">
+                                                <div class="review-header">
+                                                    <strong>{{ $review->name }}</strong>
+                                                    <div class="stars">
+                                                        {!! str_repeat('★', $review->rating) . str_repeat('☆', 5 - $review->rating) !!}
+                                                    </div>
+                                                </div>
+                                                <p class="review-text">{{ $review->comment }}</p>
                                             </div>
-                                        </div>
-                                        <p class="review-text">{{ $review->comment }}</p>
+                                        @empty
+                                            <p class="text-center">No reviews yet. Be the first to review this course!</p>
+                                        @endforelse
                                     </div>
-                                @empty
-                                    <p class="text-center">No reviews yet. Be the first to review this course!</p>
-                                @endforelse
-                            </div>
-                        </section>
-                        <style>
-                            .reviews {
-                        max-width: 800px;
-                        margin: 40px auto;
-                        padding: 20px;
-                        font-family: Arial, sans-serif;
-                        }
+                                </section>
+                                <style>
+                                    .reviews {
+                                max-width: 800px;
+                                margin: 40px auto;
+                                padding: 20px;
+                                font-family: Arial, sans-serif;
+                                }
 
-                        .section-title {
-                        font-size: 28px;
-                        text-align: center;
-                        margin-bottom: 20px;
-                        }
+                                .section-title {
+                                font-size: 28px;
+                                text-align: center;
+                                margin-bottom: 20px;
+                                }
 
-                        .review-container {
-                        max-height: 300px; /* Set your desired scroll height */
-                        overflow-y: auto;
-                        padding-right: 10px; /* space for scrollbar */
-                        }
+                                .review-container {
+                                max-height: 456px; /* Set your desired scroll height */
+                                overflow-y: auto;
+                                padding-right: 10px; /* space for scrollbar */
+                                }
 
-                        .review-box {
-                        background: #f9f9f9;
-                        border-left: 5px solid #4CAF50;
-                        padding: 20px;
-                        margin-bottom: 20px;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                        }
+                                .review-box {
+                                background: #f9f9f9;
+                                border-left: 5px solid #4CAF50;
+                                padding: 20px;
+                                margin-bottom: 20px;
+                                border-radius: 8px;
+                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                                }
 
-                        .review-header {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 10px;
-                        }
+                                .review-header {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-bottom: 10px;
+                                }
 
-                        .stars {
-                        color: #FFD700;
-                        font-size: 18px;
-                        }
+                                .stars {
+                                color: #FFD700;
+                                font-size: 18px;
+                                }
 
-                        .review-text {
-                        font-size: 16px;
-                        line-height: 1.5;
-                        color: #333;
-                        }
+                                .review-text {
+                                font-size: 16px;
+                                line-height: 1.5;
+                                color: #333;
+                                }
 
-                        /* Optional: nice scrollbar styling (Webkit-based browsers only) */
-                        .review-container::-webkit-scrollbar {
-                        width: 8px;
-                        }
-                        .review-container::-webkit-scrollbar-thumb {
-                        background-color: #ccc;
-                        border-radius: 4px;
-                        }
+                                /* Optional: nice scrollbar styling (Webkit-based browsers only) */
+                                .review-container::-webkit-scrollbar {
+                                width: 8px;
+                                }
+                                .review-container::-webkit-scrollbar-thumb {
+                                background-color: #ccc;
+                                border-radius: 4px;
+                                }
 
-                        </style>
+                                </style>
                             </div>
                         </div>
                     </div>
