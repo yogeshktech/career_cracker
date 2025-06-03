@@ -360,21 +360,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Log In Modal Start -->
-<div class="modal fade" id="loginModal">
-      <div class="modal-dialog modal-dialog-centered modal-login">
-
-         <!-- Modal Wrapper Start -->
-         <div class="modal-wrapper">
-            <button class="modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
-
-            <!-- Modal Content Start -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-login">
+        <div class="modal-wrapper">
+            <button class="modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
             <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title">Login</h5>
-                  <p class="modal-description">Don't have an account yet? <button data-bs-toggle="modal" data-bs-target="#registerModal">Sign up for free</button></p>
-               </div>
-               <div class="modal-body">
-                   <form action="{{ route('login') }}" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <p class="modal-description">Don't have an account yet? <button type="button" data-bs-toggle="modal"
+                            data-bs-target="#registerModal" data-bs-dismiss="modal">Sign up for free</button></p>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('login') }}" method="POST">
                         @csrf
                         <div class="modal-form">
                             <label class="form-label">Email</label>
@@ -398,21 +395,15 @@
                             <a class="modal-form__link" href="{{ route('password.request') }}">Forgot your password?</a>
                         </div>
                     </form>
-
-                 
-               </div>
+                </div>
             </div>
-            <!-- Modal Content End -->
-
-         </div>
-         <!-- Modal Wrapper End -->
-
-      </div>
-   </div>
+        </div>
+    </div>
+</div>
 <!-- Log In Modal End -->
 
 <!-- Register Modal Start -->
-{{-- <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-register">
         <div class="modal-wrapper">
             <button class="modal-close" data-bs-dismiss="modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
@@ -574,179 +565,7 @@
             </div>
         </div>
     </div>
-</div> --}}
-
-<div class="modal fade" id="registerModal">
-      <div class="modal-dialog modal-dialog-centered modal-register">
-
-         <!-- Modal Wrapper Start -->
-         <div class="modal-wrapper">
-            <button class="modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
-
-            <!-- Modal Content Start -->
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title">Sign Up</h5>
-                  <p class="modal-description">Already have an account? <button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></p>
-               </div>
-               <div class="modal-body">
-                    <form id="registerForm" method="POST">
-                        @csrf
-                        <div class="row gy-5">
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Your name" value="{{ old('name') }}" required>
-                                    @error('name')
-                                        <span class="text-danger" id="nameError">{{ $message }}</span>
-                                    @else
-                                        <span class="text-danger" id="nameError"></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
-                                    @error('email')
-                                        <span class="text-danger" id="emailError">{{ $message }}</span>
-                                    @else
-                                        <span class="text-danger" id="emailError"></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
-                                    @error('password')
-                                        <span class="text-danger" id="passwordError">{{ $message }}</span>
-                                    @else
-                                        <span class="text-danger" id="passwordError"></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-form">
-                                    <label class="form-label">Password Confirmation</label>
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
-                                    @error('password_confirmation')
-                                        <span class="text-danger" id="password_confirmationError">{{ $message }}</span>
-                                    @else
-                                        <span class="text-danger" id="password_confirmationError"></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="modal-form">
-                                    <label class="form-label">Contact No</label>
-                                    <input type="tel" name="contact_no" class="form-control" placeholder="Enter Contact No" value="{{ old('contact_no') }}" required>
-                                    @error('contact_no')
-                                        <span class="text-danger" id="contact_noError">{{ $message }}</span>
-                                    @else
-                                        <span class="text-danger" id="contact_noError"></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="modal-form form-check">
-                                    <input type="checkbox" name="show_terms" id="showTerms" class="form-check-input" required>
-                                    <label for="showTerms">View Terms and Privacy Policy</label>
-                                    @error('show_terms')
-                                        <span class="text-danger" id="show_termsError">{{ $message }}</span>
-                                    @else
-                                        <span class="text-danger" id="show_termsError"></span>
-                                    @enderror
-                                </div>
-                                <div id="termsContent" style="display: none;" class="mt-3">
-                                    <h6><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h6>
-       
-                                        <p>
-                                            This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms “we,” “us,” and “our” refer to Career Cracker.
-                                            Career Cracker offers this website, including all information, tools, and services available from this site to you, the user,
-                                            conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
-                                        </p>
-                                        <p>
-                                            By visiting our site and/or purchasing something from us, you engage in our “Service” and agree to be bound by the following
-                                            terms and conditions (“Terms of Service,” “Terms”), including any additional terms and conditions and policies referenced herein
-                                            and/or available by hyperlink. These Terms of Service apply to all users of the site, including, without limitation, users who
-                                            are browsers, vendors, customers, merchants, and/or contributors of content.
-                                        </p>
-                                        <p>
-                                            Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site,
-                                            you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then
-                                            you may not access the website or use any of the services. If these Terms of Service are considered an offer, acceptance is
-                                            expressly limited to these Terms of Service.
-                                        </p>
-                                        <hr class="my-4">
-                                        <h4 class="mb-3">Prohibited Uses</h4>
-                                        <p>In addition to other prohibitions as set forth in the Terms of Service, you are prohibited from using the site or its content:</p>
-                                        <ul class="list-unstyled ms-3">
-                                            <li>• For any unlawful purpose;</li>
-                                            <li>• To solicit others to perform or participate in any unlawful acts;</li>
-                                            <li>• To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances;</li>
-                                            <li>• To infringe upon or violate our intellectual property rights or the intellectual property rights of others;</li>
-                                            <li>• To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability;</li>
-                                            <li>• To submit false or misleading information;</li>
-                                            <li>• To upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Service or any related website, other websites, or the Internet;</li>
-                                            <li>• To collect or track the personal information of others;</li>
-                                            <li>• To spam, phish, pharm, pretext, spider, crawl, or scrape;</li>
-                                            <li>• For any obscene or immoral purpose;</li>
-                                            <li>• To interfere with or circumvent the security features of the Service or any related website, other websites, or the Internet.</li>
-                                        </ul>
-                                        <p class="mt-3">
-                                            We reserve the right to terminate your use of the Service or any related website for violating any of the prohibited uses.
-                                        </p>
-                                        <hr class="my-4">
-                                        <h4 class="mb-3">Contact Information</h4>
-                                        <p> Questions about the Terms of Service should be sent to us at <b>info.careercracker@gmail.com</b> </p>
-                                    <div class="modal-form form-check">
-                                        <input type="checkbox" name="terms_accepted" id="termsAccepted" class="form-check-input" required>
-                                        <label for="termsAccepted">I agree to the Terms and Privacy Policy</label>
-                                        @error('terms_accepted')
-                                            <span class="text-danger" id="terms_acceptedError">{{ $message }}</span>
-                                        @else
-                                            <span class="text-danger" id="terms_acceptedError"></span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="modal-form">
-                                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Register</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <form id="otpForm" class="d-none" method="POST">
-                        @csrf
-                        <input type="hidden" name="email" id="otpEmail">
-                        <input type="hidden" name="terms_accepted" id="otpTermsAccepted" value="true">
-                        <div class="modal-form">
-                            <label class="form-label">Enter OTP</label>
-                            <input type="text" name="otp" class="form-control" placeholder="Enter OTP" required>
-                            @error('otp')
-                                <span class="text-danger" id="otpError">{{ $message }}</span>
-                            @else
-                                <span class="text-danger" id="otpError"></span>
-                            @enderror
-                        </div>
-                        <div class="modal-form">
-                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Verify OTP</button>
-                        </div>
-                        <div class="modal-form text-center">
-                            <a href="#" id="resendOtp">Resend OTP</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- Modal Content End -->
-
-         </div>
-         <!-- Modal Wrapper End -->
-
-      </div>
-   </div>
+</div>
 <!-- Register Modal End -->
 
 
