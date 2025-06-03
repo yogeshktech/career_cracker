@@ -48,7 +48,127 @@
                             </div>
                             <div class="tutor-course-top-info__meta-action"><i class="meta-icon fas fa-user-alt"></i> {{ $course->reviews_count }} enrolled</div>
                         </div>
-                        <section class="reviews">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="d-flex container custom-container mb-4">
+    @if (!empty(trim(strip_tags($course->overview))))
+        <a href="#overview" class="slider-caption-04__btn btn btn-orange rounded-button">Overview</a>
+    @endif
+    @if (!empty(trim(strip_tags($course->highlights))))
+        <a href="#highlight" class="slider-caption-04__btn btn btn-orangee rounded-button">Course Highlights</a>
+    @endif
+    @if (!empty(trim(strip_tags($course->details))))
+        <a href="#detail" class="slider-caption-04__btn btn btn-orangee rounded-button">Course Details</a>
+    @endif
+    @if (!empty(trim(strip_tags($course->why_choose_us))))
+        <a href="#choose" class="slider-caption-04__btn btn btn-orangee rounded-button">Why Choose Us?</a>
+    @endif
+</div>
+    <div class="tutor-course-main-content section-padding-01 sticky-parent">
+        <div class="container custom-container">
+            <div class="row gy-10">
+                <div class="col-lg-5">
+                    <div class="tutor-course-main-segment">
+                        <div class="tutor-course-segment">
+                            <h4 class="tutor-course-segment__title" id="overview">Overview</h4>
+                            <div class="tutor-course-segment__content-wrap">
+                                <p>{!! $course->overview !!}</p>
+                            </div>
+                        </div>
+                        <div class="tutor-course-segment">
+                             @if (!empty(trim(strip_tags($course->highlights))))
+                            <h4 class="tutor-course-segment__title" id="highlight">Course Highlights</h4>
+                            <div class="margin-left">
+                                <p>{!! $course->highlights !!}</p>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="tutor-course-segment">
+                             @if (!empty(trim(strip_tags($course->details))))
+                            <div class="tutor-course-segment__header" id="detail">
+                                <h4 class="tutor-course-segment__title">Course Details</h4>
+                            </div>
+                            <p>{!! $course->details !!}</p>
+                            @endif
+                        </div>
+                        @if (!empty(trim(strip_tags($course->why_choose_us))))
+                        <h4 class="tutor-course-segment__title mt-4" id="choose">Why Choose This Course</h4>
+                        <p>{!! $course->why_choose_us !!}</p>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sidebar-stic">
+                        <div class="tutor-course-sidebar">
+                            <div class="tutor-course-price-preview">
+                                <div class="tutor-course-price-preview__thumbnail">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="tutor-course-price-preview__price">
+                                    <div class="tutor-course-price">
+                                        <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
+                                        @if ($course->mrp > $course->sale_price)
+                                            <span class="regular-price text-muted">₹{{ number_format($course->mrp, 2) }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="tutor-course-price-preview__meta">
+                                    <ul class="tutor-course-meta-list">
+                                        <li>
+                                            <div class="label"><i class="fas fa-play-circle"></i> Lectures</div>
+                                            <div class="value">{{ $course->total_lectures }} lectures</div>
+                                        </li>
+                                       
+                                        <li>
+                                            <div class="label"><i class="fas fa-globe"></i> Language</div>
+                                            <div class="value">{{ $course->language->name ?? ''}}</div>
+                                        </li>
+
+                                        <li>
+                                            <div class="label"><i class="fas fa-globe"></i> Regular Class begin from</div>
+                                            <div class="value">{{ $course->regular_class_date ?? ''}}</div>
+                                        </li>
+                                        <li>
+                                            <div class="label"><i class="fas fa-globe"></i> Max</div>
+                                            <div class="value">{{ $course->max_lpa ?? ''}}</div>
+                                        </li>
+                                        <li>
+                                            <div class="label"><i class="fas fa-globe"></i> Min</div>
+                                            <div class="value">{{ $course->min_lpa ?? ''}}</div>
+                                        </li>
+                                        <li>
+                                            <div class="label"><i class="fas fa-globe"></i> Free Demo Starts On</div>
+                                            <div class="value">{{ $course->pre_demo_start_date ?? ''}}</div>
+                                        </li>
+                                        <li>
+                                            <div class="label"><i class="fas fa-globe"></i> Free Demo Ends On</div>
+                                            <div class="value">{{ $course->pre_demo_end_date ?? ''}}</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tutor-course-price-preview__btn">
+                                    @if ($course->is_saleable)
+                                        <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
+                                            @csrf
+                                            <button type="submit" class="button btn btn-yellow btn-hover-secondary w-100">Add to Cart</button>
+                                        </form>
+                                        <form action="{{ route('cart.enroll', $course->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
+                                        </form>
+                                    @else
+                                        <div class="alert alert-info text-center">
+                                            Next Bactch launching Shortly
+                                        </div>
+                                    @endif
+                                </div>
+                                <section class="reviews">
                             <h2 class="section-title">Customer Reviews</h2>
                             <div class="review-container">
                                 @forelse ($course->reviews as $review)
@@ -123,129 +243,11 @@
                         }
 
                         </style>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   <div class="d-flex container custom-container mb-4">
-    @if (!empty(trim(strip_tags($course->overview))))
-        <a href="#overview" class="slider-caption-04__btn btn btn-orange rounded-button">Overview</a>
-    @endif
-    @if (!empty(trim(strip_tags($course->highlights))))
-        <a href="#highlight" class="slider-caption-04__btn btn btn-orangee rounded-button">Course Highlights</a>
-    @endif
-    @if (!empty(trim(strip_tags($course->details))))
-        <a href="#detail" class="slider-caption-04__btn btn btn-orangee rounded-button">Course Details</a>
-    @endif
-    @if (!empty(trim(strip_tags($course->why_choose_us))))
-        <a href="#choose" class="slider-caption-04__btn btn btn-orangee rounded-button">Why Choose Us?</a>
-    @endif
-</div>
-    <div class="tutor-course-main-content section-padding-01 sticky-parent">
-        <div class="container custom-container">
-            <div class="row gy-10">
-                <div class="col-lg-8">
-                    <div class="tutor-course-main-segment">
-                        <div class="tutor-course-segment">
-                            <h4 class="tutor-course-segment__title" id="overview">Overview</h4>
-                            <div class="tutor-course-segment__content-wrap">
-                                <p>{!! $course->overview !!}</p>
-                            </div>
-                        </div>
-                        <div class="tutor-course-segment">
-                             @if (!empty(trim(strip_tags($course->highlights))))
-                            <h4 class="tutor-course-segment__title" id="highlight">Course Highlights</h4>
-                            <div class="margin-left">
-                                <p>{!! $course->highlights !!}</p>
-                            </div>
-                            @endif
-                        </div>
-                        <div class="tutor-course-segment">
-                             @if (!empty(trim(strip_tags($course->details))))
-                            <div class="tutor-course-segment__header" id="detail">
-                                <h4 class="tutor-course-segment__title">Course Details</h4>
-                            </div>
-                            <p>{!! $course->details !!}</p>
-                            @endif
-                        </div>
-                        @if (!empty(trim(strip_tags($course->why_choose_us))))
-                        <h4 class="tutor-course-segment__title mt-4" id="choose">Why Choose This Course</h4>
-                        <p>{!! $course->why_choose_us !!}</p>
-                        @endif
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sidebar-stic">
-                        <div class="tutor-course-sidebar">
-                            <div class="tutor-course-price-preview">
-                                <div class="tutor-course-price-preview__thumbnail">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="tutor-course-price-preview__price">
-                                    <div class="tutor-course-price">
-                                        <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
-                                        @if ($course->mrp > $course->sale_price)
-                                            <span class="regular-price text-muted">₹{{ number_format($course->mrp, 2) }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="tutor-course-price-preview__meta">
-                                    <ul class="tutor-course-meta-list">
-                                        <li>
-                                            <div class="label"><i class="fas fa-play-circle"></i> Lectures</div>
-                                            <div class="value">{{ $course->total_lectures }} lectures</div>
-                                        </li>
-                                       
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Language</div>
-                                            <div class="value">{{ $course->language->name ?? ''}}</div>
-                                        </li>
-
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Ragular Class</div>
-                                            <div class="value">{{ $course->regular_class_date ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Max</div>
-                                            <div class="value">{{ $course->max_lpa ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Min</div>
-                                            <div class="value">{{ $course->min_lpa ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Pre Class Start</div>
-                                            <div class="value">{{ $course->pre_demo_start_date ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Pre Class End</div>
-                                            <div class="value">{{ $course->pre_demo_end_date ?? ''}}</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tutor-course-price-preview__btn">
-                                    @if ($course->is_saleable)
-                                        <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
-                                            @csrf
-                                            <button type="submit" class="button btn btn-yellow btn-hover-secondary w-100">Add to Cart</button>
-                                        </form>
-                                        <form action="{{ route('cart.enroll', $course->id) }}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
-                                        </form>
-                                    @else
-                                        <div class="alert alert-info text-center">
-                                            Next Bactch launching Shortly
-                                        </div>
-                                    @endif
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
