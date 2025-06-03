@@ -97,7 +97,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="regular_class_date" name="regular_class_date" placeholder="Name of the Course" value="{{ old('regular_class_date', $course->regular_class_date) }}" required>
+                                            maxlength="100" id="regular_class_date" name="regular_class_date" placeholder="Name of the Course" value="{{ old('regular_class_date', $course->regular_class_date) }}">
                                         <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                             <span id="current">{{ strlen(old('regular_class_date', $course->regular_class_date)) }}</span>
                                             <span id="maximum">/ 100</span>
@@ -113,7 +113,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="max_lpa" name="max_lpa" placeholder="Name of the Course" value="{{ old('max_lpa', $course->max_lpa) }}" required>
+                                            maxlength="100" id="max_lpa" name="max_lpa" placeholder="Name of the Course" value="{{ old('max_lpa', $course->max_lpa) }}">
                                         <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                             <span id="current">{{ strlen(old('max_lpa', $course->max_lpa)) }}</span>
                                             <span id="maximum">/ 100</span>
@@ -129,7 +129,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="min_lpa" name="min_lpa" placeholder="Name of the Course" value="{{ old('min_lpa', $course->min_lpa) }}" required>
+                                            maxlength="100" id="min_lpa" name="min_lpa" placeholder="Name of the Course" value="{{ old('min_lpa', $course->min_lpa) }}">
                                         <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                             <span id="current">{{ strlen(old('min_lpa', $course->min_lpa)) }}</span>
                                             <span id="maximum">/ 100</span>
@@ -145,7 +145,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="pre_demo_start_date" name="pre_demo_start_date" placeholder="Name of the Course" value="{{ old('pre_demo_start_date', $course->pre_demo_start_date) }}" required>
+                                            maxlength="100" id="pre_demo_start_date" name="pre_demo_start_date" placeholder="Name of the Course" value="{{ old('pre_demo_start_date', $course->pre_demo_start_date) }}">
                                         <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                             <span id="current">{{ strlen(old('pre_demo_start_date', $course->pre_demo_start_date)) }}</span>
                                             <span id="maximum">/ 100</span>
@@ -161,7 +161,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="pre_demo_end_date" name="pre_demo_end_date" placeholder="Name of the Course" value="{{ old('pre_demo_end_date', $course->pre_demo_end_date) }}" required>
+                                            maxlength="100" id="pre_demo_end_date" name="pre_demo_end_date" placeholder="Name of the Course" value="{{ old('pre_demo_end_date', $course->pre_demo_end_date) }}">
                                         <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
                                             <span id="current">{{ strlen(old('pre_demo_end_date', $course->pre_demo_end_date)) }}</span>
                                             <span id="maximum">/ 100</span>

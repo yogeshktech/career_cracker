@@ -80,14 +80,17 @@
                             <ul class="header-category-dropdown">
                                 @forelse ($categories as $category)
                                     <li>
-                                        <a href="{{ route('category.show', $category->id) }}">{{ $category->name }} <span
-                                                class="toggle-sub-menu"></span></a>
+                                        <a href="{{ route('category.show', $category->id) }}">{{ $category->name }} 
+                                            {{-- <span class="toggle-sub-menu"></span> --}}
+                                                
+                                            </a>
                                         @if ($category->subcategories->count())
                                             <ul class="sub-categories children">
                                                 @foreach ($category->subcategories as $subcategory)
                                                     <li>
                                                         <a href="{{ route('subcategory.show', $subcategory->id) }}">{{ $subcategory->name }}
-                                                            <span class="toggle-sub-menu"></span></a>
+                                                            <span class="toggle-sub-menu"></span>
+                                                        </a>
                                                         @if ($subcategory->courses->count())
                                                             <ul class="course-list children">
                                                                 @foreach ($subcategory->courses as $course)

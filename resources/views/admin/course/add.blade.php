@@ -102,7 +102,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="regular_class_date" name="regular_class_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                            maxlength="100" id="regular_class_date" name="regular_class_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}">
                                         @error('regular_class_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -114,7 +114,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="max_lpa" name="max_lpa" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                            maxlength="100" id="max_lpa" name="max_lpa" placeholder="Name of the Course" value="{{ old('regular_class_date') }}">
                                         @error('max_lpa')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -126,7 +126,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="min_lpa" name="min_lpa" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                            maxlength="100" id="min_lpa" name="min_lpa" placeholder="Name of the Course" value="{{ old('regular_class_date') }}">
                                         @error('min_lpa')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -138,7 +138,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="pre_demo_start_date" name="pre_demo_start_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                            maxlength="100" id="pre_demo_start_date" name="pre_demo_start_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}">
                                         @error('regular_class_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -150,7 +150,7 @@
                                             class="text-13 text-gray-400 fw-medium"></span></label>
                                     <div class="position-relative">
                                         <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
-                                            maxlength="100" id="pre_demo_end_date" name="pre_demo_end_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                            maxlength="100" id="pre_demo_end_date" name="pre_demo_end_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}">
                                         @error('pre_demo_end_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

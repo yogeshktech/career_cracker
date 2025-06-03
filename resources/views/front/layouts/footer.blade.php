@@ -97,7 +97,8 @@
                             <span class="title">We understand that each student's situation and needs are unique to them. Tell us more about what you're looking for, and we will get back to you soon.</span>
                         </div>
                         <div class="footer-widget__info">
-                            <p><strong>Address:</strong> Mumbai, India</p>
+                            {{-- <p><strong>Address:</strong> Mumbai, India</p> --}}
+                            <p><strong>Address:</strong> House no. SS2, Plot no. 651, Sector 1, Kopar Khairane, Navi Mumbai, Maharashtra 400709</p>
                             <p><strong>Email:</strong> info@careercracker.com</p>
                         </div>
                     </div>

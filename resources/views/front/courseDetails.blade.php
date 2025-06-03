@@ -135,11 +135,11 @@
                                             <div class="value">{{ $course->regular_class_date ?? ''}}</div>
                                         </li>
                                         <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Max</div>
+                                            <div class="label"><i class="fas fa-globe"></i> Max CTC</div>
                                             <div class="value">{{ $course->max_lpa ?? ''}}</div>
                                         </li>
                                         <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Min</div>
+                                            <div class="label"><i class="fas fa-globe"></i> Avg CTC</div>
                                             <div class="value">{{ $course->min_lpa ?? ''}}</div>
                                         </li>
                                         <li>
