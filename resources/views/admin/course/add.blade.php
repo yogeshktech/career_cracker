@@ -98,21 +98,65 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6">
-                                    {{-- <label for="subcategory_id" class="h5 mb-8 fw-semibold font-heading">Course
-                                        Subcategory</label>
-                                    <select id="subcategory_id" name="subcategory_id"
-                                        class="form-select py-9 placeholder-13 text-15">
-                                        <option value="" disabled selected>Select Subcategory</option>
-                                        @foreach ($subcategories as $subcategory)
-                                            <option value="{{ $subcategory->id }}" {{ old('subcategory_id') == $subcategory->id ? 'selected' : '' }}>
-                                                {{ $subcategory->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('subcategory_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror --}}
+                                   <label for="regular_class_date" class="h5 mb-8 fw-semibold font-heading">Regular Class Date<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="regular_class_date" name="regular_class_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                        @error('regular_class_date')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
+
+                                <div class="col-sm-6">
+                                   <label for="max_lpa" class="h5 mb-8 fw-semibold font-heading">Maximum LPA<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="max_lpa" name="max_lpa" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                        @error('max_lpa')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="min_lpa" class="h5 mb-8 fw-semibold font-heading">Minimum LPA<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="min_lpa" name="min_lpa" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                        @error('min_lpa')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="pre_demo_start_date" class="h5 mb-8 fw-semibold font-heading">Pre Demo Start Date<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="pre_demo_start_date" name="pre_demo_start_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                        @error('regular_class_date')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="pre_demo_end_date" class="h5 mb-8 fw-semibold font-heading">Pre Demo End Date<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="pre_demo_end_date" name="pre_demo_end_date" placeholder="Name of the Course" value="{{ old('regular_class_date') }}" required>
+                                        @error('pre_demo_end_date')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                
                                 <div class="col-sm-6">
                                     <label for="mrp" class="h5 mb-8 fw-semibold font-heading">MRP Price</label>
                                     <input type="number" name="mrp" value="{{ old('mrp') }}"

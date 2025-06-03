@@ -170,8 +170,7 @@
 
           <h2 class="section-title__title-03 py-3">10. Dispute Resolution</h2>
           <ul class="list-unstyled ms-3">
-            <li> All disputes arising out of or in connection with these Terms shall be subject to the jurisdiction of
-               the courts in Mumbai, Maharashtra, India.</li>
+           
             <li> We prefer to resolve matters amicably first through written communication. You can contact us
                at info@careercracker.com for any disputes or concerns.</li>
           </ul>

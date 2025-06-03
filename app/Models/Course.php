@@ -30,6 +30,11 @@ class Course extends Model
         'google_meet_link',
         'google_drive_link',
         'is_saleable',
+        'max_lpa',
+        'min_lpa',
+        'pre_demo_start_date',
+        'pre_demo_end_date',
+        'regular_class_date',
     ];
 
     public function category()
@@ -91,5 +96,5 @@ class Course extends Model
             ->withTimestamps();
     }
 
-   
+
 }

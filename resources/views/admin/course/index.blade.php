@@ -37,7 +37,7 @@
                                             <div class="p-8">
                                                 <span
                                                     class="text-13 py-2 px-10 rounded-pill bg-success-50 text-success-600 mb-16">
-                                                    {{ $course->subcategory->name ?? 'Uncategorized' }}
+                                                    {{ $course->category->name ?? 'Uncategorized' }}
                                                 </span>
                                                 <h5 class="mb-0">
                                                     <a href="{{ route('admin.courses.edit', $course->id) }}"

@@ -224,15 +224,19 @@ class HomeController extends Controller
         $relatedCourses = Course::where('category_id', $course->category_id)
             ->where('id', '!=', $course->id)
             ->where('status', 'published')
-            ->with(['faculties', 'creator', 'reviews']) // Will now only get approved reviews
+            ->with(['faculties', 'creator', 'reviews'])
             ->latest()
             ->take(8)
-            ->get();
+            ->get()
+            ->unique('id')
+            ->values(); // Re-index the collection
 
         $categories = Category::where('status', 'public')->get();
-
+        // dd($categories);
         return view('front.courseDetails', compact('course', 'relatedCourses', 'categories'));
     }
+
+
 
 
     public function AllBlog()

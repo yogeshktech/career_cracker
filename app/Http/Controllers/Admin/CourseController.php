@@ -15,7 +15,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::latest()->paginate(12);
-        
+
         return view('admin.course.index', compact('courses'));
     }
 
@@ -46,7 +46,12 @@ class CourseController extends Controller
             'why_choose_us' => 'nullable|string',
             'progress' => 'nullable|integer|min:0|max:100',
             'status' => 'required|in:draft,published',
-            'is_saleable' => 'required|boolean', // Add validation for is_saleable
+            'is_saleable' => 'required|boolean',
+            'max_lpa' => 'nullable',
+            'min_lpa' => 'nullable',
+            'pre_demo_start_date' => 'nullable',
+            'pre_demo_end_date' => 'nullable',
+            'regular_class_date' => 'nullable',
         ]);
 
         if (!Auth::guard('admin')->check()) {
@@ -81,7 +86,12 @@ class CourseController extends Controller
                 'created_by' => Auth::guard('admin')->id(),
                 'progress' => $request->progress ?? 0,
                 'status' => $request->status,
-                'is_saleable' => $request->is_saleable, // Add is_saleable
+                'is_saleable' => $request->is_saleable, 
+                'max_lpa' => $request->max_lpa,
+                'min_lpa' => $request->min_lpa,
+                'pre_demo_start_date' => $request->pre_demo_start_date,
+                'pre_demo_end_date' => $request->pre_demo_end_date,
+                'regular_class_date' => $request->regular_class_date,
             ]);
 
             return redirect()->route('admin.courses.index')->with('success', 'Course created successfully.');
@@ -122,6 +132,11 @@ class CourseController extends Controller
             'progress' => 'nullable|integer|min:0|max:100',
             'status' => 'required|in:draft,published',
             'is_saleable' => 'required|boolean',
+            'max_lpa' => 'nullable',
+            'min_lpa' => 'nullable',
+            'pre_demo_start_date' => 'nullable',
+            'pre_demo_end_date' => 'nullable',
+            'regular_class_date' => 'nullable',
         ]);
 
         if (!Auth::guard('admin')->check()) {
@@ -162,6 +177,11 @@ class CourseController extends Controller
             'progress' => $request->progress ?? 0,
             'status' => $request->status,
             'is_saleable' => $request->is_saleable,
+            'max_lpa' => $request->max_lpa,
+            'min_lpa' => $request->min_lpa,
+            'pre_demo_start_date' => $request->pre_demo_start_date,
+            'pre_demo_end_date' => $request->pre_demo_end_date,
+            'regular_class_date' => $request->regular_class_date,
         ]);
 
         return redirect()->route('admin.courses.index')->with('success', 'Course updated successfully.');

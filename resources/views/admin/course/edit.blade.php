@@ -93,24 +93,83 @@
                                     @enderror
                                 </div>
                                 <div class="col-sm-6">
-                                    {{-- <label for="subcategory_id" class="h5 mb-8 fw-semibold font-heading">
-                                        Course Subcategory <span class="text-13 text-gray-400 fw-medium">(Required)</span>
-                                    </label>
-                                    <select id="subcategory_id" name="subcategory_id" class="form-select py-9 placeholder-13 text-15" required>
-                                        <option value="" disabled {{ empty(old('subcategory_id', $course->subcategory_id)) ? 'selected' : '' }}>
-                                            Select Subcategory
-                                        </option>
-                                        @foreach ($subcategories as $subcategory)
-                                            <option value="{{ $subcategory->id }}"
-                                                {{ old('subcategory_id', $course->subcategory_id) == $subcategory->id ? 'selected' : '' }}
-                                                data-category-id="{{ $subcategory->category_id }}">
-                                                {{ $subcategory->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('subcategory_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror --}}
+                                   <label for="regular_class_date" class="h5 mb-8 fw-semibold font-heading">Regular Class Date<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="regular_class_date" name="regular_class_date" placeholder="Name of the Course" value="{{ old('regular_class_date', $course->regular_class_date) }}" required>
+                                        <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                            <span id="current">{{ strlen(old('regular_class_date', $course->regular_class_date)) }}</span>
+                                            <span id="maximum">/ 100</span>
+                                        </div>
+                                        @error('regular_class_date')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="max_lpa" class="h5 mb-8 fw-semibold font-heading">Maximum LPA<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="max_lpa" name="max_lpa" placeholder="Name of the Course" value="{{ old('max_lpa', $course->max_lpa) }}" required>
+                                        <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                            <span id="current">{{ strlen(old('max_lpa', $course->max_lpa)) }}</span>
+                                            <span id="maximum">/ 100</span>
+                                        </div>
+                                        @error('max_lpa')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="min_lpa" class="h5 mb-8 fw-semibold font-heading">Minimum LPA<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="text" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="min_lpa" name="min_lpa" placeholder="Name of the Course" value="{{ old('min_lpa', $course->min_lpa) }}" required>
+                                        <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                            <span id="current">{{ strlen(old('min_lpa', $course->min_lpa)) }}</span>
+                                            <span id="maximum">/ 100</span>
+                                        </div>
+                                        @error('min_lpa')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="pre_demo_start_date" class="h5 mb-8 fw-semibold font-heading">Pre Demo Start Date<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="pre_demo_start_date" name="pre_demo_start_date" placeholder="Name of the Course" value="{{ old('pre_demo_start_date', $course->pre_demo_start_date) }}" required>
+                                        <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                            <span id="current">{{ strlen(old('pre_demo_start_date', $course->pre_demo_start_date)) }}</span>
+                                            <span id="maximum">/ 100</span>
+                                        </div>
+                                        @error('regular_class_date')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                   <label for="pre_demo_end_date" class="h5 mb-8 fw-semibold font-heading">Pre Demo End Date<span
+                                            class="text-13 text-gray-400 fw-medium"></span></label>
+                                    <div class="position-relative">
+                                        <input type="date" class="text-counter placeholder-13 form-control py-11 pe-76"
+                                            maxlength="100" id="pre_demo_end_date" name="pre_demo_end_date" placeholder="Name of the Course" value="{{ old('pre_demo_end_date', $course->pre_demo_end_date) }}" required>
+                                        <div class="text-gray-400 position-absolute inset-inline-end-0 top-50 translate-middle-y me-16">
+                                            <span id="current">{{ strlen(old('pre_demo_end_date', $course->pre_demo_end_date)) }}</span>
+                                            <span id="maximum">/ 100</span>
+                                        </div>
+                                        @error('pre_demo_end_date')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
 
                                 <div class="col-sm-6">

@@ -1,6 +1,7 @@
 @extends('front.layouts.layout')
 
 @section('content')
+    <!-- Include Swiper CSS -->
     <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <div class="page-banner bg-color-11">
@@ -48,86 +49,12 @@
                             </div>
                             <div class="tutor-course-top-info__meta-action"><i class="meta-icon fas fa-user-alt"></i> {{ $course->reviews_count }} enrolled</div>
                         </div>
-                        <section class="reviews">
-                            <h2 class="section-title">Customer Reviews</h2>
-                            <div class="review-container">
-                                @forelse ($course->reviews as $review)
-                                    <div class="review-box">
-                                        <div class="review-header">
-                                            <strong>{{ $review->name }}</strong>
-                                            <div class="stars">
-                                                {!! str_repeat('★', $review->rating) . str_repeat('☆', 5 - $review->rating) !!}
-                                            </div>
-                                        </div>
-                                        <p class="review-text">{{ $review->comment }}</p>
-                                    </div>
-                                @empty
-                                    <p class="text-center">No reviews yet. Be the first to review this course!</p>
-                                @endforelse
-                            </div>
-                        </section>
-                        <style>
-                            .reviews {
-                        max-width: 800px;
-                        margin: 40px auto;
-                        padding: 20px;
-                        font-family: Arial, sans-serif;
-                        }
-
-                        .section-title {
-                        font-size: 28px;
-                        text-align: center;
-                        margin-bottom: 20px;
-                        }
-
-                        .review-container {
-                        max-height: 300px; /* Set your desired scroll height */
-                        overflow-y: auto;
-                        padding-right: 10px; /* space for scrollbar */
-                        }
-
-                        .review-box {
-                        background: #f9f9f9;
-                        border-left: 5px solid #4CAF50;
-                        padding: 20px;
-                        margin-bottom: 20px;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                        }
-
-                        .review-header {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 10px;
-                        }
-
-                        .stars {
-                        color: #FFD700;
-                        font-size: 18px;
-                        }
-
-                        .review-text {
-                        font-size: 16px;
-                        line-height: 1.5;
-                        color: #333;
-                        }
-
-                        /* Optional: nice scrollbar styling (Webkit-based browsers only) */
-                        .review-container::-webkit-scrollbar {
-                        width: 8px;
-                        }
-                        .review-container::-webkit-scrollbar-thumb {
-                        background-color: #ccc;
-                        border-radius: 4px;
-                        }
-
-                        </style>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
    <div class="d-flex container custom-container mb-4">
     @if (!empty(trim(strip_tags($course->overview))))
         <a href="#overview" class="slider-caption-04__btn btn btn-orange rounded-button">Overview</a>
@@ -142,6 +69,7 @@
         <a href="#choose" class="slider-caption-04__btn btn btn-orangee rounded-button">Why Choose Us?</a>
     @endif
 </div>
+
     <div class="tutor-course-main-content section-padding-01 sticky-parent">
         <div class="container custom-container">
             <div class="row gy-10">
@@ -173,6 +101,114 @@
                         <h4 class="tutor-course-segment__title mt-4" id="choose">Why Choose This Course</h4>
                         <p>{!! $course->why_choose_us !!}</p>
                         @endif
+                        {{-- <div class="tutor-course-segment">
+                            <h4 class="tutor-course-segment__title">Student Feedback</h4>
+                            <div class="tutor-course-segment__feedback">
+                                <div class="tutor-course-segment__reviews-average">
+                                    <div class="count">{{ number_format($course->rating / 20, 1) }}</div>
+                                    <div class="reviews-rating-star">
+                                        <div class="rating-star">
+                                            <div class="rating-label" style="width: {{ $course->rating }}%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-total">{{ $course->reviews_count }} Ratings</div>
+                                </div>
+                                <div class="tutor-course-segment__reviews-metar">
+                                    @php
+                                        $approvedReviews = $course->reviews; 
+                                        $totalApproved = $approvedReviews->count();
+                                    @endphp
+
+                                    @foreach ([5, 4, 3, 2, 1] as $star)
+                                        @php
+                                            $count = $approvedReviews->where('rating', $star)->count();
+                                            $percentage = $totalApproved > 0 ? ($count / $totalApproved) * 100 : 0;
+                                        @endphp
+                                        <div class="course-rating-metar">
+                                            <div class="rating-metar-star">
+                                                <div class="rating-star">
+                                                    <div class="rating-label" style="width: {{ $star * 20 }}%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-metar-col">
+                                                <div class="rating-metar-bar">
+                                                    <div class="rating-metar-line" style="width: {{ $percentage }}%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-metar-text">{{ round($percentage) }}%</div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div> --}}
+                        {{-- <div class="tutor-course-segment">
+                            <h4 class="tutor-course-segment__title">Write a Review</h4>
+                            <div class="tutor-course-segment__reviews">
+                                <button class="tutor-course-segment__btn btn btn-primary btn-hover-secondary" data-bs-toggle="collapse" data-bs-target="#collapseForm">Write a Review</button>
+                                <div class="collapse" id="collapseForm">
+                                    <div class="comment-form">
+                                        <form action="{{ route('reviews.store', $course->id) }}" method="POST">
+                                            @csrf
+                                            <div class="comment-form__rating">
+                                                <label class="label">Your rating: *</label>
+                                                <ul id="rating" class="rating">
+                                                    @for ($i = 1; $i <= 5; $i++)
+                                                        <li class="star" title="{{ $i }} Star" data-value="{{ $i }}"><i class="fas fa-star"></i></li>
+                                                    @endfor
+                                                </ul>
+                                                <input type="hidden" name="rating" id="rating-value" required>
+                                                @error('rating')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="row gy-4">
+                                                <div class="col-md-6">
+                                                    <div class="comment-form__input">
+                                                        <input type="text" name="name" class="form-control" placeholder="Your Name *" required value="{{ old('name') }}">
+                                                        @error('name')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="comment-form__input">
+                                                        <input type="email" name="email" class="form-control" placeholder="Your Email *" required value="{{ old('email') }}">
+                                                        @error('email')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="comment-form__input">
+                                                        <textarea name="comment" class="form-control" placeholder="Your Comment" required>{{ old('comment') }}</textarea>
+                                                        @error('comment')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="comment-form__input form-check">
+                                                        <input type="checkbox" id="save" name="save_info" {{ old('save_info') ? 'checked' : '' }}>
+                                                        <label for="save">Save my name and email in this browser for the next time I comment.</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="comment-form__input">
+                                                        <button type="submit" class="btn btn-primary btn-hover-secondary">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -194,38 +230,41 @@
                                 </div>
                                 <div class="tutor-course-price-preview__meta">
                                     <ul class="tutor-course-meta-list">
+                                        {{-- <li>
+                                            <div class="label"><i class="fas fa-sliders-h"></i> Level</div>
+                                            <div class="value">{{ $course->level }}</div>
+                                        </li> --}}
+                                        {{-- <li>
+                                            <div class="label"><i class="fas fa-clock"></i> Duration</div>
+                                            <div class="value">{{ $course->duration }}</div>
+                                        </li> --}}
                                         <li>
                                             <div class="label"><i class="fas fa-play-circle"></i> Lectures</div>
                                             <div class="value">{{ $course->total_lectures }} lectures</div>
                                         </li>
-                                       
+                                        {{-- <li>
+                                            <div class="label"><i class="fas fa-tag"></i> Subject</div>
+                                            <div class="value"><a href="{{ route('all_course', ['categories' => $course->category_id]) }}">{{ $course->category->name }}</a></div>
+                                        </li> --}}
                                         <li>
                                             <div class="label"><i class="fas fa-globe"></i> Language</div>
                                             <div class="value">{{ $course->language->name ?? ''}}</div>
                                         </li>
-
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Ragular Class</div>
-                                            <div class="value">{{ $course->regular_class_date ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Max</div>
-                                            <div class="value">{{ $course->max_lpa ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Min</div>
-                                            <div class="value">{{ $course->min_lpa ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Pre Class Start</div>
-                                            <div class="value">{{ $course->pre_demo_start_date ?? ''}}</div>
-                                        </li>
-                                        <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Pre Class End</div>
-                                            <div class="value">{{ $course->pre_demo_end_date ?? ''}}</div>
-                                        </li>
                                     </ul>
                                 </div>
+                               
+                                {{-- <div class="tutor-course-price-preview__btn">
+                                    <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
+                                        @csrf
+                                        <button type="submit" class="button btn btn-yellow btn-hover-secondary w-100">Add to Cart</button>
+                                    </form>
+
+                                    <form action="{{ route('cart.enroll', $course->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Enroll Now</button>
+                                    </form>
+                                </div> --}}
+
                                 <div class="tutor-course-price-preview__btn">
                                     @if ($course->is_saleable)
                                         <form action="{{ route('cart.add', $course->id) }}" method="POST" class="mb-2">
@@ -238,11 +277,21 @@
                                         </form>
                                     @else
                                         <div class="alert alert-info text-center">
+                                            {{-- This course is coming soon! --}}
                                             Next Bactch launching Shortly
                                         </div>
                                     @endif
                                 </div>
+
                             </div>
+                            {{-- <div class="sidebar-widget">
+                                <h3 class="sidebar-widget__title">Course Categories</h3>
+                                <ul class="sidebar-widget__link">
+                                    @foreach ($categories as $category)
+                                        <li><a href="{{ route('all_course', ['categories' => $category->id]) }}">{{ $category->name }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
