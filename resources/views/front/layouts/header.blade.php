@@ -27,13 +27,12 @@
                                             {{ Auth::user()->name }}
                                         </button>
                                         <ul class="dropdown-menu profile-menu" aria-labelledby="profileDropdown">
-                                            <li>
+                                            <li class="d-flex justify-content-between align-items-center px-3 gap-2 w-100">
                                                 <a href="{{ route('student.dashboard') }}" class="text-dark">Profile</a>
-                                            </li>
-                                            <li>
-                                                <form action="{{ route('logout') }}" method="POST">
+                                                <form action="{{ route('logout') }}" method="POST"
+                                                    onsubmit="return confirm('Are you sure you want to logout?')">
                                                     @csrf
-                                                    <button type="submit" class="dropdown-item text-dark">Logout</button>
+                                                    <button type="submit" class="">Logout</button>
                                                 </form>
                                             </li>
                                         </ul>

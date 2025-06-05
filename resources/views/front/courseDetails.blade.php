@@ -253,12 +253,15 @@
     </div>
 
     <div class="courses-section section-padding-02">
+        
         <div class="container custom-container">
+
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                        <h2 class="section-title__title"><span class="orange">Related</span> Courses</h2>
+                <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="section-title__title-03"><span class="orange">Related</span> Courses</h2>
                     </div>
+                <div class="col-lg-6">
+                    
                 </div>
                 <div class="col-lg-6">
                     <div class="courses-tab-menu" data-aos="fade-up" data-aos-duration="1000">

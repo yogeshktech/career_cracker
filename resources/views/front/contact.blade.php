@@ -22,8 +22,19 @@
             </div>
             <div class="contact-info section-padding-02">
                 <div class="row gy-4">
-                   
                     <div class="col-lg-4 col-md-6">
+                        <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="contact-info__icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info__content">
+                                <h3 class="contact-info__title">Hour of operation</h3>
+                                <p>Monday - Friday: 10:00 AM - 05:00 PM</p>
+                                <p>Sunday & Saturday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-lg-4 col-md-6">
                         <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
                             <div class="contact-info__icon">
                                 <i class="fas fa-phone"></i>
@@ -41,19 +52,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
                             <div class="contact-info__icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-info__content">
-                                <h3 class="contact-info__title">Hour of operation</h3>
-                                <p>Monday - Friday: 10:00 AM - 05:00 PM</p>
-                                <p>Sunday & Saturday: Closed</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="contact-info__icon">
-                                <i class="fas fa-clock"></i>
+                               <i class="fa-solid fa-people-arrows"></i>
                             </div>
                             <div class="contact-info__content">
                                 <h3 class="contact-info__title">Connect with us</h3>
