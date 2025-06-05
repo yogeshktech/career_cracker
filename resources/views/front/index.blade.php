@@ -277,7 +277,7 @@
 
 
     <!-- Categories Section Start -->
-    <div class="categories-section bg-color-03 section-padding-01">
+    {{-- <div class="categories-section bg-color-03 section-padding-01">
         <div class="container">
             <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="section-title__title-03"><span class="orange">Upcoming</span> Batches </h2>
@@ -299,10 +299,71 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Categories Section End -->
 
+ <div class="courses-section section-padding-02">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="section-title__title-03"><span class="orange">Upcoming</span> Batches </h2>
+                    </div>
+                </div>
+            </div>
 
+            <div class="tab-content course-tab-active swiper-button-style mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="tab-pane fade show active" id="tab1">
+
+                    <!-- Swiper Container -->
+                    <div class="swiper course-swiper">
+                        <div class="swiper-wrapper">
+                           @foreach ($course_sale_no as $course)
+                                <div class="swiper-slide">
+                                    <!-- Course Start -->
+                                    <div class="course-item">
+                                        <div class="course-header">
+                                            <div class="course-header__thumbnail">
+                                                <a href="{{ route('courses.show', $course->id) }}">
+                                                    <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
+                                                        width="258" height="173">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="course-info">
+                                            {{-- <span class="course-info__badge-text badge-all">{{ $course->level }}</span>
+                                            --}}
+                                            <h3 class="course-info__title">
+                                                <a
+                                                    href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
+                                            </h3>
+                                            {{-- <a href="#" class="course-info__instructor">{{ $course->instructor ?? '' }}</a>
+                                            --}}
+                                            <div class="course-info__price">
+                                                <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
+                                            </div>
+                                            <div class="course-info__rating">
+                                                <div class="rating-star">
+                                                    <div class="rating-label" style="width: {{ $course->rating ?? 80 }}%;">
+                                                    </div>
+                                                </div>
+                                                <span>({{ $course->reviews_count ?? 2 }})</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Course End -->
+                                </div>
+                            @endforeach
+                        </div>
+                        <!-- Navigation Arrows -->
+                        <div class="swiper-button-prev"><i class="fas fa-angle-left"></i></div>
+                        <div class="swiper-button-next"><i class="fas fa-angle-right"></i></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
