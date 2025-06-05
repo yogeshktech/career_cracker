@@ -241,11 +241,11 @@
 }
 
 /* WhatsApp Floating Button Styles */
-.float {
+/* .float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 120px;
+    bottom: 150px;
     right: 40px;
     background-color: #25d366;
     color: #FFF;
@@ -254,7 +254,7 @@
     font-size: 30px;
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
-}
+} */
 
 .my-float {
     margin-top: 16px;
@@ -264,7 +264,7 @@
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:100px;
+	bottom:150px;
 	right:40px;
 	background-color:#25d366;
 	color:#FFF;
