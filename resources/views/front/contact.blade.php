@@ -73,6 +73,8 @@
                                         <i class="fab fa-telegram-plane"></i> Telegram
                                     </a>
                                     </li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61569816428607" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a></li>
                                 </ul>
                             </div>
                         </div>

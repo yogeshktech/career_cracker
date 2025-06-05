@@ -702,6 +702,7 @@
                                         <hr class="my-4">
                                         <h4 class="mb-3">Contact Information</h4>
                                         <p> Questions about the Terms of Service should be sent to us at <b>info.careercracker@gmail.com</b> </p>
+                                        <p>By clicking 'I Agree,' you confirm that you have read and accepted the Terms and Conditions, including any additional provisions outlined on the Terms & Conditions page of the Career Cracker website.</p>
                                     <div class="modal-form form-check">
                                         <input type="checkbox" name="terms_accepted" id="termsAccepted" class="form-check-input" required>
                                         <label for="termsAccepted">I agree to the Terms and Privacy Policy</label>

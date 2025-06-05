@@ -2319,10 +2319,10 @@ only screen and (max-width: 767px) {
   font-size: 14px;
 }
 
-.header-top-bar-wrap__info-list li:hover a,
+/* .header-top-bar-wrap__info-list li:hover a,
 .header-top-bar-wrap__info-list li:hover button {
   color: #0c0a05;
-}
+} */
 
 /* .header-top-bar-wrap__info-list li:hover a,
 .header-top-bar-wrap__info-list li:hover button :hover{
