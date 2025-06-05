@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
         $courses = Course::where('status', 'published')->limit(12)->get();
         $course_sale_no = Course::where('status', 'published')
-                        ->where('is_saleable', 0)
+                        ->where('is_saleable', 1)
                         ->get();
         // dd($course_sale_no);
         $testimonials = Testimonial::orderByDesc('created_at')->get();
