@@ -33,12 +33,12 @@
                         <div class="slider-register__box text-center" data-aos="fade-up" data-aos-duration="1000">
                             <h4 class="slider-register__title">Kickstart your career with 100% <br> placement and high CTC
                                 in just 45 days
-                                <button data-bs-toggle="modal" data-bs-target="#registerModal"
-                                        class="btn btn-link"> — Register Now</button>
+                                <button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link"> —
+                                    Register Now</button>
                             </h4>
 
 
-                            
+
                             <form action="{{ route('enquiry_send') }}" method="POST">
                                 @csrf
                                 <div class="slider-register__form">
@@ -284,87 +284,66 @@
             </div>
             <div class="row g-6">
                 @foreach ($course_sale_no as $course)
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="categories-item-02" data-aos="fade-up" data-aos-duration="1000">
-                            <a class="categories-item-02__link" href="{{ route('courses.show', $course->id) }}">
-                                <div class="categories-item-02__icon">
-                                    <img style="width:40px;" src="{{ asset($course->thumbnail) }}" alt="">
-                                </div>
-                                <div class="categories-item-02__info">
-                                    <h4 class="categories-item-02__name">{{$course->title}}</h4>
-                                </div>
-                            </a>
-                        </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="categories-item-02" data-aos="fade-up" data-aos-duration="1000">
+                        <a class="categories-item-02__link" href="{{ route('courses.show', $course->id) }}">
+                            <div class="categories-item-02__icon">
+                                <img style="width:40px;" src="{{ asset($course->thumbnail) }}" alt="">
+                            </div>
+                            <div class="categories-item-02__info">
+                                <h4 class="categories-item-02__name">{{$course->title}}</h4>
+                            </div>
+                        </a>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
     </div> --}}
     <!-- Categories Section End -->
 
- <div class="courses-section section-padding-02">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
+<div class="container">
+    <div class="row">
+        <div class="">
                     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
                         <h2 class="section-title__title-03"><span class="orange">Upcoming</span> Batches </h2>
                     </div>
                 </div>
-            </div>
-
-            <div class="tab-content course-tab-active swiper-button-style mb-5" data-aos="fade-up" data-aos-duration="1000">
-                <div class="tab-pane fade show active" id="tab1">
-
-                    <!-- Swiper Container -->
-                    <div class="swiper course-swiper">
-                        <div class="swiper-wrapper">
-                           @foreach ($course_sale_no as $course)
-                                <div class="swiper-slide">
-                                    <!-- Course Start -->
-                                    <div class="course-item">
-                                        <div class="course-header">
-                                            <div class="course-header__thumbnail">
-                                                <a href="{{ route('courses.show', $course->id) }}">
-                                                    <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}"
-                                                        width="258" height="173">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="course-info">
-                                            {{-- <span class="course-info__badge-text badge-all">{{ $course->level }}</span>
-                                            --}}
-                                            <h3 class="course-info__title">
-                                                <a
-                                                    href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
-                                            </h3>
-                                            {{-- <a href="#" class="course-info__instructor">{{ $course->instructor ?? '' }}</a>
-                                            --}}
-                                            <div class="course-info__price">
-                                                <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
-                                            </div>
-                                            <div class="course-info__rating">
-                                                <div class="rating-star">
-                                                    <div class="rating-label" style="width: {{ $course->rating ?? 80 }}%;">
-                                                    </div>
-                                                </div>
-                                                <span>({{ $course->reviews_count ?? 2 }})</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Course End -->
-                                </div>
-                            @endforeach
+        @foreach ($course_sale_no as $course)
+            <div class="col-md-4 col-lg-2 mb-4">
+                <!-- Course Start -->
+                <div class="course-item">
+                    <div class="course-header">
+                        <div class="course-header__thumbnail">
+                            <a href="{{ route('courses.show', $course->id) }}">
+                                <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}" width="258" height="173">
+                            </a>
                         </div>
-                        <!-- Navigation Arrows -->
-                        <div class="swiper-button-prev"><i class="fas fa-angle-left"></i></div>
-                        <div class="swiper-button-next"><i class="fas fa-angle-right"></i></div>
                     </div>
-
+                    <div class="course-info">
+                        <h3 class="course-info__title">
+                            <a href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
+                        </h3>
+                        <div class="course-info__price">
+                            <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
+                        </div>
+                        <div class="course-info__rating">
+                            <div class="rating-star">
+                                <div class="rating-label" style="width: {{ $course->rating ?? 80 }}%;"></div>
+                            </div>
+                            <span>({{ $course->reviews_count ?? 2 }})</span>
+                        </div>
+                    </div>
                 </div>
+                <!-- Course End -->
             </div>
-        </div>
+        @endforeach
     </div>
+</div>
 
+
+
+  
 
 
 
@@ -561,7 +540,8 @@
                     <div class="col-xl-4 col-md-6 grid-item">
                         <div class="blog-item-02" data-aos="fade-up" data-aos-duration="1000">
                             <div class="blog-item-02__image">
-                                <a href="blog/{{ $blog->id }}"><img src="{{ asset($blog->blog_image) }}" alt="Blog" width="370" height="201"></a>
+                                <a href="blog/{{ $blog->id }}"><img src="{{ asset($blog->blog_image) }}" alt="Blog" width="370"
+                                        height="201"></a>
                             </div>
                             <div class="blog-item-02__content">
                                 <div class="blog-item-02__meta">
@@ -601,21 +581,17 @@
                             </button>
                             <div class="carousel-view" id="carouselView">
                                 <div class="carousel-track" id="carouselTrack">
-                                    <div class="carousel-item-custom"><img
-                                            src="{{ asset("front/assets/images/partners-logo/client-logo-01.jpg")}}"
-                                            alt="Logo 1" />
+                                    <div class="carousel-item-custom"><img src="{{ asset("
+                                            front/assets/images/partners-logo/client-logo-01.jpg")}}" alt="Logo 1" />
                                     </div>
-                                    <div class="carousel-item-custom"><img
-                                            src="{{ asset("front/assets/images/partners-logo/client-logo-04.jpg")}}"
-                                            alt="Logo 2" />
+                                    <div class="carousel-item-custom"><img src="{{ asset("
+                                            front/assets/images/partners-logo/client-logo-04.jpg")}}" alt="Logo 2" />
                                     </div>
-                                    <div class="carousel-item-custom"><img
-                                            src="{{ asset("front/assets/images/partners-logo/client-logo-05.jpg")}}"
-                                            alt="Logo 3" />
+                                    <div class="carousel-item-custom"><img src="{{ asset("
+                                            front/assets/images/partners-logo/client-logo-05.jpg")}}" alt="Logo 3" />
                                     </div>
-                                    <div class="carousel-item-custom"><img
-                                            src="{{ asset("front/assets/images/partners-logo/client-logo-06.jpg")}}"
-                                            alt="Logo 4" />
+                                    <div class="carousel-item-custom"><img src="{{ asset("
+                                            front/assets/images/partners-logo/client-logo-06.jpg")}}" alt="Logo 4" />
                                     </div>
                                 </div>
                             </div>
