@@ -95,14 +95,14 @@
                         @endforeach
 
                         <!-- Referral Code -->
-                        <div class="mb-4">
+                        {{-- <div class="mb-4">
                             <div class="input-group">
                                 <span class="input-group-text bg-white border-end-0">
                                     <i class="fa-solid fa-tag text-success"></i>
                                 </span>
                                 <input type="text" class="form-control border-start-0" placeholder="Have a referral code?">
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- Price Breakdown -->
                         <div class="price-breakdown">

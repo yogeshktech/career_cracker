@@ -236,10 +236,12 @@ class HomeController extends Controller
             ->values(); // Re-index the collection
 
         $categories = Category::where('status', 'public')->get();
+        $all_course = Course::where('is_saleable', 1)->get();
         // dd($categories);
-        return view('front.courseDetails', compact('course', 'relatedCourses', 'categories'));
+        return view('front.courseDetails', compact('course', 'relatedCourses', 'categories','all_course'));
     }
 
+    
 
 
 

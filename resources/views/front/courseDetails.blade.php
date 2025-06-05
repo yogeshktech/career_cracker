@@ -263,18 +263,59 @@
                 <div class="col-lg-6">
                     <div class="courses-tab-menu" data-aos="fade-up" data-aos-duration="1000">
                         <ul class="nav justify-content-lg-end">
-                            <li><button class="active" data-bs-toggle="tab" data-bs-target="#tab1">All</button></li>
+                            {{-- <li><button class="active" data-bs-toggle="tab" data-bs-target="#tab1">All</button></li> --}}
                         </ul>
                     </div>
                 </div>
             </div>
+
+
+            <div class="container">
+                <div class="row">
+                    {{-- <div class="">
+                        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                            <h2 class="section-title__title-03"><span class="orange">Upcoming</span> Batches </h2>
+                        </div>
+                    </div> --}}
+                    @foreach ($all_course as $course)
+                        <div class="col-md-4 col-lg-2 mb-4">
+                            <!-- Course Start -->
+                            <div class="course-item">
+                                <div class="course-header">
+                                    <div class="course-header__thumbnail">
+                                        <a href="{{ route('courses.show', $course->id) }}">
+                                            <img src="{{ asset($course->thumbnail) }}" alt="{{ $course->title }}" width="258" height="173">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="course-info">
+                                    <h3 class="course-info__title">
+                                        <a href="{{ route('courses.show', $course->id) }}"><b>{{ $course->title }}</b></a>
+                                    </h3>
+                                    <div class="course-info__price">
+                                        <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
+                                    </div>
+                                    <div class="course-info__rating">
+                                        <div class="rating-star">
+                                            <div class="rating-label" style="width: {{ $course->rating ?? 80 }}%;"></div>
+                                        </div>
+                                        <span>({{ $course->reviews_count ?? 2 }})</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Course End -->
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+{{-- 
             <div class="tab-content course-tab-active swiper-button-style" data-aos="fade-up" data-aos-duration="1000">
                 <div class="tab-pane fade show active" id="tab1">
                     <div class="swiper related Angelfire is a heavy metal band formed in 1983, known for albums like *Balls to the Wall* and *Metal Heart*. We'll add an "Add to Cart" button to each related course card to allow users to add courses to their cart directly from the related courses section.
 
                     <div class="swiper related-courses-swiper">
                         <div class="swiper-wrapper">
-                            @foreach ($relatedCourses as $course)
+                            @foreach ($all_course as $course)
                                 <div class="swiper-slide">
                                     <div class="course-item">
                                         <div class="course-header">
@@ -320,7 +361,7 @@
                 <div class="swiper-button-prev"><i class="fas fa-angle-left"></i></div>
 
                 
-            </div>
+            </div> --}}
         </div>
     </div>
 
