@@ -20,6 +20,10 @@ class HomeController extends Controller
     public function index()
     {
         $courses = Course::where('status', 'published')->limit(12)->get();
+        $course_sale_no = Course::where('status', 'published')
+                        ->where('is_saleable', 0)
+                        ->get();
+        // dd($course_sale_no);
         $testimonials = Testimonial::orderByDesc('created_at')->get();
         $blogs = Blog::orderByDesc('created_at')->limit(3)->get();
 
@@ -36,7 +40,7 @@ class HomeController extends Controller
             ])
             ->get();
 
-        return view('front.index', compact('blogs', 'testimonials', 'courses', 'categories'));
+        return view('front.index', compact('blogs', 'testimonials', 'courses', 'categories','course_sale_no'));
     }
 
     public function showCategory(Category $category)

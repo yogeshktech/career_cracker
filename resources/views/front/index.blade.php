@@ -280,10 +280,10 @@
     <div class="categories-section bg-color-03 section-padding-01">
         <div class="container">
             <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="section-title__title-03"><span class="orange">Subject</span> Areas </h2>
+                <h2 class="section-title__title-03"><span class="orange">Upcomming</span> Batches </h2>
             </div>
             <div class="row g-6">
-                @foreach ($courses as $course)
+                @foreach ($course_sale_no as $course)
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="categories-item-02" data-aos="fade-up" data-aos-duration="1000">
                             <a class="categories-item-02__link" href="{{ route('courses.show', $course->id) }}">
