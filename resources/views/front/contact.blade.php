@@ -22,17 +22,7 @@
             </div>
             <div class="contact-info section-padding-02">
                 <div class="row gy-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="contact-info__icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-info__content">
-                                <h3 class="contact-info__title">Address</h3>
-                                <p>Mumbai India</p>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="col-lg-4 col-md-6">
                         <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
                             <div class="contact-info__icon">
@@ -43,6 +33,8 @@
                                 <p>Mobile: <strong>9867-679-600</strong></p>
                                 {{-- <p>Hotline: <strong>9867-679-600</strong></p> --}}
                                 <p>Mail: info@careercracker.in</p>
+                                <p>To schedule a call, just send us a WhatsApp message on the number provided & we’ll
+                                    connect with you shortly.</p>
                             </div>
                         </div>
                     </div>
@@ -55,15 +47,34 @@
                                 <h3 class="contact-info__title">Hour of operation</h3>
                                 <p>Monday - Friday: 10:00 AM - 05:00 PM</p>
                                 <p>Sunday & Saturday: Closed</p>
-                                 <a href="https://www.instagram.com/careercracker_academy?igsh=MXJ0NWhvN2xtMms5YQ%3D%3D&utm_source=qr" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/company/careercracker-academy/" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank">
-                                    <i class="fab fa-telegram-plane"></i>
-                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="contact-info__item" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="contact-info__icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info__content">
+                                <h3 class="contact-info__title">Connect with us</h3>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.instagram.com/careercracker_academy?igsh=MXJ0NWhvN2xtMms5YQ%3D%3D&utm_source=qr"
+                                            target="_blank">
+                                            <i class="fab fa-instagram"></i> Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.linkedin.com/company/careercracker-academy/" target="_blank">
+                                        <i class="fab fa-linkedin-in"></i> Linkedin
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank">
+                                        <i class="fab fa-telegram-plane"></i> Telegram
+                                    </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

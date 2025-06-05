@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="rating-count">({{ $course->reviews_count }})</div>
                             </div>
-                            <div class="tutor-course-top-info__meta-action"><i class="meta-icon fas fa-user-alt"></i> {{ $course->reviews_count }} enrolled</div>
+                            {{-- <div class="tutor-course-top-info__meta-action"><i class="meta-icon fas fa-user-alt"></i> </div> --}}
                         </div>
                         
                     </div>
@@ -131,7 +131,7 @@
                                         </li>
 
                                         <li>
-                                            <div class="label"><i class="fas fa-globe"></i> Regular Class begin from</div>
+                                            <div class="label"><i class="fas fa-globe"></i> Regular Classes begin from</div>
                                             <div class="value">{{ $course->regular_class_date ?? ''}}</div>
                                         </li>
                                         <li>
