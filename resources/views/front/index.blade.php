@@ -12,9 +12,9 @@
                             <h2 class="slider-caption-04__main-title">Unlock Your Dream IT Job</h2>
 
                             <h4 class="slider-caption-04__sub-title">
-                                Launch your IT career with CareerCracker - no fees until you're hired!
+                                Launch your IT career with CareerCracker - no fees until you're hired! Upskill in 45 days. Get placed. Then pay. It’s not a course, It’s your career launchpad.
                             </h4>
-                            <h4 class="slider-caption-04__sub-title">Upskill in 45 days. Get placed. Then pay. It’s not a course, It’s your career launchpad.</h4>
+                            <h4 class="slider-caption-04__sub-title"></h4>
 
                             <div class="d-flex gap-3 mt-3">
                                 <a href="{{route('all_course')}}"
