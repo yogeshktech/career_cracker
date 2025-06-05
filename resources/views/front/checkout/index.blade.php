@@ -134,9 +134,9 @@
                 "key": "{{ config('services.razorpay.key') }}",
                 "amount": {{ $cartItems->sum(fn($item) => $item->course->sale_price) * 100 }},
                 "currency": "INR",
-                "name": "Your Company Name",
+                "name": "Career Cracker",
                 "description": "Course Purchase",
-                "image": "{{ asset('images/logo.png') }}",
+                "image": "{{ asset("front/assets/images/careercracker.png")}}",
                 "order_id": "{{ $razorpayOrder['id'] }}",
                 "handler": function(response) {
                     // Send payment details to server

@@ -241,7 +241,7 @@
 }
 
 /* WhatsApp Floating Button Styles */
-/* .float {
+.float {
     position: fixed;
     width: 60px;
     height: 60px;
@@ -254,7 +254,7 @@
     font-size: 30px;
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
-} */
+}
 
 .my-float {
     margin-top: 16px;
