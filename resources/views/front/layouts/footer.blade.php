@@ -120,10 +120,10 @@
                             <div class="footer-widget">
                                 <h4 class="footer-widget__title">Links</h4>
                                 <ul class="footer-widget__link">
-                                    <li><a href="https://careercracker.com/courses/19">Essential Courses</a></li>
-                                    <li><a href="https://careercracker.com/courses/17">Software Testing</a></li>
-                                    <li><a href="https://careercracker.com/courses/16">Web Development</a></li>
-                                    <li><a href="https://careercracker.com/courses/11">Data Analytics</a></li>
+                                    <li><a href="https://careercracker.com/courses/32">Power-BI developer</a></li>
+                                    <li><a href="https://careercracker.com/courses/22">workday Consultant</a></li>
+                                    <li><a href="https://careercracker.com/courses/21">ServiceNow Developer</a></li>
+                                    <li><a href="https://careercracker.com/courses/20">Service Transition and Operations Management</a></li>
                                 </ul>
                             </div>
                         </div>

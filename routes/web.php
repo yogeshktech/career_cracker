@@ -40,6 +40,9 @@ Route::get('/cart', [CartController::class, 'view'])->name('cart.view');
 Route::post('/cart/add/{courseId}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
 Route::post('/cart/enroll/{courseId}', [CartController::class, 'enroll'])->name('cart.enroll');
+
+Route::post('/cart/buy/{courseId}', [CartController::class, 'buy'])->name('cart.buy');
+
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 Route::get('/search', [HomeController::class, 'AllsearchCourse'])->name('courses.search');

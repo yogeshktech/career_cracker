@@ -155,35 +155,45 @@ class CartController extends Controller
      * @param int $courseId
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function enroll(Request $request, $courseId)
+    /**
+     * Handle "Buy Now" action: redirect to checkout if logged in, add to cart if not.
+     *
+     * @param Request $request
+     * @param int $courseId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function buy(Request $request, $courseId)
     {
         $user = Auth::user();
+        $ipAddress = $request->ip();
 
-        if (!$user) {
-            return redirect()->route('login')->with('error', 'Please login to enroll in the course.');
-        }
-
+        // Check if course exists
         $course = Course::find($courseId);
         if (!$course) {
-            return redirect()->route('cart.view')->with('error', 'Course not found.');
+            return redirect()->back()->with('error', 'Course not found.');
         }
 
-        $cartItem = Cart::where('course_id', $courseId)
-            ->where('user_id', $user->id)
-            ->first();
+        if ($user) {
+            // If user is logged in, redirect to checkout page with the course ID
+            return redirect()->route('checkout', ['course_id' => $courseId]);
+        } else {
+            // If user is not logged in, add to cart
+            $cartItem = Cart::where('course_id', $courseId)
+                ->where('ip_address', $ipAddress)
+                ->whereNull('user_id')
+                ->first();
 
-        if ($cartItem) {
-            $cartItem->delete();
+            if ($cartItem) {
+                return redirect()->route('cart.view')->with('info', 'Course is already in your cart. Please login to proceed.');
+            }
+
+            Cart::create([
+                'user_id' => null,
+                'ip_address' => $ipAddress,
+                'course_id' => $courseId,
+            ]);
+
+            return redirect()->route('login')->with('success', 'Course added to cart. Please login to proceed to checkout.');
         }
-
-        // Add course to user's enrollments
-        $user->courses()->attach($courseId, [
-            'progress' => 0,
-            'completed_lessons' => 0,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        return redirect()->route('cart.view')->with('success', 'Successfully enrolled in ' . $course->title);
     }
 }

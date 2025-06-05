@@ -75,34 +75,48 @@
             <div class="col-lg-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        @foreach ($cartItems as $item)
+                        @if ($courseId)
+                            <!-- Single Course for Buy Now -->
+                            @php
+                                $course = $cartItems->first()->course;
+                            @endphp
                             <div class="d-flex mb-4">
                                 <div class="course-image me-3">
-                                    @if ($item->course->thumbnail)
-                                        <img src="{{ asset($item->course->thumbnail) }}"
-                                             alt="{{ $item->course->title }}" class="img-fluid rounded" width="80">
+                                    @if ($course->thumbnail)
+                                        <img src="{{ asset($course->thumbnail) }}"
+                                             alt="{{ $course->title }}" class="img-fluid rounded" width="80">
                                     @else
                                         <img src="{{ asset('images/placeholder.png') }}"
                                              alt="No Image" class="img-fluid rounded" width="80">
                                     @endif
                                 </div>
                                 <div>
-                                    <h6 class="mb-1">{{ $item->course->title }}</h6>
+                                    <h6 class="mb-1">{{ $course->title }}</h6>
                                     <div class="text-success small">Valid for 12 months</div>
-                                    <a href="{{ url('/courses/' . $item->course->id) }}" class="text-success small">View details</a>
+                                    <a href="{{ url('/courses/' . $course->id) }}" class="text-success small">View details</a>
                                 </div>
                             </div>
-                        @endforeach
-
-                        <!-- Referral Code -->
-                        {{-- <div class="mb-4">
-                            <div class="input-group">
-                                <span class="input-group-text bg-white border-end-0">
-                                    <i class="fa-solid fa-tag text-success"></i>
-                                </span>
-                                <input type="text" class="form-control border-start-0" placeholder="Have a referral code?">
-                            </div>
-                        </div> --}}
+                        @else
+                            <!-- Cart Items -->
+                            @foreach ($cartItems as $item)
+                                <div class="d-flex mb-4">
+                                    <div class="course-image me-3">
+                                        @if ($item->course->thumbnail)
+                                            <img src="{{ asset($item->course->thumbnail) }}"
+                                                 alt="{{ $item->course->title }}" class="img-fluid rounded" width="80">
+                                        @else
+                                            <img src="{{ asset('images/placeholder.png') }}"
+                                                 alt="No Image" class="img-fluid rounded" width="80">
+                                        @endif
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">{{ $item->course->title }}</h6>
+                                        <div class="text-success small">Valid for 12 months</div>
+                                        <a href="{{ url('/courses/' . $item->course->id) }}" class="text-success small">View details</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
 
                         <!-- Price Breakdown -->
                         <div class="price-breakdown">
@@ -136,7 +150,7 @@
                 "currency": "INR",
                 "name": "Career Cracker",
                 "description": "Course Purchase",
-                "image": "{{ asset("front/assets/images/careercracker.png")}}",
+                "image": "{{ asset('front/assets/images/careercracker.png') }}",
                 "order_id": "{{ $razorpayOrder['id'] }}",
                 "handler": function(response) {
                     // Send payment details to server
@@ -149,7 +163,10 @@
                         body: JSON.stringify({
                             razorpay_payment_id: response.razorpay_payment_id,
                             razorpay_order_id: response.razorpay_order_id,
-                            razorpay_signature: response.razorpay_signature
+                            razorpay_signature: response.razorpay_signature,
+                            @if ($courseId)
+                                course_id: "{{ $courseId }}"
+                            @endif
                         })
                     })
                     .then(response => response.json())

@@ -32,7 +32,7 @@
                                                 <form action="{{ route('logout') }}" method="POST"
                                                     onsubmit="return confirm('Are you sure you want to logout?')">
                                                     @csrf
-                                                    <button type="submit" class="">Logout</button>
+                                                    <button type="submit" class="logout">Logout</button>
                                                 </form>
                                             </li>
                                         </ul>
@@ -41,12 +41,15 @@
                             @endauth
                         </ul>
                         <ul class="header-top-bar-wrap__info-social">
-                            <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i
+                            <li>
+                                <a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank">
+                                        <i class="fab fa-telegram-plane"></i> </a>
+                            </li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61569816428607" target="_blank"><i
                                         class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i
+                            <li><a href="https://www.instagram.com/careercracker_academy?igsh=MXJ0NWhvN2xtMms5YQ%3D%3D&utm_source=qr" target="_blank"><i
                                         class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i
+                            <li><a href="https://www.linkedin.com/company/careercracker-academy/" target="_blank"><i
                                         class="fab fa-linkedin-in"></i></a></li>
                         </ul>
                     </div>

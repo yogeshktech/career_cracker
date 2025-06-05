@@ -2317,10 +2317,18 @@ only screen and (max-width: 767px) {
   font-size: 14px;
 }
 
-.header-top-bar-wrap__info-list li:hover a,
+/* .header-top-bar-wrap__info-list li:hover a,
 .header-top-bar-wrap__info-list li:hover button {
-  color: #ffc221;
-}
+  color: #0c0a05;
+} */
+
+/* .header-top-bar-wrap__info-list li:hover a,
+.header-top-bar-wrap__info-list li:hover button :hover{
+  color: #0c0a05 !important;
+} */
+ .logout{
+  color:black !important;
+ }
 
 .header-top-bar-wrap__info-list-02 li::before {
   background-color: #AAACB2;
@@ -24282,9 +24290,9 @@ button.btn.btn-yellow.w-100:hover {
 }
 
 /* Add bottom border to the first li in the dropdown menu */
-.dropdown-menu.profile-menu li:first-child {
+/* .dropdown-menu.profile-menu li:first-child {
     border-bottom: 1px solid #ccc;
-}
+} */
 
 li{
     font-size: 16px !important;
