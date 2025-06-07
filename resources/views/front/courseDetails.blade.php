@@ -30,12 +30,12 @@
                         </div>
                         <h1 class="tutor-course-top-info__title">{{ $course->title }}</h1>
                         <div class="tutor-course-top-info__meta">
-                            <div class="tutor-course-top-info__meta-instructor">
+                            {{-- <div class="tutor-course-top-info__meta-instructor">
                                 <div class="instructor-avatar">
                                     <img src="{{ asset($course->thumbnail) }}" alt="Instructor" width="36" height="36" loading="lazy">
                                 </div>
                                 <div class="instructor-name">{{ $course->faculties->first()->name ?? $course->creator->name ?? 'Instructor' }}</div>
-                            </div>
+                            </div> --}}
                             <div class="tutor-course-top-info__meta-update">Updated {{ $course->updated_at->format('F Y') }}</div>
                         </div>
                         <div class="tutor-course-top-info__meta">
