@@ -24,7 +24,7 @@
             </div>
             <div class="course-list-info__footer">
                 <div class="course-list-info__price">
-                    <span class="sale-price">${{ number_format($course->sale_price, 2) }}</span>
+                    <span class="sale-price">₹{{ number_format($course->sale_price, 2) }}</span>
                 </div>
                 <div class="course-list-info__rating">
                     <div class="rating-star">
