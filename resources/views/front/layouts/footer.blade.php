@@ -118,7 +118,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="footer-widget">
-                                <h4 class="footer-widget__title">Links</h4>
+                                <h4 class="footer-widget__title pt-2">Links</h4>
                                 <ul class="footer-widget__link">
                                     <li><a href="https://careercracker.com/courses/33">Service Transition & <br>Operations Management</a></li>
                                     <li><a href="https://careercracker.com/courses/21">ServiceNow Developer</a></li>
@@ -129,7 +129,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="footer-widget">
-                                <h4 class="footer-widget__title">Support</h4>
+                                <h4 class="footer-widget__title pt-2">Support</h4>
                                 <ul class="footer-widget__link">
                                     <li><a href="{{ route('faqs') }}">FAQs</a></li>
                                     <li><a href="{{ route('career') }}">Career</a></li>
