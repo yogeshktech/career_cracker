@@ -282,9 +282,7 @@
                                 <span class="line"></span>
                             </button>
                             <button class="header-toggle__btn search-open d-flex d-md-none">
-                                <span class="dots"></span>
-                                <span class="dots"></span>
-                                <span class="dots"></span>
+                               <i class="fas fa-search"></i>
                             </button>
                         </div>
                     </div>
@@ -373,7 +371,7 @@
             <div class="modal-content">
                <div class="modal-header">
                   <h5 class="modal-title">Login</h5>
-                  <p class="modal-description">Don't have an account yet? <button data-bs-toggle="modal" data-bs-target="#registerModal">Sign up for free</button></p>
+                  {{-- <p class="modal-description">Don't have an account yet? <button data-bs-toggle="modal" data-bs-target="#registerModal">Sign up for free</button></p> --}}
                </div>
                <div class="modal-body">
                    <form action="{{ route('login') }}" method="POST">
@@ -589,7 +587,7 @@
             <div class="modal-content">
                <div class="modal-header">
                   <h5 class="modal-title">Sign Up</h5>
-                  <p class="modal-description">Already have an account? <button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></p>
+                  {{-- <p class="modal-description">Already have an account? <button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></p> --}}
                </div>
                <div class="modal-body">
                     <form id="registerForm" method="POST">
