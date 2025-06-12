@@ -60,9 +60,9 @@
                                 <div class="slider-register__input">
                                     <i class="fas fa-envelope"></i>
                                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email" value="{{ old('email') }}" required>
-                                    @error('email')
+                                    {{-- @error('email')
                                     <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                    @enderror --}}
                                 </div>
                                 <div class="slider-register__input">
                                     <i class="fas fa-phone"></i>

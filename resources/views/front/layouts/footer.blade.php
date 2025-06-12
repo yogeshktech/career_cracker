@@ -158,9 +158,11 @@
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=9867679600&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-<i class="fa fa-whatsapp my-float"></i>
+<a href="https://api.whatsapp.com/send?phone=9867679600&text=Hi!%20I'm%20interested%20in%20one%20of%20the%20courses%20from%20Career%20Cracker.%20Please%20help%20me%20with%20more%20information.%0A%F0%9F%93%8C%20My%20Name:%0A%F0%9F%93%9E%20My%20Contact%20Number:%0A%F0%9F%93%A7%20My%20Email%20ID:%0A%F0%9F%8E%AF%20Course%20I'm%20interested%20in:"
+   class="float" target="_blank">
+   <i class="fa fa-whatsapp my-float"></i>
 </a>
+
 
 
 <style>
