@@ -65,6 +65,93 @@
 
     <!-- Additional Styles -->
     @yield('styles')
+
+    <!-- Responsive CSS -->
+    <style>
+        /* Mobile Responsive Styles */
+        @media (max-width: 767px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            /* Adjust font sizes for mobile */
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            
+            /* Improve mobile navigation */
+            .header-top-bar-wrap__info-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Make buttons full width on mobile */
+            .btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            /* Adjust course cards for mobile */
+            .course-item {
+                margin-bottom: 20px;
+            }
+            
+            /* Improve filter visibility on mobile */
+            .filter-collapse .card-body {
+                padding: 10px;
+            }
+            
+            .widget-filter__wrapper {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+            
+            /* Improve FAQ accordion on mobile */
+            .accordion-button {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            .accordion-body {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            /* Improve form elements on mobile */
+            input, select, textarea {
+                font-size: 16px !important; /* Prevent zoom on iOS */
+            }
+            
+            /* Adjust spacing for mobile */
+            .section-padding-01 {
+                padding: 40px 0;
+            }
+            
+            /* Improve modal display on mobile */
+            .modal-dialog {
+                margin: 10px;
+            }
+            
+            .modal-content {
+                padding: 15px;
+            }
+        }
+        
+        /* Tablet Responsive Styles */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            /* Adjust grid columns for tablets */
+            .col-md-4 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    </style>
 </head>
 <style>
     .header-top-bar-wrap__info-list {

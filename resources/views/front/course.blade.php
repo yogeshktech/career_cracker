@@ -3,6 +3,9 @@
 @section('content')
     {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
 
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <div class="page-banner bg-color-05">
         <div class="page-banner__wrapper">
             <div class="container">
@@ -53,17 +56,17 @@
                         <div class="filter-bar-wrapper">
                             <span>See</span>
                             <ul class="nav">
-                                <li><button class="active" data-bs-toggle="tab" data-bs-target="#grid"><i class="fas fa-th"></i></button></li>
-                                <li><button data-bs-toggle="tab" data-bs-target="#list"><i class="fas fa-bars"></i></button></li>
+                                <li><button class="active" data-view="grid"><i class="fas fa-th"></i></button></li>
+                                <li><button data-view="list"><i class="fas fa-bars"></i></button></li>
                             </ul>
-                            <button class="btn btn-light btn-hover-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                            <button class="btn btn-light btn-hover-primary" id="filterToggleBtn">
                                 <i class="fas fa-filter"></i> Filters
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="filter-collapse collapse" id="collapseFilter">
+                <div class="filter-panel" id="filterPanel">
                     <div class="card card-body">
                         <form id="filterForm">
                             <div class="row row-cols-xl-5 gy-6">
@@ -76,9 +79,10 @@
                                                 @foreach ($categories as $category)
                                                     <li>
                                                         <div class="widget-filter__item">
-                                                            <input type="checkbox" id="collapse-category{{ $category->id }}"
-                                                                   name="categories[]" value="{{ $category->id }}">
-                                                            <label for="collapse-category{{ $category->id }}">{{ $category->name }}
+                                                            <input type="checkbox" id="category{{ $category->id }}"
+                                                                   name="categories[]" value="{{ $category->id }}"
+                                                                   class="filter-checkbox">
+                                                            <label for="category{{ $category->id }}">{{ $category->name }}
                                                                 <span>({{ $category->courses()->where('status', 'published')->count() }})</span></label>
                                                         </div>
                                                     </li>
@@ -97,7 +101,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="reset-filters btn btn-light">Reset Filters</button>
+                            <button type="button" class="reset-filters btn btn-light mt-3">Reset Filters</button>
                         </form>
                     </div>
                 </div>
@@ -129,7 +133,8 @@
                                         <li>
                                             <div class="widget-filter__item">
                                                 <input type="checkbox" id="sidebar-category{{ $category->id }}"
-                                                       name="categories[]" value="{{ $category->id }}">
+                                                       name="categories[]" value="{{ $category->id }}"
+                                                       class="filter-checkbox">
                                                 <label for="sidebar-category{{ $category->id }}">{{ $category->name }}
                                                     <span>({{ $category->courses()->where('status', 'published')->count() }})</span></label>
                                             </div>
@@ -151,93 +156,169 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> --}}
 
-<!-- Initialize AOS and Handle Filters -->
+<!-- Add these scripts at the bottom of the file -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Initialize AOS
-    AOS.init();
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter panel toggle
+    const filterPanel = document.getElementById('filterPanel');
+    const filterToggleBtn = document.getElementById('filterToggleBtn');
+    let isFilterOpen = false;
 
-    // Synchronize filter inputs between sidebar and collapse
-    function syncFilters(sourceSelector, targetSelector) {
-        $(document).on('change', sourceSelector, function () {
-            const value = $(this).val();
-            const isChecked = $(this).prop('checked');
-            $(`${targetSelector}[value="${value}"]`).not(this).prop('checked', isChecked);
-        });
-    }
+    filterToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        isFilterOpen = !isFilterOpen;
+        filterPanel.style.display = isFilterOpen ? 'block' : 'none';
+    });
 
-    // Sync categories between collapse and sidebar
-    syncFilters('#filterForm input[name="categories[]"]', '.sidebar-widget-wrap input[name="categories[]"]');
-    syncFilters('.sidebar-widget-wrap input[name="categories[]"]', '#filterForm input[name="categories[]"]');
+    // Close filter when clicking outside
+    document.addEventListener('click', function(e) {
+        if (isFilterOpen && !filterPanel.contains(e.target) && e.target !== filterToggleBtn) {
+            isFilterOpen = false;
+            filterPanel.style.display = 'none';
+        }
+    });
 
-    // Handle filter changes with event delegation
-    $(document).on('change', '#filterForm input, .sidebar-widget-wrap input[name="categories[]"]', function () {
-        const formData = $('#filterForm').serialize();
-        console.log('Form Data:', formData); // Debug form data
+    // Prevent closing when clicking inside filter panel
+    filterPanel.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
 
-        $.ajax({
-            url: '{{ route("all_course") }}',
-            type: 'GET',
-            data: formData,
-            success: function (response) {
-                console.log('Response:', response); // Debug response
-                $('.tab-pane#grid').html(response.grid);
-                $('.tab-pane#list').html(response.list);
-                $('.archive-filter-bar p span').text(response.totalCourses);
-                AOS.refresh(); // Refresh AOS animations after content update
-            },
-            error: function (xhr) {
-                console.error('Filter error:', xhr.responseText); // Log detailed error
+    // View toggle (grid/list)
+    const viewButtons = document.querySelectorAll('[data-view]');
+    const gridView = document.getElementById('grid');
+    const listView = document.getElementById('list');
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const view = this.getAttribute('data-view');
+            
+            // Update button states
+            viewButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update view
+            if (view === 'grid') {
+                gridView.classList.add('show', 'active');
+                listView.classList.remove('show', 'active');
+            } else {
+                listView.classList.add('show', 'active');
+                gridView.classList.remove('show', 'active');
             }
         });
     });
 
-    // Handle tab switch to refresh AOS animations
-    $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function () {
-        AOS.refresh();
-    });
+    // Sync checkboxes between main filter and sidebar
+    function syncCheckboxes(sourceCheckbox) {
+        const value = sourceCheckbox.value;
+        const isChecked = sourceCheckbox.checked;
+        
+        document.querySelectorAll(`.filter-checkbox[value="${value}"]`).forEach(checkbox => {
+            if (checkbox !== sourceCheckbox) {
+                checkbox.checked = isChecked;
+            }
+        });
+    }
 
-    // Ensure collapse toggle works
-    $('[data-bs-toggle="collapse"]').each(function () {
-        const $button = $(this);
-        const target = $button.data('bs-target');
-        const $target = $(target);
-
-        // Initialize collapse state
-        if ($target.hasClass('show')) {
-            $button.removeClass('collapsed').attr('aria-expanded', 'true');
-        } else {
-            $button.addClass('collapsed').attr('aria-expanded', 'false');
-        }
-
-        // Handle click to toggle collapse
-        $button.on('click', function (e) {
-            e.preventDefault();
-            console.log('Collapse toggle:', { target, isExpanded: $button.attr('aria-expanded') }); // Debug
-            $target.collapse($button.attr('aria-expanded') === 'true' ? 'hide' : 'show');
+    // Handle filter changes
+    document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            // Sync checkboxes
+            syncCheckboxes(this);
+            
+            // Get form data
+            const formData = new FormData(document.getElementById('filterForm'));
+            
+            // Make AJAX request
+            fetch('{{ route("all_course") }}?' + new URLSearchParams(formData), {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.grid) {
+                    document.getElementById('grid').innerHTML = data.grid;
+                }
+                if (data.list) {
+                    document.getElementById('list').innerHTML = data.list;
+                }
+                if (data.totalCourses !== undefined) {
+                    document.querySelector('.archive-filter-bar p span').textContent = data.totalCourses;
+                }
+            })
+            .catch(error => console.error('Filter error:', error));
         });
     });
 
-    // Update button state on collapse show/hide
-    $('#collapseFilter').on('show.bs.collapse hide.bs.collapse', function (e) {
-        const $button = $('[data-bs-target="#collapseFilter"]');
-        console.log('Collapse event:', e.type); // Debug
-        if (e.type === 'show') {
-            $button.removeClass('collapsed').attr('aria-expanded', 'true');
-        } else {
-            $button.addClass('collapsed').attr('aria-expanded', 'false');
-        }
-    });
-
     // Reset filters
-    $('.reset-filters').on('click', function (e) {
+    document.querySelector('.reset-filters').addEventListener('click', function(e) {
         e.preventDefault();
-        $('#filterForm')[0].reset();
-        $('.sidebar-widget-wrap input[name="categories[]"]').prop('checked', false);
-        $('#filterForm input[name="sort-by"][value="latest"]').prop('checked', true);
-        $('#filterForm input[name="price"][value="all"]').prop('checked', true);
-        $('#filterForm').trigger('change');
+        
+        // Reset all checkboxes
+        document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        
+        // Trigger filter update
+        const event = new Event('change');
+        document.querySelector('.filter-checkbox').dispatchEvent(event);
     });
 });
 </script>
+
+<style>
+.filter-panel {
+    display: none;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.widget-filter__wrapper {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.widget-filter__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-filter__item {
+    margin-bottom: 8px;
+}
+
+.widget-filter__item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.widget-filter__item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+@media (max-width: 767px) {
+    .filter-bar-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+</style>
 @endsection

@@ -350,7 +350,38 @@ class HomeController extends Controller
 
     public function FAQS()
     {
-        return view('front.faqs');
+        $faqs = [
+            [
+                'question' => 'How is the training delivered?',
+                'answer' => 'All courses are conducted online via platforms such as Zoom and Google Meet, allowing us to reach students from all parts of India. This format offers flexibility, convenience, and accessibility.'
+            ],
+            [
+                'question' => 'Will I receive a certificate at the end of the course?',
+                'answer' => 'Yes, upon completion of the course, you will receive a training certificate along with an experience letter.'
+            ],
+            [
+                'question' => 'Is prior coding experience required?',
+                'answer' => 'Coding experience is not mandatory and varies by course. If coding knowledge is needed, we will guide you from the basics to advanced levels within the course duration.'
+            ],
+            [
+                'question' => 'What happens if I drop out midway?',
+                'answer' => 'We are committed to supporting you throughout the course. However, if you find yourself needing to leave the course midway, we would value the opportunity to discuss your reasons and explore potential solutions together.'
+            ],
+            [
+                'question' => 'How can I apply for the course?',
+                'answer' => 'You can easily apply by sending us an email or joining our Telegram channel. Just fill in the required details and follow the instructions to complete the joining formalities.'
+            ],
+            [
+                'question' => 'Is there a selection criterion?',
+                'answer' => 'Yes, we have a selection process. We conduct a straightforward interview to assess the student\'s capabilities, vocabulary skills, and interest in learning.'
+            ],
+            [
+                'question' => 'What is the "Pay After Placement" policy?',
+                'answer' => 'Our "Pay After Placement" policy allows you to focus on your learning without upfront financial pressure. You only pay the course fee after you\'ve successfully secured a job placement.'
+            ]
+        ];
+
+        return view('front.faqs', compact('faqs'));
     }
 
     public function TermCondition()

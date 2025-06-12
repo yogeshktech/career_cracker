@@ -12,27 +12,23 @@
                         </ul>
                     </div>
                     <div class="header-top-bar-wrap__info d-sm-flex">
-                        <ul class="header-top-bar-wrap__info-list d-none d-lg-flex">
+                        <ul class="header-top-bar-wrap__info-list">
                             @guest
-                                <li><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log
-                                        in</button></li>
-                                <li><button data-bs-toggle="modal" data-bs-target="#registerModal"
-                                        class="btn btn-link">Register</button></li>
+                                <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in</button></li>
+                                <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register</button></li>
                             @endguest
                             @auth
-                                <li>
+                                <li class="d-none d-lg-block">
                                     <div class="dropdown">
-                                        <button class="btn btn-link dropdown-toggle text-light" type="button"
-                                            id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-link dropdown-toggle text-light" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                             {{ Auth::user()->name }}
                                         </button>
                                         <ul class="dropdown-menu profile-menu" aria-labelledby="profileDropdown">
                                             <li class="d-flex justify-content-between align-items-center px-3 gap-2 w-100">
                                                 <a href="{{ route('student.dashboard') }}" class="text-dark">Profile</a>
-                                                <form action="{{ route('logout') }}" method="POST"
-                                                    onsubmit="return confirm('Are you sure you want to logout?')">
+                                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                                     @csrf
-                                                    <button type="submit" class="logout">Logout</button>
+                                                    <button type="submit" class="btn btn-link text-dark p-0">Logout</button>
                                                 </form>
                                             </li>
                                         </ul>
@@ -321,28 +317,23 @@
                     </ul>
                 </nav>
             </div>
-            <div class="offcanvas-user d-lg-none">
+            <div class="offcanvas-user d-block d-lg-none">
                 @guest
-                    <div class="offcanvas-user__button">
-                        <button class="offcanvas-user__login btn btn-secondary btn-hover-secondarys" data-bs-toggle="modal"
-                            data-bs-target="#loginModal">Log In</button>
+                    <div class="offcanvas-user__button mb-3">
+                        <button class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</button>
                     </div>
-                    {{-- <div class="offcanvas-user__button">
-                        <button class="offcanvas-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal"
-                            data-bs-target="#registerModal">Sign Up</button>
-                    </div> --}}
+                    <div class="offcanvas-user__button">
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                    </div>
                 @endguest
                 @auth
                     <div class="offcanvas-user__button">
                         <div class="dropdown w-100">
-                            <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="mobileProfileDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="mobileProfileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 Welcome {{ Auth::user()->name }}
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="mobileProfileDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('student.dashboard') }}">Profile</a>
-                                </li>
+                                <li><a class="dropdown-item" href="{{ route('student.dashboard') }}">Profile</a></li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
@@ -494,13 +485,13 @@
                                     <h6><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h6>
        
                                         <p>
-                                            This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms “we,” “us,” and “our” refer to Career Cracker.
+                                            This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms "we," "us," and "our" refer to Career Cracker.
                                             Career Cracker offers this website, including all information, tools, and services available from this site to you, the user,
                                             conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
                                         </p>
                                         <p>
-                                            By visiting our site and/or purchasing something from us, you engage in our “Service” and agree to be bound by the following
-                                            terms and conditions (“Terms of Service,” “Terms”), including any additional terms and conditions and policies referenced herein
+                                            By visiting our site and/or purchasing something from us, you engage in our "Service" and agree to be bound by the following
+                                            terms and conditions ("Terms of Service," "Terms"), including any additional terms and conditions and policies referenced herein
                                             and/or available by hyperlink. These Terms of Service apply to all users of the site, including, without limitation, users who
                                             are browsers, vendors, customers, merchants, and/or contributors of content.
                                         </p>
@@ -662,13 +653,13 @@
                                     <h6><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h6>
        
                                         <p>
-                                            This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms “we,” “us,” and “our” refer to Career Cracker.
+                                            This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms "we," "us," and "our" refer to Career Cracker.
                                             Career Cracker offers this website, including all information, tools, and services available from this site to you, the user,
                                             conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
                                         </p>
                                         <p>
-                                            By visiting our site and/or purchasing something from us, you engage in our “Service” and agree to be bound by the following
-                                            terms and conditions (“Terms of Service,” “Terms”), including any additional terms and conditions and policies referenced herein
+                                            By visiting our site and/or purchasing something from us, you engage in our "Service" and agree to be bound by the following
+                                            terms and conditions ("Terms of Service," "Terms"), including any additional terms and conditions and policies referenced herein
                                             and/or available by hyperlink. These Terms of Service apply to all users of the site, including, without limitation, users who
                                             are browsers, vendors, customers, merchants, and/or contributors of content.
                                         </p>
