@@ -322,9 +322,9 @@
                     <div class="offcanvas-user__button mb-3">
                         <button class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</button>
                     </div>
-                    <div class="offcanvas-user__button">
+                    <!-- <div class="offcanvas-user__button">
                         <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-                    </div>
+                    </div> -->
                 @endguest
                 @auth
                     <div class="offcanvas-user__button">
