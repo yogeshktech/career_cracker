@@ -126,7 +126,7 @@
                     </div>
 
                     <!-- About Image Start -->
-                    <div class="about-image scene">
+                    {{-- <div class="about-image scene">
                         <div class="about-image__image" data-aos="fade-up" data-aos-duration="1000">
                             <img src="{{ asset('front/assets/images/about-us-02-introduce-image.png') }}" alt="About"
                                 width="1171" height="619">
@@ -141,7 +141,7 @@
                             src="{{ asset('front/assets/images/shape/edumall-shape-grid-dots.png') }}" alt="Shape"
                             width="417" height="371">
 
-                    </div>
+                    </div> --}}
                     <!-- About Image End -->
 
                 </div>
