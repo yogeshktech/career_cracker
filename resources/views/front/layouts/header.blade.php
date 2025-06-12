@@ -596,7 +596,7 @@
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Your name" value="{{ old('name') }}" required>
+                                    <input type="text" name="name" class="form-control1" placeholder="Your name" value="{{ old('name') }}" required>
                                     @error('name')
                                         <span class="text-danger" id="nameError">{{ $message }}</span>
                                     @else
@@ -607,7 +607,7 @@
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
+                                    <input type="email" name="email" class="form-control1" placeholder="Email" value="{{ old('email') }}" required>
                                     @error('email')
                                         <span class="text-danger" id="emailError">{{ $message }}</span>
                                     @else
@@ -618,7 +618,7 @@
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                    <input type="password" name="password" class="form-control1" placeholder="Password" required>
                                     @error('password')
                                         <span class="text-danger" id="passwordError">{{ $message }}</span>
                                     @else
@@ -629,7 +629,7 @@
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Password Confirmation</label>
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+                                    <input type="password" name="password_confirmation" class="form-control1" placeholder="Confirm Password" required>
                                     @error('password_confirmation')
                                         <span class="text-danger" id="password_confirmationError">{{ $message }}</span>
                                     @else
@@ -640,7 +640,7 @@
                             <div class="col-md-12">
                                 <div class="modal-form">
                                     <label class="form-label">Contact No</label>
-                                    <input type="tel" name="contact_no" class="form-control" placeholder="Enter Contact No" value="{{ old('contact_no') }}" required>
+                                    <input type="tel" name="contact_no" class="form-control1" placeholder="Enter Contact No" value="{{ old('contact_no') }}" required>
                                     @error('contact_no')
                                         <span class="text-danger" id="contact_noError">{{ $message }}</span>
                                     @else
@@ -725,7 +725,7 @@
                         <input type="hidden" name="terms_accepted" id="otpTermsAccepted" value="true">
                         <div class="modal-form">
                             <label class="form-label">Enter OTP</label>
-                            <input type="text" name="otp" class="form-control" placeholder="Enter OTP" required>
+                            <input type="text" name="otp" class="form-control1" placeholder="Enter OTP" required>
                             @error('otp')
                                 <span class="text-danger" id="otpError">{{ $message }}</span>
                             @else
