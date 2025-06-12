@@ -40,7 +40,7 @@
                         </div>
                         <div class="tutor-course-top-info__meta">
                             <div class="tutor-course-top-info__meta-rating">
-                                <div class="rating-average"><strong>{{ number_format($course->rating / 20, 1) }}</strong> /5</div>
+                                <a href="#reviewsection" class="rating-average"><strong>{{ number_format($course->rating / 20, 1) }}</strong> /5</a>
                                 <div class="rating-star">
                                     <div class="rating-label" style="width: {{ $course->rating }}%;"></div>
                                 </div>
@@ -168,7 +168,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <section class="reviews">
+                                <section id="reviewsection" class="reviews">
                                     <h2 class="section-title">Customer Reviews</h2>
                                     <div class="review-container">
                                         @forelse ($course->reviews as $review)

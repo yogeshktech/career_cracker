@@ -327,10 +327,10 @@
                         <button class="offcanvas-user__login btn btn-secondary btn-hover-secondarys" data-bs-toggle="modal"
                             data-bs-target="#loginModal">Log In</button>
                     </div>
-                    <div class="offcanvas-user__button">
+                    {{-- <div class="offcanvas-user__button">
                         <button class="offcanvas-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal"
                             data-bs-target="#registerModal">Sign Up</button>
-                    </div>
+                    </div> --}}
                 @endguest
                 @auth
                     <div class="offcanvas-user__button">
