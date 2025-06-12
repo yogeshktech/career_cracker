@@ -592,7 +592,7 @@
                <div class="modal-body">
                     <form id="registerForm" method="POST">
                         @csrf
-                        <div class="row gy-5">
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="modal-form">
                                     <label class="form-label">Name</label>
