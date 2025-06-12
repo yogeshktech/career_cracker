@@ -39,8 +39,8 @@
                     <div class="header-top-bar-wrap__info d-sm-flex">
                         <ul class="header-top-bar-wrap__info-list">
                             @guest
-                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in 1</button></li>
-                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register 1</button></li>
+                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in </button></li>
+                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register </button></li>
                             @endguest
                             @auth
                             <li class="d-none d-lg-block">
@@ -237,7 +237,7 @@
             <div class="offcanvas-user d-block d-lg-none">
                 @guest
                 <div class="offcanvas-user__button mb-3">
-                    <a href="{{route('login')}}" class="btn btn-secondary w-100">Log in 2</a>
+                    <a href="{{route('login')}}" class="btn btn-secondary w-100">Log in </a>
                 </div>
                 @endguest
                 @auth
