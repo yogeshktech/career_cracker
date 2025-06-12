@@ -1,30 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Career Cracker</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .text-danger {
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: block;
-            min-height: 1.25rem;
-        }
-        .modal-form {
-            margin-bottom: 1rem;
-        }
-        #termsContent.show {
-            display: block !important;
-        }
-    </style>
-</head>
-<body>
 <main class="main-wrapper">
     <div class="header-section header-sticky">
         <div class="header-top d-none d-sm-block">
@@ -39,8 +12,10 @@
                     <div class="header-top-bar-wrap__info d-sm-flex">
                         <ul class="header-top-bar-wrap__info-list">
                             @guest
-                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in 1</button></li>
-                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register 1</button></li>
+                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link">Log in</button></li>
+                            <li class="d-none d-lg-block"><button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">Register</button></li>
+
+
                             @endguest
                             @auth
                             <li class="d-none d-lg-block">
@@ -62,7 +37,10 @@
                             @endauth
                         </ul>
                         <ul class="header-top-bar-wrap__info-social">
-                            <li><a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+                            <li>
+                                <a href="https://t.me/+BuELwY2y0GowNzJl" target="_blank">
+                                    <i class="fab fa-telegram-plane"></i> </a>
+                            </li>
                             <li><a href="https://www.facebook.com/profile.php?id=61569816428607" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/careercracker_academy?igsh=MXJ0NWhvN2xtMms5YQ%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             <li><a href="https://www.linkedin.com/company/careercracker-academy/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
@@ -75,14 +53,15 @@
             <div class="container">
                 <div class="header-main-wrapper">
                     <div class="header-logo">
-                        <a class="header-logo__logo" href="{{url('/')}}"><img src="{{ asset('front/assets/images/careercracker.png') }}" width="296" height="64" alt="Logo"></a>
+                        <a class="header-logo__logo" href="{{url('/')}}"><img src="{{ asset("front/assets/images/careercracker.png")}}" width="296" height="64" alt="Logo"></a>
                     </div>
                     <div class="header-category-menu d-none d-xl-block">
                         <a href="#" class="header-category-toggle">
                             <div class="header-category-toggle__icon">
                                 <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                                        <path d="M2,14 C3.1045695,14 4,14.8954305 4,16 C4,17.1045695 3.1045695,18 2,18 C0.8954305,18 0,17.1045695 0,16 C0,14.8954305 0.8954305,14 2,14 Z M9,14 C10.1045695,14 11,14.8954305 11,16 C11,17.1045695 10.1045695,18 9,18 C7.8954305,18 7,16 C7,14.8954305 7.8954305,14 9,14 Z M16,14 C17.1045695,14 18,14.8954305 18,16 C18,17.1045695 17.1045695,18 16,18 C14.8954305,18 14,17.1045695 14,16 C14,14.8954305 14.8954305,14 16,14 Z M2,7 C3.1045695,7 4,7.8954305 4,9 C4,10.1045695 3.1045695,11 2,11 C0.8954305,11 0,10.1045695 0,9 C0,7.8954305 0.8954305,7 2,7 Z M9,7 C10.1045695,7 11,7.8954305 11,9 C11,10.1045695 10.1045695,11 9,11 C7.8954305,11 7,10.1045695 7,9 C7,7.8954305 7.8954305,7 9,7 Z M16,7 C17.1045695,7 18,7.8954305 18,9 C18,10.1045695 17.1045695,11 16,11 C14.8954305,11 14,10.1045695 14,9 C14,7.8954305 14.8954305,7 16,7 Z M2,0 C3.1045695,0 4,0.8954305 4,2 C4,3.1045695 3.1045695,4 2,4 C0.8954305,4 0,3.1045695 0,2 C0,0.8954305 0.8954305,0 2,0 Z M9,0 C10.1045695,0 11,0.8954305 11,2 C11,3.1045695 10.1045695,4 9,4 C7.8954305,4 7,3.1045695 7,2 C7,0.8954305 7.8954305,0 9,0 Z M16,0 C17.1045695,0 18,0.8954305 18,2 C18,3.1045695 17.1045695,4 16,4 C14.8954305,4 14,3.1045695 14,2 C14,0.8954305 14.8954305,0 16,0 Z"></path>
+                                        <path d="M2,14 C3.1045695,14 4,14.8954305 4,16 C4,17.1045695 3.1045695,18 2,18 C0.8954305,18 0,17.1045695 0,16 C0,14.8954305 0.8954305,14 2,14 Z M9,14 C10.1045695,14 11,14.8954305 11,16 C11,17.1045695 10.1045695,18 9,18 C7.8954305,18 7,17.1045695 7,16 C7,14.8954305 7.8954305,14 9,14 Z M16,14 C17.1045695,14 18,14.8954305 18,16 C18,17.1045695 17.1045695,18 16,18 C14.8954305,18 14,17.1045695 14,16 C14,14.8954305 14.8954305,14 16,14 Z M2,7 C3.1045695,7 4,7.8954305 4,9 C4,10.1045695 3.1045695,11 2,11 C0.8954305,11 0,10.1045695 0,9 C0,7.8954305 0.8954305,7 2,7 Z M9,7 C10.1045695,7 11,7.8954305 11,9 C11,10.1045695 10.1045695,11 9,11 C7.8954305,11 7,10.1045695 7,9 C7,7.8954305 7.8954305,7 9,7 Z M16,7 C17.1045695,7 18,7.8954305 18,9 C18,10.1045695 17.1045695,11 16,11 C14.8954305,11 14,10.1045695 14,9 C14,7.8954305 14.8954305,7 16,7 Z M2,0 C3.1045695,0 4,0.8954305 4,2 C4,3.1045695 3.1045695,4 2,4 C0.8954305,4 0,3.1045695 0,2 C0,0.8954305 0.8954305,0 2,0 Z M9,0 C10.1045695,0 11,0.8954305 11,2 C11,3.1045695 10.1045695,4 9,4 C7.8954305,4 7,3.1045695 7,2 C7,0.8954305 7.8954305,0 9,0 Z M16,0 C17.1045695,0 18,0.8954305 18,2 C18,3.1045695 17.1045695,4 16,4 C14.8954305,4 14,3.1045695 14,2 C14,0.8954305 14.8954305,0 16,0 Z">
+                                        </path>
                                     </g>
                                 </svg>
                             </div>
@@ -92,7 +71,10 @@
                             <ul class="header-category-dropdown">
                                 @forelse ($categories as $category)
                                 <li>
-                                    <a href="{{ route('category.show', $category->id) }}">{{ $category->name }}</a>
+                                    <a href="{{ route('category.show', $category->id) }}">{{ $category->name }}
+                                        {{-- <span class="toggle-sub-menu"></span> --}}
+
+                                    </a>
                                     @if ($category->subcategories->count())
                                     <ul class="sub-categories children">
                                         @foreach ($category->subcategories as $subcategory)
@@ -109,11 +91,16 @@
                                                             <img src="{{ asset($course->thumbnail) }}" alt="{{ $category->name }} - {{ $subcategory->name }} - {{ $course->title }}" width="62" height="50" loading="lazy">
                                                         </div>
                                                         <div class="categories-course__caption">
-                                                            <h5 class="categories-course__title">{{ $course->title }}</h5>
+                                                            <h5 class="categories-course__title">{{ $course->title }}
+                                                            </h5>
                                                             <div class="categories-course__price">
-                                                                <span class="categories-course__sale-price">${{ number_format($course->sale_price, 2) }}</span>
+                                                                <span class="categories-course__sale-price">
+                                                                    ${{ number_format($course->sale_price, 2) }}
+                                                                </span>
                                                                 @if ($course->mrp > $course->sale_price)
-                                                                <span class="categories-course__regular-price">${{ number_format($course->mrp, 2) }}</span>
+                                                                <span class="categories-course__regular-price">
+                                                                    ${{ number_format($course->mrp, 2) }}
+                                                                </span>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -143,11 +130,25 @@
                         <div class="header-navigation d-none d-xl-block">
                             <nav class="menu-primary">
                                 <ul class="menu-primary__container">
-                                    <li><a class="active" href="{{url('/')}}"><span>Home</span></a></li>
-                                    <li><a href="{{route('about')}}"><span>About Us</span></a></li>
-                                    <li><a href="{{route('all_course')}}"><span>Courses</span></a></li>
-                                    <li><a href="{{route('blogs')}}"><span>Blog</span></a></li>
-                                    <li><a href="{{route('contact')}}"><span>Contact Us</span></a></li>
+                                    <li><a class="active" href="{{url('/')}}"><span>Home</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('about')}}"><span>About Us</span></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="{{route('all_course')}}"><span>Courses</span></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="{{route('blogs')}}"><span>Blog</span></a>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="{{route('contact')}}"><span>Contact Us</span></a>
+
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -202,6 +203,56 @@
                                 @endif
                             </div>
                         </div>
+                        <script>
+                            document.querySelectorAll('.header-mini-cart__close').forEach(button => {
+                                button.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    const form = this.closest('.cart-remove-form');
+                                    const cartItem = this.closest('.header-mini-cart__item');
+                                    const cartItemId = cartItem.dataset.cartItemId;
+
+                                    fetch(form.action, {
+                                            method: 'POST'
+                                            , headers: {
+                                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                                                , 'Accept': 'application/json'
+                                            , }
+                                            , body: new FormData(form)
+                                        , })
+                                        .then(response => {
+                                            if (!response.ok) {
+                                                throw new Error('Network response was not ok');
+                                            }
+                                            return response.json();
+                                        })
+                                        .then(data => {
+                                            if (data.success) {
+                                                cartItem.remove();
+                                                const cartCountElement = document.querySelector('.header-action__number');
+                                                let cartCount = parseInt(cartCountElement.textContent);
+                                                cartCountElement.textContent = cartCount - 1;
+                                                const totalElement = document.querySelector('.header-mini-cart__value');
+                                                let currentTotal = parseFloat(totalElement.textContent.replace('₹', '').replace(',', ''));
+                                                const itemPrice = parseFloat(cartItem.querySelector('.amount').textContent.replace('₹', '').replace(',', ''));
+                                                totalElement.textContent = '₹' + (currentTotal - itemPrice).toFixed(2);
+                                                if (cartCount - 1 === 0) {
+                                                    const miniCartList = document.querySelector('.header-mini-cart__product-list');
+                                                    miniCartList.replaceWith(document.createElement('p')).textContent = 'Your cart is empty.';
+                                                    document.querySelector('.header-mini-cart__footer').style.display = 'none';
+                                                }
+                                                alert(data.message);
+                                            } else {
+                                                alert(data.message || 'Failed to remove item.');
+                                            }
+                                        })
+                                        .catch(error => {
+                                            console.error('Error:', error);
+                                            alert('An error occurred while removing the item.');
+                                        });
+                                });
+                            });
+
+                        </script>
                         <div class="header-toggle">
                             <button class="header-toggle__btn d-xl-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobileMenu">
                                 <span class="line"></span>
@@ -216,7 +267,7 @@
                 </div>
             </div>
         </div>
-        <div class="offcanvas offcanvas-end offcanvas-mobile" id="offcanvasMobileMenu" style="background-image: url({{ asset('front/assets/images/mobile-bg.jpg') }})">
+        <div class="offcanvas offcanvas-end offcanvas-mobile" id="offcanvasMobileMenu" style="background-image: url({{ asset('front/assets/images/mobile-bg.jpg') }}">
             <div class="offcanvas-header bg-white">
                 <div class="offcanvas-logo">
                     <a class="offcanvas-logo__logo" href="{{url('/')}}"><img src="{{ asset('front/assets/images/careercracker.png') }}" alt="Logo"></a>
@@ -226,19 +277,40 @@
             <div class="offcanvas-body">
                 <nav class="canvas-menu">
                     <ul class="offcanvas-menu">
-                        <li><a class="active" href="{{url('/')}}"><span>Home</span></a></li>
-                        <li><a href="{{route('about')}}"><span>About Us</span></a></li>
-                        <li><a href="{{route('all_course')}}"><span>Courses</span></a></li>
-                        <li><a href="{{route('blogs')}}"><span>Blog</span></a></li>
-                        <li><a href="{{route('contact')}}"><span>Contact Us</span></a></li>
+                        <li>
+                            <a class="active" href="{{url('/')}}"><span>Home</span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('about')}}"><span>About Us</span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('all_course')}}"><span>Courses</span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('blogs')}}"><span>Blog</span></a>
+                        </li>
+
+                        <li>
+                            <a href="{{route('contact')}}"><span>Contact Us</span></a>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div class="offcanvas-user d-block d-lg-none">
                 @guest
+                {{-- <div class="offcanvas-user__button mb-3">
+                        <button class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Log In1</button>
+                    </div>
+                    <div class="offcanvas-user__button">
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#registerModal">Register1</button>
+                    </div> --}}
                 <div class="offcanvas-user__button mb-3">
-                    <a href="{{route('login')}}" class="btn btn-secondary w-100">Log in 2</a>
+                    <a href="{{route('login')}}" class="btn btn-secondary w-100">Log in</a>
                 </div>
+                {{-- <div class="offcanvas-user__button">
+                    <a href="" class="btn btn-primary w-100">Register</a>
+                </div> --}}
+                
                 @endguest
                 @auth
                 <div class="offcanvas-user__button">
@@ -262,15 +334,21 @@
         </div>
     </div>
 </main>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Log In Modal Start -->
 <div class="modal fade" id="loginModal">
     <div class="modal-dialog modal-dialog-centered modal-login">
+
+        <!-- Modal Wrapper Start -->
         <div class="modal-wrapper">
             <button class="modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+
+            <!-- Modal Content Start -->
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Login</h5>
+                    {{-- <p class="modal-description">Don't have an account yet? <button data-bs-toggle="modal" data-bs-target="#registerModal">Sign up for free</button></p> --}}
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('login') }}" method="POST">
@@ -290,28 +368,39 @@
                             @enderror
                         </div>
                         <div class="modal-form py-4">
-                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In</button>
+                            <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In </button>
                         </div>
                         <div class="text-end py-2">
                             <a class="modal-form__link" href="{{ route('password.request') }}">Forgot your password?</a>
                         </div>
                     </form>
+
+
                 </div>
             </div>
+            <!-- Modal Content End -->
+
         </div>
+        <!-- Modal Wrapper End -->
+
     </div>
 </div>
 <!-- Log In Modal End -->
 
-<!-- Register Modal Start -->
+
+
 <div class="modal fade" id="registerModal">
     <div class="modal-dialog modal-dialog-centered modal-register">
+
+        <!-- Modal Wrapper Start -->
         <div class="modal-wrapper">
             <button class="modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+
+            <!-- Modal Content Start -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
-                    <p class="modal-description"></p>
+                    <h5 class="modal-title">Sign Up</h5>
+                    {{-- <p class="modal-description">Already have an account? <button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></p> --}}
                 </div>
                 <div class="modal-body">
                     <form id="registerForm" method="POST">
@@ -382,8 +471,9 @@
                                     <span class="text-danger" id="show_termsError"></span>
                                     @enderror
                                 </div>
-                                <div id="termsContent" class="mt-3" style="display: none;">
+                                <div id="termsContent" style="display: none;" class="mt-3">
                                     <h6><span class="orange">Terms & Conditions</span> of taking Service from Career Cracker Academy</h6>
+
                                     <p>
                                         This website is operated by <strong>Career Cracker</strong>. Throughout the site, the terms "we," "us," and "our" refer to Career Cracker.
                                         Career Cracker offers this website, including all information, tools, and services available from this site to you, the user,
@@ -464,86 +554,32 @@
                     </form>
                 </div>
             </div>
+            <!-- Modal Content End -->
+
         </div>
+        <!-- Modal Wrapper End -->
+
     </div>
 </div>
 <!-- Register Modal End -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Terms and Conditions Toggle
-        const registerModal = document.getElementById('registerModal');
-        if (registerModal) {
-            registerModal.addEventListener('shown.bs.modal', function() {
-                const showTermsCheckbox = document.getElementById('showTerms');
-                const termsContent = document.getElementById('termsContent');
-                console.log('Modal shown, showTermsCheckbox:', showTermsCheckbox);
-                console.log('Modal shown, termsContent:', termsContent);
-                if (showTermsCheckbox && termsContent) {
-                    showTermsCheckbox.addEventListener('change', function() {
-                        console.log('Checkbox changed, checked:', this.checked);
-                        termsContent.classList.toggle('show', this.checked);
-                        const termsAcceptedCheckbox = document.getElementById('termsAccepted');
-                        if (termsAcceptedCheckbox && !this.checked) {
-                            termsAcceptedCheckbox.checked = false;
-                        }
-                    });
-                } else {
-                    console.error('showTermsCheckbox or termsContent not found in modal');
+        // Show/Hide Terms and Conditions
+        const showTermsCheckbox = document.getElementById('showTerms');
+        const termsContent = document.getElementById('termsContent');
+        if (showTermsCheckbox && termsContent) {
+            showTermsCheckbox.addEventListener('change', function() {
+                termsContent.style.display = this.checked ? 'block' : 'none';
+                const termsAcceptedCheckbox = document.getElementById('termsAccepted');
+                if (termsAcceptedCheckbox && !this.checked) {
+                    termsAcceptedCheckbox.checked = false;
                 }
             });
         }
-
-        // Cart Item Removal
-        document.querySelectorAll('.header-mini-cart__close').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const form = this.closest('.cart-remove-form');
-                const cartItem = this.closest('.header-mini-cart__item');
-                const cartItemId = cartItem.dataset.cartItemId;
-
-                fetch(form.action, {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                        'Accept': 'application/json',
-                    },
-                    body: new FormData(form),
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.success) {
-                        cartItem.remove();
-                        const cartCountElement = document.querySelector('.header-action__number');
-                        let cartCount = parseInt(cartCountElement.textContent);
-                        cartCountElement.textContent = cartCount - 1;
-                        const totalElement = document.querySelector('.header-mini-cart__value');
-                        let currentTotal = parseFloat(totalElement.textContent.replace('₹', '').replace(',', ''));
-                        const itemPrice = parseFloat(cartItem.querySelector('.amount').textContent.replace('₹', '').replace(',', ''));
-                        totalElement.textContent = '₹' + (currentTotal - itemPrice).toFixed(2);
-                        if (cartCount - 1 === 0) {
-                            const miniCartList = document.querySelector('.header-mini-cart__product-list');
-                            miniCartList.replaceWith(document.createElement('p')).textContent = 'Your cart is empty.';
-                            document.querySelector('.header-mini-cart__footer').style.display = 'none';
-                        }
-                        alert(data.message);
-                    } else {
-                        alert(data.message || 'Failed to remove item.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An error occurred while removing the item.');
-                });
-            });
-        });
 
         // Registration Form Submission
         const registerForm = document.getElementById('registerForm');
@@ -560,74 +596,80 @@
                 });
 
                 fetch('{{ route("register") }}', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    console.log('Register Response Status:', response.status);
-                    if (!response.ok) {
-                        return response.json().then(errorData => {
-                            throw errorData;
-                        });
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Register Response Data:', data);
-                    const otpEmailInput = document.getElementById('otpEmail');
-                    if (otpEmailInput && data.email) {
-                        otpEmailInput.value = data.email;
-                    } else {
-                        console.warn('Email input or data.email missing');
-                    }
+                        method: 'POST'
+                        , body: formData
+                    })
+                    .then(response => {
+                        console.log('Register Response Status:', response.status);
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw errorData;
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Register Response Data:', data);
+                        // Store email for OTP form
+                        const otpEmailInput = document.getElementById('otpEmail');
+                        if (otpEmailInput && data.email) {
+                            otpEmailInput.value = data.email;
+                        } else {
+                            console.warn('Email input or data.email missing');
+                        }
 
-                    if (otpForm && registerForm) {
-                        otpForm.style.display = 'block';
-                        otpForm.classList.remove('d-none');
-                        registerForm.style.display = 'none';
-                        registerForm.classList.add('d-none');
+                        // Switch to OTP form
                         const registerModalLabel = document.getElementById('registerModalLabel');
                         const modalDescription = document.querySelector('.modal-description');
-                        if (registerModalLabel) {
-                            registerModalLabel.textContent = 'Verify OTP';
-                        }
-                        if (modalDescription) {
-                            modalDescription.textContent = `An OTP has been sent to ${data.email || 'your email'}`;
-                        }
-                    } else {
-                        console.error('otpForm or registerForm not found');
-                        alert('Failed to display OTP form. Please try again.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Registration Error:', error);
-                    if (error.errors) {
-                        const fieldMap = {
-                            'name': 'nameError',
-                            'email': 'emailError',
-                            'password': 'passwordError',
-                            'password_confirmation': 'password_confirmationError',
-                            'contact_no': 'contact_noError',
-                            'show_terms': 'show_termsError',
-                            'terms_accepted': 'terms_acceptedError'
-                        };
-                        Object.keys(error.errors).forEach(key => {
-                            const errorElementId = fieldMap[key];
-                            const errorElement = document.getElementById(errorElementId);
-                            if (errorElement) {
-                                errorElement.textContent = error.errors[key][0];
+                        if (otpForm && registerForm) {
+                            otpForm.style.display = 'block';
+                            otpForm.classList.remove('d-none');
+                            registerForm.style.display = 'none';
+                            registerForm.classList.add('d-none');
+                            if (registerModalLabel) {
+                                registerModalLabel.textContent = 'Verify OTP';
+                            } else {
+                                console.warn('registerModalLabel not found');
                             }
-                        });
-                        if (error.errors.email && otpForm && registerForm) {
-                            otpForm.style.display = 'none';
-                            otpForm.classList.add('d-none');
-                            registerForm.style.display = 'block';
-                            registerForm.classList.remove('d-none');
+                            if (modalDescription) {
+                                modalDescription.textContent = `An OTP has been sent to ${data.email || 'your email'}`;
+                            } else {
+                                console.warn('modalDescription not found');
+                            }
+                        } else {
+                            console.error('otpForm or registerForm not found');
+                            alert('Failed to display OTP form. Please try again.');
                         }
-                    } else {
-                        alert('Registration failed: ' + (error.message || 'Please try again.'));
-                    }
-                });
+                    })
+                    .catch(error => {
+                        console.error('Registration Error:', error);
+                        if (error.errors) {
+                            const fieldMap = {
+                                'name': 'nameError'
+                                , 'email': 'emailError'
+                                , 'password': 'passwordError'
+                                , 'password_confirmation': 'password_confirmationError'
+                                , 'contact_no': 'contact_noError'
+                                , 'show_terms': 'show_termsError'
+                                , 'terms_accepted': 'terms_acceptedError'
+                            };
+                            Object.keys(error.errors).forEach(key => {
+                                const errorElementId = fieldMap[key];
+                                const errorElement = document.getElementById(errorElementId);
+                                if (errorElement) {
+                                    errorElement.textContent = error.errors[key][0];
+                                }
+                            });
+                            if (error.errors.email && otpForm && registerForm) {
+                                otpForm.style.display = 'none';
+                                otpForm.classList.add('d-none');
+                                registerForm.style.display = 'block';
+                                registerForm.classList.remove('d-none');
+                            }
+                        } else {
+                            alert('Registration failed: ' + (error.message || 'Please try again.'));
+                        }
+                    });
             });
         }
 
@@ -642,43 +684,43 @@
                 if (otpError) otpError.textContent = '';
 
                 fetch('{{ route("otp.verify.post") }}', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    console.log('OTP Response Status:', response.status);
-                    const contentType = response.headers.get('content-type');
-                    if (!contentType || !contentType.includes('application/json')) {
-                        return response.text().then(text => {
-                            console.error('Non-JSON Response:', text.substring(0, 100));
-                            throw new Error('Received non-JSON response');
-                        });
-                    }
-                    if (!response.ok) {
-                        return response.json().then(errorData => {
-                            throw errorData;
-                        });
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('OTP Response Data:', data);
-                    const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                    if (registerModal) {
-                        registerModal.hide();
-                    } else {
-                        console.warn('registerModal not found');
-                    }
-                    window.location.assign('{{ url("/") }}');
-                })
-                .catch(error => {
-                    console.error('OTP Verification Error:', error);
-                    if (error.errors && error.errors.otp) {
-                        if (otpError) otpError.textContent = error.errors.otp[0];
-                    } else {
-                        if (otpError) otpError.textContent = error.message || 'Verification failed. Please try again.';
-                    }
-                });
+                        method: 'POST'
+                        , body: formData
+                    })
+                    .then(response => {
+                        console.log('OTP Response Status:', response.status);
+                        const contentType = response.headers.get('content-type');
+                        if (!contentType || !contentType.includes('application/json')) {
+                            return response.text().then(text => {
+                                console.error('Non-JSON Response:', text.substring(0, 100));
+                                throw new Error('Received non-JSON response');
+                            });
+                        }
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw errorData;
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('OTP Response Data:', data);
+                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                        if (registerModal) {
+                            registerModal.hide();
+                        } else {
+                            console.warn('registerModal not found');
+                        }
+                        window.location.assign('{{ url("/") }}');
+                    })
+                    .catch(error => {
+                        console.error('OTP Verification Error:', error);
+                        if (error.errors && error.errors.otp) {
+                            if (otpError) otpError.textContent = error.errors.otp[0];
+                        } else {
+                            if (otpError) otpError.textContent = error.message || 'Verification failed. Please try again.';
+                        }
+                    });
             });
         }
 
@@ -687,44 +729,58 @@
         if (resendOtpButton) {
             resendOtpButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                const email = document.getElementById('otpEmail')?.value;
+                const email = document.getElementById('otpEmail') ? .value;
                 if (!email) {
                     alert('Email not found. Please try registering again.');
                     return;
                 }
 
                 fetch('{{ route("otp.resend") }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email })
-                })
-                .then(response => {
-                    console.log('Resend OTP Response Status:', response.status);
-                    if (!response.ok) {
-                        return response.json().then(errorData => {
-                            throw errorData;
-                        });
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Resend OTP Response Data:', data);
-                    alert(`OTP resent to ${email}`);
-                })
-                .catch(error => {
-                    console.error('Resend OTP Error:', error);
-                    const otpError = document.getElementById('otpError');
-                    if (otpError && error.errors?.email) {
-                        otpError.textContent = error.errors.email[0];
-                    } else {
-                        alert('Failed to resend OTP. Please try again.');
-                    }
-                });
+                        method: 'POST'
+                        , headers: {
+                            'Content-Type': 'application/json'
+                        }
+                        , body: JSON.stringify({
+                            email
+                        })
+                    })
+                    .then(response => {
+                        console.log('Resend OTP Response Status:', response.status);
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw errorData;
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Resend OTP Response Data:', data);
+                        alert(`OTP resent to ${email}`);
+                    })
+                    .catch(error => {
+                        console.error('Resend OTP Error:', error);
+                        const otpError = document.getElementById('otpError');
+                        if (otpError && error.errors ? .email) {
+                            otpError.textContent = error.errors.email[0];
+                        } else {
+                            alert('Failed to resend OTP. Please try again.');
+                        }
+                    });
             });
         }
     });
+
 </script>
-</body>
-</html>
+<style>
+    .text-danger {
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: block;
+        min-height: 1.25rem;
+    }
+
+    .modal-form {
+        margin-bottom: 1rem;
+    }
+
+</style>
