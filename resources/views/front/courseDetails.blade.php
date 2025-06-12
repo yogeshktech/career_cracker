@@ -24,9 +24,9 @@
                     <div class="tutor-course-top-info__content">
                         <div class="tutor-course-top-info__badges">
                             @if ($course->mrp > $course->sale_price && $course->mrp > 0)
-                                <span class="onsale">{{ round((($course->mrp - $course->sale_price) / $course->mrp) * 100) }}% Off</span>
+                                <span class="onsale">{{ round((($course->mrp - $course->sale_price) / $course->mrp) * 100) }}% Off2</span>
                             @endif
-                            <a class="badges-category" href="{{ route('all_course', ['categories' => $course->category_id ?? '']) }}">{{ $course->category->name ?? ''}}</a>
+                            <a class="badges-category" href="">{{ $course->category->name ?? ''}}</a>
                         </div>
                         <h1 class="tutor-course-top-info__title">{{ $course->title }}</h1>
                         <div class="tutor-course-top-info__meta">
