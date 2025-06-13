@@ -128,7 +128,7 @@
                 </div>
                 <div class="dashboard-header__user">
                     <div class="dashboard-header__user-avatar">
-                        <img src="{{ asset('front/assets/images/avatar/avatar-02.jpg') }}" alt="Avatar" width="90" height="90">
+                        <img src="{{ $user->avatar ? asset($user->avatar) : asset('front/assets/images/avatar-placeholder.jpg') }}" alt="Avatar" width="90" height="90">
                     </div>
                     <div class="dashboard-header__user-info">
                         <h4 class="dashboard-header__user-name"><span class="welcome-text">Howdy,</span> {{ Auth::user()->name }}</h4>

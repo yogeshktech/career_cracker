@@ -9,8 +9,8 @@ use App\Models\Purchase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Password;
+
 
 class StudentController extends Controller
 {
@@ -47,46 +47,72 @@ class StudentController extends Controller
         return view('front.student.profile', compact('user', 'liveClasses'));
     }
 
-    public function updateProfile(Request $request)
+  public function updateProfile(Request $request)
     {
         $user = Auth::user();
-        
-        $validatedData = $request->validate([
+
+        // Validate the request
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
             'job_title' => 'nullable|string|max:255',
             'contact_no' => 'nullable|string|max:20',
             'bio' => 'nullable|string',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'cover_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp',
+            'cover_photo' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp',
         ]);
-        
-        $user->name = $validatedData['name'];
-        $user->email = $validatedData['email'];
-        $user->job_title = $validatedData['job_title'] ?? $user->job_title;
-        $user->contact_no = $validatedData['contact_no'] ?? $user->contact_no;
-        $user->bio = $validatedData['bio'] ?? $user->bio;
-        
+
+        // Initialize image paths
+        $avatar = $user->avatar;
+        $cover_photo = $user->cover_photo;
+
+        // Define the target directory
+        $path = public_path('uploads/students');
+
+        // Ensure the directory exists
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        // Handle avatar upload
         if ($request->hasFile('avatar')) {
-            if ($user->avatar) {
-                Storage::delete('public/' . $user->avatar);
+            // Delete old avatar if it exists
+            if ($avatar && file_exists(public_path($avatar))) {
+                unlink(public_path($avatar));
             }
-            $avatarPath = $request->file('avatar')->store('avatars', 'public');
-            $user->avatar = $avatarPath;
+            $avatarFile = $request->file('avatar');
+            $avatarName = time() . '_' . $avatarFile->getClientOriginalName();
+            $avatarFile->move($path, $avatarName);
+            $avatar = 'uploads/students/' . $avatarName;
         }
-        
+
+        // Handle cover photo upload
         if ($request->hasFile('cover_photo')) {
-            if ($user->cover_photo) {
-                Storage::delete('public/' . $user->cover_photo);
+            // Delete old cover photo if it exists
+            if ($cover_photo && file_exists(public_path($cover_photo))) {
+                unlink(public_path($cover_photo));
             }
-            $coverPath = $request->file('cover_photo')->store('covers', 'public');
-            $user->cover_photo = $coverPath;
+            $coverFile = $request->file('cover_photo');
+            $coverName = time() . '_' . $coverFile->getClientOriginalName();
+            $coverFile->move($path, $coverName);
+            $cover_photo = 'uploads/students/' . $coverName;
         }
-        
-        $user->save();
-        
+
+        // Update user
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'job_title' => $request->job_title ?? $user->job_title,
+            'contact_no' => $request->contact_no ?? $user->contact_no,
+            'bio' => $request->bio ?? $user->bio,
+            'avatar' => $avatar,
+            'cover_photo' => $cover_photo,
+        ]);
+
         return redirect()->route('student.profile')->with('success', 'Profile updated successfully.');
     }
+
+
 
     public function purchaseHistory()
     {

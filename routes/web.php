@@ -212,6 +212,7 @@ Route::prefix('student')->name('student.')->middleware('auth')->group(function (
     Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [StudentController::class, 'profile'])->name('profile');
     Route::patch('/profile', [StudentController::class, 'updateProfile'])->name('profile.update');
+    
     Route::get('/enrolled-courses', [StudentController::class, 'enrolledCourses'])->name('enrolled.courses');
     Route::get('/purchase-history', [StudentController::class, 'purchaseHistory'])->name('purchase.history');
     Route::get('/settings', [StudentController::class, 'settings'])->name('settings');
@@ -219,3 +220,4 @@ Route::prefix('student')->name('student.')->middleware('auth')->group(function (
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
     Route::get('/live-class/{course}', [StudentController::class, 'joinLiveClass'])->name('liveclass.join'); // Updated name
 });
+Route::post('student/profile/delete-photo', [ProfileController::class, 'deletePhoto'])->name('student.profile.delete-photo');
