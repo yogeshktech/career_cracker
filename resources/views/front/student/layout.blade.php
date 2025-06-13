@@ -105,12 +105,13 @@
                     <li><a href="{{ route('blogs') }}">Blog</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
-                <div class="dashboard-menu__search">
+                
+                {{-- <div class="dashboard-menu__search">
                     <form action="#">
                         <input type="text" placeholder="Search…">
                         <button class="search-btn"><i class="far fa-search"></i></button>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -131,13 +132,13 @@
                         <img src="{{ $user->avatar ? asset($user->avatar) : asset('front/assets/images/avatar-placeholder.jpg') }}" alt="Avatar" width="90" height="90">
                     </div>
                     <div class="dashboard-header__user-info">
-                        <h4 class="dashboard-header__user-name"><span class="welcome-text"></span> {{ Auth::user()->name }}</h4>
-                        <div class="dashboard-header__user-rating">
+                        <h4 class="dashboard-header__user-name"><span class="welcome-text"></span> {{ ucfirst(Auth::user()->name) }}</h4>
+                        {{-- <div class="dashboard-header__user-rating">
                             <div class="rating-star">
                                 <div class="rating-label" style="width: 100%;"></div>
                             </div>
                             <p>4.50 <span>(12 ratings)</span></p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="dashboard-header__btn">

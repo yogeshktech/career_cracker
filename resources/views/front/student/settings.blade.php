@@ -89,9 +89,9 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                                 <div id="dashboard-cover-area" class="dashboard-settings-profile__cover" style="background-image:url({{ $user->cover_photo ? asset($user->cover_photo) : asset('front/assets/images/cover-photo.jpg') }})">
-                                    <span class="cover-deleter" data-file="cover_photo">
+                                    {{-- <span class="cover-deleter" data-file="cover_photo">
                                         <i class="fas fa-trash-alt"></i>
-                                    </span>
+                                    </span> --}}
                                     <div class="overlay">
                                         <button class="cover-uploader" type="button">
                                             <i class="fas fa-camera"></i>
@@ -109,21 +109,23 @@
                                         <i class="fas fa-camera"></i>
                                     </div>
                                 </div>
-                                <div id="photo-meta-area" class="dashboard-settings-profile__photo-meta">
+                                <div id="photo-meta-area" class="dashboard-settings-profile__photo-meta mt-5">
                                     <img src="{{ asset('front/assets/images/info-icon.svg') }}" alt="icon" />
-                                    <span>Profile Photo Size: <strong>200x200</strong> pixels,</span>
+                                    {{-- <span>Profile Photo Size: <strong>200x200</strong> pixels,</span>
                                     <span>Cover Photo Size: <strong>700x430</strong> pixels,</span>
-                                    <span class="loader-area">Saving…</span>
+                                    <span class="loader-area">Saving…</span> --}}
+                                    
                                 </div>
                                 <div id="profile-photo-option" class="dashboard-settings-profile__photo-option">
                                     <span class="profile-photo-uploader"><i class="fas fa-upload"></i> Upload Photo</span>
-                                    <span class="profile-photo-deleter" data-file="avatar"><i class="fas fa-trash-alt"></i> Delete</span>
+                                    {{-- <span class="profile-photo-deleter" data-file="avatar"><i class="fas fa-trash-alt"></i> Delete</span> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dashboard-settings__btn">
+                <br><br>
+                <div class="dashboard-settings__btn pt-5">
                     <button type="submit" class="btn btn-primary btn-hover-secondary">Update Profile</button>
                 </div>
             </form>

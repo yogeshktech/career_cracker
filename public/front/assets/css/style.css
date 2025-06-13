@@ -1293,6 +1293,8 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 
 @media only screen and (max-width: 767px) {
   .btn {
+    padding-left: 10px;
+    margin-top: 40px;
     font-size: 14px;
     height: 45px;
     line-height: 45px;
@@ -4589,7 +4591,7 @@ only screen and (min-width: 1200px) and (max-width: 1499px) {
 
 @media only screen and (max-width: 575px) {
   .dashboard-menu__menu-link>li>a {
-    font-size: 30px;
+    font-size: 13px;
   }
 }
 
@@ -4700,6 +4702,7 @@ only screen and (min-width: 1200px) and (max-width: 1499px) {
   font-size: 16px;
   font-weight: 700;
   line-height: 1.7;
+  margin-top: 20px;
   margin-bottom: 17px;
 }
 
@@ -4769,7 +4772,7 @@ only screen and (min-width: 1200px) and (max-width: 1499px) {
 .footer-widget__info p {
   font-weight: 500;
   line-height: 2;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .footer-widget__social {
@@ -24298,7 +24301,7 @@ button.btn.btn-yellow.w-100:hover {
 
 li{
     font-size: 16px !important;
-    line-height: 30px !important;
+    line-height: 20px !important;
 }
 
 

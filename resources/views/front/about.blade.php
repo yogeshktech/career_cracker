@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <section class="container pading  my-5">
+    <section class="container pading my-5">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <h2 class="section-title__title-03">About Us</h2>
@@ -103,13 +103,13 @@
     <div class="tutor-course-main-content section-padding-01 sticky-parent">
         <div class="container custom-container">
             <div class="row gy-10">
-                <div class="col-lg-8 offset-2">
+                <div class="col-lg-8">
                     <div class="tutor-course-main-segment">
                         <div class="tutor-course-segment">
                             <div class="tutor-course-segment__header justify-content-center" id="detail">
                                 <h4 class="section-title__title-03">Why Choose Career Cracker?</h4>
                             </div>
-                            <div class="course-curriculum accordion">
+                            <div class="course-curriculum accordion" id="accordionCourse">
                                 <div class="accordion-item">
                                     <button class="accordion-button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne"> <i class="tutor-icon"></i>No Upfront Costs,
@@ -264,7 +264,6 @@
                                         <div class="course-curriculum__lessons">
                                             <div class="course-curriculum__lesson">
                                                 <span class="course-curriculum__title">
-
                                                     Join a thriving community of Career Cracker graduates who are
                                                     making their mark in the IT industry. Our alumni network offers
                                                     ongoing support, networking opportunities, and access to
@@ -342,12 +341,10 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+

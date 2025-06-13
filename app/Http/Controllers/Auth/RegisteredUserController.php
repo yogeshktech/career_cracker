@@ -21,12 +21,18 @@ class RegisteredUserController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validated  = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'contact_no' => ['required', 'string', 'max:15'], // Aligned with frontend
-            'show_terms' => ['required', 'accepted'], // Validate show_terms
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+                'regex:/^(?=.*[\W_]).{8,}$/', // at least 8 characters, one special character
+            ],
+            'contact_no' => ['required', 'string', 'max:15'],
+            'show_terms' => ['required', 'accepted'],
             'terms_accepted' => ['required', 'accepted'],
         ]);
 

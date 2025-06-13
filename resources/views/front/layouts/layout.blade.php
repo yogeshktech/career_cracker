@@ -10,15 +10,19 @@
     <meta name="description" content="@yield('description', '')">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17183580383"></script>
-        <script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17183580383"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'AW-17183580383');
-        </script>
+
+    </script>
 
 
 
@@ -29,9 +33,7 @@
     <!-- Font CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/vendor/fontawesome-all.min.css') }}">
@@ -49,7 +51,7 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/plugins/select2.min.css') }}">
 
     @if (session('status'))
-        <div class="alert alert-success">{{ session('status') }}</div>
+    <div class="alert alert-success">{{ session('status') }}</div>
     @endif
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +64,10 @@
 
     <!-- Vite CSS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Additional Styles -->
     @yield('styles')
 
@@ -74,83 +79,95 @@
                 padding-left: 15px;
                 padding-right: 15px;
             }
-            
+
             /* Adjust font sizes for mobile */
-            h1 { font-size: 1.8rem !important; }
-            h2 { font-size: 1.5rem !important; }
-            h3 { font-size: 1.3rem !important; }
-            
+            h1 {
+                font-size: 1.8rem !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            h3 {
+                font-size: 1.3rem !important;
+            }
+
             /* Improve mobile navigation */
             .header-top-bar-wrap__info-list {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             /* Make buttons full width on mobile */
             .btn {
                 width: 100%;
                 margin: 5px 0;
             }
-            
+
             /* Adjust course cards for mobile */
             .course-item {
                 margin-bottom: 20px;
             }
-            
+
             /* Improve filter visibility on mobile */
             .filter-collapse .card-body {
                 padding: 10px;
             }
-            
+
             .widget-filter__wrapper {
                 max-height: 200px;
                 overflow-y: auto;
             }
-            
+
             /* Improve FAQ accordion on mobile */
             .accordion-button {
                 padding: 10px;
                 font-size: 14px;
             }
-            
+
             .accordion-body {
                 padding: 10px;
                 font-size: 14px;
             }
-            
+
             /* Improve form elements on mobile */
-            input, select, textarea {
-                font-size: 16px !important; /* Prevent zoom on iOS */
+            input,
+            select,
+            textarea {
+                font-size: 16px !important;
+                /* Prevent zoom on iOS */
             }
-            
+
             /* Adjust spacing for mobile */
             .section-padding-01 {
                 padding: 40px 0;
             }
-            
+
             /* Improve modal display on mobile */
             .modal-dialog {
                 margin: 10px;
             }
-            
+
             .modal-content {
                 padding: 15px;
             }
         }
-        
+
         /* Tablet Responsive Styles */
         @media (min-width: 768px) and (max-width: 991px) {
             .container {
                 padding-left: 20px;
                 padding-right: 20px;
             }
-            
+
             /* Adjust grid columns for tablets */
             .col-md-4 {
                 flex: 0 0 50%;
                 max-width: 50%;
             }
         }
+
     </style>
 </head>
 <style>
@@ -185,6 +202,7 @@
         color: #333;
         font-weight: 500;
     }
+
 </style>
 
 <body>
@@ -193,6 +211,30 @@
 
     <main class="main-wrapper">
         @include('front.layouts.header')
+        @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success'
+                , title: 'Success'
+                , text: "{{ session('success') }}"
+                , confirmButtonColor: '#3085d6'
+            , });
+
+        </script>
+        @endif
+
+        @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error'
+                , title: 'Oops!'
+                , text: "{{ session('error') }}"
+                , confirmButtonColor: '#d33'
+            , });
+
+        </script>
+        @endif
+
         @yield('content')
         @include('front.layouts.footer')
         <!--Back To Start-->
@@ -232,23 +274,7 @@
 
     <!-- Additional Scripts -->
     @yield('scripts')
-    @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-    @if (session('error'))
-        <div class="alert alert-danger">{{ session('error') }}</div>
-    @endif
 
-    @if (session('success'))
-        <div class="alert alert-success" role="alert">
-            {{ session('success') }}
-        </div>
-    @endif
-    @if (session('error'))
-        <div class="alert alert-danger" role="alert">
-            {{ session('error') }}
-        </div>
-    @endif
 </body>
 
 </html>

@@ -325,7 +325,7 @@ class HomeController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->back()->with('success', 'Enquiry submitted successfully.');
+        return redirect()->back()->with('success', 'Thanks for choosing Career Cracker Academy. Our team will call you shortly.');
     }
 
 
