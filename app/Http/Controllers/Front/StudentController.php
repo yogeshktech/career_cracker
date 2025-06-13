@@ -26,7 +26,7 @@ class StudentController extends Controller
         $liveClasses = $user->courses()->wherePivot('google_meet_link', '!=', null)
             ->withPivot('google_meet_link', 'google_drive_link', 'progress', 'completed_lessons')
             ->get();
-        return view('front.student.dashboard', compact('enrolledCourses', 'activeCourses', 'completedCourses', 'liveClasses'));
+        return view('front.student.dashboard', compact('enrolledCourses', 'activeCourses', 'completedCourses', 'liveClasses','user'));
     }
 
     public function enrolledCourses()
@@ -37,7 +37,7 @@ class StudentController extends Controller
         $completedCourses = $user->courses()->wherePivot('progress', '>=', 100)->withPivot('google_meet_link', 'google_drive_link', 'progress', 'completed_lessons')->get();
         
         $courseuser = Course_user::where('user_id', $user->id)->get();
-        return view('front.student.enrolled-courses', compact('enrolledCourses', 'liveClasses', 'completedCourses', 'courseuser'));
+        return view('front.student.enrolled-courses', compact('enrolledCourses', 'liveClasses', 'completedCourses', 'courseuser','user'));
     }
 
     public function profile()
@@ -119,7 +119,7 @@ class StudentController extends Controller
         $user = Auth::user();
         $purchases = $user->purchases()->paginate();
         $liveClasses = $user->courses()->wherePivot('google_meet_link', '!=', null)->withPivot('google_meet_link', 'google_drive_link', 'progress', 'completed_lessons')->get();
-        return view('front.student.purchase-history', compact('purchases', 'liveClasses'));
+        return view('front.student.purchase-history', compact('purchases', 'liveClasses','user'));
     }
 
     public function settings()
