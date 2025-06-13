@@ -29,13 +29,15 @@
             position: relative;
         }
 
-        .input-group {
-            position: relative;
-        }
-
         .form-control1 {
-            padding-right: 40px;
-            /* Space for the icon in desktop view */
+            padding-right: 40px; /* Space for the icon in desktop view */
+            width: 100%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
         }
 
         .password-toggle-icon {
@@ -52,19 +54,16 @@
             font-size: 16px;
         }
 
-        /* Mobile view: Move icon outside input field */
+        /* Mobile view: Adjust icon positioning */
         @media (max-width: 376px) {
             .form-control1 {
-                padding-right: 80px;
-                /* Reset padding to avoid overlap */
+                padding-right: 12px; /* Reset padding to avoid overlap */
             }
 
             .password-toggle-icon {
-                right: 30px;
-                /* Position icon outside the input field */
+                right: -30px; /* Position icon outside the input field */
             }
         }
-
     </style>
 </head>
 <body>
@@ -395,14 +394,11 @@
                                         @else
                                         <span class="text-danger" id="passwordError"></span>
                                         @enderror
-
-                                        {{-- Password tips --}}
                                         <small class="text-muted d-block mt-1">
                                             Password must be at least 8 characters and include at least one special character (e.g. @, #, $, !).
                                         </small>
                                     </div>
                                 </div>
-
                                 <div class="col-md-6">
                                     <div class="modal-form position-relative">
                                         <label class="form-label">Password Confirmation <span style="color:red;">*</span></label>
@@ -415,15 +411,11 @@
                                         @else
                                         <span class="text-danger" id="password_confirmationError"></span>
                                         @enderror
-
-                                        {{-- Password tips --}}
                                         <small class="text-muted d-block mt-1">
                                             Please re-enter the same password.
                                         </small>
                                     </div>
                                 </div>
-
-
                                 <div class="col-md-12">
                                     <div class="modal-form">
                                         <label class="form-label">Contact No <span style="color:red;">*</span></label>
@@ -532,38 +524,47 @@
     </div>
     <!-- Register Modal End -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Password Visibility Toggle
-            document.querySelectorAll('.password-toggle-icon').forEach(icon => {
-                icon.addEventListener('click', function() {
-                    const input = this.previousElementSibling;
-                    const iconElement = this.querySelector('i');
-                    if (input.type === 'password') {
-                        input.type = 'text';
-                        iconElement.classList.remove('fa-eye');
-                        iconElement.classList.add('fa-eye-slash');
-                    } else {
-                        input.type = 'password';
-                        iconElement.classList.remove('fa-eye-slash');
-                        iconElement.classList.add('fa-eye');
-                    }
-                });
-            });
-
-            // Terms and Conditions Toggle
             const registerModal = document.getElementById('registerModal');
             if (registerModal) {
                 registerModal.addEventListener('shown.bs.modal', function() {
+                    console.log('Register modal shown');
+
+                    // Password Visibility Toggle
+                    const passwordIcons = document.querySelectorAll('.password-toggle-icon');
+                    console.log('Password toggle icons found:', passwordIcons.length);
+                    passwordIcons.forEach(icon => {
+                        icon.addEventListener('click', function() {
+                            console.log('Password toggle icon clicked');
+                            const input = this.previousElementSibling;
+                            const iconElement = this.querySelector('i');
+                            if (input && iconElement) {
+                                if (input.type === 'password') {
+                                    input.type = 'text';
+                                    iconElement.classList.remove('fa-eye');
+                                    iconElement.classList.add('fa-eye-slash');
+                                } else {
+                                    input.type = 'password';
+                                    iconElement.classList.remove('fa-eye-slash');
+                                    iconElement.classList.add('fa-eye');
+                                }
+                            } else {
+                                console.error('Input or icon element not found');
+                            }
+                        });
+                    });
+
+                    // Terms and Conditions Toggle
                     const showTermsCheckbox = document.getElementById('showTerms');
                     const termsContent = document.getElementById('termsContent');
-                    console.log('Modal shown, showTermsCheckbox:', showTermsCheckbox);
-                    console.log('Modal shown, termsContent:', termsContent);
+                    console.log('showTermsCheckbox:', showTermsCheckbox);
+                    console.log('termsContent:', termsContent);
                     if (showTermsCheckbox && termsContent) {
                         showTermsCheckbox.addEventListener('change', function() {
-                            console.log('Checkbox changed, checked:', this.checked);
+                            console.log('Terms checkbox changed, checked:', this.checked);
                             termsContent.classList.toggle('show', this.checked);
                             const termsAcceptedCheckbox = document.getElementById('termsAccepted');
                             if (termsAcceptedCheckbox && !this.checked) {
@@ -571,9 +572,11 @@
                             }
                         });
                     } else {
-                        console.error('showTermsCheckbox or termsContent not found in modal');
+                        console.error('showTermsCheckbox or termsContent not found');
                     }
                 });
+            } else {
+                console.error('registerModal not found');
             }
 
             // Cart Item Removal
@@ -585,43 +588,46 @@
                     const cartItemId = cartItem.dataset.cartItemId;
 
                     fetch(form.action, {
-                            method: 'POST'
-                            , headers: {
-                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                                , 'Accept': 'application/json'
-                            , }
-                            , body: new FormData(form)
-                        , })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok');
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                            'Accept': 'application/json',
+                        },
+                        body: new FormData(form),
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            cartItem.remove();
+                            const cartCountElement = document.querySelector('.header-action__number');
+                            let cartCount = parseInt(cartCountElement.textContent);
+                            cartCountElement.textContent = cartCount - 1;
+                            const totalElement = document.querySelector('.header-mini-cart__value');
+                            let currentTotal = parseFloat(totalElement.textContent.replace('₹', '').replace(',', ''));
+                            const itemPrice = parseFloat(cartItem.querySelector('.amount').textContent.replace('₹', '').replace(',', ''));
+                            totalElement.textContent = '₹' + (currentTotal - itemPrice).toFixed(2);
+                            if (cartCount - 1 === 0) {
+                                const miniCartList = document.querySelector('.header-mini-cart__product-list');
+                                const emptyMessage = document.createElement('p');
+                                emptyMessage.textContent = 'Your cart is empty.';
+                                emptyMessage.classList.add('text-center');
+                                miniCartList.replaceWith(emptyMessage);
+                                document.querySelector('.header-mini-cart__footer').style.display = 'none';
                             }
-                            return response.json();
-                        })
-                        .then(data => {
-                            if (data.success) {
-                                cartItem.remove();
-                                const cartCountElement = document.querySelector('.header-action__number');
-                                let cartCount = parseInt(cartCountElement.textContent);
-                                cartCountElement.textContent = cartCount - 1;
-                                const totalElement = document.querySelector('.header-mini-cart__value');
-                                let currentTotal = parseFloat(totalElement.textContent.replace('₹', '').replace(',', ''));
-                                const itemPrice = parseFloat(cartItem.querySelector('.amount').textContent.replace('₹', '').replace(',', ''));
-                                totalElement.textContent = '₹' + (currentTotal - itemPrice).toFixed(2);
-                                if (cartCount - 1 === 0) {
-                                    const miniCartList = document.querySelector('.header-mini-cart__product-list');
-                                    miniCartList.replaceWith(document.createElement('p')).textContent = 'Your cart is empty.';
-                                    document.querySelector('.header-mini-cart__footer').style.display = 'none';
-                                }
-                                alert(data.message);
-                            } else {
-                                alert(data.message || 'Failed to remove item.');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('An error occurred while removing the item.');
-                        });
+                            alert(data.message);
+                        } else {
+                            alert(data.message || 'Failed to remove item.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while removing the item.');
+                    });
                 });
             });
 
@@ -640,74 +646,74 @@
                     });
 
                     fetch('{{ route("register") }}', {
-                            method: 'POST'
-                            , body: formData
-                        })
-                        .then(response => {
-                            console.log('Register Response Status:', response.status);
-                            if (!response.ok) {
-                                return response.json().then(errorData => {
-                                    throw errorData;
-                                });
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log('Register Response Data:', data);
-                            const otpEmailInput = document.getElementById('otpEmail');
-                            if (otpEmailInput && data.email) {
-                                otpEmailInput.value = data.email;
-                            } else {
-                                console.warn('Email input or data.email missing');
-                            }
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        console.log('Register Response Status:', response.status);
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw errorData;
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Register Response Data:', data);
+                        const otpEmailInput = document.getElementById('otpEmail');
+                        if (otpEmailInput && data.email) {
+                            otpEmailInput.value = data.email;
+                        } else {
+                            console.warn('Email input or data.email missing');
+                        }
 
-                            if (otpForm && registerForm) {
-                                otpForm.style.display = 'block';
-                                otpForm.classList.remove('d-none');
-                                registerForm.style.display = 'none';
-                                registerForm.classList.add('d-none');
-                                const registerModalLabel = document.getElementById('registerModalLabel');
-                                const modalDescription = document.querySelector('.modal-description');
-                                if (registerModalLabel) {
-                                    registerModalLabel.textContent = 'Verify OTP';
-                                }
-                                if (modalDescription) {
-                                    modalDescription.textContent = `An OTP has been sent to ${data.email || 'your email'}`;
-                                }
-                            } else {
-                                console.error('otpForm or registerForm not found');
-                                alert('Failed to display OTP form. Please try again.');
+                        if (otpForm && registerForm) {
+                            otpForm.style.display = 'block';
+                            otpForm.classList.remove('d-none');
+                            registerForm.style.display = 'none';
+                            registerForm.classList.add('d-none');
+                            const registerModalLabel = document.getElementById('registerModalLabel');
+                            const modalDescription = document.querySelector('.modal-description');
+                            if (registerModalLabel) {
+                                registerModalLabel.textContent = 'Verify OTP';
                             }
-                        })
-                        .catch(error => {
-                            console.error('Registration Error:', error);
-                            if (error.errors) {
-                                const fieldMap = {
-                                    'name': 'nameError'
-                                    , 'email': 'emailError'
-                                    , 'password': 'passwordError'
-                                    , 'password_confirmation': 'password_confirmationError'
-                                    , 'contact_no': 'contact_noError'
-                                    , 'show_terms': 'show_termsError'
-                                    , 'terms_accepted': 'terms_acceptedError'
-                                };
-                                Object.keys(error.errors).forEach(key => {
-                                    const errorElementId = fieldMap[key];
-                                    const errorElement = document.getElementById(errorElementId);
-                                    if (errorElement) {
-                                        errorElement.textContent = error.errors[key][0];
-                                    }
-                                });
-                                if (error.errors.email && otpForm && registerForm) {
-                                    otpForm.style.display = 'none';
-                                    otpForm.classList.add('d-none');
-                                    registerForm.style.display = 'block';
-                                    registerForm.classList.remove('d-none');
-                                }
-                            } else {
-                                alert('Registration failed: ' + (error.message || 'Please try again.'));
+                            if (modalDescription) {
+                                modalDescription.textContent = `An OTP has been sent to ${data.email || 'your email'}`;
                             }
-                        });
+                        } else {
+                            console.error('otpForm or registerForm not found');
+                            alert('Failed to display OTP form. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Registration Error:', error);
+                        if (error.errors) {
+                            const fieldMap = {
+                                'name': 'nameError',
+                                'email': 'emailError',
+                                'password': 'passwordError',
+                                'password_confirmation': 'password_confirmationError',
+                                'contact_no': 'contact_noError',
+                                'show_terms': 'show_termsError',
+                                'terms_accepted': 'terms_acceptedError'
+                            };
+                            Object.keys(error.errors).forEach(key => {
+                                const errorElementId = fieldMap[key];
+                                const errorElement = document.getElementById(errorElementId);
+                                if (errorElement) {
+                                    errorElement.textContent = error.errors[key][0];
+                                }
+                            });
+                            if (error.errors.email && otpForm && registerForm) {
+                                otpForm.style.display = 'none';
+                                otpForm.classList.add('d-none');
+                                registerForm.style.display = 'block';
+                                registerForm.classList.remove('d-none');
+                            }
+                        } else {
+                            alert('Registration failed: ' + (error.message || 'Please try again.'));
+                        }
+                    });
                 });
             }
 
@@ -722,43 +728,43 @@
                     if (otpError) otpError.textContent = '';
 
                     fetch('{{ route("otp.verify.post") }}', {
-                            method: 'POST'
-                            , body: formData
-                        })
-                        .then(response => {
-                            console.log('OTP Response Status:', response.status);
-                            const contentType = response.headers.get('content-type');
-                            if (!contentType || !contentType.includes('application/json')) {
-                                return response.text().then(text => {
-                                    console.error('Non-JSON Response:', text.substring(0, 100));
-                                    throw new Error('Received non-JSON response');
-                                });
-                            }
-                            if (!response.ok) {
-                                return response.json().then(errorData => {
-                                    throw errorData;
-                                });
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log('OTP Response Data:', data);
-                            const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                            if (registerModal) {
-                                registerModal.hide();
-                            } else {
-                                console.warn('registerModal not found');
-                            }
-                            window.location.assign('{{ url("/") }}');
-                        })
-                        .catch(error => {
-                            console.error('OTP Verification Error:', error);
-                            if (error.errors && error.errors.otp) {
-                                if (otpError) otpError.textContent = error.errors.otp[0];
-                            } else {
-                                if (otpError) otpError.textContent = error.message || 'Verification failed. Please try again.';
-                            }
-                        });
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        console.log('OTP Response Status:', response.status);
+                        const contentType = response.headers.get('content-type');
+                        if (!contentType || !contentType.includes('application/json')) {
+                            return response.text().then(text => {
+                                console.error('Non-JSON Response:', text.substring(0, 100));
+                                throw new Error('Received non-JSON response');
+                            });
+                        }
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw errorData;
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('OTP Response Data:', data);
+                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                        if (registerModal) {
+                            registerModal.hide();
+                        } else {
+                            console.warn('registerModal not found');
+                        }
+                        window.location.assign('{{ url("/") }}');
+                    })
+                    .catch(error => {
+                        console.error('OTP Verification Error:', error);
+                        if (error.errors && error.errors.otp) {
+                            if (otpError) otpError.textContent = error.errors.otp[0];
+                        } else {
+                            if (otpError) otpError.textContent = error.message || 'Verification failed. Please try again.';
+                        }
+                    });
                 });
             }
 
@@ -767,45 +773,44 @@
             if (resendOtpButton) {
                 resendOtpButton.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const email = document.getElementById('otpEmail') ? .value;
+                    const email = document.getElementById('otpEmail')?.value;
                     if (!email) {
                         alert('Email not found. Please try registering again.');
                         return;
                     }
 
                     fetch('{{ route("otp.resend") }}', {
-                            method: 'POST'
-                            , headers: {
-                                'Content-Type': 'application/json'
-                            }
-                            , body: JSON.stringify({
-                                email
-                            })
-                        })
-                        .then(response => {
-                            console.log('Resend OTP Response Status:', response.status);
-                            if (!response.ok) {
-                                return response.json().then(errorData => {
-                                    throw errorData;
-                                });
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log('Resend OTP Response Data:', data);
-                            alert(`OTP resent to ${email}`);
-                        })
-                        .catch(error => {
-                            console.error('Resend OTP Error:', error);
-                            const otpError = document.getElementById('otpError');
-                            if (otpError && error.errors ? .email) {
-                                otpError.textContent = error.errors.email[0];
-                            } else {
-                                alert('Failed to resend OTP. Please try again.');
-                            }
-                        });
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email })
+                    })
+                    .then(response => {
+                        console.log('Resend OTP Response Status:', response.status);
+                        if (!response.ok) {
+                            return response.json().then(errorData => {
+                                throw errorData;
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Resend OTP Response Data:', data);
+                        alert(`OTP resent to ${email}`);
+                    })
+                    .catch(error => {
+                        console.error('Resend OTP Error:', error);
+                        const otpError = document.getElementById('otpError');
+                        if (otpError && error.errors?.email) {
+                            otpError.textContent = error.errors.email[0];
+                        } else {
+                            alert('Failed to resend OTP. Please try again.');
+                        }
+                    });
                 });
             }
         });
-
     </script>
+</body>
+</html>
