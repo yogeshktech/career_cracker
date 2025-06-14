@@ -24,7 +24,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:100',
-            'blog_image' => 'required|image|mimes:jpeg,png,webp,svg|max:5120',
+            'blog_image' => 'required|image|mimes:jpeg,png,webp,svg',
             'description' => 'required|string',
         ]);
 
@@ -67,7 +67,7 @@ class BlogController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:100',
-            'blog_image' => 'nullable|image|mimes:jpeg,png,webp,svg|max:5120',
+            'blog_image' => 'nullable|image|mimes:jpeg,png,webp,svg',
             'description' => 'required|string',
         ]);
 
