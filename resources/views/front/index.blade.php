@@ -1,51 +1,94 @@
 @extends('front.layouts.layout')
 @section('content')
 <!-- Slider Section Start -->
-<div class="slider-section slider-section-04 ">
-    <div class="slider-wrapper " style="background-image: url({{ asset('front/assets/images/main-hero-img.jpg') }}">
-        <div class="container ">
+<style>
+    .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
 
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slight overlay for better contrast */
+    z-index: 1;
+}
+
+.slider-wrapper {
+    position: relative;
+    z-index: 2;
+    color: #fff; /* Ensure text is white on transparent background */
+}
+
+.slider-register__box {
+    background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+    backdrop-filter: blur(8px); /* optional: frosted glass effect */
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.slider-register__input input,
+.slider-register__input textarea {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+.slider-register__input input::placeholder,
+.slider-register__input textarea::placeholder {
+    color: #eee;
+}
+
+.slider-register__input i {
+    color: #fff;
+}
+
+</style>
+
+<div class="slider-section slider-section-04 position-relative overflow-hidden">
+
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="{{ asset('front/assets/images/video/vhome.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Optional Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- Foreground Content -->
+    <div class="slider-wrapper">
+        <div class="container">
             <div class="row gy-10 align-items-center">
                 <div class="col-lg-6">
-                    <!-- Slider Caption Start -->
                     <div class="slider-caption-04" data-aos="fade-up" data-aos-duration="1000">
                         <h2 class="slider-caption-04__main-title">Unlock Your Dream IT Job</h2>
-
                         <h4 class="slider-caption-04__sub-title">
                             Launch your IT career with CareerCracker - no fees until you're hired! Upskill in 45 days. Get placed. Then pay. It’s not a course, It’s your career launchpad.
                         </h4>
-                        <h4 class="slider-caption-04__sub-title"></h4>
-
                         <div class="d-flex gap-3 mt-3">
-                            <a href="{{route('all_course')}}" class="slider-caption-04__btn btn btn-orange rounded-button">View All
-                                Courses</a>
-
+                            <a href="{{ route('all_course') }}" class="slider-caption-04__btn btn btn-orange rounded-button">View All Courses</a>
                             @guest
-                            <button class="slider-caption-04__btn btn btn-orange rounded-button" data-bs-toggle="modal" data-bs-target="#registerModal">
-                                Register Now
-                            </button>
+                                <button class="slider-caption-04__btn btn btn-orange rounded-button" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</button>
                             @endguest
-
-                            {{-- <a href="" class="slider-caption-04__btn btn btn-orangee rounded-button">Enroll Now</a>
-                                --}}
                         </div>
                     </div>
-
-
-                    <!-- Slider Caption End -->
                 </div>
-                <div class="col-lg-6  ">
 
-                    <!-- Slider Register Form Start -->
+                <div class="col-lg-6">
                     <div class="slider-register__box text-center" data-aos="fade-up" data-aos-duration="1000">
-                        <h4 class="slider-register__title">Kickstart your career with 100% <br> placement and high CTC
-                            in just 45 days
-
-                        </h4>
-                        {{-- <button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link">
-                                    Register Now</button> --}}
-
-
+                        <h4 class="slider-register__title text-white">Kickstart your career with 100% <br> placement and high CTC in just 45 days</h4>
 
                         <form action="{{ route('enquiry_send') }}" method="POST">
                             @csrf
@@ -53,46 +96,35 @@
                                 <div class="slider-register__input">
                                     <i class="fas fa-user"></i>
                                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Name" value="{{ old('name') }}" required>
-                                    @error('name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                    @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="slider-register__input">
                                     <i class="fas fa-envelope"></i>
                                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email" value="{{ old('email') }}" required>
-                                    {{-- @error('email')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror --}}
                                 </div>
                                 <div class="slider-register__input">
                                     <i class="fas fa-phone"></i>
                                     <input type="tel" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Contact No" value="{{ old('phone') }}" required>
-                                    @error('phone')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                    @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="slider-register__input">
                                     <i class="fas fa-comment"></i>
                                     <textarea name="message" class="form-control @error('message') is-invalid @enderror" placeholder="Enter Your Message" required>{{ old('message') }}</textarea>
-                                    @error('message')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                    @error('message') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="slider-register__btn">
-                                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Submit
-                                        Now</button>
+                                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Submit Now</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <!-- Slider Register Form End -->
-
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 </div>
+
 <!-- Slider Section End -->
 
 
