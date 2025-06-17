@@ -266,7 +266,7 @@
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:150px;
+	bottom:50px;
 	right:40px;
 	background-color:#25d366;
 	color:#FFF;
