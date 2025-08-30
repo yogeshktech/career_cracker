@@ -74,7 +74,7 @@
                     <div class="header-top-bar-wrap d-sm-flex justify-content-between align-items-center">
                         <div class="header-top-bar-wrap__info">
                             <ul class="header-top-bar-wrap__info-list">
-                                <li><a href="tel:9867-679-600"><i class="fas fa-phone"></i> <span class="info-text">9867-679-600</span></a></li>
+                                <li><a href="tel:9892775540"><i class="fas fa-phone"></i> <span class="info-text">9892775540</span></a></li>
                                 <li><a href="mailto:info@careercracker.com"><i class="far fa-envelope"></i> <span class="info-text">info@careercracker.com</span></a></li>
                             </ul>
                         </div>

@@ -19,7 +19,11 @@ use App\Http\Controllers\Front\StudentController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SitemapController;
 
+
+
+Route::get('/sitemap', [SitemapController::class, 'index']);
 
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
