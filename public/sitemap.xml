@@ -13,9 +13,6 @@
     <loc>http://localhost/annirudh/</loc>
             </url>
     <url>
-    <loc>http://localhost/new_apis/</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/</loc>
             </url>
     <url>
@@ -25,31 +22,7 @@
     <loc>http://localhost/main_final_original/</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/test/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/wordpress/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/xampp/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/?C=D;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/hyperscritps_html.zip</loc>
+    <loc>http://localhost/new_apis/</loc>
             </url>
     <url>
     <loc>http://localhost/?C=N;O=D</loc>
@@ -61,10 +34,34 @@
     <loc>http://localhost/?C=S;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/yogesh/</loc>
+    <loc>http://localhost/?C=D;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/new_shoes/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/test/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/program/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/</loc>
             </url>
     <url>
     <loc>http://localhost/hyperscritps_html/index.html</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/xampp/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/yogesh/</loc>
             </url>
     <url>
     <loc>http://localhost/hyperscritps_html/about.html</loc>
@@ -89,6 +86,9 @@
             </url>
     <url>
     <loc>http://localhost/hyperscritps_html/contact.html</loc>
+            </url>
+    <url>
+    <loc>http://localhost/hyperscritps_html.zip</loc>
             </url>
     <url>
     <loc>http://localhost/hyperscritps_html/return-policy.html</loc>
@@ -121,16 +121,19 @@
     <loc>http://localhost/git/?C=S;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/index</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/?C=D;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/</loc>
             </url>
     <url>
+    <loc>http://localhost/main_final_original%20-%20Copy/index</loc>
+            </url>
+    <url>
     <loc>http://localhost/main_final_original%20-%20Copy/cart</loc>
+            </url>
+    <url>
+    <loc>http://localhost/main_final_original%20-%20Copy/dashboard</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/shop</loc>
@@ -139,22 +142,19 @@
     <loc>http://localhost/main_final_original%20-%20Copy/contact</loc>
             </url>
     <url>
+    <loc>http://localhost/main_final_original%20-%20Copy/login</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online-Shopping-Portal-project-V2.0.zip</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/dashboard</loc>
-            </url>
-    <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/shop.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/login</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/sign-up</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/about-us</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/sign-up</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/shop.php</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/compare.php</loc>
@@ -166,19 +166,19 @@
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=164</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=165</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=171</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=167</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=165</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=170</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=172</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=167</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=171</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=172</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=173</loc>
@@ -244,25 +244,25 @@
     <loc>http://localhost/main_final_original/product_details.php?p_id=163</loc>
             </url>
     <url>
+    <loc>http://localhost/main_final_original/product_details.php?p_id=167</loc>
+            </url>
+    <url>
     <loc>http://localhost/main_final_original/product_details.php?p_id=164</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original/product_details.php?p_id=165</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original/product_details.php?p_id=171</loc>
+    <loc>http://localhost/main_final_original/product_details.php?p_id=170</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original/product_details.php?p_id=170</loc>
+    <loc>http://localhost/main_final_original/product_details.php?p_id=173</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original/product_details.php?p_id=172</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original/product_details.php?p_id=167</loc>
-            </url>
-    <url>
-    <loc>http://localhost/main_final_original/product_details.php?p_id=173</loc>
+    <loc>http://localhost/main_final_original/product_details.php?p_id=171</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original/index.php</loc>
@@ -298,10 +298,22 @@
     <loc>http://localhost/new_shoes/contact.php</loc>
             </url>
     <url>
+    <loc>http://localhost/?C=M;O=D</loc>
+            </url>
+    <url>
     <loc>http://localhost/new_shoes/index.php</loc>
             </url>
     <url>
+    <loc>http://localhost/?C=N;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/?C=D;O=D</loc>
+            </url>
+    <url>
     <loc>http://localhost/new_shoes/products.php?scat_id=17</loc>
+            </url>
+    <url>
+    <loc>http://localhost/?C=S;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/new_shoes/products.php?scat_id=18</loc>
@@ -340,10 +352,10 @@
     <loc>http://localhost/new_shoes/products.php?scat_id=40</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/products.php?scat_id=28</loc>
+    <loc>http://localhost/new_shoes/products.php?scat_id=27</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/products.php?scat_id=27</loc>
+    <loc>http://localhost/new_shoes/products.php?scat_id=28</loc>
             </url>
     <url>
     <loc>http://localhost/new_shoes/products.php?scat_id=29</loc>
@@ -376,10 +388,10 @@
     <loc>http://localhost/new_shoes/products.php?scat_id=35</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/login.php</loc>
+    <loc>http://localhost/new_shoes/shop.php</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/shop.php</loc>
+    <loc>http://localhost/new_shoes/login.php</loc>
             </url>
     <url>
     <loc>http://localhost/new_shoes/registration.php</loc>
@@ -388,16 +400,16 @@
     <loc>http://localhost/new_shoes/categories.php</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/subcategories.php?cat_id=19&amp;Men</loc>
-            </url>
-    <url>
-    <loc>http://localhost/new_shoes/subcategories.php?cat_id=21&amp;Kids</loc>
-            </url>
-    <url>
     <loc>http://localhost/new_shoes/subcategories.php?cat_id=18&amp;New%20Arrivals1</loc>
             </url>
     <url>
+    <loc>http://localhost/new_shoes/subcategories.php?cat_id=19&amp;Men</loc>
+            </url>
+    <url>
     <loc>http://localhost/new_shoes/subcategories.php?cat_id=20&amp;Women</loc>
+            </url>
+    <url>
+    <loc>http://localhost/new_shoes/subcategories.php?cat_id=21&amp;Kids</loc>
             </url>
     <url>
     <loc>http://localhost/new_shoes/product-details.php?p_id=42</loc>
@@ -415,55 +427,13 @@
     <loc>http://localhost/new_shoes/product-details.php?p_id=59</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/product-details.php?p_id=62</loc>
-            </url>
-    <url>
     <loc>http://localhost/new_shoes/product-details.php?p_id=61</loc>
             </url>
     <url>
+    <loc>http://localhost/new_shoes/product-details.php?p_id=62</loc>
+            </url>
+    <url>
     <loc>http://localhost/new_shoes/product-details.php?p_id=66</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=N;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=M;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=S;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/even_number.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/facto.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/palindrom.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/prime.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/user.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=D;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=M;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=D;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=N;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=S;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/add_job.php</loc>
@@ -472,49 +442,61 @@
     <loc>http://localhost/php_rest_full_api/add_job_delete.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/add_job_edit.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/add_job_all_data.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/Copy%20Files/</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/add_job_search.php</loc>
+    <loc>http://localhost/php_rest_full_api/admin.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/admin_edit.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/admin.php</loc>
-            </url>
-    <url>
     <loc>http://localhost/php_rest_full_api/adminlogin.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/all_posts.php</loc>
+    <loc>http://localhost/php_rest_full_api/Copy%20Files/</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/carrer.php</loc>
+    <loc>http://localhost/php_rest_full_api/add_job_all_data.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/all_user.php</loc>
+    <loc>http://localhost/php_rest_full_api/add_job_edit.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/all_posts%20copy.php</loc>
+    <loc>http://localhost/php_rest_full_api/add_job_search.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/all_enquery.php</loc>
             </url>
     <url>
+    <loc>http://localhost/php_rest_full_api/all_posts.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/?C=N;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/all_posts%20copy.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/carrer.php</loc>
+            </url>
+    <url>
     <loc>http://localhost/php_rest_full_api/carrer_update.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/delete_enquery.php</loc>
+    <loc>http://localhost/php_rest_full_api/?C=M;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/?C=S;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/?C=D;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/all_user.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/carrer_view.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/delete_enquery.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/enquery.php</loc>
@@ -523,46 +505,79 @@
     <loc>http://localhost/php_rest_full_api/job_posts.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/job_posts_edit%20copy.php</loc>
-            </url>
-    <url>
     <loc>http://localhost/php_rest_full_api/job_posts_edit.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/update_enquery.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/register.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/?C=N;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/?C=M;O=A</loc>
+    <loc>http://localhost/php_rest_full_api/job_posts_edit%20copy.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/micro_order_correct.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/?C=S;O=A</loc>
+    <loc>http://localhost/php_rest_full_api/register.php</loc>
             </url>
     <url>
-    <loc>http://localhost/wordpress/?C=D;O=A</loc>
+    <loc>http://localhost/php_rest_full_api/update_enquery.php</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/?C=D;O=A</loc>
+    <loc>http://localhost/program/facto.php</loc>
             </url>
     <url>
-    <loc>http://localhost/wordpress/?C=N;O=D</loc>
+    <loc>http://localhost/program/even_number.php</loc>
             </url>
     <url>
-    <loc>http://localhost/xampp/?C=N;O=D</loc>
+    <loc>http://localhost/program/palindrom.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/program/prime.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/program/?C=N;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/program/?C=S;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/uploads/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/program/?C=D;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/program/?C=M;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/user.php</loc>
             </url>
     <url>
     <loc>http://localhost/wordpress/?C=M;O=A</loc>
             </url>
     <url>
+    <loc>http://localhost/reactcrud/?C=M;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=S;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=D;O=A</loc>
+            </url>
+    <url>
     <loc>http://localhost/wordpress/?C=S;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=N;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/?C=N;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/?C=D;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/xampp/?C=N;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/xampp/?C=M;O=A</loc>
@@ -571,22 +586,13 @@
     <loc>http://localhost/xampp/?C=S;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/xampp/?C=D;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/uploads/</loc>
+    <loc>http://localhost/yogesh/dashboard.zip</loc>
             </url>
     <url>
     <loc>http://localhost/yogesh/?C=N;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/yogesh/dashboard.zip</loc>
-            </url>
-    <url>
-    <loc>http://localhost/yogesh/?C=S;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/yogesh/?C=M;O=A</loc>
+    <loc>http://localhost/xampp/?C=D;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/yogesh/dashboard/</loc>
@@ -595,52 +601,46 @@
     <loc>http://localhost/yogesh/nn.html</loc>
             </url>
     <url>
+    <loc>http://localhost/yogesh/?C=M;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/yogesh/?C=S;O=A</loc>
+            </url>
+    <url>
     <loc>http://localhost/yogesh/?C=D;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/git/?C=N;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/git/?C=S;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/?C=D;O=D</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/?C=S;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/Read%20me.txt</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/?C=M;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/?C=N;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/?C=D;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/</loc>
+    <loc>http://localhost/git/?C=S;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/SQL%20file/</loc>
             </url>
     <url>
-    <loc>http://localhost/?C=D;O=D</loc>
+    <loc>http://localhost/git/Online/shopping/</loc>
             </url>
     <url>
-    <loc>http://localhost/?C=N;O=A</loc>
+    <loc>http://localhost/git/?C=D;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/?C=M;O=D</loc>
+    <loc>http://localhost/git/Online/?C=N;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/?C=S;O=D</loc>
+    <loc>http://localhost/git/Online/?C=M;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/?C=S;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/?C=D;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/check-out.php</loc>
@@ -649,22 +649,22 @@
     <loc>http://localhost/main_final_original%20-%20Copy/blog-left-sidebar.php</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=174</loc>
-            </url>
-    <url>
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=175</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=176</loc>
-            </url>
-    <url>
-    <loc>http://localhost/main_final_original%20-%20Copy/forget-password.php</loc>
+    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=174</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=177</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=178</loc>
+            </url>
+    <url>
+    <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=176</loc>
+            </url>
+    <url>
+    <loc>http://localhost/main_final_original%20-%20Copy/forget-password.php</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/product_details.php?p_id=179</loc>
@@ -709,9 +709,6 @@
     <loc>http://localhost/main_final_original/blog-left-sidebar.php</loc>
             </url>
     <url>
-    <loc>http://localhost/main_final_original/forget-password.php</loc>
-            </url>
-    <url>
     <loc>http://localhost/main_final_original/product_details.php?p_id=174</loc>
             </url>
     <url>
@@ -725,6 +722,9 @@
             </url>
     <url>
     <loc>http://localhost/main_final_original/product_details.php?p_id=178</loc>
+            </url>
+    <url>
+    <loc>http://localhost/main_final_original/forget-password.php</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original/product_details.php?p_id=179</loc>
@@ -763,10 +763,10 @@
     <loc>http://localhost/main_final_original/product_details.php?p_id=191</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/product-details.php?p_id=57</loc>
+    <loc>http://localhost/new_shoes/product-details.php</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/product-details.php</loc>
+    <loc>http://localhost/new_shoes/product-details.php?p_id=57</loc>
             </url>
     <url>
     <loc>http://localhost/new_shoes/product-details.php?p_id=49</loc>
@@ -790,10 +790,10 @@
     <loc>http://localhost/new_shoes/product-details.php?p_id=60</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/product-details.php?p_id=45&amp;G-720-TAN</loc>
+    <loc>http://localhost/new_shoes/product-details.php?p_id=44&amp;G-715</loc>
             </url>
     <url>
-    <loc>http://localhost/new_shoes/product-details.php?p_id=44&amp;G-715</loc>
+    <loc>http://localhost/new_shoes/product-details.php?p_id=45&amp;G-720-TAN</loc>
             </url>
     <url>
     <loc>http://localhost/new_shoes/product-details.php?p_id=47&amp;%20FC%2008</loc>
@@ -826,58 +826,7 @@
     <loc>http://localhost/new_shoes/product-details.php?p_id=59&amp;MONIKA%2011</loc>
             </url>
     <url>
-    <loc>http://localhost/program/?C=N;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=S;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/program/?C=D;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=N;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/user.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/user%20copy.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=M;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=S;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=D;O=A</loc>
-            </url>
-    <url>
     <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=N;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_delete%20copy.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_edit%20copy.php</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=N;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=D;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/?C=S;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_edit%20copy%202.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=M;O=A</loc>
@@ -887,6 +836,15 @@
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=D;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_delete%20copy.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_edit%20copy.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_edit%20copy%202.php</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/Copy%20Files/add_job_search%20copy.php</loc>
@@ -901,52 +859,37 @@
     <loc>http://localhost/php_rest_full_api/Copy%20Files/register%20copy.php</loc>
             </url>
     <url>
-    <loc>http://localhost/xampp/?C=N;O=A</loc>
+    <loc>http://localhost/program/?C=S;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/wordpress/?C=D;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/wordpress/?C=N;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/wordpress/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/wordpress/?C=S;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/xampp/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/xampp/?C=D;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/xampp/?C=S;O=D</loc>
+    <loc>http://localhost/program/?C=N;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/?C=N;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/?C=D;O=D</loc>
+    <loc>http://localhost/php_rest_full_api/uploads/?C=M;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/uploads/?C=M;O=A</loc>
+    <loc>http://localhost/php_rest_full_api/uploads/?C=S;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/?C=N;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/uploads/?C=S;O=A</loc>
+    <loc>http://localhost/php_rest_full_api/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/?C=S;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/?C=D;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/?C=D;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/05a1b7b634f1a10bb5172a0796c7bdd0.jpg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/?C=S;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/05adf118b9bcac363d31febb643488b2.jpg</loc>
@@ -988,28 +931,25 @@
     <loc>http://localhost/php_rest_full_api/uploads/24dc238477dcb66e486e4e5b6d67edbd.jpg</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/?C=M;O=D</loc>
-            </url>
-    <url>
     <loc>http://localhost/php_rest_full_api/uploads/330c8b16f7e1f90a192877b0df126215.jpg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/uploads/47e2e2dbfba59fd62c74acbeef747238.pdf</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/891e8778fec7edf3e05b583540c0cc79.jpg</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/uploads/3338f3f7339b5f57d3b0ab31ab807263.jpg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/uploads/56038a6119e2c2b15de26972651097d8.webp</loc>
-            </url>
-    <url>
     <loc>http://localhost/php_rest_full_api/uploads/1464bae71973af3b2e12df2e184a1462.jpg</loc>
             </url>
     <url>
+    <loc>http://localhost/php_rest_full_api/uploads/3338f3f7339b5f57d3b0ab31ab807263.jpg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/uploads/47e2e2dbfba59fd62c74acbeef747238.pdf</loc>
+            </url>
+    <url>
     <loc>http://localhost/php_rest_full_api/uploads/9321b96866e78ec1931ecc0210daea2a.jpg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/php_rest_full_api/uploads/56038a6119e2c2b15de26972651097d8.webp</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/474081cb9f6996481dd67b94b8a98f83.jpg</loc>
@@ -1066,37 +1006,97 @@
     <loc>http://localhost/php_rest_full_api/uploads/fc21f4cfd2e07ddbe2049bcaed6b08ae.jpg</loc>
             </url>
     <url>
-    <loc>http://localhost/yogesh/?C=S;O=D</loc>
+    <loc>http://localhost/program/?C=D;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/yogesh/?C=M;O=D</loc>
+    <loc>http://localhost/program/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=N;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/user.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/user%20copy.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/?C=N;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=M;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=D;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=S;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/?C=D;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/wordpress/?C=S;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=N;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/xampp/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/xampp/?C=N;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=S;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/?C=D;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/xampp/?C=S;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/xampp/?C=D;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/yogesh/?C=N;O=A</loc>
             </url>
     <url>
+    <loc>http://localhost/yogesh/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/SQL%20file/shopping.sql</loc>
+            </url>
+    <url>
+    <loc>http://localhost/yogesh/?C=S;O=D</loc>
+            </url>
+    <url>
     <loc>http://localhost/yogesh/?C=D;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/my-cart.php</loc>
+    <loc>http://localhost/git/Online/SQL%20file/?C=N;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/?C=M;O=D</loc>
+    <loc>http://localhost/git/Online/SQL%20file/?C=M;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/?C=D;O=D</loc>
+    <loc>http://localhost/git/Online/SQL%20file/?C=S;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/?C=N;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/?C=S;O=D</loc>
+    <loc>http://localhost/git/Online/SQL%20file/?C=D;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/login.php</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/track-orders.php</loc>
+    <loc>http://localhost/git/Online/shopping/my-cart.php</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/index.php</loc>
@@ -1105,13 +1105,16 @@
     <loc>http://localhost/git/Online/shopping/category.php?cid=3</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?cid=6</loc>
+    <loc>http://localhost/git/Online/shopping/track-orders.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?cid=5</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?cid=4</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?cid=5</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?cid=6</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?cid=8</loc>
@@ -1126,19 +1129,19 @@
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=2</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=3</loc>
+    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=2</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=2</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=3</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=3</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=4</loc>
+    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=4</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=4</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=4</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=5</loc>
@@ -1204,10 +1207,10 @@
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=16</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=17</loc>
+    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=16</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=16</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=17</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=17</loc>
@@ -1219,10 +1222,10 @@
     <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=18</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=19</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=19</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=19</loc>
+    <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=19</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=20</loc>
@@ -1243,25 +1246,16 @@
     <loc>http://localhost/git/Online/shopping/index.php?page=product&amp;action=add&amp;id=22</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=N;O=D</loc>
+    <loc>http://localhost/git/Online/?C=N;O=A</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=M;O=A</loc>
+    <loc>http://localhost/git/Online/?C=M;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=S;O=A</loc>
+    <loc>http://localhost/git/Online/?C=S;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=D;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/SQL%20file/shopping.sql</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=N;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=N;O=A</loc>
+    <loc>http://localhost/git/Online/?C=D;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/main_final_original%20-%20Copy/blog-details.php</loc>
@@ -1270,31 +1264,19 @@
     <loc>http://localhost/main_final_original/blog-details.php</loc>
             </url>
     <url>
-    <loc>http://localhost/reactcrud/api/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=S;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/reactcrud/api/?C=D;O=D</loc>
+    <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=N;O=A</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=M;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=D;O=D</loc>
-            </url>
-    <url>
     <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=S;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/forgot-password.php</loc>
+    <loc>http://localhost/php_rest_full_api/Copy%20Files/?C=D;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=8</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=15</loc>
+    <loc>http://localhost/php_rest_full_api/uploads/?C=S;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/?C=N;O=A</loc>
@@ -1303,10 +1285,40 @@
     <loc>http://localhost/php_rest_full_api/uploads/?C=M;O=D</loc>
             </url>
     <url>
-    <loc>http://localhost/php_rest_full_api/uploads/?C=S;O=D</loc>
+    <loc>http://localhost/reactcrud/api/?C=D;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=S;O=D</loc>
             </url>
     <url>
     <loc>http://localhost/php_rest_full_api/uploads/?C=D;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=N;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/reactcrud/api/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/SQL%20file/?C=N;O=A</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/SQL%20file/?C=S;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/SQL%20file/?C=M;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=15</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/SQL%20file/?C=D;O=D</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/forgot-password.php</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=8</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=15&amp;&amp;action=wishlist</loc>
@@ -1315,22 +1327,28 @@
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=16</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=12</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=16&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=19&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=9</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=20</loc>
+    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=10</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=19</loc>
+    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=11</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=20&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=17</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?pid=17&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=18</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?pid=18&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/sub-category.php?scid=2</loc>
@@ -1360,13 +1378,16 @@
     <loc>http://localhost/git/Online/shopping/category.php?pid=1&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=3</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=2</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=2&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=3</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?pid=3&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=4</loc>
@@ -1375,25 +1396,19 @@
     <loc>http://localhost/git/Online/shopping/category.php?pid=4&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=3&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=5</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=5&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=5</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=6</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=7&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=6&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=7</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?pid=7&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=8</loc>
@@ -1405,10 +1420,13 @@
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=9</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=11</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=7</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=9&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=11</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?pid=11&amp;&amp;action=wishlist</loc>
@@ -1420,10 +1438,10 @@
     <loc>http://localhost/git/Online/shopping/category.php?pid=12&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=13</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?pid=13&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=13&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=13</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=14</loc>
@@ -1438,82 +1456,22 @@
     <loc>http://localhost/git/Online/shopping/category.php?pid=21&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=9</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=10</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=11</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=17</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=17&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=18</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=18&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/1/micromax1.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/sub-category.php?scid=15</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/category.php?pid=22&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/1/micromax%20main%20image.jpg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/category.php?page=product&amp;action=add&amp;id=22</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=1&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/2/apple-iphone-6-1.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/2/apple-iphone-6-2.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=1</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/2/apple-iphone-6-3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=2&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=2</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=4</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=6</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=3</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=5</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=8</loc>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/2/apple-iphone-6-2.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/3/mi-redmi-note-4-1.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=7</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/3/mi-redmi-note-4-2.jpeg</loc>
@@ -1522,16 +1480,46 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/3/mi-redmi-note-4-3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=3&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=1</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=2&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=2</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=3</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=4</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=5</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/4/lenovo-k6-power-k33a42-1.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=6</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=7</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=8</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=3&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/4/lenovo-k6-power-k33a42-2.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/4/lenovo-k6-power-k33a42-3.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=4&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/5/lenovo-k5-note-pa330010in-1.jpeg</loc>
@@ -1543,13 +1531,19 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/5/lenovo-k5-note-pa330116in-3.jpeg</loc>
             </url>
     <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=5&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/6/micromax-canvas-mega-4g-1.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/6/micromax-canvas-mega-4g-2.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/6/micromax-canvas-mega-4g-3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/6/micromax-canvas-mega-4g-2.jpeg</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=6&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/7/samsung-galaxy-on7-sm-1.jpeg</loc>
@@ -1561,6 +1555,9 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/7/samsung-galaxy-on5-sm-3.jpeg</loc>
             </url>
     <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=7&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/8/oppo-a57-na-original-1.jpeg</loc>
             </url>
     <url>
@@ -1570,7 +1567,7 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/8/oppo-a57-na-original-3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=4&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=8&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/9/amzer-amz98947-original-1.jpeg</loc>
@@ -1582,49 +1579,37 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/9/amzer-amz98947-original-3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/11/acer-aspire-notebook-original-2.jpeg</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=9&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/11/acer-aspire-notebook-original-1.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/11/acer-aspire-notebook-original-3.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=5&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=6&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=7&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=8&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=9&amp;&amp;action=wishlist</loc>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/11/acer-aspire-notebook-original-2.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=9</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/12/micromax-lt777w-2-in-1-laptop-original-1.jpeg</loc>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/11/acer-aspire-notebook-original-3.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=11&amp;&amp;action=wishlist</loc>
             </url>
     <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/12/micromax-lt777w-2-in-1-laptop-original-1.jpeg</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/12/micromax-lt777w-2-in-1-laptop-original-2.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/12/micromax-lt777w-2-in-1-laptop-original-3.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=11</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=12</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/12/micromax-lt777w-2-in-1-laptop-original-3.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=13</loc>
@@ -1636,13 +1621,16 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/13/hp-notebook-original-1.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/13/hp-notebook-original-2.jpeg</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=12&amp;&amp;action=wishlist</loc>
             </url>
     <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/13/hp-notebook-original-2.jpeg</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/13/hp-notebook-original-3.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=13&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/14/lenovo-ideapad-notebook-original-1.jpeg</loc>
@@ -1654,19 +1642,10 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/14/lenovo-ideapad-notebook-3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/15/diary-of-a-wimpy-kid-do-it-yourself-book-original-1.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=13&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=14&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/16/22-thea-stilton-and-the-tropical-treasure-original-1.jpeg</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/17/inaf245-queen-rosewood-sheesham-induscraft-na-honey-brown-original-1.jpeg</loc>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/15/diary-of-a-wimpy-kid-do-it-yourself-book-original-1.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=15&amp;&amp;action=wishlist</loc>
@@ -1675,13 +1654,19 @@
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=15</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/17/inaf245-queen-rosewood-sheesham-induscraft-na-honey-brown-original-2.jpeg</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=16</loc>
             </url>
     <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/16/22-thea-stilton-and-the-tropical-treasure-original-1.jpeg</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=16&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/17/inaf245-queen-rosewood-sheesham-induscraft-na-honey-brown-original-1.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/17/inaf245-queen-rosewood-sheesham-induscraft-na-honey-brown-original-2.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/17/inaf245-queen-rosewood-sheesham-induscraft-na-honey-brown-original-3.jpeg</loc>
@@ -1705,16 +1690,22 @@
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=18&amp;&amp;action=wishlist</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/19/1.jpeg</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=18</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=18</loc>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/19/1.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/19/2.jpeg</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/19/3.jpeg</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=19&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=19</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=20</loc>
@@ -1726,10 +1717,10 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/20/2.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=19</loc>
+    <loc>http://localhost/git/Online/shopping/admin/productimages/20/3.jpeg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/admin/productimages/20/3.jpeg</loc>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=20&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/21/61HXVQ+KUQL._SL1500_.jpg</loc>
@@ -1741,6 +1732,12 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/21/51qTiWJdL2L._SL1500_.jpg</loc>
             </url>
     <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?pid=21&amp;&amp;action=wishlist</loc>
+            </url>
+    <url>
+    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=21</loc>
+            </url>
+    <url>
     <loc>http://localhost/git/Online/shopping/admin/productimages/22/01.jpg</loc>
             </url>
     <url>
@@ -1750,36 +1747,9 @@
     <loc>http://localhost/git/Online/shopping/admin/productimages/22/04.jpg</loc>
             </url>
     <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=19&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=20&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=N;O=A</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=M;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=D;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/SQL%20file/?C=S;O=D</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?pid=21&amp;&amp;action=wishlist</loc>
-            </url>
-    <url>
-    <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=21</loc>
-            </url>
-    <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?pid=22&amp;&amp;action=wishlist</loc>
             </url>
     <url>
     <loc>http://localhost/git/Online/shopping/product-details.php?page=product&amp;action=add&amp;id=22</loc>
-            </url>
-    <url>
-    <loc>http://localhost/wordpress/wordpress/</loc>
             </url>
 </urlset>
