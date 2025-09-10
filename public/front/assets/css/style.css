@@ -6218,7 +6218,7 @@ only screen and (max-width: 767px) {
 
 .slider-section-04 .slider-wrapper {
   padding: 160px 0;
-  background-color: #020101;
+  /* background-color: #020101; */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
