@@ -134,7 +134,7 @@
                                     <li><a href="{{ route('faqs') }}">FAQs</a></li>
                                     <li><a href="{{ route('career') }}">Career</a></li>
                                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                                    <li><a href="{{ url('/sitemap') }}">Site Map</a></li>
+                                   
                                 </ul>
                             </div>
                         </div>
