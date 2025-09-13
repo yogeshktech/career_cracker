@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-    <loc>http://localhost/up</loc>
+    <loc>https://careercracker.com/up</loc>
             </url>
     <url>
-    <loc>http://localhost/register</loc>
+    <loc>https://careercracker.com/register</loc>
             </url>
     <url>
     <loc>http://localhost</loc>
             </url>
     <url>
-    <loc>http://localhost/cart</loc>
+    <loc>https://careercracker.com/cart</loc>
             </url>
     <url>
-    <loc>http://localhost/search</loc>
+    <loc>https://careercracker.com/search</loc>
             </url>
     <url>
-    <loc>http://localhost/checkout</loc>
+    <loc>https://careercracker.com/checkout</loc>
             </url>
     <url>
-    <loc>http://localhost/order/confirmation/{orderId}</loc>
+    <loc>https://careercracker.com/order/confirmation/{orderId}</loc>
             </url>
     <url>
-    <loc>http://localhost/courses</loc>
+    <loc>https://careercracker.com/courses</loc>
             </url>
     <url>
-    <loc>http://localhost/courses/{course}</loc>
+    <loc>https://careercracker.com/courses/{course}</loc>
             </url>
     <url>
-    <loc>http://localhost/blogs</loc>
+    <loc>https://careercracker.com/blogs</loc>
             </url>
     <url>
-    <loc>http://localhost/blog/{id}</loc>
+    <loc>https://careercracker.com/blog/{id}</loc>
             </url>
     <url>
-    <loc>http://localhost/career</loc>
+    <loc>https://careercracker.com/career</loc>
             </url>
     <url>
-    <loc>http://localhost/about</loc>
+    <loc>https://careercracker.com/about</loc>
             </url>
     <url>
-    <loc>http://localhost/contact</loc>
+    <loc>https://careercracker.com/contact</loc>
             </url>
     <url>
-    <loc>http://localhost/faqs</loc>
+    <loc>https://careercracker.com/faqs</loc>
             </url>
     <url>
-    <loc>http://localhost/term-conditions</loc>
+    <loc>https://careercracker.com/term-conditions</loc>
             </url>
     <url>
-    <loc>http://localhost/privacy-policy</loc>
+    <loc>https://careercracker.com/privacy-policy</loc>
             </url>
     <url>
-    <loc>http://localhost/course/{course}</loc>
+    <loc>https://careercracker.com/course/{course}</loc>
             </url>
     <url>
-    <loc>http://localhost/category/{category}</loc>
+    <loc>https://careercracker.com/category/{category}</loc>
             </url>
     <url>
-    <loc>http://localhost/subcategory/{subcategory}</loc>
+    <loc>https://careercracker.com/subcategory/{subcategory}</loc>
             </url>
     <url>
-    <loc>http://localhost/login</loc>
+    <loc>https://careercracker.com/login</loc>
             </url>
     <url>
-    <loc>http://localhost/forgot-password</loc>
+    <loc>https://careercracker.com/forgot-password</loc>
             </url>
     <url>
-    <loc>http://localhost/reset-password/{token}</loc>
+    <loc>https://careercracker.com/reset-password/{token}</loc>
             </url>
     <url>
-    <loc>http://localhost/verify-email</loc>
+    <loc>https://careercracker.com/verify-email</loc>
             </url>
     <url>
-    <loc>http://localhost/verify-email/{id}/{hash}</loc>
+    <loc>https://careercracker.com/verify-email/{id}/{hash}</loc>
             </url>
     <url>
-    <loc>http://localhost/confirm-password</loc>
+    <loc>https://careercracker.com/confirm-password</loc>
             </url>
     <url>
-    <loc>http://localhost/storage/{path}</loc>
+    <loc>https://careercracker.com/storage/{path}</loc>
             </url>
 </urlset>

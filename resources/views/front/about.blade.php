@@ -2,7 +2,7 @@
 @section('content')
     <div class="page-banner">
         <div class="page-banner__wrapper about-banner"
-            style="background-image: url({{ asset('front/assets/images/about-us-hero-bg.jpg)') }}">
+            style="background-image: url({{ asset('front/assets/images/about.jpg)') }}">
             <div class="container">
                 <div class="page-breadcrumb">
                     <ul class="breadcrumb breadcrumb-white">
@@ -29,7 +29,7 @@
                 </p>
             </div>
             <div class="col-md-6 text-center">
-                <img src="{{ asset('front/assets/images/gallery/about-us-gallery-03.jpg')}}" class="img-fluid"
+                <img src="{{ asset('front/assets/images/about/about1.webp')}}" class="img-fluid"
                     alt="Right Side Image">
             </div>
         </div>
@@ -44,7 +44,7 @@
                     <div class="academics-item text-center" data-aos="fade-up" data-aos-duration="1000">
                         <a href="#" class="academics-item__link">
                             <div class="academics-item__image">
-                                <img src="{{ asset('front/assets/images/academics/event-thumbnail-01.jpg')}}"
+                                <img src="{{ asset('front/assets/images/about/value.webp')}}"
                                     alt="University" width="370" height="269">
                                 <h3 class="academics-item__title">Our Values</h3>
                             </div>
@@ -62,7 +62,7 @@
                     <div class="academics-item text-center" data-aos="fade-up" data-aos-duration="1000">
                         <a href="#" class="academics-item__link">
                             <div class="academics-item__image">
-                                <img src="{{ asset('front/assets/images/academics/event-thumbnail-02.jpg')}}"
+                                <img src="{{ asset('front/assets/images/about/approach.webp')}}"
                                     alt="University" width="370" height="269">
                                 <h3 class="academics-item__title">Our Approach</h3>
                             </div>
@@ -80,7 +80,7 @@
                     <div class="academics-item text-center" data-aos="fade-up" data-aos-duration="1000">
                         <a href="#" class="academics-item__link">
                             <div class="academics-item__image">
-                                <img src="{{ asset('front/assets/images/academics/event-thumbnail-03.jpg')}}"
+                                <img src="{{ asset('front/assets/images/about/service.webp')}}"
                                     alt="University" width="370" height="269">
                                 <h3 class="academics-item__title">Our Services</h3>
                             </div>

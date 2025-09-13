@@ -1,80 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Career Cracker</title>
-    <!-- Bootstrap CSS -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .text-danger {
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: block;
-            min-height: 1.25rem;
-        }
 
-        .modal-form {
-            margin-bottom: 1rem;
-        }
 
-        #termsContent.show {
-            display: block !important;
-        }
-
-        .input-group {
-            position: relative;
-        }
-
-        .form-control1 {
-            padding-right: 40px; /* Space for the icon in desktop view */
-            width: 100%;
-            height: calc(1.5em + 0.75rem + 2px);
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-        }
-
-        .password-toggle-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #666;
-            z-index: 10;
-        }
-
-        .password-toggle-icon i {
-            font-size: 16px;
-        }
-
-        /* Mobile view: Adjust icon positioning */
-        @media (max-width: 376px) {
-            .form-control1 {
-                padding-right: 12px; /* Reset padding to avoid overlap */
-            }
-
-            .password-toggle-icon {
-                right: -30px; /* Position icon outside the input field */
-            }
-        }
-    </style>
-</head>
-<body>
-    <main class="main-wrapper">
         <div class="header-section header-sticky">
             <div class="header-top d-none d-sm-block">
                 <div class="container">
                     <div class="header-top-bar-wrap d-sm-flex justify-content-between align-items-center">
                         <div class="header-top-bar-wrap__info">
                             <ul class="header-top-bar-wrap__info-list">
-                                <li><a href="tel:9867-679-600"><i class="fas fa-phone"></i> <span class="info-text">9867-679-600</span></a></li>
+                                <li><a href="tel:9892775540"><i class="fas fa-phone"></i> <span class="info-text">9892775540</span></a></li>
                                 <li><a href="mailto:info@careercracker.com"><i class="far fa-envelope"></i> <span class="info-text">info@careercracker.com</span></a></li>
                             </ul>
                         </div>
@@ -304,7 +236,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    
 
     <!-- Log In Modal Start -->
     <div class="modal fade" id="loginModal">
@@ -812,5 +744,3 @@
             }
         });
     </script>
-</body>
-</html>

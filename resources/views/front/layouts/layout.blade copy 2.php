@@ -2,43 +2,58 @@
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title', 'Career Cracker')</title>
-    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="@yield('description', '')">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Dynamic Title & Description -->
+    <title>@yield('title', 'Career Cracker')</title>
+    <meta name="description" content="@yield('description', 'Career Cracker helps you crack your dream job with expert guidance, resources, and career tips.')">
+    <meta name="keywords" content="career cracker, jobs, career guidance, interview tips, resume tips, job search, placement preparation">
+    <meta name="author" content="Career Cracker">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Career Cracker - Crack Your Dream Career">
+    <meta property="og:description" content="Get expert career guidance, job interview tips, resume hacks, and resources to crack your dream job.">
+    <meta property="og:image" content="https://careercracker.com/front/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://careercracker.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Career Cracker - Crack Your Dream Career">
+    <meta name="twitter:description" content="Explore career tips, job guidance, and resources to crack your dream career.">
+    <meta name="twitter:image" content="https://careercracker.com/front/assets/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://careercracker.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://careercracker.com/front/assets/images/fevicon-icon.png" type="image/png">
+
+    <!-- Font Awesome (Latest) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17183580383"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'AW-17183580383');
-
     </script>
 
-
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
-
-    <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
-    <!-- Font CSS -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{{ asset('front/assets/css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/vendor/fontawesome-all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/vendor/edumall-icon.css') }}">
-    <link rel="stylesheet" href="{{ asset('front/assets/css/vendor/bootstrap.min.css') }}">
 
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/plugins/aos.css') }}">
@@ -50,19 +65,14 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/plugins/ion.rangeSlider.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/plugins/select2.min.css') }}">
 
-    @if (session('status'))
-    <div class="alert alert-success">{{ session('status') }}</div>
-    @endif
-
+    <!-- Bootstrap CDN (optional, if not using vendor/bootstrap.min.css above) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Style CSS -->
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Vite CSS -->
+    <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Additional Styles -->
@@ -167,47 +177,44 @@
 
     </style>
 
-    
+    <style>
+        .header-top-bar-wrap__info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header-top-bar-wrap__info-list li {
+            font-size: 1rem;
+        }
+
+        .btn-link {
+            color: #007bff;
+            text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        .user-name {
+            color: #333;
+            font-weight: 500;
+        }
+
+    </style>
 </head>
-<style>
-    .header-top-bar-wrap__info-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 1rem;
-    }
 
-    .header-top-bar-wrap__info-list li {
-        font-size: 1rem;
-    }
-
-    .btn-link {
-        color: #007bff;
-        text-decoration: none;
-        background: none;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-    }
-
-    .btn-link:hover {
-        text-decoration: underline;
-        color: #0056b3;
-    }
-
-    .user-name {
-        color: #333;
-        font-weight: 500;
-    }
-
-</style>
 
 <body>
-
-
-
     <main class="main-wrapper">
         @include('front.layouts.header')
         @if (session('success'))

@@ -41,8 +41,8 @@
                             </div>
                             <div class="contact-info__content">
                                 <h3 class="contact-info__title">Contact</h3>
-                                <p>Mobile: <strong>9867-679-600</strong></p>
-                                {{-- <p>Hotline: <strong>9867-679-600</strong></p> --}}
+                                <p>Mobile: <strong>9892775540</strong></p>
+                                {{-- <p>Hotline: <strong>9892775540</strong></p> --}}
                                 <p>Mail: info@careercracker.in</p>
                                 <p>To schedule a call, just send us a WhatsApp message on the number provided & we’ll
                                     connect with you shortly.</p>

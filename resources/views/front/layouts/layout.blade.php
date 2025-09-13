@@ -2,13 +2,30 @@
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title', 'Career Cracker')</title>
-    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="@yield('description', '')">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Dynamic Title & Description -->
+    <title>@yield('title', 'Career Cracker')</title>
+    <meta name="description" content="@yield('description', 'Career Cracker helps you crack your dream job with expert guidance, resources, and career tips.')">
+    <meta name="keywords" content="career cracker, jobs, career guidance, interview tips, resume tips, job search, placement preparation">
+    <meta name="author" content="Career Cracker">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Career Cracker - Crack Your Dream Career">
+    <meta property="og:description" content="Get expert career guidance, job interview tips, resume hacks, and resources to crack your dream job.">
+    <meta property="og:image" content="https://careercracker.com/front/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://careercracker.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Career Cracker - Crack Your Dream Career">
+    <meta name="twitter:description" content="Explore career tips, job guidance, and resources to crack your dream career.">
+    <meta name="twitter:image" content="https://careercracker.com/front/assets/images/og-image.jpg">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17183580383"></script>
@@ -24,11 +41,9 @@
 
     </script>
 
-
-
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
     <!-- Font CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -165,9 +180,62 @@
             }
         }
 
-    </style>
-</head>
-<style>
+   
+        .text-danger {
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+            min-height: 1.25rem;
+        }
+
+        .modal-form {
+            margin-bottom: 1rem;
+        }
+
+        #termsContent.show {
+            display: block !important;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .form-control1 {
+            padding-right: 40px; /* Space for the icon in desktop view */
+            width: 100%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+
+        .password-toggle-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+            z-index: 10;
+        }
+
+        .password-toggle-icon i {
+            font-size: 16px;
+        }
+
+        /* Mobile view: Adjust icon positioning */
+        @media (max-width: 376px) {
+            .form-control1 {
+                padding-right: 12px; /* Reset padding to avoid overlap */
+            }
+
+            .password-toggle-icon {
+                right: -30px; /* Position icon outside the input field */
+            }
+        }
+    
     .header-top-bar-wrap__info-list {
         list-style: none;
         padding: 0;
@@ -201,11 +269,8 @@
     }
 
 </style>
-
+</head>
 <body>
-
-
-
     <main class="main-wrapper">
         @include('front.layouts.header')
         @if (session('success'))
@@ -216,7 +281,6 @@
                 , text: "{{ session('success') }}"
                 , confirmButtonColor: '#3085d6'
             , });
-
         </script>
         @endif
 
@@ -234,14 +298,7 @@
 
         @yield('content')
         @include('front.layouts.footer')
-        <!--Back To Start-->
-        {{-- <button id="backBtn" class="back-to-top backBtn">
-            <i class="arrow-top fas fa-arrow-up"></i>
-            <i class="arrow-bottom fas fa-arrow-up"></i>
-        </button> --}}
     </main>
-
-
     <!-- JS Vendor, Plugins & Activation Script Files -->
 
     <!-- Vendors JS -->
