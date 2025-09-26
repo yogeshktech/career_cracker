@@ -41,8 +41,20 @@
 
     </script>
 
+
+
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+
+
+<!-- Favicon for browsers and Google -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ asset('front/assets/images/fevicon-icon.png') }}g">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
     <!-- Font CSS -->
@@ -80,6 +92,8 @@
     <!-- Vite CSS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+
+   
     <!-- Additional Styles -->
     @yield('styles')
 
