@@ -52,6 +52,9 @@
     <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('front/assets/images/fevicon-icon.png') }}"> --}}
 
+
+    
+
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
     <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
