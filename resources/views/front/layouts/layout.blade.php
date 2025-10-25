@@ -2,7 +2,7 @@
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -47,12 +47,14 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
 
 
-<!-- Favicon for browsers and Google -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
-<link rel="icon" type="image/png" sizes="48x48" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+    <!-- Favicon for browsers and Google -->
+    {{-- <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('front/assets/images/fevicon-icon.png') }}"> --}}
 
-
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('front/assets/images/fevicon-icon.png') }}">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -93,7 +95,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-   
+
     <!-- Additional Styles -->
     @yield('styles')
 
@@ -194,7 +196,7 @@
             }
         }
 
-   
+
         .text-danger {
             font-size: 0.875rem;
             margin-top: 0.25rem;
@@ -215,7 +217,8 @@
         }
 
         .form-control1 {
-            padding-right: 40px; /* Space for the icon in desktop view */
+            padding-right: 40px;
+            /* Space for the icon in desktop view */
             width: 100%;
             height: calc(1.5em + 0.75rem + 2px);
             padding: 0.375rem 0.75rem;
@@ -242,47 +245,49 @@
         /* Mobile view: Adjust icon positioning */
         @media (max-width: 376px) {
             .form-control1 {
-                padding-right: 12px; /* Reset padding to avoid overlap */
+                padding-right: 12px;
+                /* Reset padding to avoid overlap */
             }
 
             .password-toggle-icon {
-                right: -30px; /* Position icon outside the input field */
+                right: -30px;
+                /* Position icon outside the input field */
             }
         }
-    
-    .header-top-bar-wrap__info-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 1rem;
-    }
 
-    .header-top-bar-wrap__info-list li {
-        font-size: 1rem;
-    }
+        .header-top-bar-wrap__info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1rem;
+        }
 
-    .btn-link {
-        color: #007bff;
-        text-decoration: none;
-        background: none;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-    }
+        .header-top-bar-wrap__info-list li {
+            font-size: 1rem;
+        }
 
-    .btn-link:hover {
-        text-decoration: underline;
-        color: #0056b3;
-    }
+        .btn-link {
+            color: #007bff;
+            text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+        }
 
-    .user-name {
-        color: #333;
-        font-weight: 500;
-    }
+        .btn-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
 
-</style>
+        .user-name {
+            color: #333;
+            font-weight: 500;
+        }
+
+    </style>
 </head>
 <body>
     <main class="main-wrapper">
@@ -295,6 +300,7 @@
                 , text: "{{ session('success') }}"
                 , confirmButtonColor: '#3085d6'
             , });
+
         </script>
         @endif
 
